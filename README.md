@@ -1,7 +1,10 @@
-# dindex — a bounded two-group balance index for microbial community tables
+# dindex — a bounded two-group dominance index, developed for marine giant-virus communities
 
 `dindex` computes the **D-index**, a single number that summarises the balance between two groups
-of taxa in a sample:
+of taxa in a sample. It was developed for the two dominant marine giant-virus orders,
+*Imitervirales* (**I**) and *Algavirales* (**A**), which together account for most of the
+giant-virus PolB coverage detected at SPOT and in Tara Oceans, so that their balance
+describes which of the two orders dominates:
 
 $$D = \frac{I - A}{I + A} = \tanh\!\left(\tfrac{1}{2}\ln\frac{I}{A}\right)$$
 
@@ -17,12 +20,17 @@ D runs from **−1** (only A detected) through **0** (equal abundance) to **+1**
 Because it is a function of the ratio I/A, D is unchanged by sequencing depth, by normalisation
 to relative abundance, or by any factor applied equally to both groups.
 
-Nothing in the calculation is specific to viruses. It applies to any two groups whose balance you
-expect to track an environmental gradient — ecotypes or clades, warm- vs cold-associated lineages,
-copiotrophs vs oligotrophs, or two functional gene families. The input can be read counts, coverage,
-TPM, relative abundance or cell counts.
+**Scope.** The arithmetic is not virus-specific: D is a bounded balance between any two groups
+measured on the same scale (two clades or ecotypes, warm- versus cold-associated lineages,
+copiotrophs versus oligotrophs, two functional gene families), and the input may be read counts,
+coverage, TPM, relative abundance or cell counts. Two conditions travel with the index: both groups
+must be detectable in the same assay, and their combined share must represent a meaningful part of
+the community. D remains a **relative** measure, so it cannot compare absolute abundances across
+samples. The validation reported here is the giant-virus application; `docs/METHODS_TEMPLATE.md`
+describes how to adapt the index to another pair.
 
-This repository also contains the **analysis code for the accompanying manuscript**:
+This repository contains (i) the `dindex` implementation used for that application and (ii) the
+**analysis code for the accompanying manuscript**:
 
 > Feng, J., Hou, S. *et al.* Recurrent warming-associated shifts in marine giant-virus dominance
 > across scales. (in submission).

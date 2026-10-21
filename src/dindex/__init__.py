@@ -1,4 +1,4 @@
-"""dindex: a bounded two-group balance index for microbial community composition.
+"""dindex: a bounded two-group dominance index developed for marine giant-virus communities.
 
     D = (P - M) / (P + M) = tanh(0.5 ln(P/M))
 

@@ -1,4 +1,5 @@
-# dindex.R -- bounded two-group balance index D = (P - M) / (P + M),
+# dindex.R -- bounded two-group dominance index, developed for marine giant-virus communities.
+# D = (P - M) / (P + M),
 # equal to tanh(0.5 * log(P / M)) when both groups have positive abundance.
 # MIT License (see LICENSE). Base R only; the phyloseq helper is used if phyloseq is installed.
 # Source with: source("dindex.R")

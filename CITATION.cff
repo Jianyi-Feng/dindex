@@ -1,10 +1,11 @@
 cff-version: 1.2.0
 message: "If you use the D-index or this code, please cite the manuscript and this repository."
-title: "dindex: a bounded two-group balance index for microbial community tables"
+title: "dindex: a bounded two-group dominance index for marine giant-virus communities"
 abstract: >-
   Python and R implementation of the D-index, D = (I - A)/(I + A) = tanh(0.5 ln(I/A)) for I, A > 0,
   a bounded
-  bounded two-group balance index of microbial community composition (equal to tanh(0.5 ln(P/M)) when
+  bounded two-group dominance index developed for marine giant-virus communities (equal to
+  tanh(0.5 ln(P/M)) when
   both groups are present), with quality-control flags,
   count-based and bootstrap intervals, and calibration helpers (environmental sensitivity, the
   value of the driver at which D = 0, and seasonal-baseline anomalies). This repository also

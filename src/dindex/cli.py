@@ -80,7 +80,7 @@ def cmd_baseline(a):
 
 
 def main(argv=None):
-    p = argparse.ArgumentParser(prog="dindex", description="Bounded two-group balance index D = (P - M)/(P + M) for microbial community tables.")
+    p = argparse.ArgumentParser(prog="dindex", description="Bounded two-group dominance index developed for marine giant-virus communities; D = (P - M)/(P + M) for microbial community tables.")
     p.add_argument("--version", action="version", version=f"dindex {__version__}")
     sub = p.add_subparsers(dest="cmd", required=True)
 
