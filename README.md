@@ -1,16 +1,16 @@
-﻿# dindex — a two-group log-ratio index for microbial community tables
+# dindex — a two-group log-ratio index for microbial community tables
 
 `dindex` computes the **D-index**, a single number that summarises the balance between two groups
 of taxa in a sample:
 
-$$D = \frac{P - M}{P + M} = \tanh\!\left(\tfrac{1}{2}\ln\frac{P}{M}\right)$$
+$$D = \frac{I - A}{I + A} = \tanh\!\left(\tfrac{1}{2}\ln\frac{I}{A}\right)$$
 
-- **P** is the summed abundance of the "plus" group (in the giant-virus study: *Imitervirales*).
-- **M** is the summed abundance of the "minus" group (*Algavirales*).
+- **I** is the summed abundance of *Imitervirales* (the "plus" group in the giant-virus study).
+- **A** is the summed abundance of *Algavirales* (the "minus" group).
 
-D runs from **−1** (only M detected) through **0** (equal abundance) to **+1** (only P detected).
-It depends only on the ratio P/M, so it is unchanged by sequencing depth, by normalisation to
-relative abundance, or by any factor applied equally to both groups. It is undefined when P + M = 0.
+D runs from **−1** (only A detected) through **0** (equal abundance) to **+1** (only I detected).
+It depends only on the ratio I/A, so it is unchanged by sequencing depth, by normalisation to
+relative abundance, or by any factor applied equally to both groups. It is undefined when I + A = 0.
 
 Nothing in the calculation is specific to viruses. It applies to any two groups whose balance you
 expect to track an environmental gradient — ecotypes or clades, warm- vs cold-associated lineages,
@@ -19,8 +19,8 @@ TPM, relative abundance or cell counts.
 
 This repository also contains the **analysis code for the accompanying manuscript**:
 
-> Feng, J., Hou, S. *et al.* A giant-virus index of warming-associated community reorganization.
-> (in submission).
+> Feng, J., Hou, S. *et al.* Recurrent warming-associated shifts in marine giant-virus dominance
+> across scales. (in submission).
 
 ---
 
@@ -102,6 +102,8 @@ d_from_phyloseq(ps, rank = "Order", plus = "Imitervirales", minus = "Algavirales
 d_zero_point(df, "temperature", group = "station")
 ```
 
+The generic command-line and API use the neutral names `plus` (= I) and `minus` (= A).
+
 ## What the output columns mean
 
 | Column | Meaning |
@@ -136,29 +138,37 @@ for an adaptable Methods paragraph.
 
 ## Data
 
-The input tables, model outputs and figure source data for the manuscript are archived separately:
+Data availability statements, following the manuscript:
 
-- **Data, index tables and gridded model output** — `https://doi.org/10.6084/m9.figshare.34419060`;
-  the tables used here are included in this repository under `raw_tables/` and `processed_tables/`,
-  and the two large gridded CMIP6 fields (`cmip6_grid.npz`, `archived__cmip6_grid.npz`) are in the deposit
-- **SPOT metagenomic reads** — NCBI Sequence Read Archive, BioProjects `PRJNA1536449` (2014–2019) and
-  `PRJNA814250` (2012–2013)
-- **GVMAG and Mirusviricota MAG sequences** — NCBI, `PRJNA1536449`
+- **Newly generated SPOT metagenomic reads** — NCBI Sequence Read Archive, BioProject
+  [`PRJNA1536449`](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1536449)
+- **Previously released viral metagenomes** — JGI Genome Portal, proposal ID `2799`
+- **Previously released 0.2–1.2 µm size-fraction samples** — BioProject
+  [`PRJNA814250`](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA814250)
+- **Nucleocytoviricota and Mirusviricota MAGs** (nucleotide and protein sequences) — figshare,
+  [`https://doi.org/10.6084/m9.figshare.34419060`](https://doi.org/10.6084/m9.figshare.34419060)
 - **Tara Oceans metagenomes** — ENA `PRJEB1787`, `PRJEB1788`, `PRJEB9740`
+- **Companion 16S and 18S rRNA amplicon series** from the same programme are described in our
+  previous studies
 - **CMIP6 fields** — the four Earth-system models used (CESM2-WACCM, IPSL-CM6A-LR, NorESM2-MM,
-  UKESM1-0-LL) are public through the ESGF archive
+  UKESM1-0-LL) are public through the [ESGF archive](https://esgf-node.llnl.gov/)
 
-All observation tables needed to rerun the analyses ship with this repository, so no extra download is
-required to get started: run `bash run_checks.sh` for a completeness and runnability check, and see
-`RUN.md` for the scripts that additionally need the large gridded fields or external raw model output.
-Every script resolves paths relative to its own location and reads tables from `raw_tables/` and
-`processed_tables/`.
+The observation tables needed to rerun the analyses ship with this repository (`raw_tables/` and
+`processed_tables/`), so no extra download is required to get started. The large gridded CMIP6
+arrays are archived with the figshare deposit (`07_CMIP6_gridded_fields/`); `RUN.md` lists which
+scripts need them.
+
+Run the packaging and runnability check with:
+
+```bat
+python tools\check_data_layout.py
+```
 
 ## Tests
 
 ```bash
 pip install -e ".[test]"
-PYTHONPATH=src python -m pytest -q      # Python suite
+set PYTHONPATH=src && python -m pytest -q    # Python suite (Windows)
 Rscript tests/test_dindex.R             # R checks (needs Rscript)
 ```
 
