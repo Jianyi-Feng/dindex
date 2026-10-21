@@ -9,14 +9,14 @@ projection. Everything else is unchanged from .
 
 ( header) Framework C (predict I and A separately) + ENSEMBLE + I/A abundance
 
-Framework C: 分别预测 Imitervirales(I) 和 Algavirales(A)，再合成 D = (I-A)/(I+A)。
-沿用  的结论，但去掉 Temp × log10(Chl) 交互项（主效应模型）：
-  - 8 个主效应特征：Temperature, Salinity（线性）+ ChlorophyllA, CO3, PO4, NO3, Si, Iron（log10）；
-  - 模型池：LinearReg, Ridge, Lasso, ElasticNet, BayesianRidge, Huber, PLS, LassoLars, AdaBoost, ExtraTrees（去掉 KernelRidge）；
-  - 集成：对每个模型的 D 预测做平均（Uniform / R2-weighted / Top3），GroupKFold CV 选最优。
-  - 输出 D-index + Imitervirales/Algavirales 相对丰度预测。
+Framework C: predict Imitervirales (I) and Algavirales (A) separately, then combine D = (I-A)/(I+A).
+Follows the earlier conclusion but drops the Temp x log10(Chl) interaction (main-effects model):
+  - 8 main-effect features: Temperature and Salinity (linear), plus ChlorophyllA, CO3, PO4, NO3, Si and Iron (log10);
+  - model pool: LinearReg, Ridge, Lasso, ElasticNet, BayesianRidge, Huber, PLS, LassoLars, AdaBoost, ExtraTrees (KernelRidge removed);
+  - ensemble: average the per-model D predictions (uniform / R2-weighted / top-3) and choose the best by GroupKFold CV.
+  - outputs the D-index plus the predicted Imitervirales/Algavirales relative abundances.
 
-CMIP6 自动扫描所有年代。
+CMIP6 scanning covers all decades automatically.
 """
 import os, sys, warnings, time, hashlib, argparse, glob, re
 import numpy as np
@@ -74,7 +74,7 @@ plt.rcParams.update({"figure.dpi": 150, "savefig.dpi": 300,
 
 LINEAR_FEATURES = ["Temperature", "Salinity"]
 LOG_FEATURES = ["ChlorophyllA", "PO4", "NO3", "Si", "Iron"]  # : CO3 removed (mislabelled pigment)
-DERIVED_FEATURES = []  # 主效应模型：无交互项（去掉 Temp_x_Chl_log）
+DERIVED_FEATURES = []  # main-effects model: no interaction term (Temp_x_Chl_log removed)
 CAT_FEATURE = "Size_fraction_group"
 
 
@@ -132,8 +132,8 @@ n_stations = train_df["station_id"].nunique()
 print(f"Stations={n_stations}  Samples={len(train_df)}  D mean={y_D.mean():.4f} std={y_D.std():.4f}")
 
 X_num = train_df[model_features].values
-# 手动二值化 Size_fraction：Pico=0, Femto=1（等效 OneHotEncoder drop=first，
-# 且避免字符串 OneHotEncoder 在部分 sklearn/numpy 版本下的 isnan 报错）
+# Manual binarisation of Size_fraction: Pico=0, Femto=1 (equivalent to OneHotEncoder drop=first,
+# and avoids the isnan error of the string OneHotEncoder in some sklearn/numpy versions)
 X_cat = (train_df[CAT_FEATURE].values == "Femto-size").astype(np.float64).reshape(-1, 1)
 X_full = np.hstack([X_num, X_cat])
 n_num_cols = X_num.shape[1]
@@ -352,14 +352,14 @@ prep = final_I_models[top[final_idx[0]]["name"]].named_steps["prep"]
 
 
 def model_D_pred(nm, X):
-    # 注意：X 已经是 prep.transform 后的结果，这里只调用 model 步骤，避免二次标准化
+    # NOTE: X is already the output of prep.transform, so only the model step is called here
     I_p = np.clip(final_I_models[nm].named_steps["model"].predict(X), 0, 1)
     A_p = np.clip(final_A_models[nm].named_steps["model"].predict(X), 0, 1)
     den = I_p + A_p
     return np.divide(I_p - A_p, den, out=np.zeros_like(I_p), where=den > 1e-12)
 
 
-# full-train R2 (in-sample, for reference) —— 传入标准化后的 X
+# full-train R2 (in-sample, for reference) -- computed on the standardised X
 X_full_pp = prep.transform(X_full)
 D_full = np.zeros_like(y_D)
 for j, idx in enumerate(final_idx):
@@ -395,7 +395,7 @@ def predict_D(X_prep):
 
 
 def predict_I(X_prep):
-    # Imitervirales 相对丰度（0~1 分数），由集成 I 模型加权平均
+    # Imitervirales relative abundance (0-1 fraction), weighted average of the ensemble I models
     I_ens = np.zeros(X_prep.shape[0])
     for j, idx in enumerate(final_idx):
         w = (1.0 / len(final_idx)) if final_w is None else final_w[j]
@@ -404,7 +404,7 @@ def predict_I(X_prep):
 
 
 def predict_A(X_prep):
-    # Algavirales 相对丰度（0~1 分数），由集成 A 模型加权平均
+    # Algavirales relative abundance (0-1 fraction), weighted average of the ensemble A models
     A_ens = np.zeros(X_prep.shape[0])
     for j, idx in enumerate(final_idx):
         w = (1.0 / len(final_idx)) if final_w is None else final_w[j]

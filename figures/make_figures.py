@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 基于 big115（1.15× 字号版）重做的修改；原文件未动。
+# Redrawn from the 1.15x font-size build; the original file is unchanged.
 """Main and Extended Data figures for the  D-index manuscript ( builder +  Fig. 5, ED Figs 4-5).
 
 Nature specification: 180 mm width, Arial-metric sans serif (Liberation Sans), 6-8 pt text,
@@ -60,15 +60,15 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False, "legend.frameon": False,
     "axes.titlepad": 3, "axes.labelpad": 2, "savefig.dpi": 600,
 })
-# ---------------------------------------------------------------- 小提琴垫片（第二轮反馈）
-# 只在这三段里把 boxplot 临时替换为小提琴图；其余箱线图面板保持原样。
+# ---------------------------------------------------------------- violin overlays
+# Replace the boxplot with a violin only in these three blocks; other panels stay as they are.
 import matplotlib.axes as _ma
 _ORIG_BOXPLOT = _ma.Axes.boxplot
 
 
 def _violin_boxplot(self, data, positions=None, widths=None, **kw):
     import numpy as _np
-    # 取色：优先系列色（boxprops.edgecolor），medianprops 的黑色只用于中位线
+    # Colour: prefer the series colour (boxprops.edgecolor); the black medianprops colour is used only for the median line
     col = "k"
     for key, field in (("boxprops", "edgecolor"), ("boxprops", "color"),
                        ("whiskerprops", "color"), ("whiskerprops", "edgecolor")):
@@ -76,7 +76,7 @@ def _violin_boxplot(self, data, positions=None, widths=None, **kw):
         if d_.get(field):
             col = d_[field]
             break
-    # 规整输入：Series/ndarray -> 单元素列表；已是 list/tuple（含长度不等的 ragged 列表）原样保留
+    # Normalise the input: Series/ndarray -> single-element list; list/tuple (including ragged lists) is kept as is
     if isinstance(data, (list, tuple)):
         data = list(data)
     else:
@@ -92,7 +92,7 @@ def _violin_boxplot(self, data, positions=None, widths=None, **kw):
                              showmedians=True, bw_method=0.35)
         lo, hi = float(_np.min(v)), float(_np.max(v))
         for b in vp["bodies"]:
-            # KDE 尾巴会伸出数据范围，按数据极值裁掉（避免长尖刺）
+            # The KDE tail extends beyond the data range, so clip it at the data extremes
             for path in b.get_paths():
                 xy = path.vertices
                 xy[:, 1] = _np.clip(xy[:, 1], lo, hi)
@@ -106,11 +106,11 @@ def violin_panels_on():
 
 
 def violin_panels_off():
-    # 作者要求全局小提琴：保持启用（不再还原）
+    # Violins are used throughout, as requested: keep enabled
     pass
 
 
-# 作者要求：本图集内所有箱线图一律改为小提琴图
+# All boxes in this figure set are drawn as violins
 violin_panels_on()
 
 I_C, A_C = "#0072B2", "#D55E00"          # Imitervirales blue, Algavirales vermillion
@@ -483,7 +483,7 @@ forest = pd.DataFrame([
     ("2015 only", sup.loc["pre_vs_2015", "delta_D_season_adjusted"], sup.loc["pre_vs_2015", "delta_D_season_adj_CI_low"], sup.loc["pre_vs_2015", "delta_D_season_adj_CI_high"], f"$P_{{BH}}$ = {sup.loc['pre_vs_2015', 'P_season_adjusted_BH']:.4f}", GREY),
     ("Unadjusted median", sup.loc["pre_vs_heatwave_2014_2015", "delta_D"], sup.loc["pre_vs_heatwave_2014_2015", "CI_low"], sup.loc["pre_vs_heatwave_2014_2015", "CI_high"], f"$P_{{BH}}$ = {sup.loc['pre_vs_heatwave_2014_2015', 'P_adjusted_BH']:.2f}", GREY),
 ], columns=["estimate", "dD", "lo", "hi", "p", "col"])
-forest["col"] = "#000000"   # 作者要求：森林图所有行统一黑色
+forest["col"] = "#000000"   # all forest rows in one colour
 yy = np.arange(len(forest))[::-1]
 for y_, r in zip(yy, forest.itertuples()):
     ax.plot([r.lo, r.hi], [y_, y_], color=r.col, lw=0.8)
@@ -641,7 +641,7 @@ for y_, r in zip(yy, tr.itertuples()):
         lo, hi = wilson(k, n)
         ax.plot([lo*100, hi*100], [y_+dy]*2, color=col, lw=0.9)
         ax.plot(k/n*100, y_+dy, "o", ms=3.2, color=col, lw=0)
-    # 作者要求：行末百分比注释去掉（数值在 source data 与图注中给出）
+    # Trailing percentage labels removed; the values are given in the source data and legend
 ax.set_yticks(yy, tr.trait); ax.set_xlim(0, 122); ax.set_xticks(range(0, 101, 20)); ax.spines["bottom"].set_bounds(0, 100)
 ax.set_xlabel("Genomes encoding trait (%, 95% CI)")
 ax.legend(handles=[Line2D([], [], color=I_C, marker="o", ms=3, label=f"Imitervirales ({nI} genomes)"),

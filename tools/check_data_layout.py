@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-"""静态检查：脚本引用的输入表是否都在本仓库里。
+"""Static check: are all input tables referenced by the scripts present in this repository?
 
-判定规则：
-  * 仓库里已有的表格 -> OK
-  * 投稿编号前缀（Supplementary_Data_7_、Supplementary_Table_3_ 等）与脚本内部短名互相匹配 -> OK
-  * 脚本自己写出来的文件（to_csv/to_excel/savez/open）-> 视为可生成，不算缺失
-  * 其余 -> 列为"仓库外输入"（大体积网格或外部原始数据）
+Rules:
+  * a table that exists in the repository -> OK
+  * a submission-number prefix (Supplementary_Data_7_, Supplementary_Table_3_, ...) matches a short name used inside a script -> OK
+  * files a script writes itself (to_csv/to_excel/savez/open) -> treated as generated, not missing
+  * everything else -> listed as a repository-external input (large grids or external raw data)
 """
 import os, re, sys
 
@@ -31,7 +31,7 @@ for base in ("raw_tables", "processed_tables"):
 REF = re.compile("['\"]([A-Za-z0-9_./\\-]+\\.(?:csv|xlsx|tsv|npz|log|json|txt))['\"]")
 WROTE = re.compile("(?:to_csv|to_excel|ExcelWriter|savez\\w*|open)\\s*\\([^)]{0,160}?['\"]([A-Za-z0-9_./\\-]+\\.(?:csv|xlsx|tsv|npz|log))['\"]")
 
-# 第 1 遍：收集"本仓库某处会写出这个名字"的集合（跨脚本也算，A 写 B 读很常见）
+# Pass 1: collect every name that is written somewhere in the repository (cross-script counts; A writes, B reads)
 SOURCES = []
 generated = set()
 for sub in ("analysis", "figures"):
@@ -43,7 +43,7 @@ for sub in ("analysis", "figures"):
                 generated |= set(os.path.basename(x) for x in
                                  WROTE.findall(open(p, encoding="utf-8", errors="replace").read()))
 
-# 第 2 遍：报告缺失的输入
+# Pass 2: report the missing inputs
 missing, checked = {}, 0
 for p in SOURCES:
     t = open(p, encoding="utf-8", errors="replace").read()
@@ -55,12 +55,12 @@ for p in SOURCES:
         if base not in HAVE and base not in HAVENORM and norm(base) not in HAVENORM:
             missing.setdefault(base, []).append(os.path.relpath(p, PKG))
 
-print("仓库内表格文件: %d 个" % len(HAVE))
-print("脚本引用的输入: %d 处；脚本管线自行生成的文件名 %d 个（已排除）" % (checked, len(generated)))
+print("Table files inside the repository: %d" % len(HAVE))
+print("Inputs referenced by the scripts: %d; filenames generated within the pipeline (excluded): %d" % (checked, len(generated)))
 if missing:
-    print("\n仓库外输入 %d 个（体积过大的网格或外部原始数据，见 RUN.md）:" % len(missing))
+    print("\nRepository-external inputs: %d (large grids or external raw data; see RUN.md):" % len(missing))
     for b, fs in sorted(missing.items()):
-        print("  %-48s %d 个脚本引用，例: %s" % (b, len(fs), fs[0]))
+        print("  %-48s referenced by %d script(s), e.g. %s" % (b, len(fs), fs[0]))
 else:
-    print("\n所有被引用的输入都在仓库内 ✓")
+    print("\nAll referenced inputs are present in the repository")
 sys.exit(0)

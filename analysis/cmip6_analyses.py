@@ -46,7 +46,7 @@ fr = pd.DataFrame(fr_rows); fa = pd.DataFrame(fr_aoa)
 rt = rate_table(fr, "final ensemble (7 predictors)"); ra = rate_table(fa, "final ensemble, AOA cells only")
 keep = {"supplied ensemble (gridded)": "archived final ensemble (8 predictors incl. mislabelled CO3)",
         "temperature-only": "temperature-only", "random forest, 7 predictors (no CO3)": "random forest, 7 predictors"}
-# 早期存档结果只作为一致性核对，缺失时跳过
+# The early archived results are used only for the consistency check and are skipped when absent
 _old_rates = HERE / "archived__cmip6_front_rates_by_projection.csv"
 _old_traj = HERE / "archived__cmip6_front_trajectories.csv"
 if _old_rates.exists():

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 基于 big115（1.15× 字号版）重做的修改；原文件未动。
+# Redrawn from the 1.15x font-size build; the original file is unchanged.
 """Extended Data Fig. 4 (): projection robustness, with the isotherm comparison added as panels g and h.
 
 Panels a-f reproduce the / figure from make_figures.py; g and h are new and come from
