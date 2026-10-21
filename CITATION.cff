@@ -1,8 +1,8 @@
-﻿cff-version: 1.2.0
+cff-version: 1.2.0
 message: "If you use the D-index or this code, please cite the manuscript and this repository."
 title: "dindex: a two-group log-ratio index for microbial community tables"
 abstract: >-
-  Python and R implementation of the D-index, D = (P - M)/(P + M) = tanh(0.5 ln(P/M)), a bounded
+  Python and R implementation of the D-index, D = (I - A)/(I + A) = tanh(0.5 ln(I/A)), a bounded
   two-group log-ratio index of microbial community composition, with quality-control flags,
   count-based and bootstrap intervals, and calibration helpers (environmental sensitivity, the
   value of the driver at which D = 0, and seasonal-baseline anomalies). This repository also
@@ -11,7 +11,7 @@ abstract: >-
 type: software
 license: MIT
 version: "0.1.0"
-date-released: "2026-09-24"
+date-released: "2026-10-21"
 repository-code: "https://github.com/Jianyi-Feng/dindex"
 url: "https://github.com/Jianyi-Feng/dindex"
 
@@ -43,7 +43,7 @@ keywords:
 
 references:
   - type: article
-    title: "A giant-virus index of warming-associated community reorganization"
+    title: "Recurrent warming-associated shifts in marine giant-virus dominance across scales"
     authors:
       - family-names: Feng
         given-names: Jianyi

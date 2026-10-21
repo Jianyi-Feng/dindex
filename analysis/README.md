@@ -1,6 +1,6 @@
 # Manuscript analysis scripts
 
-Code for the analyses reported in *A giant-virus index of warming-associated community
+Code for the analyses reported in *Recurrent warming-associated shifts in marine giant-virus dominance across scales
 reorganization*. Scripts are grouped by the part of the paper they produce and are listed in the
 order they were run.
 
