@@ -1,0 +1,11 @@
+statistic,value,n,ci_low,ci_high,P,note
+"D = 0 front rate, North",65.26932303619384,4,51.22632838948567,86.17612270100912,,"four-model mean and range, km per decade"
+"isotherm displacement rate, North",68.41345876312255,4,50.07749261474609,83.30484396362303,,"SST isotherm coinciding with the 2000s front, same grid and algorithm, km per decade"
+"front-to-isotherm rate ratio, North",0.9533607976721626,4,0.7665590858425962,1.0344671282097342,0.5131835712665608,paired t-test over four Earth-system models; ratio < 1 in 2 of 4 models
+"climate velocity, 30-45 deg N",89.12679027079817,4,71.29171166323172,114.09500690411599,,"four-model mean of the area-weighted median |dT/dt|/|grad T|, km per decade"
+"D = 0 front rate, South",36.027341293334956,4,19.525784067789715,49.87657040405273,,"four-model mean and range, km per decade"
+"isotherm displacement rate, South",52.26810679626464,4,43.13963470458983,68.2937602742513,,"SST isotherm coinciding with the 2000s front, same grid and algorithm, km per decade"
+"front-to-isotherm rate ratio, South",0.6796581562936524,4,0.45261820600702196,0.7963636664440962,0.013792201851353228,paired t-test over four Earth-system models; ratio < 1 in 4 of 4 models
+"climate velocity, 30-45 deg S",58.73314013088928,4,36.8398546457372,75.1848925513038,,"four-model mean of the area-weighted median |dT/dt|/|grad T|, km per decade"
+correlation of front rate with isotherm rate,0.9044868445286605,8,,,0.002025294064776328,Pearson r across the eight model-hemisphere pairs
+"climate velocity, global",110.118502298522,4,80.82563586013414,131.21779430843955,,"four-model mean of the area-weighted median, km per decade"

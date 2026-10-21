@@ -1,0 +1,267 @@
+genome,phylum,order,order_group,family,family_in_nucl_diversity_metadata,order_in_nucl_diversity_metadata,taxonomy_source,name_as_written_in_tax_file,n_genes_observed,n_genes_with_defined_pNpS,n_genes_tierA,n_curated_pathway_genes,n_observations,n_observations_pNpS_defined,n_samples_with_data,n_samples_with_defined_pNpS,has_defined_pNpS
+NCLDV_AE_201411_bin_75,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201411_bin_75,392,20,2,17,2458,77,164,36,TRUE
+NCLDV_AE_201601_bin_117,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201601_bin_117,124,40,15,0,1243,174,124,24,TRUE
+NCLDV_AE_201601_bin_79,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201601_bin_79,103,73,69,2,979,204,87,16,TRUE
+NCLDV_AE_201604_bin_110,Nucleocytoviricota,Algavirales,Algavirales,incertae_sedis,AG_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_AE_201604_bin_110,216,10,1,2,823,32,144,23,TRUE
+NCLDV_AE_201701_bin_83,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201701_bin_83,260,224,190,2,4288,1257,160,44,TRUE
+NCLDV_AE_201702_bin_13,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201702_bin_13,220,208,207,2,3776,1753,136,36,TRUE
+NCLDV_AE_201702_bin_44,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201702_bin_44,214,184,183,6,3307,1250,142,33,TRUE
+NCLDV_AE_201705_bin_16,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201705_bin_16,224,222,222,3,4049,2185,127,26,TRUE
+NCLDV_AE_201705_bin_20,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201705_bin_20,171,153,133,3,2454,709,114,16,TRUE
+NCLDV_AE_201706_bin_34,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201706_bin_34,150,35,9,4,833,88,94,22,TRUE
+NCLDV_AE_201706_bin_59,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201706_bin_59,131,130,128,1,2702,1445,164,74,TRUE
+NCLDV_AE_201711_bin_23,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201711_bin_23,409,109,4,14,3059,165,162,35,TRUE
+NCLDV_AE_201801_bin_21,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201801_bin_21,124,38,12,4,947,179,159,48,TRUE
+NCLDV_AE_201804_bin_6,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201804_bin_6,103,100,99,1,1582,847,83,20,TRUE
+NCLDV_AE_201809_bin_161,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201809_bin_161,329,28,1,12,1974,48,152,16,TRUE
+NCLDV_DP_APR-2010_bin_102,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2010_bin_102,194,175,174,5,2450,1069,117,38,TRUE
+NCLDV_DP_APR-2010_bin_108,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2010_bin_108,108,103,103,2,1801,752,101,19,TRUE
+NCLDV_DP_APR-2010_bin_116,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2010_bin_116,200,198,196,3,2834,1342,165,116,TRUE
+NCLDV_DP_APR-2010_bin_29,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2010_bin_29,168,119,99,4,1608,311,100,37,TRUE
+NCLDV_DP_APR-2011_bin_234,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2011_bin_234,148,138,124,2,2409,981,144,29,TRUE
+NCLDV_DP_APR-2011_bin_237,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2011_bin_237,168,161,160,1,2389,1160,111,30,TRUE
+NCLDV_DP_APR-2013_bin_32,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2013_bin_32,126,125,125,5,1863,1123,98,19,TRUE
+NCLDV_DP_APR-2013_bin_45,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2013_bin_45,150,107,98,2,1370,305,86,31,TRUE
+NCLDV_DP_APR-2013_bin_46,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2013_bin_46,191,124,100,4,1828,291,120,19,TRUE
+NCLDV_DP_AUG-2010_bin_72,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_AUG-2010_bin_72,206,197,192,5,3318,1478,130,32,TRUE
+NCLDV_DP_DEC-2009_bin_69,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_DEC-2009_bin_69,96,89,88,0,1042,457,60,10,TRUE
+NCLDV_DP_FEB-2010_bin_81,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_FEB-2010_bin_81,250,221,216,4,2618,686,127,21,TRUE
+NCLDV_DP_FEB-2012_bin_33,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_FEB-2012_bin_33,153,110,81,1,2106,485,137,14,TRUE
+NCLDV_DP_FEB-2012_bin_94,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_FEB-2012_bin_94,163,140,130,3,1761,545,155,51,TRUE
+NCLDV_DP_JAN-2013_bin_90,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JAN-2013_bin_90,145,139,138,1,2247,1006,106,22,TRUE
+NCLDV_DP_JUL-2011_bin_127,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUL-2011_bin_127,207,104,93,3,1715,328,151,32,TRUE
+NCLDV_DP_JUL-2011_bin_41,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUL-2011_bin_41,156,107,102,2,1382,358,96,29,TRUE
+NCLDV_DP_JUL-2011_bin_53,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUL-2011_bin_53,238,136,122,4,1349,202,138,22,TRUE
+NCLDV_DP_JUL-2011_bin_85,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUL-2011_bin_85,147,146,146,1,1971,1187,80,17,TRUE
+NCLDV_DP_JUN-2011_bin_125,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2011_bin_125,183,106,76,6,1425,184,110,9,TRUE
+NCLDV_DP_JUN-2011_bin_145,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2011_bin_145,133,124,123,1,1492,791,60,11,TRUE
+NCLDV_DP_JUN-2011_bin_148,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2011_bin_148,127,75,51,2,1225,226,139,56,TRUE
+NCLDV_DP_JUN-2011_bin_75,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2011_bin_75,168,125,119,0,1542,436,111,39,TRUE
+NCLDV_DP_JUN-2012_bin_11,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2012_bin_11,159,71,47,3,1178,113,104,11,TRUE
+NCLDV_DP_JUN-2012_bin_217,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2012_bin_217,107,13,1,3,307,20,51,6,TRUE
+NCLDV_DP_MAY-2011_bin_77,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_MAY-2011_bin_77,224,176,162,4,2409,673,114,20,TRUE
+NCLDV_DP_SEP-2011_bin_162,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_SEP-2011_bin_162,201,107,84,5,1771,409,162,119,TRUE
+NCLDV_virome_2009_10_bin_123,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2009_10_bin_123,185,185,185,2,3312,1960,132,27,TRUE
+NCLDV_virome_2009_12_bin_23,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2009_12_bin_23,163,140,139,1,2203,913,103,21,TRUE
+NCLDV_virome_2009_12_bin_3,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2009_12_bin_3,242,185,128,2,2869,685,157,43,TRUE
+NCLDV_virome_2009_12_bin_74,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2009_12_bin_74,361,239,136,1,4106,842,164,51,TRUE
+NCLDV_virome_2010_02_bin_55,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_02_bin_55,160,119,85,1,2052,453,131,17,TRUE
+NCLDV_virome_2010_03_bin_14,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_03_bin_14,68,66,64,1,932,366,68,14,TRUE
+NCLDV_virome_2010_03_bin_37,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_03_bin_37,154,127,97,0,2242,622,133,23,TRUE
+NCLDV_virome_2010_09_bin_99,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_09_bin_99,255,92,20,2,1477,149,79,10,TRUE
+NCLDV_virome_2011_02_bin_4,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2011_02_bin_4,68,64,63,0,983,420,71,14,TRUE
+NCLDV_virome_2011_06_bin_32,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2011_06_bin_32,193,111,87,1,1863,362,139,29,TRUE
+NCLDV_virome_2011_11_bin_72,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2011_11_bin_72,196,188,175,3,3348,1547,156,38,TRUE
+NCLDV_virome_2013_06_bin_5,Nucleocytoviricota,Algavirales,Algavirales,incertae_sedis,AG_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_06_bin_5,221,24,2,7,1965,192,166,103,TRUE
+NCLDV_virome_2013_07_bin_32,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_07_bin_32,172,97,88,4,1536,215,104,22,TRUE
+NCLDV_virome_2014_04_bin_51,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2014_04_bin_51,169,71,70,4,766,196,155,94,TRUE
+NCLDV_virome_2014_11_bin_230,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2014_11_bin_230,241,236,236,5,4804,2332,167,129,TRUE
+NCLDV_virome_2014_11_bin_327,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2014_11_bin_327,88,18,1,2,486,31,77,8,TRUE
+NCLDV_virome_2015_02_bin_149,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_149,225,208,206,3,3202,1089,121,19,TRUE
+NCLDV_virome_2015_02_bin_222,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_222,223,220,214,4,3867,1742,143,24,TRUE
+NCLDV_virome_2015_02_bin_56,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_56,217,82,10,6,1257,129,113,12,TRUE
+NCLDV_virome_2015_02_bin_59,Nucleocytoviricota,Algavirales,Algavirales,incertae_sedis,AG_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_59,273,35,6,5,1248,200,167,94,TRUE
+NCLDV_virome_2015_02_bin_90,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_90,87,87,87,1,1823,974,115,25,TRUE
+NCLDV_virome_2015_04_bin_329,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_04_bin_329,174,138,133,5,2042,745,92,18,TRUE
+NCLDV_virome_2015_04_bin_405,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_04_bin_405,171,93,83,2,1674,352,154,37,TRUE
+NCLDV_virome_2015_04_bin_83,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_04_bin_83,104,102,96,0,1534,681,95,20,TRUE
+NCLDV_virome_2015_05_bin_131,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_05_bin_131,163,158,148,6,2066,796,107,15,TRUE
+NCLDV_virome_2015_05_bin_195,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_05_bin_195,118,102,102,2,1627,676,96,19,TRUE
+NCLDV_virome_2015_05_bin_199,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_05_bin_199,139,99,75,3,988,212,53,9,TRUE
+NCLDV_virome_2015_05_bin_44,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_05_bin_44,274,163,96,2,2190,329,152,19,TRUE
+NCLDV_virome_2015_05_bin_62,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_05_bin_62,220,164,143,3,2223,532,131,38,TRUE
+NCLDV_virome_2015_05_bin_96,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_05_bin_96,118,96,88,1,1872,544,149,29,TRUE
+NCLDV_virome_2015_06_bin_209,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_209,191,145,93,3,1854,439,104,18,TRUE
+NCLDV_virome_2015_06_bin_315,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_315,108,95,92,2,1181,461,87,14,TRUE
+NCLDV_virome_2015_06_bin_33,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_33,148,133,114,3,1016,259,109,9,TRUE
+NCLDV_virome_2015_06_bin_60,Nucleocytoviricota,Algavirales,Algavirales,AG_04,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_60,140,93,33,3,1105,221,68,11,TRUE
+NCLDV_virome_2015_07_bin_167,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_07_bin_167,226,34,2,6,1076,103,164,69,TRUE
+NCLDV_virome_2015_07_bin_177,Nucleocytoviricota,Algavirales,Algavirales,incertae_sedis,AG_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_07_bin_177,334,21,1,8,1578,156,165,86,TRUE
+NCLDV_virome_2015_07_bin_6,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_07_bin_6,80,25,14,0,544,78,53,14,TRUE
+NCLDV_virome_2015_12_bin_240,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_12_bin_240,159,65,31,2,1578,292,126,28,TRUE
+NCLDV_virome_2015_12_bin_312,Nucleocytoviricota,Algavirales,Algavirales,AG_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_12_bin_312,158,158,157,3,2882,1110,161,54,TRUE
+Mirus_virome_2015_07_bin_205,Mirusviricota,E_01,Mirusviricota (E_01),E_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_2015_07VIROME_bin_205,229,10,3,0,1389,248,167,119,TRUE
+NCLDV_AE_201410_bin_110,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_110,1319,178,7,73,12723,933,167,150,TRUE
+NCLDV_AE_201410_bin_122,Nucleocytoviricota,Imitervirales,Imitervirales,IM_06,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_122,323,56,2,14,4199,215,167,83,TRUE
+NCLDV_AE_201410_bin_139,Nucleocytoviricota,Imitervirales,Imitervirales,IM_06,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_139,631,122,5,26,6649,353,167,86,TRUE
+NCLDV_AE_201410_bin_146,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_146,432,103,4,25,3401,234,166,67,TRUE
+NCLDV_AE_201410_bin_16,Nucleocytoviricota,Imitervirales,Imitervirales,IM_07,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_16,403,34,4,39,3641,500,167,152,TRUE
+NCLDV_AE_201410_bin_62,Nucleocytoviricota,Imitervirales,Imitervirales,IM_16,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_62,1173,75,5,77,7885,508,167,137,TRUE
+NCLDV_AE_201411_bin_120,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201411_bin_120,337,155,1,16,2417,259,154,18,TRUE
+NCLDV_AE_201411_bin_187,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201411_bin_187,297,51,5,11,3117,209,167,91,TRUE
+NCLDV_AE_201411_bin_215,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201411_bin_215,403,62,0,16,3691,139,167,38,TRUE
+NCLDV_AE_201411_bin_94,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201411_bin_94,385,39,1,16,3369,163,166,52,TRUE
+NCLDV_AE_201506_bin_17,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201506_bin_17,473,418,394,8,4530,1054,166,41,TRUE
+NCLDV_AE_201602_bin_12,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201602_bin_12,426,87,6,20,3775,292,167,107,TRUE
+NCLDV_AE_201602_bin_33,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201602_bin_33,572,206,9,24,6557,851,167,139,TRUE
+NCLDV_AE_201603_bin_31,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201603_bin_31,389,317,114,15,7562,1125,167,133,TRUE
+NCLDV_AE_201604_bin_88,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201604_bin_88,445,318,286,17,5147,754,167,61,TRUE
+NCLDV_AE_201604_bin_93,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201604_bin_93,437,85,26,12,1382,98,126,10,TRUE
+NCLDV_AE_201604_bin_98,Nucleocytoviricota,Imitervirales,Imitervirales,IM_06,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201604_bin_98,631,269,8,30,9374,656,167,119,TRUE
+NCLDV_AE_201608_bin_20,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201608_bin_20,817,266,33,50,6222,907,167,147,TRUE
+NCLDV_AE_201701_bin_137,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201701_bin_137,378,122,4,10,3124,379,167,102,TRUE
+NCLDV_AE_201705_bin_62,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201705_bin_62,328,56,1,10,2375,144,166,41,TRUE
+NCLDV_AE_201706_bin_10,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201706_bin_10,968,140,9,31,10207,665,167,123,TRUE
+NCLDV_AE_201801_bin_4,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201801_bin_4,432,51,22,25,2609,393,167,108,TRUE
+NCLDV_AE_201802_bin_11,Nucleocytoviricota,Imitervirales,Imitervirales,incertae_sedis,IM_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_AE_201802_bin_11,621,57,7,69,5945,725,167,151,TRUE
+NCLDV_AE_201809_bin_146,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201809_bin_146,438,25,4,25,3363,367,167,120,TRUE
+NCLDV_AE_201809_bin_155,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201809_bin_155,1265,301,16,37,16883,1146,167,123,TRUE
+NCLDV_AE_201809_bin_169,Nucleocytoviricota,Imitervirales,Imitervirales,IM_07,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201809_bin_169,522,13,0,27,2289,70,167,50,TRUE
+NCLDV_AE_201809_bin_19,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201809_bin_19,399,100,2,20,5759,381,167,90,TRUE
+NCLDV_AE_201809_bin_209,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201809_bin_209,886,162,12,47,7835,451,167,109,TRUE
+NCLDV_AE_201809_bin_7,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201809_bin_7,509,158,4,28,3747,427,167,129,TRUE
+NCLDV_AE_201907T5_bin_71,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201907T5_bin_71,517,130,23,17,4933,531,167,106,TRUE
+NCLDV_AE_201907T5_bin_79,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201907T5_bin_79,338,72,11,15,1957,122,150,23,TRUE
+NCLDV_AE_201907T5_bin_95,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201907T5_bin_95,530,188,18,20,5642,462,167,97,TRUE
+NCLDV_DP_APR-2010_bin_110,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2010_bin_110,319,279,161,12,6576,1519,167,126,TRUE
+NCLDV_DP_APR-2010_bin_64,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2010_bin_64,435,399,358,16,4836,1244,167,106,TRUE
+NCLDV_DP_APR-2011_bin_198,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2011_bin_198,258,19,1,10,1336,102,163,81,TRUE
+NCLDV_DP_APR-2011_bin_77,Nucleocytoviricota,Imitervirales,Imitervirales,incertae_sedis,IM_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2011_bin_77,200,120,3,6,2385,427,167,143,TRUE
+NCLDV_DP_APR-2013_bin_138,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2013_bin_138,193,41,17,3,1154,85,149,24,TRUE
+NCLDV_DP_APR-2013_bin_7,Nucleocytoviricota,Imitervirales,Imitervirales,incertae_sedis,IM_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_DP_APR-2013_bin_7,340,137,5,13,4346,543,167,144,TRUE
+NCLDV_DP_AUG-2010_bin_54,Nucleocytoviricota,Imitervirales,Imitervirales,IM_16,,,SPOT_NCLDV_tax.csv,NCLDV_DP_AUG-2010_bin_54,592,161,19,20,4863,329,167,90,TRUE
+NCLDV_DP_AUG-2010_bin_73,Nucleocytoviricota,Imitervirales,Imitervirales,IM_08,,,SPOT_NCLDV_tax.csv,NCLDV_DP_AUG-2010_bin_73,440,403,374,21,3439,684,166,66,TRUE
+NCLDV_DP_AUG-2012_bin_110,Nucleocytoviricota,Imitervirales,Imitervirales,IM_16,,,SPOT_NCLDV_tax.csv,NCLDV_DP_AUG-2012_bin_110,518,150,23,21,4051,269,167,46,TRUE
+NCLDV_DP_DEC-2012_bin_107,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_DEC-2012_bin_107,376,32,0,13,2694,83,167,27,TRUE
+NCLDV_DP_DEC-2012_bin_76,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_DEC-2012_bin_76,76,13,1,8,982,109,167,71,TRUE
+NCLDV_DP_FEB-2013_bin_52,Nucleocytoviricota,Imitervirales,Imitervirales,incertae_sedis,IM_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_DP_FEB-2013_bin_52,397,241,162,8,3692,664,166,99,TRUE
+NCLDV_DP_JAN-2013_bin_12,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JAN-2013_bin_12,152,66,0,3,1250,142,147,48,TRUE
+NCLDV_DP_JUL-2011_bin_158,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUL-2011_bin_158,125,100,50,6,922,135,108,20,TRUE
+NCLDV_DP_JUN-2009_bin_56,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2009_bin_56,660,109,1,27,4873,215,167,56,TRUE
+NCLDV_DP_JUN-2011_bin_158,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2011_bin_158,237,127,43,10,3209,358,162,32,TRUE
+NCLDV_DP_JUN-2012_bin_46,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_JUN-2012_bin_46,273,243,241,5,1701,486,159,66,TRUE
+NCLDV_DP_MAR-2012_bin_100,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_MAR-2012_bin_100,462,236,13,17,4844,434,163,23,TRUE
+NCLDV_DP_MAR-2012_bin_105,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_MAR-2012_bin_105,187,44,2,9,1768,109,167,48,TRUE
+NCLDV_DP_MAY-2011_bin_11,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_DP_MAY-2011_bin_11,186,158,121,7,1845,367,158,18,TRUE
+NCLDV_DP_MAY-2011_bin_28,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_DP_MAY-2011_bin_28,345,302,302,10,2178,409,139,12,TRUE
+NCLDV_DP_NOV-2012_bin_21,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_NOV-2012_bin_21,151,26,1,8,1549,54,162,20,TRUE
+NCLDV_DP_NOV-2012_bin_42,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_NOV-2012_bin_42,370,142,14,13,5426,634,167,132,TRUE
+NCLDV_DP_NOV-2012_bin_54,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_NOV-2012_bin_54,522,70,4,27,4078,289,167,102,TRUE
+NCLDV_DP_OCT-2012_bin_120,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_120,318,86,1,10,4855,340,167,89,TRUE
+NCLDV_DP_OCT-2012_bin_123,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_123,378,49,6,11,3910,519,167,133,TRUE
+NCLDV_DP_OCT-2012_bin_126,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_126,300,18,1,10,1953,51,165,32,TRUE
+NCLDV_DP_OCT-2012_bin_136,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_136,349,67,1,18,3581,352,167,131,TRUE
+NCLDV_DP_OCT-2012_bin_146,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_146,363,51,1,19,2715,150,166,68,TRUE
+NCLDV_DP_OCT-2012_bin_159,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_159,200,16,3,12,1616,187,167,110,TRUE
+NCLDV_DP_OCT-2012_bin_207,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_207,458,208,16,28,3628,420,164,108,TRUE
+NCLDV_DP_OCT-2012_bin_212,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_212,262,58,0,9,2365,129,151,18,TRUE
+NCLDV_DP_OCT-2012_bin_214,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_214,344,334,311,15,5150,1215,166,46,TRUE
+NCLDV_DP_OCT-2012_bin_217,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_217,487,117,2,18,5011,308,167,67,TRUE
+NCLDV_DP_OCT-2012_bin_265,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_265,317,192,11,13,5126,604,166,74,TRUE
+NCLDV_DP_OCT-2012_bin_294,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_294,391,36,2,14,3249,264,166,111,TRUE
+NCLDV_DP_OCT-2012_bin_315,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_315,407,166,4,15,2815,275,167,59,TRUE
+NCLDV_DP_OCT-2012_bin_319,Nucleocytoviricota,Imitervirales,Imitervirales,IM_06,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_319,868,216,5,43,9217,579,167,94,TRUE
+NCLDV_DP_OCT-2012_bin_32,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_32,503,57,0,17,3051,153,167,62,TRUE
+NCLDV_DP_OCT-2012_bin_338,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_338,394,94,2,18,4326,271,167,75,TRUE
+NCLDV_DP_OCT-2012_bin_346,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_346,240,178,8,12,2965,419,165,63,TRUE
+NCLDV_DP_OCT-2012_bin_69,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_DP_OCT-2012_bin_69,318,76,1,12,2386,193,167,74,TRUE
+NCLDV_virome_2009_07_bin_103,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2009_07_bin_103,1084,399,181,35,12535,1489,167,111,TRUE
+NCLDV_virome_2010_05_bin_41,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_05_bin_41,457,217,212,18,2029,312,162,16,TRUE
+NCLDV_virome_2010_05_bin_53,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_05_bin_53,1202,741,644,35,14152,2542,167,121,TRUE
+NCLDV_virome_2010_09_bin_123,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_09_bin_123,947,409,210,20,9943,1369,167,121,TRUE
+NCLDV_virome_2010_09_bin_131,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_09_bin_131,505,309,178,10,7184,1065,167,67,TRUE
+NCLDV_virome_2010_12_bin_134,Nucleocytoviricota,Imitervirales,Imitervirales,incertae_sedis,IM_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_virome_2010_12_bin_134,552,244,136,11,5513,834,167,65,TRUE
+NCLDV_virome_2011_12_bin_69,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2011_12_bin_69,1050,406,161,38,9535,1430,167,117,TRUE
+NCLDV_virome_2012_05_bin_51,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2012_05_bin_51,825,392,261,36,7853,1159,167,90,TRUE
+NCLDV_virome_2012_06_bin_72,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2012_06_bin_72,353,169,143,4,3024,374,165,70,TRUE
+NCLDV_virome_2012_08_bin_104,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2012_08_bin_104,304,185,183,12,1509,257,146,19,TRUE
+NCLDV_virome_2012_09_bin_68,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2012_09_bin_68,205,64,50,17,979,140,157,54,TRUE
+NCLDV_virome_2013_02_bin_21,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_02_bin_21,323,196,55,12,2299,326,159,44,TRUE
+NCLDV_virome_2013_02_bin_6,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_02_bin_6,462,139,17,16,4890,506,167,93,TRUE
+NCLDV_virome_2013_05_bin_36,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_05_bin_36,592,104,46,18,6633,687,167,128,TRUE
+NCLDV_virome_2013_06_bin_24,Nucleocytoviricota,Imitervirales,Imitervirales,incertae_sedis,IM_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_06_bin_24,816,488,303,13,9761,1983,166,116,TRUE
+NCLDV_virome_2013_07_bin_60,Nucleocytoviricota,Imitervirales,Imitervirales,incertae_sedis,IM_incertae_sedis,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_07_bin_60,385,141,30,11,4182,345,166,39,TRUE
+NCLDV_virome_2013_08_bin_55,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_08_bin_55,557,395,38,18,9415,1581,167,108,TRUE
+NCLDV_virome_2013_08_bin_57,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2013_08_bin_57,463,284,163,5,6609,1143,165,94,TRUE
+NCLDV_virome_2014_04_bin_29,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2014_04_bin_29,457,299,181,14,5156,1107,167,53,TRUE
+NCLDV_virome_2014_04_bin_67,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2014_04_bin_67,385,199,48,15,3636,511,166,59,TRUE
+NCLDV_virome_2014_04_bin_88,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2014_04_bin_88,421,98,19,20,5099,566,167,148,TRUE
+NCLDV_virome_2014_05_bin_16,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2014_05_bin_16,491,116,63,23,3099,290,165,26,TRUE
+NCLDV_virome_2014_05_bin_26,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2014_05_bin_26,948,379,205,25,9384,1358,167,120,TRUE
+NCLDV_virome_2015_02_bin_108,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_108,718,454,139,28,7637,1258,167,150,TRUE
+NCLDV_virome_2015_02_bin_122,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_122,239,190,180,9,1463,301,157,64,TRUE
+NCLDV_virome_2015_02_bin_15,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_15,276,120,20,6,2823,355,166,90,TRUE
+NCLDV_virome_2015_02_bin_183,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_183,525,439,432,11,5343,946,167,145,TRUE
+NCLDV_virome_2015_02_bin_266,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_266,344,194,141,16,2118,318,166,68,TRUE
+NCLDV_virome_2015_02_bin_302,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_302,385,307,279,9,3521,625,167,67,TRUE
+NCLDV_virome_2015_02_bin_314,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_314,417,219,146,18,2838,560,167,125,TRUE
+NCLDV_virome_2015_02_bin_363,Nucleocytoviricota,Imitervirales,Imitervirales,IM_07,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_02_bin_363,425,320,32,23,4531,486,167,83,TRUE
+NCLDV_virome_2015_05_bin_213,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_05_bin_213,424,249,125,17,3415,443,165,34,TRUE
+NCLDV_virome_2015_05_bin_7,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_05_bin_7,275,219,210,5,1838,439,165,59,TRUE
+NCLDV_virome_2015_06_bin_123,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_123,342,174,139,17,4059,704,167,162,TRUE
+NCLDV_virome_2015_06_bin_136,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_136,439,57,54,14,1355,65,155,10,TRUE
+NCLDV_virome_2015_06_bin_139,Nucleocytoviricota,Imitervirales,Imitervirales,IM_12,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_139,401,56,26,11,1020,67,123,11,TRUE
+NCLDV_virome_2015_06_bin_145,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_145,409,272,242,12,3562,522,167,106,TRUE
+NCLDV_virome_2015_06_bin_261,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_261,419,258,172,11,5150,755,167,129,TRUE
+NCLDV_virome_2015_06_bin_308,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_06_bin_308,415,368,350,19,6053,1093,167,96,TRUE
+NCLDV_virome_2015_07_bin_27,Nucleocytoviricota,Imitervirales,Imitervirales,IM_07,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_07_bin_27,82,4,0,6,333,82,127,78,TRUE
+NCLDV_virome_2015_07_bin_281,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_07_bin_281,323,72,3,18,1361,90,141,14,TRUE
+NCLDV_virome_2015_08_bin_117,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_117,473,250,61,18,3975,441,159,26,TRUE
+NCLDV_virome_2015_08_bin_13,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_13,318,146,25,13,1519,250,163,83,TRUE
+NCLDV_virome_2015_08_bin_151,Nucleocytoviricota,Imitervirales,Imitervirales,IM_16,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_151,644,224,151,26,3990,442,167,81,TRUE
+NCLDV_virome_2015_08_bin_153,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_153,320,114,71,14,2469,240,167,69,TRUE
+NCLDV_virome_2015_08_bin_154,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_154,445,273,105,18,2497,359,152,39,TRUE
+NCLDV_virome_2015_08_bin_161,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_161,285,67,30,19,1200,158,164,80,TRUE
+NCLDV_virome_2015_08_bin_169,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_169,368,134,19,13,1964,234,166,75,TRUE
+NCLDV_virome_2015_08_bin_31,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_31,223,67,0,10,710,71,96,3,TRUE
+NCLDV_virome_2015_08_bin_34,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_34,269,207,83,14,2467,469,167,74,TRUE
+NCLDV_virome_2015_08_bin_46,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_46,263,48,7,9,712,73,125,23,TRUE
+NCLDV_virome_2015_08_bin_90,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_08_bin_90,372,274,246,14,5575,845,167,116,TRUE
+NCLDV_virome_2015_10_bin_121,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_121,329,44,0,14,1690,57,156,16,TRUE
+NCLDV_virome_2015_10_bin_182,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_182,410,43,0,14,1611,75,164,31,TRUE
+NCLDV_virome_2015_10_bin_185,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_185,642,108,7,30,5112,303,167,106,TRUE
+NCLDV_virome_2015_10_bin_227,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_227,808,153,14,25,7064,626,167,150,TRUE
+NCLDV_virome_2015_10_bin_245,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_245,412,273,4,11,3283,365,163,25,TRUE
+NCLDV_virome_2015_10_bin_320,Nucleocytoviricota,Imitervirales,Imitervirales,IM_13,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_320,460,33,3,19,4086,347,167,154,TRUE
+NCLDV_virome_2015_10_bin_377,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_377,247,25,4,13,2611,321,167,120,TRUE
+NCLDV_virome_2015_10_bin_390,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_390,302,163,19,13,3338,331,163,37,TRUE
+NCLDV_virome_2015_10_bin_416,Nucleocytoviricota,Imitervirales,Imitervirales,IM_08,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_416,271,89,3,16,1812,201,155,72,TRUE
+NCLDV_virome_2015_10_bin_429,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_429,293,117,14,12,3583,333,158,41,TRUE
+NCLDV_virome_2015_10_bin_56,Nucleocytoviricota,Imitervirales,Imitervirales,IM_09,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_56,272,60,5,8,3534,378,167,113,TRUE
+NCLDV_virome_2015_10_bin_65,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_65,917,257,35,27,7838,527,167,77,TRUE
+NCLDV_virome_2015_10_bin_76,Nucleocytoviricota,Imitervirales,Imitervirales,IM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_76,147,6,0,6,695,13,122,10,TRUE
+Mirus_AE_201408_bin_4,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201408_bin_4,176,0,0,0,275,0,42,0,FALSE
+Mirus_AE_201410_bin_117,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201410_bin_117,59,3,0,0,278,4,103,4,TRUE
+Mirus_AE_201601_bin_109,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201601_bin_109,39,4,0,0,219,15,103,15,TRUE
+Mirus_AE_201601_bin_38,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201601_bin_38,64,1,0,0,152,1,22,1,TRUE
+Mirus_AE_201602_bin_16,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201602_bin_16,154,46,0,0,665,79,127,32,TRUE
+Mirus_AE_201702_bin_34,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201702_bin_34,183,1,0,0,256,2,43,2,TRUE
+Mirus_AE_201702_bin_58,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201702_bin_58,42,1,0,0,131,9,74,9,TRUE
+Mirus_AE_201702_bin_71,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201702_bin_71,124,3,1,0,438,110,148,100,TRUE
+Mirus_AE_201702_bin_86,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201702_bin_86,104,1,0,0,341,59,162,59,TRUE
+Mirus_AE_201704_bin_62,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201704_bin_62,52,3,0,0,199,16,108,14,TRUE
+Mirus_AE_201706_bin_16,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201706_bin_16,181,9,0,0,854,52,146,41,TRUE
+Mirus_AE_201706_bin_49,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201706_bin_49,219,14,0,0,743,16,107,6,TRUE
+Mirus_AE_201809_bin_137,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201809_bin_137,76,6,2,0,369,52,119,37,TRUE
+Mirus_AE_201809_bin_14,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201809_bin_14,47,1,0,0,164,1,70,1,TRUE
+Mirus_AE_201809_bin_158,Mirusviricota,MR_01,Mirusviricota (MR_01),MR_01,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201809_bin_158,91,6,0,0,256,8,64,4,TRUE
+Mirus_AE_201409_bin_85,Mirusviricota,MR_02,Mirusviricota (MR_02),MR_02,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201409_bin_85,49,3,1,0,273,6,115,6,TRUE
+Mirus_AE_201601_bin_111,Mirusviricota,MR_02,Mirusviricota (MR_02),MR_02,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201601_bin_111,42,5,2,0,321,25,127,20,TRUE
+Mirus_AE_201603_bin_47,Mirusviricota,MR_02,Mirusviricota (MR_02),MR_02,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201603_bin_47,215,7,1,0,719,88,161,66,TRUE
+Mirus_virome_2014_04_bin_27,Mirusviricota,MR_02,Mirusviricota (MR_02),MR_02,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_2014_04VIROME_bin_27,151,6,3,0,599,51,151,47,TRUE
+Mirus_virome_2014_04_bin_97,Mirusviricota,MR_02,Mirusviricota (MR_02),MR_02,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_2014_04VIROME_bin_97,350,7,1,0,828,51,138,46,TRUE
+Mirus_AE_201410_bin_111,Mirusviricota,MR_03,Mirusviricota (MR_03),MR_03,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_201410_bin_111,29,0,0,0,51,0,22,0,FALSE
+Mirus_virome_2010_03_bin_105,Mirusviricota,MR_03,Mirusviricota (MR_03),MR_03,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_2010_03VIROME_bin_105,103,4,2,0,434,47,140,36,TRUE
+Mirus_virome_2014_04_bin_43,Mirusviricota,MR_07,Mirusviricota (MR_07),MR_07,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_2014_04VIROME_bin_43,87,29,3,0,167,29,22,2,TRUE
+Mirus_virome_2014_04_bin_70,Mirusviricota,MR_07,Mirusviricota (MR_07),MR_07,,,SPOT_NCLDV_tax.csv (Mirus name canonicalised),Mirus_2014_04VIROME_bin_70,38,1,0,0,79,4,38,4,TRUE
+NCLDV_AE_201410_bin_52,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_05,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_52,30,5,0,7,237,21,110,16,TRUE
+NCLDV_AE_201410_bin_74,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_03,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_74,40,5,2,4,1040,158,167,102,TRUE
+NCLDV_AE_201601_bin_50,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_05,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201601_bin_50,336,15,4,11,2567,386,166,108,TRUE
+NCLDV_AE_201601_bin_52,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_05,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201601_bin_52,135,7,2,7,1367,117,160,61,TRUE
+NCLDV_AE_201601_bin_67,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_05,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201601_bin_67,377,9,2,19,1680,238,165,139,TRUE
+NCLDV_AE_201601_bin_9,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_05,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201601_bin_9,171,12,3,14,1518,166,165,78,TRUE
+NCLDV_AE_201603_bin_40,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_05,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201603_bin_40,68,8,2,11,1075,83,165,50,TRUE
+NCLDV_virome_2015_07_bin_252,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_05,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_07_bin_252,171,12,0,8,1132,101,158,61,TRUE
+NCLDV_virome_2015_07_bin_88,Nucleocytoviricota,Pandoravirales,Pandoravirales,PV_03,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_07_bin_88,239,5,1,6,937,149,163,125,TRUE
+NCLDV_AE_201410_bin_89,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201410_bin_89,126,4,0,5,768,50,163,44,TRUE
+NCLDV_AE_20151007_bin_1,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_20151007_bin_1,202,7,2,13,736,160,167,130,TRUE
+NCLDV_AE_201709_bin_21,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201709_bin_21,173,12,2,5,1050,127,161,106,TRUE
+NCLDV_AE_201807_bin_49,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201807_bin_49,364,13,0,12,1261,14,153,4,TRUE
+NCLDV_AE_201807_bin_55,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201807_bin_55,408,95,65,23,3477,436,167,132,TRUE
+NCLDV_AE_201807_bin_76,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201807_bin_76,175,2,0,25,829,24,152,23,TRUE
+NCLDV_AE_201907T5_bin_62,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201907T5_bin_62,274,7,0,8,977,22,150,19,TRUE
+NCLDV_AE_201907T6_bin_24,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_AE_201907T6_bin_24,285,8,0,7,1132,20,159,17,TRUE
+NCLDV_virome_2009_07_bin_174,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2009_07_bin_174,203,9,1,10,1119,252,164,119,TRUE
+NCLDV_virome_2015_07_bin_148,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_07_bin_148,336,6,1,11,1739,165,167,116,TRUE
+NCLDV_virome_2015_10_bin_143,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_143,99,6,0,8,677,30,161,28,TRUE
+NCLDV_virome_2015_10_bin_319,Nucleocytoviricota,Pimascovirales,Pimascovirales,PM_01,,,SPOT_NCLDV_tax.csv,NCLDV_virome_2015_10_bin_319,191,4,1,8,961,69,166,62,TRUE

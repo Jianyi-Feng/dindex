@@ -1,0 +1,11 @@
+statistic,value
+pre-2014 samples (viral + picoplankton),89
+pair with the largest combined PolB share,Algavirales vs Imitervirales
+"Imitervirales + Algavirales median share, pre-2014",0.9872061095
+next-largest combined share (any other pair),0.7841335313140001
+"D = (I - A)/(I + A) vs SST slope, pre-2014, fraction-adjusted (D per degC)",0.08664804832168158
+slope 95% CI low,0.043816198123505144
+slope 95% CI high,0.129479898519858
+slope P (HC3),7.340479796581692e-05
+rank of the I-A pair by |t| among 36 pairs,2
+combined share of the pair ranked first by |t|,0.007272280551

@@ -1,0 +1,2 @@
+model,R2,RMSE,MAE,n
+"final ensemble (14 models, I and A separately; 7 predictors), nested station-grouped CV",0.634451980203104,0.4502231264272097,0.34384423364310707,196

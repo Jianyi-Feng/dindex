@@ -1,0 +1,5 @@
+hemisphere,n,slope_deg_per_year,slope_CI_low,slope_CI_high,km_per_decade,km_per_decade_CI_low,km_per_decade_CI_high,R2,P,t,direction,pooled_over,manuscript_reference
+North,40,0.05626699555,0.02492684817,0.08760714293,62.63641945,27.74856738,97.52427151,0.257954221,0.0008212374812,3.634525902,northward (poleward),4 ESMs x 10 decades,"61.4 km/decade, R2 = 0.253, P = 0.001"
+South,40,0.03299965739,0.01003349154,0.05596582325,36.73521861,11.16928278,62.30115445,0.182113268,0.006030954225,2.908814395,southward (poleward),4 ESMs x 10 decades,"38.8 km/decade, R2 = 0.196, P = 0.004"
+North (ensemble-mean front),10,0.05626699555,0.05126112337,0.06127286774,62.63641945,57.06388253,68.20895637,0.9882325854,5.267891218e-9,25.91994353,northward (poleward),"ensemble mean of the 4 ESMs, n = 10 decades","61.4 km/decade, R2 = 0.253, P = 0.001"
+South (ensemble-mean front),10,0.03299965739,0.02872477973,0.03727453506,36.73521861,31.97642479,41.49401243,0.9753753471,1.015457416e-7,17.80105826,southward (poleward),"ensemble mean of the 4 ESMs, n = 10 decades","38.8 km/decade, R2 = 0.196, P = 0.004"

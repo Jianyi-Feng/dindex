@@ -1,0 +1,27 @@
+# Runtime requirements.
+# The dindex package itself only needs the first three:  pip install -e .
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+
+# calibration / statistics helpers
+statsmodels>=0.14
+scikit-learn>=1.3
+
+# figures. The manuscript PDFs were rendered with matplotlib 3.11.2 on Linux; pinning it
+# reproduces the published layout exactly, while any 3.9+ renders with possible spacing drift.
+matplotlib==3.11.2
+cartopy>=0.22          # map panels in figures/make_figures.py and make_extended_data_fig4.py
+shapely>=2.0           # cartopy geometry backend
+pyproj>=3.5            # projections for the map panels
+pyshp>=2.3             # coastline shapefiles
+Pillow>=10.0           # raster panels in make_figures.py and build_supplementary_figures.py
+networkx>=2.8          # association network in make_supplementary_figs4_5_pnps_network.py
+openpyxl>=3.1          # Supplementary Table workbooks
+python-docx>=1.1       # Supplementary Figures DOCX builder
+
+# tests
+pytest>=7
+
+# optional: PDF text-layer and label-collision audits
+PyMuPDF>=1.24,<2.0

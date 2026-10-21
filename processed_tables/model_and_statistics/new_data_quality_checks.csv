@@ -1,0 +1,22 @@
+check,status,evidence,severity_if_failed
+PolB required columns,PASS,16 columns present,High
+PolB sample-by-order grain,PASS,"1,503 rows = 167 samples × 9 orders; no duplicate sample/order keys",High
+PolB completeness,PASS,no missing cells,High
+PolB catalogue counts constant,PASS,one invariant catalogue count per order,High
+PolB catalogue total,PASS,"order counts sum to 1,095; Imitervirales 721 and Algavirales 241",High
+PolB compositional closure,PASS,per-sample sum range 0.999999999906–1.000000000100,High
+PolB-to-D join coverage,PASS,167/167 sample identifiers match SPOT_sample_Dindex.csv,High
+PolB D-index reproduction,PASS,maximum absolute difference 1.55e-10,High
+pN/pS QC status,PASS,all-gene QC rows 25; curated-pathway QC rows 25,High
+All-gene pN/pS grain,PASS,"84,846 unique genome/gene records",High
+All-gene order sensitivity rows,PASS,gene-level Imitervirales–Algavirales result present for tiers A–E,High
+All-genome order sensitivity rows,PASS,genome-level Imitervirales–Algavirales result present for tiers A–E,High
+Network identifiers,PASS,31 unique nodes and 53 unique edges,High
+Network endpoint integrity,PASS,every source and target resolves to the node table,High
+Network degree reproduction,PASS,node degree equals incident edge count,High
+Network weighted-degree reproduction,PASS,node weighted_degree equals sum of incident archived edge weights,High
+Network inference limitation,PASS,"aggregate table has no P value, signed FlashWeave weight or known-host flag",Medium
+Rhodopsin metadata completeness,PASS,183 complete metadata rows,High
+Rhodopsin identifiers unique,PASS,all 183 sequence labels are unique,High
+Rhodopsin topology limitation,PASS,"metadata include labels/classes/TM counts but no sequences, alignment, tree or structure",Medium
+NCLDV tree metadata,PASS,"1,620 unique, complete phylogeny-tip annotations",High

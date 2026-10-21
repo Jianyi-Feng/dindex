@@ -1,0 +1,58 @@
+item,value,unit,detail
+threshold: minimum site coverage (inStrain run),10,x,manuscript Methods / SI Note 6.1; baked into the supplied values
+threshold: minor-allele frequency (inStrain run),0.05,within-sample allele frequency,manuscript Methods / SI Note 6.1
+"threshold: reporting filter (conservative subset, tier A)",coverage >= 10,gene-mean coverage,"pN/pS defined and gene-mean coverage at or above the stated 10x; the stated 10x rule is a per-site inStrain setting, so this is a stricter additional filter"
+"threshold: reporting filter (full analysis set, tier D)",none beyond pN/pS definedness,gene x sample observation,every observation in which inStrain reported a pN/pS
+threshold: pN/pS definedness,SNV_S_count >= 1,synonymous variant present,"rows without a synonymous variant have no pS denominator and are undefined, not zero"
+tier A: gene x sample observations,1087,observations,
+tier A: distinct genes,497,curated genes,of 3164 in the curated list
+tier A: distinct genomes (GVMAGs),130,genomes,
+tier A: distinct samples,64,samples,of 167
+tier A: distinct pathways,13,pathways,of 15 curated pathways
+tier A: Imitervirales vs Algavirales genes,366 vs 126,genes,
+"tier A: median pN/pS (gene level, all pathways)",0.1162,pN/pS,unit = per-gene median
+"tier A: median pN/pS (observation level, all pathways)",0.1100,pN/pS,pseudoreplicated; descriptive only
+tier A: IQR of pN/pS (gene level),0.0584-0.198,pN/pS,unit = per-gene median
+tier A: genes with pN/pS > 1,7 / 497 (1.4%),genes,compatible with relaxed purifying selection or positive selection
+full analysis set (tier D): gene x sample observations,5551,observations,every observation in which inStrain reported a pN/pS
+full analysis set (tier D): distinct genes,1219,curated genes,
+full analysis set (tier D): distinct genomes (GVMAGs),213,genomes,
+full analysis set (tier D): distinct samples,166,samples,of 167; JUN-2013 contributes no defined pN/pS
+full analysis set (tier D): distinct pathways,15,pathways,13 of the 15 curated pathways have at least 5 genes with data and were tested
+full analysis set (tier D): median pN/pS,0.08285,pN/pS,unit = per-gene median
+full analysis set (tier D): IQR of pN/pS,0.00-0.180,pN/pS,unit = per-gene median
+full analysis set (tier D): genes with pN/pS > 1,12 / 1219 (1.0%),genes,compatible with relaxed purifying selection or positive selection
+all tiers: observations with a defined pN/pS,5551,observations,no coverage filter (tier D)
+all tiers: genes with a defined pN/pS,1219,genes,tier D
+tier A: Imitervirales vs Algavirales pN/pS (unit = gene),median 0.119 vs 0.105,pN/pS,"n = 366 vs 126 genes; Mann-Whitney U = 22499, P = 0.684, Cliff's delta = 0.0242 [-0.0896, 0.143], higher in Imitervirales"
+tier A: Imitervirales vs Algavirales pN/pS (unit = genome),median 0.110 vs 0.110,pN/pS,"n = 74 vs 54 genomes; Mann-Whitney U = 1965, P = 0.875, Cliff's delta = -0.0165 [-0.216, 0.180], higher in Algavirales"
+tier A: Imitervirales vs Algavirales (gene unit),"P = 0.684, BH_P = 0.799",order contrast,median 0.119 vs 0.105; higher in Imitervirales
+tier B: Imitervirales vs Algavirales (gene unit),"P = 0.344, BH_P = 0.636",order contrast,median 0.114 vs 0.0958; higher in Imitervirales
+tier C: Imitervirales vs Algavirales (gene unit),"P = 0.883, BH_P = 0.883",order contrast,median 0.0942 vs 0.0892; higher in Imitervirales
+tier D: Imitervirales vs Algavirales (gene unit),"P = 0.502, BH_P = 0.502",order contrast,median 0.0831 vs 0.0892; higher in Algavirales
+tier E: Imitervirales vs Algavirales (gene unit),"P = 0.815, BH_P = 0.815",order contrast,median 0.120 vs 0.105; higher in Imitervirales
+tier A: pathways tested and BH-significant,11 tested / 0 significant at BH < 0.05,pathway family,coverage >= 10x (conservative subset)
+tier B: pathways tested and BH-significant,11 tested / 0 significant at BH < 0.05,pathway family,coverage >= 5x
+tier C: BH-significant pathway contrast -- TCA cycle,median 0.0429 vs 0.0950 (44 vs 1087 genes),pN/pS pathway vs background,"P = 0.000612, BH-adjusted P = 0.00734, Cliff's delta = -0.303 [-0.424, -0.175], lower pN/pS in pathway"
+tier C: BH-significant pathway contrast -- Ubiquitin system,median 0.116 vs 0.0840 (396 vs 735 genes),pN/pS pathway vs background,"P = 0.00285, BH-adjusted P = 0.0171, Cliff's delta = 0.107 [0.0339, 0.180], higher pN/pS in pathway"
+tier C: pathways tested and BH-significant,12 tested / 2 significant at BH < 0.05,pathway family,coverage >= 1x
+tier D: BH-significant pathway contrast -- TCA cycle,median 0.0247 vs 0.0883 (49 vs 1170 genes),pN/pS pathway vs background,"P = 0.00000100, BH-adjusted P = 0.0000130, Cliff's delta = -0.408 [-0.514, -0.292], lower pN/pS in pathway"
+tier D: BH-significant pathway contrast -- Ubiquitin system,median 0.115 vs 0.0767 (411 vs 808 genes),pN/pS pathway vs background,"P = 0.000200, BH-adjusted P = 0.00130, Cliff's delta = 0.129 [0.0557, 0.199], higher pN/pS in pathway"
+tier D: pathways tested and BH-significant,13 tested / 2 significant at BH < 0.05,pathway family,no coverage filter (full analysis set)
+tier E: pathways tested and BH-significant,11 tested / 0 significant at BH < 0.05,pathway family,coverage >= 10x and inStrain breadth >= 0.5
+tier A pathway test 1: Glycolysis,median 0.162 vs 0.116 (n = 14 vs 483 genes),pN/pS pathway vs background,"P = 0.0425, BH-adjusted P = 0.234, Cliff's delta = 0.318 [0.0266, 0.581], higher pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 1.00"
+tier A pathway test 2: TCA cycle,median 0.0637 vs 0.119 (n = 22 vs 475 genes),pN/pS pathway vs background,"P = 0.0294, BH-adjusted P = 0.234, Cliff's delta = -0.274 [-0.417, -0.111], lower pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 1.00"
+tier A pathway test 3: Cold shock proteins,median 0.0672 vs 0.117 (n = 14 vs 483 genes),pN/pS pathway vs background,"P = 0.0835, BH-adjusted P = 0.306, Cliff's delta = -0.271 [-0.611, 0.0948], lower pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 1.00"
+tier A pathway test 4: Light harvesting,median 0.124 vs 0.116 (n = 59 vs 438 genes),pN/pS pathway vs background,"P = 0.198, BH-adjusted P = 0.363, Cliff's delta = 0.103 [-0.0313, 0.250], higher pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 0.589"
+tier A pathway test 5: Oxidative stress regulation,median 0.0719 vs 0.117 (n = 8 vs 489 genes),pN/pS pathway vs background,"P = 0.155, BH-adjusted P = 0.363, Cliff's delta = -0.293 [-0.518, -0.0475], lower pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 1.00"
+tier A pathway test 6: Ubiquitin system,median 0.127 vs 0.112 (n = 182 vs 315 genes),pN/pS pathway vs background,"P = 0.197, BH-adjusted P = 0.363, Cliff's delta = 0.0694 [-0.0358, 0.179], higher pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 0.266"
+tier A pathway test 7: Heat shock proteins,median 0.0960 vs 0.119 (n = 95 vs 402 genes),pN/pS pathway vs background,"P = 0.241, BH-adjusted P = 0.379, Cliff's delta = -0.0772 [-0.207, 0.0469], lower pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 0.623"
+tier A pathway test 8: DNA repair,median 0.126 vs 0.115 (n = 45 vs 452 genes),pN/pS pathway vs background,"P = 0.396, BH-adjusted P = 0.545, Cliff's delta = 0.0765 [-0.0757, 0.237], higher pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 1.00"
+tier A pathway test 9: Amino acid metabolism,median 0.114 vs 0.116 (n = 10 vs 487 genes),pN/pS pathway vs background,"P = 0.571, BH-adjusted P = 0.629, Cliff's delta = -0.105 [-0.394, 0.150], lower pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 1.00"
+tier A pathway test 10: Lipid metabolism,median 0.104 vs 0.117 (n = 14 vs 483 genes),pN/pS pathway vs background,"P = 0.556, BH-adjusted P = 0.629, Cliff's delta = -0.0923 [-0.350, 0.151], lower pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 1.00"
+tier A pathway test 11: Apoptosis,median 0.129 vs 0.116 (n = 30 vs 467 genes),pN/pS pathway vs background,"P = 0.945, BH-adjusted P = 0.945, Cliff's delta = 0.00757 [-0.211, 0.203], higher pN/pS in pathway; Fisher P for the fraction of genes with pN/pS > 1 = 1.00"
+sensitivity tier A,"1087 observations, 497 genes, 13 pathways",tier summary,coverage >= 10x (conservative subset); median pN/pS (gene level) = 0.116
+sensitivity tier B,"1640 observations, 741 genes, 14 pathways",tier summary,coverage >= 5x; median pN/pS (gene level) = 0.110
+sensitivity tier C,"3564 observations, 1131 genes, 14 pathways",tier summary,coverage >= 1x; median pN/pS (gene level) = 0.0906
+sensitivity tier D,"5551 observations, 1219 genes, 15 pathways",tier summary,no coverage filter (full analysis set); median pN/pS (gene level) = 0.0829
+sensitivity tier E,"1001 observations, 487 genes, 13 pathways",tier summary,coverage >= 10x and inStrain breadth >= 0.5; median pN/pS (gene level) = 0.117

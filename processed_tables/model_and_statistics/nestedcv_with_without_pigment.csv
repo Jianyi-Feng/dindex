@@ -1,0 +1,3 @@
+model,pooled_R2,mean_fold_R2,RMSE,n
+8 predictors (incl. mislabelled 'CO3' = 19'-butanoyloxyfucoxanthin),0.6282464428732293,0.6244832439105414,0.4540285345478072,196
+7 predictors (without 'CO3'),0.634451980203104,0.6267746165614881,0.4502231264272097,196

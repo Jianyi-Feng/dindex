@@ -1,0 +1,26 @@
+check,result,note
+MAGs in SPOT_NCLDV_tax.csv,266,all 266 usable after canonicalising the 25 Mirus intermediate names
+MAGs after canonicalisation,266,matches the 266 GVMAGs
+MAGs also in SPOT_GV_nucl_diversity_metadata.csv,266,second taxonomy source
+MAGs in one source only,0,"tax-only 0, nucl-div-only 0"
+gene_info data rows,786133,all genes of all MAGs (raw files)
+rows resolved to one of the 266 MAGs,786133,scaffold -> MAG; from the gene id only in 0 rows
+rows with a defined pN/pS,124071,pNpS_variants non-empty
+rows with SNV_S_count >= 1,124071,reported separately below; equals the defined count exactly
+rows with an explicit SNV_S_count == 0,333891,a called synonymous-variant block that found no synonymous variant
+rows with a blank SNV/SNS block,328171,"no variant called at all, so inStrain leaves the whole block and pN/pS empty"
+identity: defined == rows with SNV_S >= 1,PASS,124071 rows have pNpS_variants and 124071 rows have SNV_S_count >= 1
+identity: defined + explicit SNV_S==0 + blank == resolved,PASS,124071 + 333891 + 328171 = 786133
+distinct genes observed,84846,all resolve to the 266 MAGs
+genes with >=1 defined pN/pS,33483,the gene-level analysis universe
+  with coverage >= 10x (tier A),18589,of the genes with a defined pN/pS
+all genes with KO annotation,28032,of 84846 genes observed
+  ... among genes with a defined pN/pS,13002,of 33483
+all genes on >=1 KEGG pathway,14283,
+  ... among genes with a defined pN/pS,6904,
+all genes with Pfam annotation,31996,
+  ... among genes with a defined pN/pS,15417,
+genes with neither KO nor Pfam,49284,of 84846 genes; 16531 of 33483 among genes with a defined pN/pS
+  in the curated pathway list,1218,of 3164 curated proteins
+pNpS == dNdS x (SNV_N x SNS_S)/(SNV_S x SNS_N),PASS,"21475/21475 exact, worst relative error 0 (all genes, not just curated)"
+samples with at least one defined pN/pS,167,of 167

@@ -1,0 +1,357 @@
+DATASET_BINARY
+#Binary datasets are visualized as filled or empty symbols, depending on the value associated with a node (0 or 1).
+#Each node can have multiple associated values, and each value will be represented by a symbol (defined in FIELD_SHAPES) with corresponding color and label (from FIELD_COLORS and FIELD_LABELS).
+#Possible values (defined under DATA below) for each node are 1 (filled shapes), 0 (empty shapes) and -1 (completely omitted).
+
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file.
+SEPARATOR	TAB
+#SEPARATOR SPACE
+#SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL	symbol
+
+#dataset color (can be changed later)
+COLOR	#ff0000
+
+#shapes for each field column; possible choices are
+#1: rectangle 
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: check mark
+FIELD_SHAPES	5
+
+#field labels
+FIELD_LABELS	f1
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+#define colors for each individual field column (if not defined all symbols will use the main dataset color, defined in COLOR above)
+#FIELD_COLORS,#ff0000
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#To order legend entries horizontally instead of vertically, set LEGEND_HORIZONTAL to 1
+#Shape should be a number between 1 and 6, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_SCALE,1
+#LEGEND_POSITION_X,100
+#LEGEND_POSITION_Y,100
+#LEGEND_HORIZONTAL,0
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+#LEGEND_SHAPE_SCALES,1,1,0.5
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+#SHOW_INTERNAL,0
+
+#show dashed lines between leaf labels and the dataset
+#DASHED_LINES,1
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+#MARGIN,0
+#align symbols to the end of each leaf label (individual dataset field will not be aligned to each other)
+#ALIGN_TO_LABELS,1
+
+#symbol height factor; Default symbol height will be slightly less than the available space between leaves, but you can set a multiplication factor here to increase/decrease it (values from 0 to 1 will decrease it, values above 1 will increase it)
+#HEIGHT_FACTOR,1
+
+#increase/decrease the spacing between individual levels, when there is more than one binary level defined 
+#SYMBOL_SPACING,10
+
+#vertical and horizontal grids can be displayed connecting the shapes
+#HORIZONTAL_GRID,1
+#VERTICAL_GRID,1
+
+#display or hide the text labels above each field column
+#SHOW_LABELS,1
+
+#text label size factor
+#SIZE_FACTOR,1
+
+#text label rotation
+#LABEL_ROTATION,0
+
+#text label shift in pixels (positive or negative)
+#LABEL_SHIFT,0
+
+#align fields labels to the tree circle; only applies in circular display mode
+#LABEL_ALIGN_TO_TREE,0
+
+#An example dataset with 4 columns (circle, left triangle, right triangle and rectangle):
+#FIELD_SHAPES,2,4,5,1
+#FIELD_LABELS,f1,f2,f3,f4
+FIELD_COLORS	#FF7F00
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+
+NCLDV.virome.2014.04.bin.51	1
+NCLDV.DP.JUL-2011.bin.53	1
+NCLDV.DP.JUN-2012.bin.217	1
+NCLDV.virome.2015.07.bin.167	1
+NCLDV.virome.2015.02.bin.149	1
+NCLDV.DP.JUN-2011.bin.145	1
+NCLDV.DP.APR-2013.bin.32	1
+NCLDV.virome.2015.04.bin.329	1
+NCLDV.virome.2015.06.bin.315	1
+NCLDV.virome.2013.07.bin.32	1
+NCLDV.DP.SEP-2011.bin.162	1
+NCLDV.virome.2015.05.bin.131	1
+NCLDV.virome.2010.03.bin.14	1
+NCLDV.DP.APR-2011.bin.237	1
+NCLDV.AE.201702.bin.13	1
+NCLDV.AE.201804.bin.6	1
+NCLDV.DP.JUL-2011.bin.85	1
+NCLDV.virome.2009.12.bin.23	1
+NCLDV.virome.2015.05.bin.195	1
+NCLDV.virome.2009.12.bin.3	1
+NCLDV.virome.2015.02.bin.90	1
+NCLDV.AE.201706.bin.59	1
+NCLDV.virome.2015.04.bin.405	1
+NCLDV.virome.2010.03.bin.37	1
+NCLDV.DP.FEB-2012.bin.33	1
+NCLDV.virome.2009.12.bin.74	1
+NCLDV.AE.201701.bin.83	1
+NCLDV.virome.2010.02.bin.55	1
+NCLDV.virome.2015.12.bin.312	1
+NCLDV.virome.2015.05.bin.96	1
+NCLDV.DP.APR-2011.bin.234	1
+NCLDV.DP.DEC-2009.bin.69	1
+NCLDV.DP.APR-2010.bin.102	1
+NCLDV.DP.MAY-2011.bin.77	1
+NCLDV.DP.APR-2013.bin.45	1
+NCLDV.AE.201702.bin.44	1
+NCLDV.DP.JUL-2011.bin.41	1
+NCLDV.DP.JUN-2011.bin.75	1
+NCLDV.AE.201705.bin.20	1
+NCLDV.DP.JAN-2013.bin.90	1
+NCLDV.DP.APR-2010.bin.108	1
+NCLDV.virome.2011.02.bin.4	1
+NCLDV.AE.201705.bin.16	1
+NCLDV.AE.201601.bin.79	1
+NCLDV.DP.FEB-2010.bin.81	1
+NCLDV.AE.201801.bin.21	1
+NCLDV.virome.2015.07.bin.6	1
+NCLDV.AE.201601.bin.117	1
+NCLDV.virome.2009.10.bin.123	1
+NCLDV.virome.2015.06.bin.209	1
+NCLDV.virome.2015.05.bin.62	1
+NCLDV.DP.FEB-2012.bin.94	1
+NCLDV.DP.APR-2010.bin.116	1
+NCLDV.DP.JUL-2011.bin.127	1
+NCLDV.virome.2015.12.bin.240	1
+NCLDV.virome.2015.04.bin.83	1
+NCLDV.virome.2015.02.bin.222	1
+NCLDV.virome.2014.11.bin.230	1
+NCLDV.virome.2011.11.bin.72	1
+NCLDV.DP.AUG-2010.bin.72	1
+NCLDV.AE.201411.bin.75	1
+NCLDV.AE.201711.bin.23	1
+NCLDV.AE.201809.bin.161	1
+NCLDV.virome.2011.06.bin.32	1
+NCLDV.virome.2015.05.bin.44	1
+NCLDV.DP.JUN-2011.bin.125	1
+NCLDV.virome.2010.09.bin.99	1
+NCLDV.DP.JUN-2011.bin.148	1
+NCLDV.virome.2015.02.bin.56	1
+NCLDV.virome.2015.05.bin.199	1
+NCLDV.virome.2015.06.bin.60	1
+NCLDV.DP.APR-2013.bin.46	1
+NCLDV.DP.JUN-2012.bin.11	1
+NCLDV.virome.2015.06.bin.33	1
+NCLDV.virome.2014.11.bin.327	1
+NCLDV.AE.201706.bin.34	1
+NCLDV.DP.APR-2010.bin.29	1
+NCLDV.virome.2015.02.bin.59	1
+NCLDV.virome.2015.07.bin.177	1
+NCLDV.AE.201604.bin.110	1
+NCLDV.virome.2013.06.bin.5	1
+NCLDV.AE.201809.bin.209	1
+NCLDV.virome.2015.10.bin.185	1
+NCLDV.virome.2015.08.bin.153	1
+NCLDV.virome.2015.08.bin.13	1
+NCLDV.virome.2015.10.bin.121	1
+NCLDV.virome.2013.02.bin.21	1
+NCLDV.DP.OCT-2012.bin.126	1
+NCLDV.DP.OCT-2012.bin.159	1
+NCLDV.DP.OCT-2012.bin.32	1
+NCLDV.AE.201809.bin.146	1
+NCLDV.virome.2015.07.bin.281	1
+NCLDV.virome.2015.08.bin.161	1
+NCLDV.virome.2015.10.bin.227	1
+NCLDV.AE.201410.bin.110	1
+NCLDV.AE.201411.bin.187	1
+NCLDV.DP.OCT-2012.bin.315	1
+NCLDV.DP.OCT-2012.bin.69	1
+NCLDV.virome.2014.04.bin.88	1
+NCLDV.virome.2010.09.bin.123	1
+NCLDV.DP.MAR-2012.bin.100	1
+NCLDV.virome.2015.10.bin.377	1
+NCLDV.AE.201602.bin.33	1
+NCLDV.virome.2013.08.bin.55	1
+NCLDV.virome.2015.10.bin.65	1
+NCLDV.virome.2015.08.bin.117	1
+NCLDV.virome.2014.04.bin.29	1
+NCLDV.AE.201602.bin.12	1
+NCLDV.AE.201907T5.bin.95	1
+NCLDV.virome.2011.12.bin.69	1
+NCLDV.AE.201907T5.bin.71	1
+NCLDV.virome.2015.02.bin.108	1
+NCLDV.AE.201604.bin.88	1
+NCLDV.virome.2013.02.bin.6	1
+NCLDV.DP.OCT-2012.bin.136	1
+NCLDV.AE.201603.bin.31	1
+NCLDV.DP.APR-2010.bin.110	1
+NCLDV.virome.2010.09.bin.131	1
+NCLDV.virome.2013.08.bin.57	1
+NCLDV.virome.2014.04.bin.67	1
+NCLDV.virome.2015.08.bin.154	1
+NCLDV.DP.OCT-2012.bin.123	1
+NCLDV.DP.APR-2011.bin.198	1
+NCLDV.AE.201809.bin.155	1
+NCLDV.DP.OCT-2012.bin.146	1
+NCLDV.virome.2015.06.bin.145	1
+NCLDV.virome.2015.10.bin.76	1
+NCLDV.DP.OCT-2012.bin.294	1
+NCLDV.AE.201411.bin.94	1
+NCLDV.DP.DEC-2012.bin.107	1
+NCLDV.DP.OCT-2012.bin.217	1
+NCLDV.DP.NOV-2012.bin.54	1
+NCLDV.virome.2014.05.bin.26	1
+NCLDV.DP.JUN-2009.bin.56	1
+NCLDV.AE.201705.bin.62	1
+NCLDV.virome.2010.05.bin.53	1
+NCLDV.virome.2015.10.bin.182	1
+NCLDV.virome.2015.08.bin.169	1
+NCLDV.virome.2015.02.bin.314	1
+NCLDV.virome.2015.08.bin.31	1
+NCLDV.virome.2015.08.bin.46	1
+NCLDV.DP.APR-2010.bin.64	1
+NCLDV.AE.201411.bin.120	1
+NCLDV.virome.2015.05.bin.213	1
+NCLDV.virome.2015.10.bin.245	1
+NCLDV.AE.201809.bin.7	1
+NCLDV.virome.2010.05.bin.41	1
+NCLDV.virome.2012.08.bin.104	1
+NCLDV.AE.201907T5.bin.79	1
+NCLDV.DP.OCT-2012.bin.207	1
+NCLDV.AE.201608.bin.20	1
+NCLDV.AE.201410.bin.146	1
+NCLDV.virome.2015.02.bin.122	1
+NCLDV.DP.JAN-2013.bin.12	1
+NCLDV.DP.MAR-2012.bin.105	1
+NCLDV.AE.201706.bin.10	1
+NCLDV.AE.201411.bin.215	1
+NCLDV.virome.2014.05.bin.16	1
+NCLDV.virome.2012.05.bin.51	1
+NCLDV.virome.2015.02.bin.266	1
+NCLDV.AE.201604.bin.98	1
+NCLDV.DP.OCT-2012.bin.319	1
+NCLDV.AE.201410.bin.139	1
+NCLDV.AE.201410.bin.122	1
+NCLDV.virome.2015.07.bin.27	1
+NCLDV.virome.2015.02.bin.363	1
+NCLDV.AE.201410.bin.16	1
+NCLDV.AE.201809.bin.169	1
+NCLDV.virome.2015.10.bin.416	1
+NCLDV.DP.AUG-2010.bin.73	1
+NCLDV.AE.201801.bin.4	1
+NCLDV.virome.2015.05.bin.7	1
+NCLDV.DP.JUN-2012.bin.46	1
+NCLDV.DP.APR-2013.bin.138	1
+NCLDV.virome.2012.06.bin.72	1
+NCLDV.virome.2013.05.bin.36	1
+NCLDV.virome.2009.07.bin.103	1
+NCLDV.DP.OCT-2012.bin.346	1
+NCLDV.virome.2015.08.bin.34	1
+NCLDV.DP.OCT-2012.bin.212	1
+NCLDV.DP.OCT-2012.bin.214	1
+NCLDV.virome.2015.10.bin.390	1
+NCLDV.DP.JUL-2011.bin.158	1
+NCLDV.DP.DEC-2012.bin.76	1
+NCLDV.DP.NOV-2012.bin.21	1
+NCLDV.DP.OCT-2012.bin.120	1
+NCLDV.DP.OCT-2012.bin.265	1
+NCLDV.virome.2015.08.bin.90	1
+NCLDV.virome.2015.10.bin.429	1
+NCLDV.DP.JUN-2011.bin.158	1
+NCLDV.DP.NOV-2012.bin.42	1
+NCLDV.AE.201809.bin.19	1
+NCLDV.virome.2015.06.bin.261	1
+NCLDV.DP.OCT-2012.bin.338	1
+NCLDV.virome.2015.06.bin.123	1
+NCLDV.virome.2015.10.bin.56	1
+NCLDV.virome.2015.06.bin.308	1
+NCLDV.virome.2012.09.bin.68	1
+NCLDV.virome.2015.06.bin.136	1
+NCLDV.AE.201604.bin.93	1
+NCLDV.virome.2015.06.bin.139	1
+NCLDV.DP.MAY-2011.bin.11	1
+NCLDV.AE.201506.bin.17	1
+NCLDV.virome.2015.02.bin.15	1
+NCLDV.AE.201701.bin.137	1
+NCLDV.virome.2015.02.bin.183	1
+NCLDV.DP.MAY-2011.bin.28	1
+NCLDV.virome.2015.02.bin.302	1
+NCLDV.virome.2015.10.bin.320	1
+NCLDV.virome.2015.08.bin.151	1
+NCLDV.DP.AUG-2010.bin.54	1
+NCLDV.DP.AUG-2012.bin.110	1
+NCLDV.AE.201410.bin.62	1
+NCLDV.AE.201802.bin.11	1
+NCLDV.DP.APR-2011.bin.77	1
+NCLDV.virome.2010.12.bin.134	1
+NCLDV.virome.2013.06.bin.24	1
+NCLDV.DP.APR-2013.bin.7	1
+NCLDV.DP.FEB-2013.bin.52	1
+NCLDV.virome.2013.07.bin.60	1
+NCLDV.AE.201410.bin.74	1
+NCLDV.virome.2015.07.bin.88	1
+NCLDV.virome.2015.07.bin.252	1
+NCLDV.AE.201410.bin.52	1
+NCLDV.AE.201603.bin.40	1
+NCLDV.AE.201601.bin.9	1
+NCLDV.AE.201601.bin.67	1
+NCLDV.AE.201601.bin.50	1
+NCLDV.AE.201601.bin.52	1
+NCLDV.virome.2015.10.bin.143	1
+NCLDV.AE.20151007.bin.1	1
+NCLDV.AE.201807.bin.55	1
+NCLDV.AE.201807.bin.76	1
+NCLDV.AE.201907T6.bin.24	1
+NCLDV.AE.201807.bin.49	1
+NCLDV.virome.2015.10.bin.319	1
+NCLDV.AE.201907T5.bin.62	1
+NCLDV.AE.201410.bin.89	1
+NCLDV.AE.201709.bin.21	1
+NCLDV.virome.2015.07.bin.148	1
+NCLDV.virome.2009.07.bin.174	1

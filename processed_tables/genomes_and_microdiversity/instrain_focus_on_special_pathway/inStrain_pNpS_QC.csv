@@ -1,0 +1,26 @@
+check,result,note
+rows with SNV_count >= 1,6459,variant-carrying observations among the curated genes
+"  of these, pNpS_variants reported",5551,inStrain reports pN/pS when a synonymous variant exists
+"  of these, SNV_S_count == 0 (pN/pS undefined)",908,"no pS denominator; excluded, not set to zero"
+identity SNV_count>=1 == defined + SNV_S==0,PASS,5551 + 908 = 6459
+pNpS == 0 whenever SNV_N_count == 0,PASS,0 violations
+pNpS == dNdS x (SNV_N x SNS_S)/(SNV_S x SNS_N),PASS,"893/893 exact, worst relative error 0"
+rows with a defined pN/pS,5551,across all samples and all coverage levels
+  distinct genes,1219,of 2903 curated genes observed
+  distinct pathways,15,of 15 curated pathways observed
+  distinct genomes,213,
+  distinct samples,166,of 167
+tier A rows without gene_length,0,gene_length is blank in some inStrain records; not used as a filter
+gene x sample rows created by shared Instrain_gene_id,23,"two Instrain_gene_ids each map to two curated proteins, so the 35,078 matched observations expand to 35,101 rows"
+samples with no defined pN/pS at any coverage,1,JUN-2013 -- no curated gene in this sample reached SNV_S_count >= 1
+observations from shared Instrain_gene_id,46,"NCLDV_virome_2010_05_bin_53_contig_70_5, NCLDV_AE_201604_bin_98_contig_4_2 -- reported once per curated protein/pathway"
+mapping table rows,3166,curated gene / pathway annotations
+mapping table unique Instrain_gene_id,3164,2 ids are shared by two curated proteins each; those observations are reported once per protein/pathway
+gene_info files read,167,one per SPOT sample
+gene_info data rows (all genes),786133,"whole gene_info files, not just curated genes"
+gene_info rows mapped to the curated list,35101,the analysis universe before any filter
+sample metadata resolved,167,samples joined to SPOT_sample_Dindex.csv
+tier A rows lacking gene_length,0,gene_length is blank in some inStrain records; not used as a reporting filter
+"pNpS_variants > 1, tier A observations",17,compatible with relaxed constraint or positive selection
+"pNpS_variants == 0, tier A observations",154,synonymous variants only
+largest single-gene observation count (tier D),97,shows why the gene is the unit of analysis

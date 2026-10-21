@@ -1,0 +1,49 @@
+section,statistic,value,n,ci_low,ci_high,P,note
+CMIP6-gridded,gridded zonal-mean D vs supplied latitude table: max |difference|,6.162299803769146e-08,6760.0,,,,
+CMIP6-gridded,gridded front vs supplied front: max |difference| (deg),1.9038867193899025e-06,80.0,,,,
+CMIP6-gridded,2-degree ocean cells common to all four ESMs,10828.0,,,,,
+CMIP6-gridded,area-weighted share of cells with four-model sign agreement on dD,0.7803360260392553,,,,,
+CMIP6-gridded,area-weighted share of cells where four-model mean dD > 0,0.9861176083373914,,,,,
+CMIP6-gridded,"sign agreement, |lat| < 30",0.8556731208842221,4146.0,,,,area-weighted; mean dD 0.123
+CMIP6-gridded,"sign agreement, 30-45",0.9111741871291024,1905.0,,,,area-weighted; mean dD 0.185
+CMIP6-gridded,"sign agreement, 45-60",0.6615959680927896,2099.0,,,,area-weighted; mean dD 0.083
+CMIP6-gridded,"sign agreement, > 60",0.3475004049623735,2678.0,,,,area-weighted; mean dD 0.076
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2000-2009, all ocean",0.7387253046035767,4.0,0.4562397003173828,0.9061266779899596,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2000-2009, near fronts |D|<0.15",0.6053380891680717,4.0,0.2670072019100189,0.8544983863830566,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2000-2009, |lat| >= 60",0.6488842517137527,4.0,0.5159726142883301,0.8271488547325134,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2090-2099, all ocean",0.564082607626915,4.0,0.3821570873260498,0.7457665801048279,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2090-2099, near fronts |D|<0.15",0.6756660789251328,4.0,0.2708229422569275,0.8891236186027527,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2090-2099, |lat| >= 60",0.8123854398727417,4.0,0.7230838537216187,0.8923382759094238,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2000-2009, all ocean",0.7222584336996078,4.0,0.5741972327232361,0.8185239434242249,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2000-2009, near fronts |D|<0.15",0.9521421194076538,4.0,0.9075217247009276,0.9809326529502868,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2000-2009, |lat| >= 60",0.2511438466608524,4.0,0.0986706018447876,0.3805755078792572,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2090-2099, all ocean",0.8509624898433685,4.0,0.6848445534706116,0.930441677570343,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2090-2099, near fronts |D|<0.15",0.9208162724971772,4.0,0.8976118564605713,0.9588744044303894,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2090-2099, |lat| >= 60",0.9245776683092116,4.0,0.8724929094314575,0.9892314076423644,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2000-2009, all ocean",0.7197766155004501,4.0,0.5094740986824036,0.8652969598770142,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2000-2009, near fronts |D|<0.15",0.7240501344203949,4.0,0.528831958770752,0.8807153701782227,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2000-2009, |lat| >= 60",0.8305381536483765,4.0,0.7122070789337158,0.9840314984321594,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2090-2099, all ocean",0.6467800065875053,4.0,0.3983384072780609,0.7772030234336853,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2090-2099, near fronts |D|<0.15",0.6752316877245903,4.0,0.3476212918758392,0.8391281962394714,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2090-2099, |lat| >= 60",0.7912891805171967,4.0,0.7035901546478271,0.8691641092300415,,"mean and range over ESMs, area-weighted"
+CMIP6-gridded,temperature-only calibration: ln(I/A) = b0 + bT*T + bF*femto,0.1800065128322397,,,,,"b0=-1.861, bF=-1.092"
+CMIP6-gridded,"temperature at D=0 (pico, femto) in temperature-only calibration",10.341041824339156,,,,,femto 16.41 degC
+CMIP6-gridded,"front rate North, random forest, 7 predictors (no CO3) (km/decade)",68.51753208306718,4.0,43.1380439213022,93.26423406650052,,mean and ESM range; ESMs poleward 4/4; min R2 0.96
+CMIP6-gridded,"front rate South, random forest, 7 predictors (no CO3) (km/decade)",51.772713417905,4.0,33.27404521781982,71.37784644984593,,mean and ESM range; ESMs poleward 4/4; min R2 0.96
+CMIP6-gridded,"front rate North, random forest, 8 predictors (km/decade)",70.55474176784955,4.0,49.29936496567159,92.0425010756075,,mean and ESM range; ESMs poleward 4/4; min R2 0.95
+CMIP6-gridded,"front rate South, random forest, 8 predictors (km/decade)",51.11381959500871,4.0,32.522027782751934,69.88299972913663,,mean and ESM range; ESMs poleward 4/4; min R2 0.96
+CMIP6-gridded,"front rate North, supplied ensemble (gridded) (km/decade)",62.63641825103759,4.0,48.42866373697916,84.5986894226074,,mean and ESM range; ESMs poleward 4/4; min R2 0.96
+CMIP6-gridded,"front rate South, supplied ensemble (gridded) (km/decade)",36.73522540537516,4.0,19.44639986165364,51.4771227722168,,mean and ESM range; ESMs poleward 4/4; min R2 0.91
+CMIP6-gridded,"front rate North, supplied ensemble, 2-degree cells (km/decade)",59.68537891133626,4.0,49.20507189941407,74.77808716837565,,mean and ESM range; ESMs poleward 4/4; min R2 0.96
+CMIP6-gridded,"front rate South, supplied ensemble, 2-degree cells (km/decade)",39.835419934590654,4.0,23.48961030069987,54.90722823079427,,mean and ESM range; ESMs poleward 4/4; min R2 0.91
+CMIP6-gridded,"front rate North, temperature-only (km/decade)",75.09277187498931,4.0,39.67344372318559,113.07515256361349,,mean and ESM range; ESMs poleward 4/4; min R2 0.88
+CMIP6-gridded,"front rate South, temperature-only (km/decade)",46.86906358525189,4.0,29.072322138004868,60.85367865861159,,mean and ESM range; ESMs poleward 4/4; min R2 0.92
+CMIP6-gridded,"front rate North, supplied ensemble, AOA cells only (km/decade)",57.78076019795735,4.0,50.55775612386067,73.70131614176431,,ESMs poleward 4/4; min R2 0.94; DI threshold 0.527
+CMIP6-gridded,"front rate South, supplied ensemble, AOA cells only (km/decade)",36.64035490926106,4.0,19.18041837565104,51.207146982828775,,ESMs poleward 4/4; min R2 0.90; DI threshold 0.527
+CMIP6-gridded,"front rate North, carbonate refit without CO3 (km/decade, 2-degree cells)",63.61077005359704,4.0,49.08601732723218,82.95856775002355,,ESMs poleward 4/4; faithful re-implementation of Predict_D-index.py
+CMIP6-gridded,"front rate South, carbonate refit without CO3 (km/decade, 2-degree cells)",39.28118610450228,4.0,22.342324708764373,54.29275349477608,,ESMs poleward 4/4; faithful re-implementation of Predict_D-index.py
+CMIP6-gridded,"front rate North, carbonate refit, CO3 as supplied (km/decade, 2-degree cells)",65.61233640737879,4.0,52.68339696857715,81.19913980495463,,ESMs poleward 4/4; faithful re-implementation of Predict_D-index.py
+CMIP6-gridded,"front rate South, carbonate refit, CO3 as supplied (km/decade, 2-degree cells)",43.46917198379765,4.0,25.51151182448029,56.91399927277405,,ESMs poleward 4/4; faithful re-implementation of Predict_D-index.py
+CMIP6-gridded,"front rate North, carbonate refit, CO3 set to Tara median (km/decade, 2-degree cells)",62.25566174193884,4.0,50.76258048560699,80.88246454463666,,ESMs poleward 4/4; faithful re-implementation of Predict_D-index.py
+CMIP6-gridded,"front rate South, carbonate refit, CO3 set to Tara median (km/decade, 2-degree cells)",39.45313778818432,4.0,22.86324932236164,55.20769344952903,,ESMs poleward 4/4; faithful re-implementation of Predict_D-index.py
+CMIP6-gridded,"carbonate refit (CO3 as supplied) vs archived predictions, 2-degree cells: mean cellwise r",0.998521849665298,,,,,mean |dD| 0.024

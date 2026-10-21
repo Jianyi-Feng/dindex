@@ -1,0 +1,167 @@
+section,statistic,value,n,ci_low,ci_high,P,note,source
+A,SPOT metagenomes,167.0,,,,,"{""viral"": 65, ""micro"": 60, ""pico"": 42}",audit (analysis/inherited)
+A,"SPOT I+A share of PolB coverage, median",0.9654783313,167.0,0.88375739795,0.99002480335,,IQR,audit (analysis/inherited)
+A,I+A share median (micro),0.8682662651999999,60.0,,,,,audit (analysis/inherited)
+A,I+A share median (pico),0.98679665535,42.0,,,,,audit (analysis/inherited)
+A,I+A share median (viral),0.9831670043,65.0,,,,,audit (analysis/inherited)
+A,SPOT D vs SST Pearson r,0.5555806669474823,157.0,,,4.275233848102056e-14,,audit (analysis/inherited)
+A,SPOT D vs SST Spearman rho,0.5200538050051972,157.0,,,2.94678449458062e-12,,audit (analysis/inherited)
+A,"SPOT dD/dSST, fraction-adjusted (HC3)",0.1115712954520152,157.0,0.0815196469426303,0.1416229439614002,3.421784441790412e-13,D units per degC,audit (analysis/inherited)
+A,"SPOT dD/dSST_clim, fraction-adjusted (HC3)",0.0989750722567583,157.0,0.0697670406117957,0.1281831039017209,3.1033115307422195e-11,,audit (analysis/inherited)
+A,"SPOT dD/dSST_anomaly, fraction-adjusted (HC3)",0.1795435666719976,157.0,0.1153293083011601,0.243757825042835,4.2514661149602914e-08,,audit (analysis/inherited)
+A,SPOT seasonal minus anomaly slope,-0.0805684944152393,157.0,-0.1429133385891073,-0.0182236502413713,0.0113133098949654,equal slopes => one temperature sensitivity for season and anomaly,audit (analysis/inherited)
+A,"dD/dSST (micro, HAC lag 3)",0.1251709332209398,50.0,0.0967616717872395,0.15358019465464,5.842853403854375e-18,,audit (analysis/inherited)
+A,SST at D=0 (micro),17.1741438366359,50.0,15.2149673311836,18.2109383223835,,bootstrap 2000,audit (analysis/inherited)
+A,"dD/dSST (pico, HAC lag 3)",0.117096737701381,42.0,0.0576140560145166,0.1765794193882455,0.0001141520821791,,audit (analysis/inherited)
+A,SST at D=0 (pico),19.65148921451329,42.0,18.47031059491642,23.196004337030733,,bootstrap 2000,audit (analysis/inherited)
+A,"dD/dSST (viral, HAC lag 3)",0.0964597602522381,65.0,0.0399288776879707,0.1529906428165054,0.0008248298483411,,audit (analysis/inherited)
+A,SST at D=0 (viral),22.556813828599623,65.0,20.79535013589098,30.69386153996136,,bootstrap 2000,audit (analysis/inherited)
+B,max |D - tanh(ln(I/A)/2)| (SPOT),1.5549417309301816e-10,167.0,,,,"identity for I,A>0",audit (analysis/inherited)
+B,SPOT ln(I/A) vs SST Pearson r,0.5740764686800355,157.0,,,3.840158674983302e-15,,audit (analysis/inherited)
+B,"SPOT dln(I/A)/dSST, fraction-adjusted",0.3286586029963271,157.0,0.2410162096415315,0.4163009963511226,1.9841957950292145e-13,,audit (analysis/inherited)
+C,viral pre-event samples,47.0,,,,,2009-07..2013-12,audit (analysis/inherited)
+C,viral 2014-2015 samples,18.0,,,,,,audit (analysis/inherited)
+C,pre-event harmonic R2,0.2732784823503192,47.0,,,0.0008914488498759,,audit (analysis/inherited)
+C,season-adjusted median shift (this analysis),0.4246565755094263,65.0,,,,,audit (analysis/inherited)
+C,season-adjusted mean shift,0.4598799162247396,65.0,,,,,audit (analysis/inherited)
+C,SST anomaly mean pre / 2014-15,-0.7934013506080851,,,,,heatwave 1.46,audit (analysis/inherited)
+C,SST anomaly mean 2014-15,1.4597003500222223,18.0,,,,,audit (analysis/inherited)
+C,"season-adjusted mean shift, year-block bootstrap CI",0.4598799162247396,,0.3271840693108199,0.5684741662861948,,5000 resamples of calendar years,audit (analysis/inherited)
+C,"year-label permutation P (one-sided, exact)",0.0476190476190476,21.0,,,,observed rank 1 of 21; minimum attainable P = 0.048,audit (analysis/inherited)
+C,"matched-month D difference, median",0.3159515109949999,18.0,,,0.0015792846679687,Wilcoxon signed-rank,audit (analysis/inherited)
+C,matched-month differences > 0,15.0,18.0,,,,,audit (analysis/inherited)
+C,pre-event dResid/dSST_anomaly,0.0194816427703346,47.0,-0.0519903771244635,0.0909536626651327,0.593174469242137,,audit (analysis/inherited)
+C,heatwave shift predicted from pre-event anomaly slope,0.043894122456913,,-0.1171425662024838,0.2049308111163099,,compare with observed mean shift,audit (analysis/inherited)
+C,viral 2009-2015 resid ~ SST_anomaly + MEI: SST_anomaly,0.183287395834286,65.0,0.102052506542539,0.264522285126033,9.770224980579856e-06,,audit (analysis/inherited)
+C,viral 2009-2015 resid ~ SST_anomaly + MEI: MEI,-0.0368637312774134,65.0,-0.1481647702837256,0.0744373077288987,0.5162384289843683,,audit (analysis/inherited)
+D,Tara samples with valid D and predictors,196.0,,,,,83 stations,audit (analysis/inherited)
+D,Tara samples with D = +1 or -1 (one order absent),12.0,196.0,,,,,audit (analysis/inherited)
+D,Tara station-mean D vs temperature Pearson r,0.7363065220299184,83.0,,,2.1596245645972614e-15,,audit (analysis/inherited)
+D,Tara station-mean D vs temperature Spearman rho,0.625123972154886,83.0,,,2.666431593554377e-10,,audit (analysis/inherited)
+D,Tara station-mean D vs chlorophyll a Pearson r,-0.6495426285536178,83.0,,,3.074655994205182e-11,,audit (analysis/inherited)
+D,Tara station-mean D vs chlorophyll a Spearman rho,-0.6482129644781139,83.0,,,3.4758656090249196e-11,,audit (analysis/inherited)
+D,Tara station-mean |latitude| vs D Spearman rho,-0.6277654170689727,83.0,,,2.130073667515588e-10,,audit (analysis/inherited)
+D,Tara dln(I/A)/dT (station-clustered),0.1800065128322399,196.0,0.1364282786799353,0.2235847469845444,5.682904439407703e-16,,audit (analysis/inherited)
+D,Tara dD/dT (station-clustered),0.0430763886060159,196.0,0.0335654490096836,0.0525873282023481,6.871640029898332e-19,,audit (analysis/inherited)
+D,Tara dD/dT within SPOT SST range 13-24 degC,0.0875150983964093,51.0,0.0048505636074099,0.1701796331854086,0.0379893026863051,,audit (analysis/inherited)
+D,"Tara temperature at D=0, pico",10.341041824339165,196.0,6.643390066882557,13.24384050205598,,station bootstrap,audit (analysis/inherited)
+D,"Tara temperature at D=0, femto",16.410131335275775,196.0,12.52934377283192,21.669131540469444,,station bootstrap,audit (analysis/inherited)
+D,station-blocked CV R2: temperature-only log-ratio,0.4697651439120661,196.0,0.4533135250057671,0.4836279659421624,,20 random station partitions; range,audit (analysis/inherited)
+D,station-blocked CV RMSE: temperature-only log-ratio,0.5422209014426768,196.0,,,,,audit (analysis/inherited)
+D,leave-one-basin-out R2: temperature-only log-ratio,0.4534026406260282,196.0,,,,,audit (analysis/inherited)
+D,leave-one-basin-out RMSE: temperature-only log-ratio,0.5505405929773541,196.0,,,,,audit (analysis/inherited)
+D,station-blocked CV R2: ridge log-ratio (8 predictors),0.5385543022163708,196.0,0.4836026324670286,0.5663233206691085,,20 random station partitions; range,audit (analysis/inherited)
+D,station-blocked CV RMSE: ridge log-ratio (8 predictors),0.5056972579981894,196.0,,,,,audit (analysis/inherited)
+D,leave-one-basin-out R2: ridge log-ratio (8 predictors),0.3852383860008163,196.0,,,,,audit (analysis/inherited)
+D,leave-one-basin-out RMSE: ridge log-ratio (8 predictors),0.5838603089177493,196.0,,,,,audit (analysis/inherited)
+D,station-blocked CV R2: random forest log-ratio (8 predictors),0.572261110742896,196.0,0.487361389713506,0.6642856539452475,,20 random station partitions; range,audit (analysis/inherited)
+D,station-blocked CV RMSE: random forest log-ratio (8 predictors),0.486313806686513,196.0,,,,,audit (analysis/inherited)
+D,leave-one-basin-out R2: random forest log-ratio (8 predictors),0.1854050019337046,196.0,,,,,audit (analysis/inherited)
+D,leave-one-basin-out RMSE: random forest log-ratio (8 predictors),0.6720884796506628,196.0,,,,,audit (analysis/inherited)
+D,station-blocked CV R2: random forest D (8 predictors),0.5839844037550298,196.0,0.5090211647514575,0.6497978692048334,,20 random station partitions; range,audit (analysis/inherited)
+D,station-blocked CV RMSE: random forest D (8 predictors),0.479674533889373,196.0,,,,,audit (analysis/inherited)
+D,leave-one-basin-out R2: random forest D (8 predictors),0.2724293127100649,196.0,,,,,audit (analysis/inherited)
+D,leave-one-basin-out RMSE: random forest D (8 predictors),0.6351746815231104,196.0,,,,,audit (analysis/inherited)
+D,supplied pipeline OOF R2 (MD5 env-hash groups),0.6230823019298168,196.0,,,,,audit (analysis/inherited)
+D,supplied pipeline OOF RMSE,0.4571711820748854,196.0,,,,,audit (analysis/inherited)
+D,supplied CV: max stations per group / groups per station,1.0,,,,,groups per station max 1,audit (analysis/inherited)
+D,OOF permutation dR2: temperature,0.5266679929024985,1000.0,0.0135222746511118,1.1640214735358507,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+D,OOF permutation dR2: log_chl,0.1729744742939713,1000.0,-0.0819901942106145,0.6967624460870371,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+D,OOF permutation dR2: femto,0.1427005687371507,1000.0,-0.0067939490298882,0.3651229740605832,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+D,OOF permutation dR2: log_CO3,0.0372689833665001,1000.0,-0.1293420433470623,0.1931475796879759,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+D,OOF permutation dR2: salinity,0.0333841040352271,1000.0,-0.0854792162511146,0.1346458178945606,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+D,OOF permutation dR2: log_Fe,-0.0026698724607467,1000.0,-0.0838647172805436,0.0660873159515361,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+D,OOF permutation dR2: log_PO4,-0.0026999401316872,1000.0,-0.0541070303027621,0.0408672322902083,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+D,OOF permutation dR2: log_Si,-0.007587455760858,1000.0,-0.0458545473266345,0.0157378030535742,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+D,OOF permutation dR2: log_NO3,-0.008377328773387,1000.0,-0.0676254088119764,0.0213967081373558,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations,audit (analysis/inherited)
+E,"SPOT observed D vs D predicted from Tara temperature calibration, r",0.4445523917153788,107.0,,,1.6105643913642538e-06,viral+pico; Tara femto/pico calibration,audit (analysis/inherited)
+E,"transfer bias (predicted - observed D), mean",0.6685236769641161,107.0,,,,,audit (analysis/inherited)
+E,transfer RMSE (D units),0.7949887907967482,107.0,,,,,audit (analysis/inherited)
+E,"SST read from D (Tara calibration) vs observed SST, r",0.5544521281354792,107.0,,,5.78759611370932e-10,,audit (analysis/inherited)
+E,"SST read from D, median absolute error degC",10.267331269934314,107.0,,,,,audit (analysis/inherited)
+E,transfer r (pico),0.5092588790592004,42.0,,,0.000572484714981,,audit (analysis/inherited)
+E,transfer r (viral),0.4884125962055307,65.0,,,3.6667128029834415e-05,,audit (analysis/inherited)
+F,pooled front rate North km/decade,62.6364194546933,40.0,27.755360308261977,97.51747860112462,0.0008212374787502,R2=0.258; 4 ESM x 10 decades,audit (analysis/inherited)
+F,front rate with ESM fixed effects North km/decade,62.63641945469311,40.0,56.69485753811773,68.57798137126848,1.0910855165343158e-21,R2=0.980,audit (analysis/inherited)
+F,pooled front rate South km/decade,36.73521863791998,40.0,11.17426066534881,62.29617661049115,0.0060309542047128,R2=0.182; 4 ESM x 10 decades,audit (analysis/inherited)
+F,front rate with ESM fixed effects South km/decade,36.73521863792232,40.0,32.18842935595964,41.28200791988501,5.27360000100778e-18,R2=0.976,audit (analysis/inherited)
+F,per-ESM rate range North km/decade,58.75916308606663,,48.42864924450664,84.59870240213331,,"median, range",audit (analysis/inherited)
+F,per-ESM R2 range North,0.9709293101269644,,0.9571843522233348,0.9841639479016264,,,audit (analysis/inherited)
+F,per-ESM decadal noise around trend North km,32.88346770586317,,26.102052756621912,42.640078598114975,,,audit (analysis/inherited)
+F,per-ESM signal-to-noise per decade North,1.801918073054877,,1.472361845984701,2.454868788216212,,,audit (analysis/inherited)
+F,per-ESM decades to 2-sigma displacement North,1.1109054706708177,,0.8147074945921102,1.3583617406646529,,,audit (analysis/inherited)
+F,ensemble front displacement 2000s->2090s North km,581.6007685256997,,450.6114320619996,788.1400473583999,,,audit (analysis/inherited)
+F,all ESMs move poleward North,4.0,4.0,,,,,audit (analysis/inherited)
+F,per-ESM rate range South km/decade,38.00867966631999,,19.44636857064,51.47714664839998,,"median, range",audit (analysis/inherited)
+F,per-ESM R2 range South,0.9596670829517402,,0.9086509540219588,0.9912886984275414,,,audit (analysis/inherited)
+F,per-ESM decadal noise around trend South km,18.014392840604238,,15.496652478752916,31.05118106373564,,,audit (analysis/inherited)
+F,per-ESM signal-to-noise per decade South,1.7993732827145408,,0.9821199988320036,3.3218236466862145,,,audit (analysis/inherited)
+F,per-ESM decades to 2-sigma displacement South,1.256341950110679,,0.6020789219184348,2.036411031623957,,,audit (analysis/inherited)
+F,ensemble front displacement 2000s->2090s South km,325.2557469887,,157.52104163839996,464.5079752059999,,,audit (analysis/inherited)
+F,all ESMs move poleward South,4.0,4.0,,,,,audit (analysis/inherited)
+F,latitude bins where all 4 ESMs agree on sign of dD,0.6863905325443787,169.0,,,,fraction of 1-degree bins,audit (analysis/inherited)
+F,"dD 2090s-2000s band (-80, -60]",0.0070101204210526,,-0.0083095429736842,0.0218418085631579,,"4-ESM mean, ESM range",audit (analysis/inherited)
+F,"dD 2090s-2000s band (-60, -30]",0.1009999591914916,,0.0570764698399333,0.1394982480640333,,"4-ESM mean, ESM range",audit (analysis/inherited)
+F,"dD 2090s-2000s band (-30, 30]",0.1226624095205,,0.0699904136003333,0.172539259405,,"4-ESM mean, ESM range",audit (analysis/inherited)
+F,"dD 2090s-2000s band (30, 60]",0.1883157332474641,,0.0691026621446899,0.3104868947204,,"4-ESM mean, ESM range",audit (analysis/inherited)
+F,"dD 2090s-2000s band (60, 80]",0.1429757756262499,,-0.08026013934,0.3124086284649999,,"4-ESM mean, ESM range",audit (analysis/inherited)
+G,viral pre-event dD/dSST,0.0569930868311315,47.0,0.0043369847848958,0.1096491888773672,0.033888566171506,,audit (analysis/inherited)
+G,heatwave D shift expected from pre-event SST calibration,0.0873512188184596,18.0,,,,,audit (analysis/inherited)
+G,heatwave D shift observed (raw means),0.4027102578220212,18.0,,,,,audit (analysis/inherited)
+G,"heatwave D above SST-calibrated expectation, median",0.2147421266993534,18.0,,,0.030364990234375,12/18 positive; Wilcoxon,audit (analysis/inherited)
+G,heatwave mean SST minus pre-event mean SST,1.5326634101654832,18.0,,,,,audit (analysis/inherited)
+G,Tara->SPOT transfer [L ~ temperature + femto] r,0.4445523917153788,107.0,,,1.6105643913642538e-06,bias +0.669; RMSE 0.795,audit (analysis/inherited)
+G,Tara->SPOT transfer [L ~ temperature + lchl + femto] r,0.3470243382311522,107.0,,,0.0002502846092947,bias +0.415; RMSE 0.643,audit (analysis/inherited)
+G,SPOT chlorophyll a median (mg m-3),0.37144443,107.0,,,,Tara median 0.205,audit (analysis/inherited)
+G,Tara dln(I/A)/dT <15 degC,0.0966349233867919,75.0,-0.0500919347422186,0.2433617815158024,0.1967589942700237,,audit (analysis/inherited)
+G,Tara dln(I/A)/dT >=15 degC,0.2044885600756065,121.0,0.0657965691052783,0.3431805510459347,0.0038550381286892,,audit (analysis/inherited)
+G,"micro/nano season-adjusted D, post phase minus heatwave phase",-0.2027753340085524,50.0,-0.380637754069006,-0.0249129139480988,0.025450645589873,"heatwave-phase matched-SST samples 2014-01-01..2016-12-01 (n=33), post-phase 2017-01-01..2018-07-01 (n=17); mean SST anomaly 1.33 -> 0.67 degC",audit (analysis/inherited)
+H,Tara log-ratio slope pseudocount 0.0001,0.2016568325317445,196.0,0.1493366591381028,0.2539770059253863,4.2125190658152384e-14,ln[(I+eps)/(A+eps)] ~ temperature + size fraction; station-clustered errors,audit (analysis/inherited)
+H,Tara log-ratio slope pseudocount 0.001,0.1800065128322398,196.0,0.1364282786799353,0.2235847469845444,5.682904439407985e-16,ln[(I+eps)/(A+eps)] ~ temperature + size fraction; station-clustered errors,audit (analysis/inherited)
+H,Tara log-ratio slope pseudocount 0.01,0.1477880644184679,196.0,0.1140718891061502,0.1815042397307855,8.613506316011002e-18,ln[(I+eps)/(A+eps)] ~ temperature + size fraction; station-clustered errors,audit (analysis/inherited)
+H,SPOT vs Tara overlapping-range slope difference (approx z),0.0240561970556059,208.0,,,0.5919199651492193,independent-estimate sensitivity check from reported 95% intervals; not an equivalence test,audit (analysis/inherited)
+CMIP6-gridded,gridded zonal-mean D vs supplied latitude table: max |difference|,6.162299803769146e-08,6760.0,,,,,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,gridded front vs supplied front: max |difference| (deg),1.9038867193899025e-06,80.0,,,,,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,2-degree ocean cells common to all four ESMs,10828.0,,,,,,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,area-weighted share of cells with four-model sign agreement on dD,0.7803360260392553,,,,,,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,area-weighted share of cells where four-model mean dD > 0,0.9861176083373914,,,,,,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"sign agreement, |lat| < 30",0.8556731208842221,4146.0,,,,area-weighted; mean dD 0.123,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"sign agreement, 30-45",0.9111741871291024,1905.0,,,,area-weighted; mean dD 0.185,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"sign agreement, 45-60",0.6615959680927896,2099.0,,,,area-weighted; mean dD 0.083,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"sign agreement, > 60",0.3475004049623735,2678.0,,,,area-weighted; mean dD 0.076,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2000-2009, all ocean",0.7387253046035767,4.0,0.4562397003173828,0.9061266779899596,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2000-2009, near fronts |D|<0.15",0.6053380891680717,4.0,0.2670072019100189,0.8544983863830566,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2000-2009, |lat| >= 60",0.6488842517137527,4.0,0.5159726142883301,0.8271488547325134,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2090-2099, all ocean",0.564082607626915,4.0,0.3821570873260498,0.7457665801048279,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2090-2099, near fronts |D|<0.15",0.6756660789251328,4.0,0.2708229422569275,0.8891236186027527,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA importance-weighted, 8 predictors, 2090-2099, |lat| >= 60",0.8123854398727417,4.0,0.7230838537216187,0.8923382759094238,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2000-2009, all ocean",0.7222584336996078,4.0,0.5741972327232361,0.8185239434242249,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2000-2009, near fronts |D|<0.15",0.9521421194076538,4.0,0.9075217247009276,0.9809326529502868,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2000-2009, |lat| >= 60",0.2511438466608524,4.0,0.0986706018447876,0.3805755078792572,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2090-2099, all ocean",0.8509624898433685,4.0,0.6848445534706116,0.930441677570343,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2090-2099, near fronts |D|<0.15",0.9208162724971772,4.0,0.8976118564605713,0.9588744044303894,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 8 predictors, 2090-2099, |lat| >= 60",0.9245776683092116,4.0,0.8724929094314575,0.9892314076423644,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2000-2009, all ocean",0.7197766155004501,4.0,0.5094740986824036,0.8652969598770142,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2000-2009, near fronts |D|<0.15",0.7240501344203949,4.0,0.528831958770752,0.8807153701782227,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2000-2009, |lat| >= 60",0.8305381536483765,4.0,0.7122070789337158,0.9840314984321594,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2090-2099, all ocean",0.6467800065875053,4.0,0.3983384072780609,0.7772030234336853,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2090-2099, near fronts |D|<0.15",0.6752316877245903,4.0,0.3476212918758392,0.8391281962394714,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"AOA unweighted, 7 predictors (no CO3), 2090-2099, |lat| >= 60",0.7912891805171967,4.0,0.7035901546478271,0.8691641092300415,,"mean and range over ESMs, area-weighted",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,temperature-only calibration: ln(I/A) = b0 + bT*T + bF*femto,0.1800065128322397,,,,,"b0=-1.861, bF=-1.092",cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"temperature at D=0 (pico, femto) in temperature-only calibration",10.341041824339156,,,,,femto 16.41 degC,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate North, random forest, 7 predictors (no CO3) (km/decade)",68.51753208306718,4.0,43.1380439213022,93.26423406650052,,mean and ESM range; ESMs poleward 4/4; min R2 0.96,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate South, random forest, 7 predictors (no CO3) (km/decade)",51.772713417905,4.0,33.27404521781982,71.37784644984593,,mean and ESM range; ESMs poleward 4/4; min R2 0.96,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate North, random forest, 8 predictors (km/decade)",70.55474176784955,4.0,49.29936496567159,92.0425010756075,,mean and ESM range; ESMs poleward 4/4; min R2 0.95,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate South, random forest, 8 predictors (km/decade)",51.11381959500871,4.0,32.522027782751934,69.88299972913663,,mean and ESM range; ESMs poleward 4/4; min R2 0.96,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate North, supplied ensemble (gridded) (km/decade)",62.63641825103759,4.0,48.42866373697916,84.5986894226074,,mean and ESM range; ESMs poleward 4/4; min R2 0.96,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate South, supplied ensemble (gridded) (km/decade)",36.73522540537516,4.0,19.44639986165364,51.4771227722168,,mean and ESM range; ESMs poleward 4/4; min R2 0.91,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate North, supplied ensemble, 2-degree cells (km/decade)",59.68537891133626,4.0,49.20507189941407,74.77808716837565,,mean and ESM range; ESMs poleward 4/4; min R2 0.96,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate South, supplied ensemble, 2-degree cells (km/decade)",39.835419934590654,4.0,23.48961030069987,54.90722823079427,,mean and ESM range; ESMs poleward 4/4; min R2 0.91,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate North, temperature-only (km/decade)",75.09277187498931,4.0,39.67344372318559,113.07515256361349,,mean and ESM range; ESMs poleward 4/4; min R2 0.88,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate South, temperature-only (km/decade)",46.86906358525189,4.0,29.072322138004868,60.85367865861159,,mean and ESM range; ESMs poleward 4/4; min R2 0.92,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate North, supplied ensemble, AOA cells only (km/decade)",57.78076019795735,4.0,50.55775612386067,73.70131614176431,,ESMs poleward 4/4; min R2 0.94; DI threshold 0.527,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+CMIP6-gridded,"front rate South, supplied ensemble, AOA cells only (km/decade)",36.64035490926106,4.0,19.18041837565104,51.207146982828775,,ESMs poleward 4/4; min R2 0.90; DI threshold 0.527,cmip6_gridded_analyses.py / cmip6_aoa_fronts.py
+GENOME-,binary traits tested,25.0,,,,,,genome_and_validation_tables.py
+GENOME-,"max BH-adjusted P among five displayed traits, BH over all tested traits",1.1718023485065382e-06,,,,,,genome_and_validation_tables.py
+GENOME-,Imitervirales families with n>=5,4.0,,,,,,genome_and_validation_tables.py
+GENOME-,Imitervirales families (n>=5) with HSP prevalence > max Algavirales family prevalence,4.0,,,,,,genome_and_validation_tables.py

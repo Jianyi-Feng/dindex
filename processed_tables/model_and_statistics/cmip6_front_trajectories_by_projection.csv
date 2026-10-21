@@ -1,0 +1,401 @@
+﻿ESM,decade,year,hemisphere,front,projection
+CESM2-WACCM,2000-2009,2004.5,North,38.333412170410156,final ensemble (7 predictors)
+CESM2-WACCM,2000-2009,2004.5,South,38.28445053100586,final ensemble (7 predictors)
+CESM2-WACCM,2010-2019,2014.5,North,38.62350845336914,final ensemble (7 predictors)
+CESM2-WACCM,2010-2019,2014.5,South,38.120601654052734,final ensemble (7 predictors)
+CESM2-WACCM,2020-2029,2024.5,North,38.94121551513672,final ensemble (7 predictors)
+CESM2-WACCM,2020-2029,2024.5,South,38.41255187988281,final ensemble (7 predictors)
+CESM2-WACCM,2030-2039,2034.5,North,39.56247329711914,final ensemble (7 predictors)
+CESM2-WACCM,2030-2039,2034.5,South,38.67557144165039,final ensemble (7 predictors)
+CESM2-WACCM,2040-2049,2044.5,North,39.80382537841797,final ensemble (7 predictors)
+CESM2-WACCM,2040-2049,2044.5,South,38.8354377746582,final ensemble (7 predictors)
+CESM2-WACCM,2050-2059,2054.5,North,39.93384552001953,final ensemble (7 predictors)
+CESM2-WACCM,2050-2059,2054.5,South,39.15431594848633,final ensemble (7 predictors)
+CESM2-WACCM,2060-2069,2064.5,North,40.753787994384766,final ensemble (7 predictors)
+CESM2-WACCM,2060-2069,2064.5,South,39.70066452026367,final ensemble (7 predictors)
+CESM2-WACCM,2070-2079,2074.5,North,41.259788513183594,final ensemble (7 predictors)
+CESM2-WACCM,2070-2079,2074.5,South,40.2017707824707,final ensemble (7 predictors)
+CESM2-WACCM,2080-2089,2084.5,North,41.76385498046875,final ensemble (7 predictors)
+CESM2-WACCM,2080-2089,2084.5,South,40.720130920410156,final ensemble (7 predictors)
+CESM2-WACCM,2090-2099,2094.5,North,42.70671081542969,final ensemble (7 predictors)
+CESM2-WACCM,2090-2099,2094.5,South,41.400691986083984,final ensemble (7 predictors)
+IPSL-CM6A-LR,2000-2009,2004.5,North,39.21554946899414,final ensemble (7 predictors)
+IPSL-CM6A-LR,2000-2009,2004.5,South,39.0434455871582,final ensemble (7 predictors)
+IPSL-CM6A-LR,2010-2019,2014.5,North,39.40879821777344,final ensemble (7 predictors)
+IPSL-CM6A-LR,2010-2019,2014.5,South,39.651206970214844,final ensemble (7 predictors)
+IPSL-CM6A-LR,2020-2029,2024.5,North,40.10264205932617,final ensemble (7 predictors)
+IPSL-CM6A-LR,2020-2029,2024.5,South,39.58515548706055,final ensemble (7 predictors)
+IPSL-CM6A-LR,2030-2039,2034.5,North,40.88120651245117,final ensemble (7 predictors)
+IPSL-CM6A-LR,2030-2039,2034.5,South,39.87171173095703,final ensemble (7 predictors)
+IPSL-CM6A-LR,2040-2049,2044.5,North,41.24104690551758,final ensemble (7 predictors)
+IPSL-CM6A-LR,2040-2049,2044.5,South,40.17939376831055,final ensemble (7 predictors)
+IPSL-CM6A-LR,2050-2059,2054.5,North,41.688541412353516,final ensemble (7 predictors)
+IPSL-CM6A-LR,2050-2059,2054.5,South,40.30637741088867,final ensemble (7 predictors)
+IPSL-CM6A-LR,2060-2069,2064.5,North,42.183570861816406,final ensemble (7 predictors)
+IPSL-CM6A-LR,2060-2069,2064.5,South,40.85635757446289,final ensemble (7 predictors)
+IPSL-CM6A-LR,2070-2079,2074.5,North,43.116180419921875,final ensemble (7 predictors)
+IPSL-CM6A-LR,2070-2079,2074.5,South,41.14439010620117,final ensemble (7 predictors)
+IPSL-CM6A-LR,2080-2089,2084.5,North,44.28312301635742,final ensemble (7 predictors)
+IPSL-CM6A-LR,2080-2089,2084.5,South,41.483333587646484,final ensemble (7 predictors)
+IPSL-CM6A-LR,2090-2099,2094.5,North,45.118995666503906,final ensemble (7 predictors)
+IPSL-CM6A-LR,2090-2099,2094.5,South,42.20418167114258,final ensemble (7 predictors)
+NorESM2-MM,2000-2009,2004.5,North,34.72368621826172,final ensemble (7 predictors)
+NorESM2-MM,2000-2009,2004.5,South,34.275146484375,final ensemble (7 predictors)
+NorESM2-MM,2010-2019,2014.5,North,34.66551208496094,final ensemble (7 predictors)
+NorESM2-MM,2010-2019,2014.5,South,34.163204193115234,final ensemble (7 predictors)
+NorESM2-MM,2020-2029,2024.5,North,35.381473541259766,final ensemble (7 predictors)
+NorESM2-MM,2020-2029,2024.5,South,34.066566467285156,final ensemble (7 predictors)
+NorESM2-MM,2030-2039,2034.5,North,36.08845520019531,final ensemble (7 predictors)
+NorESM2-MM,2030-2039,2034.5,South,34.27901840209961,final ensemble (7 predictors)
+NorESM2-MM,2040-2049,2044.5,North,36.05056381225586,final ensemble (7 predictors)
+NorESM2-MM,2040-2049,2044.5,South,34.48397445678711,final ensemble (7 predictors)
+NorESM2-MM,2050-2059,2054.5,North,37.04520797729492,final ensemble (7 predictors)
+NorESM2-MM,2050-2059,2054.5,South,34.77455520629883,final ensemble (7 predictors)
+NorESM2-MM,2060-2069,2064.5,North,37.0102424621582,final ensemble (7 predictors)
+NorESM2-MM,2060-2069,2064.5,South,34.782291412353516,final ensemble (7 predictors)
+NorESM2-MM,2070-2079,2074.5,North,37.96425247192383,final ensemble (7 predictors)
+NorESM2-MM,2070-2079,2074.5,South,35.141048431396484,final ensemble (7 predictors)
+NorESM2-MM,2080-2089,2084.5,North,37.99007797241211,final ensemble (7 predictors)
+NorESM2-MM,2080-2089,2084.5,South,35.38121795654297,final ensemble (7 predictors)
+NorESM2-MM,2090-2099,2094.5,North,38.72174072265625,final ensemble (7 predictors)
+NorESM2-MM,2090-2099,2094.5,South,35.74653244018555,final ensemble (7 predictors)
+UKESM1-0-LL,2000-2009,2004.5,North,40.624935150146484,final ensemble (7 predictors)
+UKESM1-0-LL,2000-2009,2004.5,South,36.36749267578125,final ensemble (7 predictors)
+UKESM1-0-LL,2010-2019,2014.5,North,41.92565155029297,final ensemble (7 predictors)
+UKESM1-0-LL,2010-2019,2014.5,South,36.75178909301758,final ensemble (7 predictors)
+UKESM1-0-LL,2020-2029,2024.5,North,42.99669647216797,final ensemble (7 predictors)
+UKESM1-0-LL,2020-2029,2024.5,South,36.886165618896484,final ensemble (7 predictors)
+UKESM1-0-LL,2030-2039,2034.5,North,43.68364334106445,final ensemble (7 predictors)
+UKESM1-0-LL,2030-2039,2034.5,South,37.35072326660156,final ensemble (7 predictors)
+UKESM1-0-LL,2040-2049,2044.5,North,44.18852233886719,final ensemble (7 predictors)
+UKESM1-0-LL,2040-2049,2044.5,South,37.732872009277344,final ensemble (7 predictors)
+UKESM1-0-LL,2050-2059,2054.5,North,44.92362594604492,final ensemble (7 predictors)
+UKESM1-0-LL,2050-2059,2054.5,South,38.154090881347656,final ensemble (7 predictors)
+UKESM1-0-LL,2060-2069,2064.5,North,45.395259857177734,final ensemble (7 predictors)
+UKESM1-0-LL,2060-2069,2064.5,South,38.73653793334961,final ensemble (7 predictors)
+UKESM1-0-LL,2070-2079,2074.5,North,45.7703971862793,final ensemble (7 predictors)
+UKESM1-0-LL,2070-2079,2074.5,South,39.28162384033203,final ensemble (7 predictors)
+UKESM1-0-LL,2080-2089,2084.5,North,47.41197204589844,final ensemble (7 predictors)
+UKESM1-0-LL,2080-2089,2084.5,South,39.874637603759766,final ensemble (7 predictors)
+UKESM1-0-LL,2090-2099,2094.5,North,48.35701370239258,final ensemble (7 predictors)
+UKESM1-0-LL,2090-2099,2094.5,South,40.31325149536133,final ensemble (7 predictors)
+CESM2-WACCM,2000-2009,2004.5,North,37.99429702758789,"final ensemble, AOA cells only"
+CESM2-WACCM,2000-2009,2004.5,South,38.28445053100586,"final ensemble, AOA cells only"
+CESM2-WACCM,2010-2019,2014.5,North,38.40288162231445,"final ensemble, AOA cells only"
+CESM2-WACCM,2010-2019,2014.5,South,38.120601654052734,"final ensemble, AOA cells only"
+CESM2-WACCM,2020-2029,2024.5,North,38.77703857421875,"final ensemble, AOA cells only"
+CESM2-WACCM,2020-2029,2024.5,South,38.41255187988281,"final ensemble, AOA cells only"
+CESM2-WACCM,2030-2039,2034.5,North,39.3647346496582,"final ensemble, AOA cells only"
+CESM2-WACCM,2030-2039,2034.5,South,38.67557144165039,"final ensemble, AOA cells only"
+CESM2-WACCM,2040-2049,2044.5,North,39.611610412597656,"final ensemble, AOA cells only"
+CESM2-WACCM,2040-2049,2044.5,South,38.8354377746582,"final ensemble, AOA cells only"
+CESM2-WACCM,2050-2059,2054.5,North,39.687313079833984,"final ensemble, AOA cells only"
+CESM2-WACCM,2050-2059,2054.5,South,39.15431594848633,"final ensemble, AOA cells only"
+CESM2-WACCM,2060-2069,2064.5,North,40.544212341308594,"final ensemble, AOA cells only"
+CESM2-WACCM,2060-2069,2064.5,South,39.70066452026367,"final ensemble, AOA cells only"
+CESM2-WACCM,2070-2079,2074.5,North,41.153079986572266,"final ensemble, AOA cells only"
+CESM2-WACCM,2070-2079,2074.5,South,40.2017707824707,"final ensemble, AOA cells only"
+CESM2-WACCM,2080-2089,2084.5,North,41.66129684448242,"final ensemble, AOA cells only"
+CESM2-WACCM,2080-2089,2084.5,South,40.720130920410156,"final ensemble, AOA cells only"
+CESM2-WACCM,2090-2099,2094.5,North,42.645198822021484,"final ensemble, AOA cells only"
+CESM2-WACCM,2090-2099,2094.5,South,41.400691986083984,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2000-2009,2004.5,North,39.81923294067383,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2000-2009,2004.5,South,39.0434455871582,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2010-2019,2014.5,North,39.99166488647461,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2010-2019,2014.5,South,39.651206970214844,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2020-2029,2024.5,North,40.53855895996094,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2020-2029,2024.5,South,39.58515548706055,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2030-2039,2034.5,North,41.404052734375,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2030-2039,2034.5,South,39.87171173095703,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2040-2049,2044.5,North,41.86285400390625,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2040-2049,2044.5,South,40.17939376831055,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2050-2059,2054.5,North,42.26774597167969,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2050-2059,2054.5,South,40.30637741088867,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2060-2069,2064.5,North,44.02326965332031,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2060-2069,2064.5,South,40.85635757446289,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2070-2079,2074.5,North,44.92677307128906,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2070-2079,2074.5,South,41.14439010620117,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2080-2089,2084.5,North,45.598506927490234,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2080-2089,2084.5,South,41.483333587646484,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2090-2099,2094.5,North,46.48527908325195,"final ensemble, AOA cells only"
+IPSL-CM6A-LR,2090-2099,2094.5,South,42.20418167114258,"final ensemble, AOA cells only"
+NorESM2-MM,2000-2009,2004.5,North,34.920589447021484,"final ensemble, AOA cells only"
+NorESM2-MM,2000-2009,2004.5,South,34.338645935058594,"final ensemble, AOA cells only"
+NorESM2-MM,2010-2019,2014.5,North,34.886234283447266,"final ensemble, AOA cells only"
+NorESM2-MM,2010-2019,2014.5,South,34.18230438232422,"final ensemble, AOA cells only"
+NorESM2-MM,2020-2029,2024.5,North,35.567806243896484,"final ensemble, AOA cells only"
+NorESM2-MM,2020-2029,2024.5,South,34.112056732177734,"final ensemble, AOA cells only"
+NorESM2-MM,2030-2039,2034.5,North,36.44950866699219,"final ensemble, AOA cells only"
+NorESM2-MM,2030-2039,2034.5,South,34.34197998046875,"final ensemble, AOA cells only"
+NorESM2-MM,2040-2049,2044.5,North,36.49652099609375,"final ensemble, AOA cells only"
+NorESM2-MM,2040-2049,2044.5,South,34.536155700683594,"final ensemble, AOA cells only"
+NorESM2-MM,2050-2059,2054.5,North,37.509498596191406,"final ensemble, AOA cells only"
+NorESM2-MM,2050-2059,2054.5,South,34.82223892211914,"final ensemble, AOA cells only"
+NorESM2-MM,2060-2069,2064.5,North,37.40357208251953,"final ensemble, AOA cells only"
+NorESM2-MM,2060-2069,2064.5,South,34.804561614990234,"final ensemble, AOA cells only"
+NorESM2-MM,2070-2079,2074.5,North,38.27580261230469,"final ensemble, AOA cells only"
+NorESM2-MM,2070-2079,2074.5,South,35.146080017089844,"final ensemble, AOA cells only"
+NorESM2-MM,2080-2089,2084.5,North,38.33115768432617,"final ensemble, AOA cells only"
+NorESM2-MM,2080-2089,2084.5,South,35.38808822631836,"final ensemble, AOA cells only"
+NorESM2-MM,2090-2099,2094.5,North,39.14734649658203,"final ensemble, AOA cells only"
+NorESM2-MM,2090-2099,2094.5,South,35.759151458740234,"final ensemble, AOA cells only"
+UKESM1-0-LL,2000-2009,2004.5,North,40.20454406738281,"final ensemble, AOA cells only"
+UKESM1-0-LL,2000-2009,2004.5,South,36.36749267578125,"final ensemble, AOA cells only"
+UKESM1-0-LL,2010-2019,2014.5,North,40.622493743896484,"final ensemble, AOA cells only"
+UKESM1-0-LL,2010-2019,2014.5,South,36.75178909301758,"final ensemble, AOA cells only"
+UKESM1-0-LL,2020-2029,2024.5,North,41.62285614013672,"final ensemble, AOA cells only"
+UKESM1-0-LL,2020-2029,2024.5,South,36.886165618896484,"final ensemble, AOA cells only"
+UKESM1-0-LL,2030-2039,2034.5,North,42.000728607177734,"final ensemble, AOA cells only"
+UKESM1-0-LL,2030-2039,2034.5,South,37.35072326660156,"final ensemble, AOA cells only"
+UKESM1-0-LL,2040-2049,2044.5,North,42.0450325012207,"final ensemble, AOA cells only"
+UKESM1-0-LL,2040-2049,2044.5,South,37.732872009277344,"final ensemble, AOA cells only"
+UKESM1-0-LL,2050-2059,2054.5,North,43.707523345947266,"final ensemble, AOA cells only"
+UKESM1-0-LL,2050-2059,2054.5,South,38.154090881347656,"final ensemble, AOA cells only"
+UKESM1-0-LL,2060-2069,2064.5,North,43.845909118652344,"final ensemble, AOA cells only"
+UKESM1-0-LL,2060-2069,2064.5,South,38.73653793334961,"final ensemble, AOA cells only"
+UKESM1-0-LL,2070-2079,2074.5,North,44.807987213134766,"final ensemble, AOA cells only"
+UKESM1-0-LL,2070-2079,2074.5,South,39.28162384033203,"final ensemble, AOA cells only"
+UKESM1-0-LL,2080-2089,2084.5,North,44.92661666870117,"final ensemble, AOA cells only"
+UKESM1-0-LL,2080-2089,2084.5,South,39.874637603759766,"final ensemble, AOA cells only"
+UKESM1-0-LL,2090-2099,2094.5,North,46.11146545410156,"final ensemble, AOA cells only"
+UKESM1-0-LL,2090-2099,2094.5,South,40.31325149536133,"final ensemble, AOA cells only"
+CESM2-WACCM,2000-2009,2004.5,North,44.507611419650345,temperature-only
+CESM2-WACCM,2000-2009,2004.5,South,41.374355052226505,temperature-only
+CESM2-WACCM,2010-2019,2014.5,North,44.71333818133488,temperature-only
+CESM2-WACCM,2010-2019,2014.5,South,41.49090088576035,temperature-only
+CESM2-WACCM,2020-2029,2024.5,North,45.00503229731166,temperature-only
+CESM2-WACCM,2020-2029,2024.5,South,41.88171277312185,temperature-only
+CESM2-WACCM,2030-2039,2034.5,North,45.36085912034906,temperature-only
+CESM2-WACCM,2030-2039,2034.5,South,42.207815843333016,temperature-only
+CESM2-WACCM,2040-2049,2044.5,North,45.468366927661016,temperature-only
+CESM2-WACCM,2040-2049,2044.5,South,42.50338066958542,temperature-only
+CESM2-WACCM,2050-2059,2054.5,North,45.44236868606383,temperature-only
+CESM2-WACCM,2050-2059,2054.5,South,42.97244981414115,temperature-only
+CESM2-WACCM,2060-2069,2064.5,North,46.07078579043719,temperature-only
+CESM2-WACCM,2060-2069,2064.5,South,43.58654447423028,temperature-only
+CESM2-WACCM,2070-2079,2074.5,North,46.707136745908976,temperature-only
+CESM2-WACCM,2070-2079,2074.5,South,44.30150414458535,temperature-only
+CESM2-WACCM,2080-2089,2084.5,North,47.18727895308106,temperature-only
+CESM2-WACCM,2080-2089,2084.5,South,45.04920267994042,temperature-only
+CESM2-WACCM,2090-2099,2094.5,North,48.59342018697101,temperature-only
+CESM2-WACCM,2090-2099,2094.5,South,45.832350191325325,temperature-only
+IPSL-CM6A-LR,2000-2009,2004.5,North,42.72445947493148,temperature-only
+IPSL-CM6A-LR,2000-2009,2004.5,South,41.12684209140488,temperature-only
+IPSL-CM6A-LR,2010-2019,2014.5,North,42.93408531437923,temperature-only
+IPSL-CM6A-LR,2010-2019,2014.5,South,41.42151308260416,temperature-only
+IPSL-CM6A-LR,2020-2029,2024.5,North,43.20298672104035,temperature-only
+IPSL-CM6A-LR,2020-2029,2024.5,South,41.534526222512525,temperature-only
+IPSL-CM6A-LR,2030-2039,2034.5,North,44.08942656182976,temperature-only
+IPSL-CM6A-LR,2030-2039,2034.5,South,41.80940663669425,temperature-only
+IPSL-CM6A-LR,2040-2049,2044.5,North,44.846073932645545,temperature-only
+IPSL-CM6A-LR,2040-2049,2044.5,South,42.028971223221845,temperature-only
+IPSL-CM6A-LR,2050-2059,2054.5,North,45.54245217134637,temperature-only
+IPSL-CM6A-LR,2050-2059,2054.5,South,42.23370451492118,temperature-only
+IPSL-CM6A-LR,2060-2069,2064.5,North,46.14756471832352,temperature-only
+IPSL-CM6A-LR,2060-2069,2064.5,South,42.68892076033249,temperature-only
+IPSL-CM6A-LR,2070-2079,2074.5,North,47.28790424607291,temperature-only
+IPSL-CM6A-LR,2070-2079,2074.5,South,43.4079975073413,temperature-only
+IPSL-CM6A-LR,2080-2089,2084.5,North,48.7375813519854,temperature-only
+IPSL-CM6A-LR,2080-2089,2084.5,South,43.95132109906622,temperature-only
+IPSL-CM6A-LR,2090-2099,2094.5,North,52.30046163263789,temperature-only
+IPSL-CM6A-LR,2090-2099,2094.5,South,44.78647851893967,temperature-only
+NorESM2-MM,2000-2009,2004.5,North,43.19341112873151,temperature-only
+NorESM2-MM,2000-2009,2004.5,South,42.19676658545099,temperature-only
+NorESM2-MM,2010-2019,2014.5,North,43.376605538599385,temperature-only
+NorESM2-MM,2010-2019,2014.5,South,42.17378931700508,temperature-only
+NorESM2-MM,2020-2029,2024.5,North,43.8181645482725,temperature-only
+NorESM2-MM,2020-2029,2024.5,South,42.265996097218704,temperature-only
+NorESM2-MM,2030-2039,2034.5,North,44.552696700767584,temperature-only
+NorESM2-MM,2030-2039,2034.5,South,42.47031777099488,temperature-only
+NorESM2-MM,2040-2049,2044.5,North,44.28149783719846,temperature-only
+NorESM2-MM,2040-2049,2044.5,South,42.783339322364384,temperature-only
+NorESM2-MM,2050-2059,2054.5,North,45.07513606095513,temperature-only
+NorESM2-MM,2050-2059,2054.5,South,43.06572071811444,temperature-only
+NorESM2-MM,2060-2069,2064.5,North,45.06378803128924,temperature-only
+NorESM2-MM,2060-2069,2064.5,South,43.25554275508726,temperature-only
+NorESM2-MM,2070-2079,2074.5,North,45.57695895871953,temperature-only
+NorESM2-MM,2070-2079,2074.5,South,43.59705806385162,temperature-only
+NorESM2-MM,2080-2089,2084.5,North,45.86432348921724,temperature-only
+NorESM2-MM,2080-2089,2084.5,South,44.07301811185478,temperature-only
+NorESM2-MM,2090-2099,2094.5,North,46.55670018712348,temperature-only
+NorESM2-MM,2090-2099,2094.5,South,44.47492423245647,temperature-only
+UKESM1-0-LL,2000-2009,2004.5,North,42.764202424086456,temperature-only
+UKESM1-0-LL,2000-2009,2004.5,South,41.307017172155525,temperature-only
+UKESM1-0-LL,2010-2019,2014.5,North,42.997418779779615,temperature-only
+UKESM1-0-LL,2010-2019,2014.5,South,41.65465799998928,temperature-only
+UKESM1-0-LL,2020-2029,2024.5,North,43.682280881216194,temperature-only
+UKESM1-0-LL,2020-2029,2024.5,South,41.843507916127855,temperature-only
+UKESM1-0-LL,2030-2039,2034.5,North,44.30508362580903,temperature-only
+UKESM1-0-LL,2030-2039,2034.5,South,42.40381893678938,temperature-only
+UKESM1-0-LL,2040-2049,2044.5,North,44.92428156432048,temperature-only
+UKESM1-0-LL,2040-2049,2044.5,South,42.81843219625063,temperature-only
+UKESM1-0-LL,2050-2059,2054.5,North,45.92968891251468,temperature-only
+UKESM1-0-LL,2050-2059,2054.5,South,43.26187313455729,temperature-only
+UKESM1-0-LL,2060-2069,2064.5,North,47.20284320687629,temperature-only
+UKESM1-0-LL,2060-2069,2064.5,South,43.90309156444207,temperature-only
+UKESM1-0-LL,2070-2079,2074.5,North,47.90254252650454,temperature-only
+UKESM1-0-LL,2070-2079,2074.5,South,44.60311593492983,temperature-only
+UKESM1-0-LL,2080-2089,2084.5,North,50.115577280964175,temperature-only
+UKESM1-0-LL,2080-2089,2084.5,South,45.400755566737686,temperature-only
+UKESM1-0-LL,2090-2099,2094.5,North,52.428025411940766,temperature-only
+UKESM1-0-LL,2090-2099,2094.5,South,46.33325699679472,temperature-only
+CESM2-WACCM,2000-2009,2004.5,North,40.44691422615197,"random forest, 7 predictors"
+CESM2-WACCM,2000-2009,2004.5,South,38.17635743570239,"random forest, 7 predictors"
+CESM2-WACCM,2010-2019,2014.5,North,40.69615291142816,"random forest, 7 predictors"
+CESM2-WACCM,2010-2019,2014.5,South,38.13013912771562,"random forest, 7 predictors"
+CESM2-WACCM,2020-2029,2024.5,North,40.919771440991774,"random forest, 7 predictors"
+CESM2-WACCM,2020-2029,2024.5,South,38.61539720392031,"random forest, 7 predictors"
+CESM2-WACCM,2030-2039,2034.5,North,41.86870250597043,"random forest, 7 predictors"
+CESM2-WACCM,2030-2039,2034.5,South,39.15931855882146,"random forest, 7 predictors"
+CESM2-WACCM,2040-2049,2044.5,North,42.00185364551987,"random forest, 7 predictors"
+CESM2-WACCM,2040-2049,2044.5,South,39.50769201336551,"random forest, 7 predictors"
+CESM2-WACCM,2050-2059,2054.5,North,42.16452058620912,"random forest, 7 predictors"
+CESM2-WACCM,2050-2059,2054.5,South,39.7705888710017,"random forest, 7 predictors"
+CESM2-WACCM,2060-2069,2064.5,North,42.78680535093952,"random forest, 7 predictors"
+CESM2-WACCM,2060-2069,2064.5,South,40.05311645615878,"random forest, 7 predictors"
+CESM2-WACCM,2070-2079,2074.5,North,42.83957909461128,"random forest, 7 predictors"
+CESM2-WACCM,2070-2079,2074.5,South,40.59680677714917,"random forest, 7 predictors"
+CESM2-WACCM,2080-2089,2084.5,North,43.23075276131355,"random forest, 7 predictors"
+CESM2-WACCM,2080-2089,2084.5,South,41.52578243672159,"random forest, 7 predictors"
+CESM2-WACCM,2090-2099,2094.5,North,44.189311529264266,"random forest, 7 predictors"
+CESM2-WACCM,2090-2099,2094.5,South,42.13624836210724,"random forest, 7 predictors"
+IPSL-CM6A-LR,2000-2009,2004.5,North,39.272567954315,"random forest, 7 predictors"
+IPSL-CM6A-LR,2000-2009,2004.5,South,37.132264404063285,"random forest, 7 predictors"
+IPSL-CM6A-LR,2010-2019,2014.5,North,39.90922162839831,"random forest, 7 predictors"
+IPSL-CM6A-LR,2010-2019,2014.5,South,37.42734021662704,"random forest, 7 predictors"
+IPSL-CM6A-LR,2020-2029,2024.5,North,40.60229429641592,"random forest, 7 predictors"
+IPSL-CM6A-LR,2020-2029,2024.5,South,37.75615053404248,"random forest, 7 predictors"
+IPSL-CM6A-LR,2030-2039,2034.5,North,41.2875617607395,"random forest, 7 predictors"
+IPSL-CM6A-LR,2030-2039,2034.5,South,38.17465354569763,"random forest, 7 predictors"
+IPSL-CM6A-LR,2040-2049,2044.5,North,41.51017039552763,"random forest, 7 predictors"
+IPSL-CM6A-LR,2040-2049,2044.5,South,38.54657534015936,"random forest, 7 predictors"
+IPSL-CM6A-LR,2050-2059,2054.5,North,42.19184639107918,"random forest, 7 predictors"
+IPSL-CM6A-LR,2050-2059,2054.5,South,38.8529711070559,"random forest, 7 predictors"
+IPSL-CM6A-LR,2060-2069,2064.5,North,42.67289549170939,"random forest, 7 predictors"
+IPSL-CM6A-LR,2060-2069,2064.5,South,39.44310647280333,"random forest, 7 predictors"
+IPSL-CM6A-LR,2070-2079,2074.5,North,43.727474938338325,"random forest, 7 predictors"
+IPSL-CM6A-LR,2070-2079,2074.5,South,40.11445299945206,"random forest, 7 predictors"
+IPSL-CM6A-LR,2080-2089,2084.5,North,45.00949629322003,"random forest, 7 predictors"
+IPSL-CM6A-LR,2080-2089,2084.5,South,40.73734175537257,"random forest, 7 predictors"
+IPSL-CM6A-LR,2090-2099,2094.5,North,45.83622018488065,"random forest, 7 predictors"
+IPSL-CM6A-LR,2090-2099,2094.5,South,41.63262757843941,"random forest, 7 predictors"
+NorESM2-MM,2000-2009,2004.5,North,38.48083811418197,"random forest, 7 predictors"
+NorESM2-MM,2000-2009,2004.5,South,37.702831497823496,"random forest, 7 predictors"
+NorESM2-MM,2010-2019,2014.5,North,38.572171506218034,"random forest, 7 predictors"
+NorESM2-MM,2010-2019,2014.5,South,37.7299500025028,"random forest, 7 predictors"
+NorESM2-MM,2020-2029,2024.5,North,39.25757660414445,"random forest, 7 predictors"
+NorESM2-MM,2020-2029,2024.5,South,37.703389858813466,"random forest, 7 predictors"
+NorESM2-MM,2030-2039,2034.5,North,39.94520923491791,"random forest, 7 predictors"
+NorESM2-MM,2030-2039,2034.5,South,38.03938232190733,"random forest, 7 predictors"
+NorESM2-MM,2040-2049,2044.5,North,39.68270041316766,"random forest, 7 predictors"
+NorESM2-MM,2040-2049,2044.5,South,38.77951017495494,"random forest, 7 predictors"
+NorESM2-MM,2050-2059,2054.5,North,41.08593108330111,"random forest, 7 predictors"
+NorESM2-MM,2050-2059,2054.5,South,39.06606204412869,"random forest, 7 predictors"
+NorESM2-MM,2060-2069,2064.5,North,41.02194058012355,"random forest, 7 predictors"
+NorESM2-MM,2060-2069,2064.5,South,39.205928993073,"random forest, 7 predictors"
+NorESM2-MM,2070-2079,2074.5,North,41.944777667360576,"random forest, 7 predictors"
+NorESM2-MM,2070-2079,2074.5,South,39.4843272705635,"random forest, 7 predictors"
+NorESM2-MM,2080-2089,2084.5,North,42.1986826442815,"random forest, 7 predictors"
+NorESM2-MM,2080-2089,2084.5,South,39.898411298151736,"random forest, 7 predictors"
+NorESM2-MM,2090-2099,2094.5,North,43.52081108608857,"random forest, 7 predictors"
+NorESM2-MM,2090-2099,2094.5,South,40.08606805026472,"random forest, 7 predictors"
+UKESM1-0-LL,2000-2009,2004.5,North,39.960448285604535,"random forest, 7 predictors"
+UKESM1-0-LL,2000-2009,2004.5,South,36.26132135906167,"random forest, 7 predictors"
+UKESM1-0-LL,2010-2019,2014.5,North,40.40225606178257,"random forest, 7 predictors"
+UKESM1-0-LL,2010-2019,2014.5,South,36.70573467207186,"random forest, 7 predictors"
+UKESM1-0-LL,2020-2029,2024.5,North,41.33645950058885,"random forest, 7 predictors"
+UKESM1-0-LL,2020-2029,2024.5,South,36.9040935868988,"random forest, 7 predictors"
+UKESM1-0-LL,2030-2039,2034.5,North,41.77491597332797,"random forest, 7 predictors"
+UKESM1-0-LL,2030-2039,2034.5,South,37.62406540738841,"random forest, 7 predictors"
+UKESM1-0-LL,2040-2049,2044.5,North,42.5449461466121,"random forest, 7 predictors"
+UKESM1-0-LL,2040-2049,2044.5,South,38.06026023599058,"random forest, 7 predictors"
+UKESM1-0-LL,2050-2059,2054.5,North,43.73102980044525,"random forest, 7 predictors"
+UKESM1-0-LL,2050-2059,2054.5,South,38.90597495964414,"random forest, 7 predictors"
+UKESM1-0-LL,2060-2069,2064.5,North,44.59596172106061,"random forest, 7 predictors"
+UKESM1-0-LL,2060-2069,2064.5,South,39.75065868230797,"random forest, 7 predictors"
+UKESM1-0-LL,2070-2079,2074.5,North,45.09620625920188,"random forest, 7 predictors"
+UKESM1-0-LL,2070-2079,2074.5,South,40.39326136592735,"random forest, 7 predictors"
+UKESM1-0-LL,2080-2089,2084.5,North,46.587313164870686,"random forest, 7 predictors"
+UKESM1-0-LL,2080-2089,2084.5,South,41.26206063808314,"random forest, 7 predictors"
+UKESM1-0-LL,2090-2099,2094.5,North,47.34868680504868,"random forest, 7 predictors"
+UKESM1-0-LL,2090-2099,2094.5,South,41.73149780687319,"random forest, 7 predictors"
+CESM2-WACCM,2000-2009,2004.5,North,38.2447509765625,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2000-2009,2004.5,South,37.999473571777344,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2010-2019,2014.5,North,38.56345748901367,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2010-2019,2014.5,South,37.9088249206543,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2020-2029,2024.5,North,38.83852767944336,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2020-2029,2024.5,South,38.17872619628906,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2030-2039,2034.5,North,39.41691207885742,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2030-2039,2034.5,South,38.452266693115234,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2040-2049,2044.5,North,39.61902618408203,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2040-2049,2044.5,South,38.62297439575195,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2050-2059,2054.5,North,39.73015975952149,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2050-2059,2054.5,South,38.88447952270508,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2060-2069,2064.5,North,40.65637969970703,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2060-2069,2064.5,South,39.34370803833008,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2070-2079,2074.5,North,41.10147857666016,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2070-2079,2074.5,South,39.80166244506836,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2080-2089,2084.5,North,41.45006942749024,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2080-2089,2084.5,South,40.34000396728516,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2090-2099,2094.5,North,42.29264450073242,archived ensemble (8 predictors incl. mislabelled CO3)
+CESM2-WACCM,2090-2099,2094.5,South,40.95803451538086,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2000-2009,2004.5,North,39.08414840698242,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2000-2009,2004.5,South,38.13574600219727,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2010-2019,2014.5,North,39.25691986083984,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2010-2019,2014.5,South,38.47563171386719,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2020-2029,2024.5,North,39.88679504394531,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2020-2029,2024.5,South,38.46477890014648,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2030-2039,2034.5,North,40.60813522338867,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2030-2039,2034.5,South,38.86941909790039,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2040-2049,2044.5,North,40.6751823425293,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2040-2049,2044.5,South,39.36388397216797,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2050-2059,2054.5,North,41.27997589111328,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2050-2059,2054.5,South,39.549835205078125,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2060-2069,2064.5,North,41.728511810302734,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2060-2069,2064.5,South,40.057884216308594,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2070-2079,2074.5,North,42.29758071899414,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2070-2079,2074.5,South,40.42334747314453,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2080-2089,2084.5,North,43.23825073242188,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2080-2089,2084.5,South,40.78501892089844,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2090-2099,2094.5,North,44.54710388183594,archived ensemble (8 predictors incl. mislabelled CO3)
+IPSL-CM6A-LR,2090-2099,2094.5,South,41.27666473388672,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2000-2009,2004.5,North,34.20966339111328,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2000-2009,2004.5,South,33.994388580322266,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2010-2019,2014.5,North,34.24922561645508,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2010-2019,2014.5,South,33.912410736083984,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2020-2029,2024.5,North,35.09234619140625,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2020-2029,2024.5,South,33.817413330078125,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2030-2039,2034.5,North,35.59684371948242,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2030-2039,2034.5,South,34.06040573120117,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2040-2049,2044.5,North,35.48843002319336,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2040-2049,2044.5,South,34.26461410522461,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2050-2059,2054.5,North,36.77969741821289,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2050-2059,2054.5,South,34.56230163574219,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2060-2069,2064.5,North,36.73193359375,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2060-2069,2064.5,South,34.53799819946289,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2070-2079,2074.5,North,37.72646331787109,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2070-2079,2074.5,South,34.90864562988281,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2080-2089,2084.5,North,37.748722076416016,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2080-2089,2084.5,South,35.18409729003906,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2090-2099,2094.5,North,38.51720428466797,archived ensemble (8 predictors incl. mislabelled CO3)
+NorESM2-MM,2090-2099,2094.5,South,35.409420013427734,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2000-2009,2004.5,North,40.21614837646485,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2000-2009,2004.5,South,35.68113327026367,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2010-2019,2014.5,North,40.58461380004883,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2010-2019,2014.5,South,36.17183303833008,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2020-2029,2024.5,North,42.01690673828125,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2020-2029,2024.5,South,36.40205383300781,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2030-2039,2034.5,North,42.9273796081543,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2030-2039,2034.5,South,36.88132095336914,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2040-2049,2044.5,North,43.39634323120117,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2040-2049,2044.5,South,37.24840927124024,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2050-2059,2054.5,North,44.35220718383789,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2050-2059,2054.5,South,37.7420768737793,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2060-2069,2064.5,North,44.85503005981445,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2060-2069,2064.5,South,38.2177963256836,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2070-2079,2074.5,North,45.105865478515625,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2070-2079,2074.5,South,38.7055549621582,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2080-2089,2084.5,North,46.22606658935547,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2080-2089,2084.5,South,39.41825485229492,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2090-2099,2094.5,North,47.29609680175781,archived ensemble (8 predictors incl. mislabelled CO3)
+UKESM1-0-LL,2090-2099,2094.5,South,39.85385894775391,archived ensemble (8 predictors incl. mislabelled CO3)

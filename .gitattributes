@@ -1,0 +1,6 @@
+* -text
+# Keep every file byte-identical: the sha256 values in MANIFEST_github.csv must match
+# what is in the repository, so no line-ending conversion is allowed.
+*.csv -text
+*.md -text
+*.py -text

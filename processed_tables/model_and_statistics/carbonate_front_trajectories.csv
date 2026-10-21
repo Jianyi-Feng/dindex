@@ -1,0 +1,321 @@
+variant,ESM,decade,year,hemisphere,front
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2000-2009,2004.5,North,37.91238021850586
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2000-2009,2004.5,South,37.789329528808594
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2000-2009,2004.5,North,37.26603133154161
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2000-2009,2004.5,South,37.37821867753952
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2000-2009,2004.5,North,38.002473273283805
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2000-2009,2004.5,South,38.22394760343189
+carbonate refit without CO3,CESM2-WACCM,2000-2009,2004.5,North,37.99890263623365
+carbonate refit without CO3,CESM2-WACCM,2000-2009,2004.5,South,38.066408496179214
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2010-2019,2014.5,North,38.233009338378906
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2010-2019,2014.5,South,37.681400299072266
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2010-2019,2014.5,North,37.5445565058274
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2010-2019,2014.5,South,37.26210680677561
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2010-2019,2014.5,North,38.31994338774643
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2010-2019,2014.5,South,37.991029992073194
+carbonate refit without CO3,CESM2-WACCM,2010-2019,2014.5,North,38.339924839296415
+carbonate refit without CO3,CESM2-WACCM,2010-2019,2014.5,South,37.87071581212348
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2020-2029,2024.5,North,38.60204315185547
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2020-2029,2024.5,South,37.97388458251953
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2020-2029,2024.5,North,37.94299254488256
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2020-2029,2024.5,South,37.52725734667213
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2020-2029,2024.5,North,38.76743822332721
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2020-2029,2024.5,South,38.2574181749964
+carbonate refit without CO3,CESM2-WACCM,2020-2029,2024.5,North,38.7963304329181
+carbonate refit without CO3,CESM2-WACCM,2020-2029,2024.5,South,38.173989738610345
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2030-2039,2034.5,North,39.22240447998047
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2030-2039,2034.5,South,38.258548736572266
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2030-2039,2034.5,North,38.523762972401805
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2030-2039,2034.5,South,37.84554877675158
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2030-2039,2034.5,North,39.336958073481405
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2030-2039,2034.5,South,38.56924764772165
+carbonate refit without CO3,CESM2-WACCM,2030-2039,2034.5,North,39.368690714079975
+carbonate refit without CO3,CESM2-WACCM,2030-2039,2034.5,South,38.52402952307073
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2040-2049,2044.5,North,39.43540573120117
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2040-2049,2044.5,South,38.46403503417969
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2040-2049,2044.5,North,38.79160275745686
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2040-2049,2044.5,South,38.10239990125194
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2040-2049,2044.5,North,39.55379973464653
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2040-2049,2044.5,South,38.83893880856894
+carbonate refit without CO3,CESM2-WACCM,2040-2049,2044.5,North,39.61055685087387
+carbonate refit without CO3,CESM2-WACCM,2040-2049,2044.5,South,38.80665477167996
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2050-2059,2054.5,North,39.5285758972168
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2050-2059,2054.5,South,38.8459358215332
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2050-2059,2054.5,North,38.93080010478656
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2050-2059,2054.5,South,38.50526833792842
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2050-2059,2054.5,North,39.662342613408775
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2050-2059,2054.5,South,39.15150480084454
+carbonate refit without CO3,CESM2-WACCM,2050-2059,2054.5,North,39.73599815266406
+carbonate refit without CO3,CESM2-WACCM,2050-2059,2054.5,South,39.14293496811613
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2060-2069,2064.5,North,40.3925895690918
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2060-2069,2064.5,South,39.33283615112305
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2060-2069,2064.5,North,39.812781604788036
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2060-2069,2064.5,South,39.04850132355194
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2060-2069,2064.5,North,40.571568349342634
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2060-2069,2064.5,South,39.6392875403607
+carbonate refit without CO3,CESM2-WACCM,2060-2069,2064.5,North,40.67915650045506
+carbonate refit without CO3,CESM2-WACCM,2060-2069,2064.5,South,39.614351526947566
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2070-2079,2074.5,North,40.93659591674805
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2070-2079,2074.5,South,39.78951644897461
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2070-2079,2074.5,North,40.3926083226585
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2070-2079,2074.5,South,39.57190480300338
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2070-2079,2074.5,North,41.06500651755049
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2070-2079,2074.5,South,40.09978983620473
+carbonate refit without CO3,CESM2-WACCM,2070-2079,2074.5,North,41.17717678614695
+carbonate refit without CO3,CESM2-WACCM,2070-2079,2074.5,South,40.101674346611965
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2080-2089,2084.5,North,41.36506271362305
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2080-2089,2084.5,South,40.255184173583984
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2080-2089,2084.5,North,40.94839010290767
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2080-2089,2084.5,South,40.09497616249707
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2080-2089,2084.5,North,41.526275274301014
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2080-2089,2084.5,South,40.606721060700615
+carbonate refit without CO3,CESM2-WACCM,2080-2089,2084.5,North,41.639169788210914
+carbonate refit without CO3,CESM2-WACCM,2080-2089,2084.5,South,40.65966497992827
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2090-2099,2094.5,North,41.88255310058594
+"supplied ensemble, 2-degree cells",CESM2-WACCM,2090-2099,2094.5,South,40.93686294555664
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2090-2099,2094.5,North,41.48901707288774
+"carbonate refit, CO3 as supplied",CESM2-WACCM,2090-2099,2094.5,South,40.76247030808808
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2090-2099,2094.5,North,42.168744450761395
+"carbonate refit, CO3 set to Tara median",CESM2-WACCM,2090-2099,2094.5,South,41.29951910493411
+carbonate refit without CO3,CESM2-WACCM,2090-2099,2094.5,North,42.26354125877789
+carbonate refit without CO3,CESM2-WACCM,2090-2099,2094.5,South,41.34565199378229
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2000-2009,2004.5,North,38.928043365478516
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2000-2009,2004.5,South,38.088653564453125
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2000-2009,2004.5,North,37.675232185820526
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2000-2009,2004.5,South,37.245668938668075
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2000-2009,2004.5,North,38.55068662415399
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2000-2009,2004.5,South,38.63712703260912
+carbonate refit without CO3,IPSL-CM6A-LR,2000-2009,2004.5,North,38.983177053925615
+carbonate refit without CO3,IPSL-CM6A-LR,2000-2009,2004.5,South,38.95525489458639
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2010-2019,2014.5,North,39.0837516784668
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2010-2019,2014.5,South,38.51292419433594
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2010-2019,2014.5,North,37.92751312958516
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2010-2019,2014.5,South,37.64516407594462
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2010-2019,2014.5,North,38.80578940809011
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2010-2019,2014.5,South,39.13565868987478
+carbonate refit without CO3,IPSL-CM6A-LR,2010-2019,2014.5,North,39.23064387393702
+carbonate refit without CO3,IPSL-CM6A-LR,2010-2019,2014.5,South,39.46328796026828
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2020-2029,2024.5,North,39.6667594909668
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2020-2029,2024.5,South,38.505191802978516
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2020-2029,2024.5,North,38.64487481495763
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2020-2029,2024.5,South,37.72243813083905
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2020-2029,2024.5,North,39.426698487885524
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2020-2029,2024.5,South,39.016060022394036
+carbonate refit without CO3,IPSL-CM6A-LR,2020-2029,2024.5,North,39.84844011519778
+carbonate refit without CO3,IPSL-CM6A-LR,2020-2029,2024.5,South,39.35126302573123
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2030-2039,2034.5,North,40.22600555419922
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2030-2039,2034.5,South,38.8274040222168
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2030-2039,2034.5,North,39.21968001370163
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2030-2039,2034.5,South,38.07602791061448
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2030-2039,2034.5,North,40.02380669231965
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2030-2039,2034.5,South,39.42765455131683
+carbonate refit without CO3,IPSL-CM6A-LR,2030-2039,2034.5,North,40.47952587105978
+carbonate refit without CO3,IPSL-CM6A-LR,2030-2039,2034.5,South,39.74345121058702
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2040-2049,2044.5,North,40.34492492675781
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2040-2049,2044.5,South,39.24517822265625
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2040-2049,2044.5,North,39.41379393851724
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2040-2049,2044.5,South,38.48387748837049
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2040-2049,2044.5,North,40.25779480518892
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2040-2049,2044.5,South,39.80893351940592
+carbonate refit without CO3,IPSL-CM6A-LR,2040-2049,2044.5,North,40.762017435073545
+carbonate refit without CO3,IPSL-CM6A-LR,2040-2049,2044.5,South,40.139740635479264
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2050-2059,2054.5,North,40.877845764160156
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2050-2059,2054.5,South,39.44895935058594
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2050-2059,2054.5,North,40.15143127650349
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2050-2059,2054.5,South,38.72978517466339
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2050-2059,2054.5,North,40.771859633580455
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2050-2059,2054.5,South,39.97017081562682
+carbonate refit without CO3,IPSL-CM6A-LR,2050-2059,2054.5,North,41.30386414963344
+carbonate refit without CO3,IPSL-CM6A-LR,2050-2059,2054.5,South,40.27293627211023
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2060-2069,2064.5,North,41.375267028808594
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2060-2069,2064.5,South,40.0468635559082
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2060-2069,2064.5,North,40.56221842790692
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2060-2069,2064.5,South,39.44435554506765
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2060-2069,2064.5,North,41.28250619116369
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2060-2069,2064.5,South,40.65941286943313
+carbonate refit without CO3,IPSL-CM6A-LR,2060-2069,2064.5,North,41.94943947094614
+carbonate refit without CO3,IPSL-CM6A-LR,2060-2069,2064.5,South,40.94041964910731
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2070-2079,2074.5,North,42.19611740112305
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2070-2079,2074.5,South,40.47997283935547
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2070-2079,2074.5,North,41.423856348392356
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2070-2079,2074.5,South,39.96059432807528
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2070-2079,2074.5,North,42.149445709015644
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2070-2079,2074.5,South,40.96645658883881
+carbonate refit without CO3,IPSL-CM6A-LR,2070-2079,2074.5,North,42.80625353194055
+carbonate refit without CO3,IPSL-CM6A-LR,2070-2079,2074.5,South,41.20349930876141
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2080-2089,2084.5,North,42.98834228515625
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2080-2089,2084.5,South,40.927669525146484
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2080-2089,2084.5,North,42.36223063537595
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2080-2089,2084.5,South,40.477281516191916
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2080-2089,2084.5,North,43.01863955818399
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2080-2089,2084.5,South,41.394668650829615
+carbonate refit without CO3,IPSL-CM6A-LR,2080-2089,2084.5,North,43.73509572627627
+carbonate refit without CO3,IPSL-CM6A-LR,2080-2089,2084.5,South,41.6326313688558
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2090-2099,2094.5,North,44.09291458129883
+"supplied ensemble, 2-degree cells",IPSL-CM6A-LR,2090-2099,2094.5,South,41.456546783447266
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2090-2099,2094.5,North,43.5640664719946
+"carbonate refit, CO3 as supplied",IPSL-CM6A-LR,2090-2099,2094.5,South,41.207930729340376
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2090-2099,2094.5,North,44.16677123515738
+"carbonate refit, CO3 set to Tara median",IPSL-CM6A-LR,2090-2099,2094.5,South,41.9757930091452
+carbonate refit without CO3,IPSL-CM6A-LR,2090-2099,2094.5,North,44.839993069098185
+carbonate refit without CO3,IPSL-CM6A-LR,2090-2099,2094.5,South,42.16088531834227
+"supplied ensemble, 2-degree cells",NorESM2-MM,2000-2009,2004.5,North,34.21253204345703
+"supplied ensemble, 2-degree cells",NorESM2-MM,2000-2009,2004.5,South,33.923370361328125
+"carbonate refit, CO3 as supplied",NorESM2-MM,2000-2009,2004.5,North,32.83766872928817
+"carbonate refit, CO3 as supplied",NorESM2-MM,2000-2009,2004.5,South,33.07842902691126
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2000-2009,2004.5,North,34.48563667842748
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2000-2009,2004.5,South,34.254811576281895
+carbonate refit without CO3,NorESM2-MM,2000-2009,2004.5,North,34.885538634877705
+carbonate refit without CO3,NorESM2-MM,2000-2009,2004.5,South,34.28201105530366
+"supplied ensemble, 2-degree cells",NorESM2-MM,2010-2019,2014.5,North,34.300254821777344
+"supplied ensemble, 2-degree cells",NorESM2-MM,2010-2019,2014.5,South,33.841304779052734
+"carbonate refit, CO3 as supplied",NorESM2-MM,2010-2019,2014.5,North,32.996431535777695
+"carbonate refit, CO3 as supplied",NorESM2-MM,2010-2019,2014.5,South,33.05211043391462
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2010-2019,2014.5,North,34.52277213282901
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2010-2019,2014.5,South,34.11696956334284
+carbonate refit without CO3,NorESM2-MM,2010-2019,2014.5,North,34.80832044038461
+carbonate refit without CO3,NorESM2-MM,2010-2019,2014.5,South,34.165116071882636
+"supplied ensemble, 2-degree cells",NorESM2-MM,2020-2029,2024.5,North,35.31642532348633
+"supplied ensemble, 2-degree cells",NorESM2-MM,2020-2029,2024.5,South,33.70598220825195
+"carbonate refit, CO3 as supplied",NorESM2-MM,2020-2029,2024.5,North,33.899479483645806
+"carbonate refit, CO3 as supplied",NorESM2-MM,2020-2029,2024.5,South,32.91861229833283
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2020-2029,2024.5,North,35.38281733210546
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2020-2029,2024.5,South,33.9889577706919
+carbonate refit without CO3,NorESM2-MM,2020-2029,2024.5,North,35.70068641629599
+carbonate refit without CO3,NorESM2-MM,2020-2029,2024.5,South,34.070959130644866
+"supplied ensemble, 2-degree cells",NorESM2-MM,2030-2039,2034.5,North,35.936737060546875
+"supplied ensemble, 2-degree cells",NorESM2-MM,2030-2039,2034.5,South,34.019325256347656
+"carbonate refit, CO3 as supplied",NorESM2-MM,2030-2039,2034.5,North,34.390991099187985
+"carbonate refit, CO3 as supplied",NorESM2-MM,2030-2039,2034.5,South,33.2459982198246
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2030-2039,2034.5,North,36.01854902544655
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2030-2039,2034.5,South,34.257347243440826
+carbonate refit without CO3,NorESM2-MM,2030-2039,2034.5,North,36.32501947888158
+carbonate refit without CO3,NorESM2-MM,2030-2039,2034.5,South,34.301061512633275
+"supplied ensemble, 2-degree cells",NorESM2-MM,2040-2049,2044.5,North,35.881446838378906
+"supplied ensemble, 2-degree cells",NorESM2-MM,2040-2049,2044.5,South,34.252281188964844
+"carbonate refit, CO3 as supplied",NorESM2-MM,2040-2049,2044.5,North,34.56281614195888
+"carbonate refit, CO3 as supplied",NorESM2-MM,2040-2049,2044.5,South,33.52545264169518
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2040-2049,2044.5,North,36.05962249148017
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2040-2049,2044.5,South,34.52216897377855
+carbonate refit without CO3,NorESM2-MM,2040-2049,2044.5,North,36.335172617267965
+carbonate refit without CO3,NorESM2-MM,2040-2049,2044.5,South,34.53070881801141
+"supplied ensemble, 2-degree cells",NorESM2-MM,2050-2059,2054.5,North,36.905548095703125
+"supplied ensemble, 2-degree cells",NorESM2-MM,2050-2059,2054.5,South,34.60276412963867
+"carbonate refit, CO3 as supplied",NorESM2-MM,2050-2059,2054.5,North,35.09303301439536
+"carbonate refit, CO3 as supplied",NorESM2-MM,2050-2059,2054.5,South,33.86926790520132
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2050-2059,2054.5,North,36.86777395155224
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2050-2059,2054.5,South,34.85194867887645
+carbonate refit without CO3,NorESM2-MM,2050-2059,2054.5,North,37.07147265290416
+carbonate refit without CO3,NorESM2-MM,2050-2059,2054.5,South,34.82793982488778
+"supplied ensemble, 2-degree cells",NorESM2-MM,2060-2069,2064.5,North,36.93907165527344
+"supplied ensemble, 2-degree cells",NorESM2-MM,2060-2069,2064.5,South,34.598209381103516
+"carbonate refit, CO3 as supplied",NorESM2-MM,2060-2069,2064.5,North,35.5529845214846
+"carbonate refit, CO3 as supplied",NorESM2-MM,2060-2069,2064.5,South,33.96815523816956
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2060-2069,2064.5,North,36.973823230613505
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2060-2069,2064.5,South,34.86130668810751
+carbonate refit without CO3,NorESM2-MM,2060-2069,2064.5,North,37.12628697742377
+carbonate refit without CO3,NorESM2-MM,2060-2069,2064.5,South,34.83663705431415
+"supplied ensemble, 2-degree cells",NorESM2-MM,2070-2079,2074.5,North,37.6602783203125
+"supplied ensemble, 2-degree cells",NorESM2-MM,2070-2079,2074.5,South,35.041221618652344
+"carbonate refit, CO3 as supplied",NorESM2-MM,2070-2079,2074.5,North,36.57319530243173
+"carbonate refit, CO3 as supplied",NorESM2-MM,2070-2079,2074.5,South,34.32628068723646
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2070-2079,2074.5,North,37.7511622099797
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2070-2079,2074.5,South,35.29998552298565
+carbonate refit without CO3,NorESM2-MM,2070-2079,2074.5,North,37.959204925947006
+carbonate refit without CO3,NorESM2-MM,2070-2079,2074.5,South,35.32546958361664
+"supplied ensemble, 2-degree cells",NorESM2-MM,2080-2089,2084.5,North,37.750694274902344
+"supplied ensemble, 2-degree cells",NorESM2-MM,2080-2089,2084.5,South,35.37662887573242
+"carbonate refit, CO3 as supplied",NorESM2-MM,2080-2089,2084.5,North,36.8106977843393
+"carbonate refit, CO3 as supplied",NorESM2-MM,2080-2089,2084.5,South,34.72250482731699
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2080-2089,2084.5,North,37.84948944891262
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2080-2089,2084.5,South,35.64979650936021
+carbonate refit without CO3,NorESM2-MM,2080-2089,2084.5,North,38.06058773642618
+carbonate refit without CO3,NorESM2-MM,2080-2089,2084.5,South,35.67113937993288
+"supplied ensemble, 2-degree cells",NorESM2-MM,2090-2099,2094.5,North,38.6291389465332
+"supplied ensemble, 2-degree cells",NorESM2-MM,2090-2099,2094.5,South,35.62403869628906
+"carbonate refit, CO3 as supplied",NorESM2-MM,2090-2099,2094.5,North,37.7016821209071
+"carbonate refit, CO3 as supplied",NorESM2-MM,2090-2099,2094.5,South,34.919775321557964
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2090-2099,2094.5,North,38.62311749403824
+"carbonate refit, CO3 set to Tara median",NorESM2-MM,2090-2099,2094.5,South,35.86165935140068
+carbonate refit without CO3,NorESM2-MM,2090-2099,2094.5,North,38.83635956650021
+carbonate refit without CO3,NorESM2-MM,2090-2099,2094.5,South,35.88172448672433
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2000-2009,2004.5,North,41.27939224243164
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2000-2009,2004.5,South,35.46196746826172
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2000-2009,2004.5,North,40.678647756466205
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2000-2009,2004.5,South,34.93288111364165
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2000-2009,2004.5,North,41.53648728374832
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2000-2009,2004.5,South,35.595632267805456
+carbonate refit without CO3,UKESM1-0-LL,2000-2009,2004.5,North,41.7912963289509
+carbonate refit without CO3,UKESM1-0-LL,2000-2009,2004.5,South,36.02466446037334
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2010-2019,2014.5,North,41.66823959350586
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2010-2019,2014.5,South,35.834922790527344
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2010-2019,2014.5,North,41.24482026952703
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2010-2019,2014.5,South,35.279956980665936
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2010-2019,2014.5,North,41.94066802846214
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2010-2019,2014.5,South,35.965771166957886
+carbonate refit without CO3,UKESM1-0-LL,2010-2019,2014.5,North,42.19084958289554
+carbonate refit without CO3,UKESM1-0-LL,2010-2019,2014.5,South,36.41552788848099
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2020-2029,2024.5,North,42.25832748413086
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2020-2029,2024.5,South,36.002506256103516
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2020-2029,2024.5,North,41.900327454489044
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2020-2029,2024.5,South,35.46134426961492
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2020-2029,2024.5,North,42.593548403502375
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2020-2029,2024.5,South,36.13927023462481
+carbonate refit without CO3,UKESM1-0-LL,2020-2029,2024.5,North,42.85987102726113
+carbonate refit without CO3,UKESM1-0-LL,2020-2029,2024.5,South,36.59031850336834
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2030-2039,2034.5,North,42.865386962890625
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2030-2039,2034.5,South,36.58134078979492
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2030-2039,2034.5,North,42.54426988306272
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2030-2039,2034.5,South,36.02114421012469
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2030-2039,2034.5,North,43.238596021296566
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2030-2039,2034.5,South,36.70716260225746
+carbonate refit without CO3,UKESM1-0-LL,2030-2039,2034.5,North,43.50924137098569
+carbonate refit without CO3,UKESM1-0-LL,2030-2039,2034.5,South,37.14350677222967
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2040-2049,2044.5,North,43.339298248291016
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2040-2049,2044.5,South,37.045379638671875
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2040-2049,2044.5,North,43.08548987782792
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2040-2049,2044.5,South,36.48769799751259
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2040-2049,2044.5,North,43.747788430052985
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2040-2049,2044.5,South,37.17827865271991
+carbonate refit without CO3,UKESM1-0-LL,2040-2049,2044.5,North,44.044148841643825
+carbonate refit without CO3,UKESM1-0-LL,2040-2049,2044.5,South,37.59210783682276
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2050-2059,2054.5,North,44.242950439453125
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2050-2059,2054.5,South,37.575904846191406
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2050-2059,2054.5,North,44.054722250797326
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2050-2059,2054.5,South,37.13830250934461
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2050-2059,2054.5,North,44.65875156231806
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2050-2059,2054.5,South,37.728414266143865
+carbonate refit without CO3,UKESM1-0-LL,2050-2059,2054.5,North,44.91304092949065
+carbonate refit without CO3,UKESM1-0-LL,2050-2059,2054.5,South,38.12977216584862
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2060-2069,2064.5,North,44.845130920410156
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2060-2069,2064.5,South,38.19026184082031
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2060-2069,2064.5,North,44.67076668383397
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2060-2069,2064.5,South,37.71364792134582
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2060-2069,2064.5,North,45.31476831322011
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2060-2069,2064.5,South,38.316940413762495
+carbonate refit without CO3,UKESM1-0-LL,2060-2069,2064.5,North,45.625878691471904
+carbonate refit without CO3,UKESM1-0-LL,2060-2069,2064.5,South,38.73310709471705
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2070-2079,2074.5,North,45.22135543823242
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2070-2079,2074.5,South,38.6757698059082
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2070-2079,2074.5,North,45.08868271913434
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2070-2079,2074.5,South,38.22840955259532
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2070-2079,2074.5,North,45.73100408251159
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2070-2079,2074.5,South,38.84283326143602
+carbonate refit without CO3,UKESM1-0-LL,2070-2079,2074.5,North,46.076773999730186
+carbonate refit without CO3,UKESM1-0-LL,2070-2079,2074.5,South,39.25265371481713
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2080-2089,2084.5,North,46.50788116455078
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2080-2089,2084.5,South,39.2635498046875
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2080-2089,2084.5,North,46.44476696777937
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2080-2089,2084.5,South,38.82522455858697
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2080-2089,2084.5,North,47.14948914349657
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2080-2089,2084.5,South,39.400204384286994
+carbonate refit without CO3,UKESM1-0-LL,2080-2089,2084.5,North,47.55626473930349
+carbonate refit without CO3,UKESM1-0-LL,2080-2089,2084.5,South,39.80135483013761
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2090-2099,2094.5,North,47.42401123046875
+"supplied ensemble, 2-degree cells",UKESM1-0-LL,2090-2099,2094.5,South,39.75754928588867
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2090-2099,2094.5,North,47.41912889495112
+"carbonate refit, CO3 as supplied",UKESM1-0-LL,2090-2099,2094.5,South,39.374923276800004
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2090-2099,2094.5,North,48.26943947238824
+"carbonate refit, CO3 set to Tara median",UKESM1-0-LL,2090-2099,2094.5,South,39.91688431771269
+carbonate refit without CO3,UKESM1-0-LL,2090-2099,2094.5,North,48.691416214595485
+carbonate refit without CO3,UKESM1-0-LL,2090-2099,2094.5,South,40.264055450436125

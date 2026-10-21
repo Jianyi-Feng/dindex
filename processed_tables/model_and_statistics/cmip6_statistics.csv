@@ -1,0 +1,35 @@
+﻿section,statistic,value,n,ci_low,ci_high,note
+CMIP6-final,"front rate North, archived ensemble (8 predictors incl. mislabelled CO3) (km/decade)",62.63641825103759,4.0,48.42866373697916,84.5986894226074,ESMs poleward 4/4; min R2 0.96
+CMIP6-final,"front rate South, archived ensemble (8 predictors incl. mislabelled CO3) (km/decade)",36.73522540537516,4.0,19.44639986165364,51.4771227722168,ESMs poleward 4/4; min R2 0.91
+CMIP6-final,"front rate North, random forest, 7 predictors (km/decade)",68.51753208306718,4.0,43.1380439213022,93.26423406650052,ESMs poleward 4/4; min R2 0.96
+CMIP6-final,"front rate South, random forest, 7 predictors (km/decade)",51.772713417904995,4.0,33.27404521781982,71.37784644984593,ESMs poleward 4/4; min R2 0.96
+CMIP6-final,"front rate North, temperature-only (km/decade)",75.09277187498931,4.0,39.67344372318559,113.07515256361349,ESMs poleward 4/4; min R2 0.88
+CMIP6-final,"front rate South, temperature-only (km/decade)",46.869063585251894,4.0,29.072322138004868,60.85367865861159,ESMs poleward 4/4; min R2 0.92
+CMIP6-final,"front rate North, final ensemble (7 predictors) (km/decade)",65.26932303619384,4.0,51.22632838948567,86.17612270100912,ESMs poleward 4/4; min R2 0.97
+CMIP6-final,"front rate South, final ensemble (7 predictors) (km/decade)",36.027341293334956,4.0,19.525784067789715,49.87657040405273,ESMs poleward 4/4; min R2 0.89
+CMIP6-final,"front rate North, final ensemble, AOA cells only (km/decade)",66.72327777862549,4.0,53.68351470947265,87.33284928385416,ESMs poleward 4/4; min R2 0.97
+CMIP6-final,"front rate South, final ensemble, AOA cells only (km/decade)",35.88019676717122,4.0,18.937205963134765,49.87657040405273,ESMs poleward 4/4; min R2 0.88
+CMIP6-final,front displacement 2000s->2090s North (km),612.451416015625,4.0,445.06341552734375,860.7349853515625,
+CMIP6-final,front latitude 2000s North,38.224395751953125,4.0,34.72368621826172,40.624935150146484,
+CMIP6-final,front displacement 2000s->2090s South (km),325.44744873046875,4.0,163.794677734375,439.24188232421875,
+CMIP6-final,front latitude 2000s South,36.99263381958008,4.0,34.275146484375,39.0434455871582,
+CMIP6-final,area-weighted share with four-model sign agreement on dD,0.7004061458026598,,,,
+CMIP6-final,area-weighted share where four-model mean dD > 0,0.9729470444212468,,,,
+CMIP6-final,"sign agreement, |lat| < 30",0.8108803494032072,4146.0,,,mean dD 0.119
+CMIP6-final,"sign agreement, 30-45",0.8968952998134615,1905.0,,,mean dD 0.193
+CMIP6-final,"sign agreement, 45-60",0.4657246292406457,2099.0,,,mean dD 0.071
+CMIP6-final,"sign agreement, > 60",0.15470523639251688,2678.0,,,mean dD 0.065
+CMIP6-final,"AOA share 2000-2009, all ocean",0.9279403239488602,4.0,0.8297794461250305,0.9792156219482422,
+CMIP6-final,"AOA share 2000-2009, near fronts |D|<0.15",0.9373090863227844,4.0,0.830478310585022,0.9751105308532715,
+CMIP6-final,"AOA share 2000-2009, |lat| >= 60",0.936443492770195,4.0,0.874222457408905,0.9966708421707153,
+CMIP6-final,"AOA share 2000-2009, all ocean, conservative threshold",0.6668913140892982,4.0,0.46416452527046204,0.8107487559318542,
+CMIP6-final,"AOA share 2000-2009, near fronts, conservative threshold",0.6686549484729767,4.0,0.35156238079071045,0.8525904417037964,
+CMIP6-final,"AOA share 2000-2009, |lat| >= 60, conservative threshold",0.8033939749002457,4.0,0.6943719983100891,0.9759664535522461,
+CMIP6-final,"AOA share 2090-2099, all ocean",0.8928029239177704,4.0,0.7276067733764648,0.9573326706886292,
+CMIP6-final,"AOA share 2090-2099, near fronts |D|<0.15",0.8554383367300034,4.0,0.730668842792511,0.9552425146102905,
+CMIP6-final,"AOA share 2090-2099, |lat| >= 60",0.9056650251150131,4.0,0.832344114780426,0.9897491335868835,
+CMIP6-final,"AOA share 2090-2099, all ocean, conservative threshold",0.5782550871372223,4.0,0.3592652678489685,0.7102914452552795,
+CMIP6-final,"AOA share 2090-2099, near fronts, conservative threshold",0.6612176671624184,4.0,0.4109109938144684,0.8431053161621094,
+CMIP6-final,"AOA share 2090-2099, |lat| >= 60, conservative threshold",0.7598207592964172,4.0,0.6575506925582886,0.8554618954658508,
+CMIP6-final,AOA dissimilarity threshold (median of 50 station partitions),0.5704797705973756,50.0,0.3955453300633246,0.705647241113818,
+CMIP6-final,vs archived grid-cell D: mean r,0.9977291387624012,8.0,0.9958865172341717,0.9989881935795105,mean |dD| 0.064

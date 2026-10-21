@@ -1,0 +1,205 @@
+﻿statistic,value,n,ci_low,ci_high,P,note
+SPOT metagenomes,167,,,,,"{""viral"": 65, ""micro"": 60, ""pico"": 42}"
+"SPOT I+A share of PolB coverage, median",0.965478331,167,0.883757398,0.990024803,,IQR
+I+A share median (micro),0.868266265,60,,,,
+I+A share median (pico),0.986796655,42,,,,
+I+A share median (viral),0.983167004,65,,,,
+SPOT D vs SST Pearson r,0.555580667,157,,,4.28E-14,
+SPOT D vs SST Spearman rho,0.520053805,157,,,2.95E-12,
+"SPOT dD/dSST, fraction-adjusted (HC3)",0.111571295,157,0.081519647,0.141622944,3.42E-13,D units per degC
+"SPOT dD/dSST_clim, fraction-adjusted (HC3)",0.098975072,157,0.069767041,0.128183104,3.10E-11,
+"SPOT dD/dSST_anomaly, fraction-adjusted (HC3)",0.179543567,157,0.115329308,0.243757825,4.25E-08,
+SPOT seasonal minus anomaly slope,-0.080568494,157,-0.142913339,-0.01822365,0.01131331,equal slopes => one temperature sensitivity for season and anomaly
+"dD/dSST (micro, HAC lag 3)",0.125170933,50,0.096761672,0.153580195,5.84E-18,
+SST at D=0 (micro),17.17414384,50,15.21496733,18.21093832,,bootstrap 2000
+"dD/dSST (pico, HAC lag 3)",0.117096738,42,0.057614056,0.176579419,0.000114152,
+SST at D=0 (pico),19.65148921,42,18.47031059,23.19600434,,bootstrap 2000
+"dD/dSST (viral, HAC lag 3)",0.09645976,65,0.039928878,0.152990643,0.00082483,
+SST at D=0 (viral),22.55681383,65,20.79535014,30.69386154,,bootstrap 2000
+max |D - tanh(ln(I/A)/2)| (SPOT),1.55E-10,167,,,,"identity for I,A>0"
+SPOT ln(I/A) vs SST Pearson r,0.574076469,157,,,3.84E-15,
+"SPOT dln(I/A)/dSST, fraction-adjusted",0.328658603,157,0.24101621,0.416300996,1.98E-13,
+viral pre-event samples,47,,,,,2009-07..2013-12
+viral 2014-2015 samples,18,,,,,
+pre-event harmonic R2,0.273278482,47,,,0.000891449,
+season-adjusted median shift (this analysis),0.424656576,65,,,,
+season-adjusted mean shift,0.459879916,65,,,,
+SST anomaly mean pre / 2014-15,-0.793401351,,,,,heatwave 1.46
+SST anomaly mean 2014-15,1.45970035,18,,,,
+"season-adjusted mean shift, year-block bootstrap CI",0.459879916,,0.327184069,0.568474166,,5000 resamples of calendar years
+"year-label permutation P (one-sided, exact)",0.047619048,21,,,,observed rank 1 of 21; minimum attainable P = 0.048
+"matched-month D difference, median",0.315951511,18,,,0.001579285,Wilcoxon signed-rank
+matched-month differences > 0,15,18,,,,
+pre-event dResid/dSST_anomaly,0.019481643,47,-0.051990377,0.090953663,0.593174469,
+heatwave shift predicted from pre-event anomaly slope,0.043894122,,-0.117142566,0.204930811,,compare with observed mean shift
+viral 2009-2015 resid ~ SST_anomaly + MEI: SST_anomaly,0.183287396,65,0.102052507,0.264522285,9.77E-06,
+viral 2009-2015 resid ~ SST_anomaly + MEI: MEI,-0.036863731,65,-0.14816477,0.074437308,0.516238429,
+Tara samples with valid D and predictors,196,,,,,83 stations
+Tara samples with D = +1 or -1 (one order absent),12,196,,,,
+Tara station-mean D vs temperature Pearson r,0.736306522,83,,,2.16E-15,
+Tara station-mean D vs temperature Spearman rho,0.625123972,83,,,2.67E-10,
+Tara station-mean D vs chlorophyll a Pearson r,-0.649542629,83,,,3.07E-11,
+Tara station-mean D vs chlorophyll a Spearman rho,-0.648212964,83,,,3.48E-11,
+Tara station-mean |latitude| vs D Spearman rho,-0.627765417,83,,,2.13E-10,
+Tara dln(I/A)/dT (station-clustered),0.180006513,196,0.136428279,0.223584747,5.68E-16,
+Tara dD/dT (station-clustered),0.043076389,196,0.033565449,0.052587328,6.87E-19,
+Tara dD/dT within SPOT SST range 13-24 degC,0.087515098,51,0.004850564,0.170179633,0.037989303,
+"Tara temperature at D=0, pico",10.34104182,196,6.643390067,13.2438405,,station bootstrap
+"Tara temperature at D=0, femto",16.41013134,196,12.52934377,21.66913154,,station bootstrap
+station-blocked CV R2: temperature-only log-ratio,0.469765144,196,0.453313525,0.483627966,,20 random station partitions; range
+station-blocked CV RMSE: temperature-only log-ratio,0.542220901,196,,,,
+leave-one-basin-out R2: temperature-only log-ratio,0.453402641,196,,,,
+leave-one-basin-out RMSE: temperature-only log-ratio,0.550540593,196,,,,
+supplied pipeline OOF R2 (MD5 env-hash groups),0.623082302,196,,,,
+supplied pipeline OOF RMSE,0.457171182,196,,,,
+supplied CV: max stations per group / groups per station,1,,,,,groups per station max 1
+OOF permutation dR2: temperature,0.526667993,1000,0.013522275,1.164021474,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations
+OOF permutation dR2: log_chl,0.172974474,1000,-0.081990194,0.696762446,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations
+OOF permutation dR2: femto,0.142700569,1000,-0.006793949,0.365122974,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations
+OOF permutation dR2: salinity,0.033384104,1000,-0.085479216,0.134645818,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations
+OOF permutation dR2: log_Fe,-0.002669872,1000,-0.083864717,0.066087316,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations
+OOF permutation dR2: log_PO4,-0.00269994,1000,-0.05410703,0.040867232,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations
+OOF permutation dR2: log_Si,-0.007587456,1000,-0.045854547,0.015737803,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations
+OOF permutation dR2: log_NO3,-0.008377329,1000,-0.067625409,0.021396708,,RF log-ratio; permuted within held-out station folds; 20 partitions x 10 permutations
+"SPOT observed D vs D predicted from Tara temperature calibration, r",0.444552392,107,,,1.61E-06,viral+pico; Tara femto/pico calibration
+"transfer bias (predicted - observed D), mean",0.668523677,107,,,,
+transfer RMSE (D units),0.794988791,107,,,,
+"SST read from D (Tara calibration) vs observed SST, r",0.554452128,107,,,5.79E-10,
+"SST read from D, median absolute error degC",10.26733127,107,,,,
+transfer r (pico),0.509258879,42,,,0.000572485,
+transfer r (viral),0.488412596,65,,,3.67E-05,
+viral pre-event dD/dSST,0.056993087,47,0.004336985,0.109649189,0.033888566,
+heatwave D shift expected from pre-event SST calibration,0.087351219,18,,,,
+heatwave D shift observed (raw means),0.402710258,18,,,,
+"heatwave D above SST-calibrated expectation, median",0.214742127,18,,,0.03036499,12/18 positive; Wilcoxon
+heatwave mean SST minus pre-event mean SST,1.53266341,18,,,,
+Tara->SPOT transfer [L ~ temperature + femto] r,0.444552392,107,,,1.61E-06,bias +0.669; RMSE 0.795
+Tara->SPOT transfer [L ~ temperature + lchl + femto] r,0.347024338,107,,,0.000250285,bias +0.415; RMSE 0.643
+SPOT chlorophyll a median (mg m-3),0.37144443,107,,,,Tara median 0.205
+Tara dln(I/A)/dT <15 degC,0.096634923,75,-0.050091935,0.243361782,0.196758994,
+Tara dln(I/A)/dT >=15 degC,0.20448856,121,0.065796569,0.343180551,0.003855038,
+"micro/nano season-adjusted D, post phase minus heatwave phase",-0.202775334,50,-0.380637754,-0.024912914,0.025450646,"heatwave-phase matched-SST samples 2014-01-01..2016-12-01 (n=33), post-phase 2017-01-01..2018-07-01 (n=17); mean SST anomaly 1.33 -> 0.67 degC"
+Tara log-ratio slope pseudocount 0.0001,0.201656833,196,0.149336659,0.253977006,4.21E-14,ln[(I+eps)/(A+eps)] ~ temperature + size fraction; station-clustered errors
+Tara log-ratio slope pseudocount 0.001,0.180006513,196,0.136428279,0.223584747,5.68E-16,ln[(I+eps)/(A+eps)] ~ temperature + size fraction; station-clustered errors
+Tara log-ratio slope pseudocount 0.01,0.147788064,196,0.114071889,0.18150424,8.61E-18,ln[(I+eps)/(A+eps)] ~ temperature + size fraction; station-clustered errors
+SPOT vs Tara overlapping-range slope difference (approx z),0.024056197,208,,,0.591919965,independent-estimate sensitivity check from reported 95% intervals; not an equivalence test
+binary traits tested,25,,,,,
+"max BH-adjusted P among five displayed traits, BH over all tested traits",1.17E-06,,,,,
+Imitervirales families with n>=5,4,,,,,
+Imitervirales families (n>=5) with HSP prevalence > max Algavirales family prevalence,4,,,,,
+"front rate North, random forest, 7 predictors (km/decade)",68.51753208,4,43.13804392,93.26423407,,ESMs poleward 4/4; min R2 0.96
+"front rate South, random forest, 7 predictors (km/decade)",51.77271342,4,33.27404522,71.37784645,,ESMs poleward 4/4; min R2 0.96
+"front rate North, temperature-only (km/decade)",75.09277187,4,39.67344372,113.0751526,,ESMs poleward 4/4; min R2 0.88
+"front rate South, temperature-only (km/decade)",46.86906359,4,29.07232214,60.85367866,,ESMs poleward 4/4; min R2 0.92
+"front rate North, final ensemble (7 predictors) (km/decade)",65.26932304,4,51.22632839,86.1761227,,ESMs poleward 4/4; min R2 0.97
+"front rate South, final ensemble (7 predictors) (km/decade)",36.02734129,4,19.52578407,49.8765704,,ESMs poleward 4/4; min R2 0.89
+"front rate North, final ensemble, AOA cells only (km/decade)",66.72327778,4,53.68351471,87.33284928,,ESMs poleward 4/4; min R2 0.97
+"front rate South, final ensemble, AOA cells only (km/decade)",35.88019677,4,18.93720596,49.8765704,,ESMs poleward 4/4; min R2 0.88
+front displacement 2000s->2090s North (km),612.451416,4,445.0634155,860.7349854,,
+front latitude 2000s North,38.22439575,4,34.72368622,40.62493515,,
+front displacement 2000s->2090s South (km),325.4474487,4,163.7946777,439.2418823,,
+front latitude 2000s South,36.99263382,4,34.27514648,39.04344559,,
+area-weighted share with four-model sign agreement on dD,0.700406146,,,,,
+area-weighted share where four-model mean dD > 0,0.972947044,,,,,
+"sign agreement, |lat| < 30",0.810880349,4146,,,,mean dD 0.119
+"sign agreement, 30-45",0.8968953,1905,,,,mean dD 0.193
+"sign agreement, 45-60",0.465724629,2099,,,,mean dD 0.071
+"sign agreement, > 60",0.154705236,2678,,,,mean dD 0.065
+"AOA share 2000-2009, all ocean",0.927940324,4,0.829779446,0.979215622,,
+"AOA share 2000-2009, near fronts |D|<0.15",0.937309086,4,0.830478311,0.975110531,,
+"AOA share 2000-2009, |lat| >= 60",0.936443493,4,0.874222457,0.996670842,,
+"AOA share 2000-2009, all ocean, conservative threshold",0.666891314,4,0.464164525,0.810748756,,
+"AOA share 2000-2009, near fronts, conservative threshold",0.668654948,4,0.351562381,0.852590442,,
+"AOA share 2000-2009, |lat| >= 60, conservative threshold",0.803393975,4,0.694371998,0.975966454,,
+"AOA share 2090-2099, all ocean",0.892802924,4,0.727606773,0.957332671,,
+"AOA share 2090-2099, near fronts |D|<0.15",0.855438337,4,0.730668843,0.955242515,,
+"AOA share 2090-2099, |lat| >= 60",0.905665025,4,0.832344115,0.989749134,,
+"AOA share 2090-2099, all ocean, conservative threshold",0.578255087,4,0.359265268,0.710291445,,
+"AOA share 2090-2099, near fronts, conservative threshold",0.661217667,4,0.410910994,0.843105316,,
+"AOA share 2090-2099, |lat| >= 60, conservative threshold",0.759820759,4,0.657550693,0.855461895,,
+AOA dissimilarity threshold (median of 50 station partitions),0.570479771,50,0.39554533,0.705647241,,
+"Final 14-model ensemble, 7 predictors (I and A modelled separately), nested station-grouped CV: station-blocked R2 (mean)",0.63445198,196,,,,range over 20 station partitions
+"Final 14-model ensemble, 7 predictors (I and A modelled separately), nested station-grouped CV: station-blocked RMSE",0.450223126,196,,,,
+Linear D ~ temperature + size fraction (main-text temperature model; Fig. 3d): station-blocked R2 (mean),0.557820515,196,0.538758971,0.576523068,,range over 20 station partitions
+Linear D ~ temperature + size fraction (main-text temperature model; Fig. 3d): station-blocked RMSE,0.495135094,196,,,,
+Linear D ~ temperature + size fraction (main-text temperature model; Fig. 3d): leave-one-basin-out pooled R2,0.535309703,196,,,,
+Linear ln(I/A) ~ temperature + size fraction (sensitivity model): station-blocked R2 (mean),0.469765144,196,0.453313525,0.483627966,,range over 20 station partitions
+Linear ln(I/A) ~ temperature + size fraction (sensitivity model): station-blocked RMSE,0.542220901,196,,,,
+Linear ln(I/A) ~ temperature + size fraction (sensitivity model): leave-one-basin-out pooled R2,0.453402641,196,,,,
+"Random forest D, 7 environmental predictors + size fraction: station-blocked R2 (mean)",0.566686911,196,0.45925153,0.64064458,,range over 20 station partitions
+"Random forest D, 7 environmental predictors + size fraction: station-blocked RMSE",0.489374561,196,,,,
+"Random forest D, 7 environmental predictors + size fraction: leave-one-basin-out pooled R2",0.266746103,196,,,,
+"Random forest ln(I/A), 7 environmental predictors + size fraction: station-blocked R2 (mean)",0.553255881,196,0.463040838,0.624905339,,range over 20 station partitions
+"Random forest ln(I/A), 7 environmental predictors + size fraction: station-blocked RMSE",0.497108785,196,,,,
+"Random forest ln(I/A), 7 environmental predictors + size fraction: leave-one-basin-out pooled R2",0.162850473,196,,,,
+"Ridge ln(I/A), 7 environmental predictors + size fraction: station-blocked R2 (mean)",0.529677005,196,0.489270942,0.560118293,,range over 20 station partitions
+"Ridge ln(I/A), 7 environmental predictors + size fraction: station-blocked RMSE",0.510571828,196,,,,
+"Ridge ln(I/A), 7 environmental predictors + size fraction: leave-one-basin-out pooled R2",0.49658289,196,,,,
+Heat-shock proteins: prevalence Imitervirales vs Algavirales,0.9568 vs 0.3457,139/81,,,9.42E-23,Fisher exact; BH across 25 traits
+Type-I rhodopsin: prevalence Imitervirales vs Algavirales,0.4892 vs 0.0370,139/81,,,3.01E-13,Fisher exact; BH across 25 traits
+DNA repair: prevalence Imitervirales vs Algavirales,0.9209 vs 0.0123,139/81,,,3.73E-45,Fisher exact; BH across 25 traits
+Glycolysis: prevalence Imitervirales vs Algavirales,0.4820 vs 0.1111,139/81,,,2.54E-08,Fisher exact; BH across 25 traits
+TCA cycle: prevalence Imitervirales vs Algavirales,0.2086 vs 0.0000,139/81,,,1.17E-06,Fisher exact; BH across 25 traits
+"D = 0 front rate, North",65.26932304,4,51.22632839,86.1761227,,"four-model mean and range, km per decade"
+"isotherm displacement rate, North",68.41345876,4,50.07749261,83.30484396,,"SST isotherm coinciding with the 2000s front, same grid and algorithm, km per decade"
+"front-to-isotherm rate ratio, North",0.953360798,4,0.766559086,1.034467128,0.513183571,paired t-test over four Earth-system models; ratio < 1 in 2 of 4 models
+"climate velocity, 30-45 deg N",89.12679027,4,71.29171166,114.0950069,,"four-model mean of the area-weighted median |dT/dt|/|grad T|, km per decade"
+"D = 0 front rate, South",36.02734129,4,19.52578407,49.8765704,,"four-model mean and range, km per decade"
+"isotherm displacement rate, South",52.2681068,4,43.1396347,68.29376027,,"SST isotherm coinciding with the 2000s front, same grid and algorithm, km per decade"
+"front-to-isotherm rate ratio, South",0.679658156,4,0.452618206,0.796363666,0.013792202,paired t-test over four Earth-system models; ratio < 1 in 4 of 4 models
+"climate velocity, 30-45 deg S",58.73314013,4,36.83985465,75.18489255,,"four-model mean of the area-weighted median |dT/dt|/|grad T|, km per decade"
+correlation of front rate with isotherm rate,0.904486845,8,,,0.002025294,Pearson r across the eight model-hemisphere pairs
+"climate velocity, global",110.1185023,4,80.82563586,131.2177943,,"four-model mean of the area-weighted median, km per decade"
+"pN/pS Imitervirales vs Algavirales, tier A (observation coverage >= 10x), gene (per-gene median across samples): Cliff's delta",0.148559313,10457/8025,0.094072147,0.202732513,1.73E-67,medians 0.1529 vs 0.1153; secondary: genes are nested in genomes
+"pN/pS Imitervirales vs Algavirales, tier A (observation coverage >= 10x), genome (median of per-gene medians): Cliff's delta",0.366705247,128/81,0.215470679,0.51253858,8.13E-06,medians 0.1581 vs 0.1231; primary
+"pN/pS Imitervirales vs Algavirales, tier A (observation coverage >= 10x), genome (median of pooled observations): Cliff's delta",0.42033179,128/81,0.285300926,0.5625,3.15E-07,medians 0.1679 vs 0.1188; sensitivity: weights genes by sampling frequency; gene-weighted sensitivity
+"pN/pS Imitervirales vs Algavirales, tier B (observation coverage >= 5x), gene (per-gene median across samples): Cliff's delta",0.105610466,15570/8821,0.055902503,0.153398808,4.93E-43,medians 0.1349 vs 0.1100; secondary: genes are nested in genomes
+"pN/pS Imitervirales vs Algavirales, tier B (observation coverage >= 5x), genome (median of per-gene medians): Cliff's delta",0.269171848,137/81,0.115067135,0.409209696,0.000907905,medians 0.1308 vs 0.1167; primary
+"pN/pS Imitervirales vs Algavirales, tier B (observation coverage >= 5x), genome (median of pooled observations): Cliff's delta",0.41677931,137/81,0.27601604,0.551955483,2.78E-07,medians 0.1490 vs 0.1098; sensitivity: weights genes by sampling frequency; gene-weighted sensitivity
+"pN/pS Imitervirales vs Algavirales, tier C (observation coverage >= 1x), gene (per-gene median across samples): Cliff's delta",0.059081156,22204/9419,0.016631258,0.100546929,6.59E-17,medians 0.1189 vs 0.1018; secondary: genes are nested in genomes
+"pN/pS Imitervirales vs Algavirales, tier C (observation coverage >= 1x), genome (median of per-gene medians): Cliff's delta",0.072031264,139/81,-0.082258638,0.229241052,0.37378273,medians 0.1054 vs 0.1013; primary
+"pN/pS Imitervirales vs Algavirales, tier C (observation coverage >= 1x), genome (median of pooled observations): Cliff's delta",0.304023448,139/81,0.159956479,0.445978773,0.000171631,medians 0.1317 vs 0.1061; sensitivity: weights genes by sampling frequency; gene-weighted sensitivity
+"pN/pS Imitervirales vs Algavirales, tier D (no coverage filter (every defined pN/pS)), gene (per-gene median across samples): Cliff's delta",0.039225724,23573/9488,-0.003958187,0.082108972,1.96E-08,medians 0.1157 vs 0.1005; secondary: genes are nested in genomes
+"pN/pS Imitervirales vs Algavirales, tier D (no coverage filter (every defined pN/pS)), genome (median of per-gene medians): Cliff's delta",-0.015543121,139/81,-0.172235545,0.147351008,0.848478273,medians 0.0996 vs 0.1000; primary
+"pN/pS Imitervirales vs Algavirales, tier D (no coverage filter (every defined pN/pS)), genome (median of pooled observations): Cliff's delta",0.188382627,139/81,0.037385647,0.339017675,0.019920146,medians 0.1197 vs 0.1036; sensitivity: weights genes by sampling frequency; gene-weighted sensitivity
+"pN/pS Imitervirales vs Algavirales, tier E (observation coverage >= 10x and breadth >= 0.5), gene (per-gene median across samples): Cliff's delta",0.140955933,10294/7988,0.085467624,0.196431429,2.20E-60,medians 0.1515 vs 0.1165; secondary: genes are nested in genomes
+"pN/pS Imitervirales vs Algavirales, tier E (observation coverage >= 10x and breadth >= 0.5), genome (median of per-gene medians): Cliff's delta",0.276652893,121/80,0.124772727,0.42231405,0.00091363,medians 0.1446 vs 0.1208; primary
+"pN/pS Imitervirales vs Algavirales, tier E (observation coverage >= 10x and breadth >= 0.5), genome (median of pooled observations): Cliff's delta",0.302892562,121/80,0.151033058,0.448558884,0.000282902,medians 0.1430 vs 0.1196; sensitivity: weights genes by sampling frequency; gene-weighted sensitivity
+pre-2014 derivation: pre-2014 samples (viral + picoplankton),89,89,,,,
+pre-2014 derivation: pair with the largest combined PolB share,Algavirales vs Imitervirales,89,,,,
+"pre-2014 derivation: Imitervirales + Algavirales median share, pre-2014",0.98720611,89,,,,
+pre-2014 derivation: next-largest combined share (any other pair),0.784133531,89,,,,
+"pre-2014 derivation: D = (I - A)/(I + A) vs SST slope, pre-2014, fraction-adjusted (D per degC)",0.086648048,89,,,,
+pre-2014 derivation: slope 95% CI low,0.043816198,89,,,,
+pre-2014 derivation: slope 95% CI high,0.129479899,89,,,,
+pre-2014 derivation: slope P (HC3),7.34E-05,89,,,,
+pre-2014 derivation: rank of the I-A pair by |t| among 36 pairs,2,89,,,,
+pre-2014 derivation: combined share of the pair ranked first by |t|,0.007272281,89,,,,
+"Tara Imitervirales + Algavirales share of giant-virus PolB, median",0.969096031,196,0.917460295,0.989538708,,IQR
+"per-genome median nucleotide diversity, Imitervirales vs Algavirales, 0.02–0.2 µm",0.0164 vs 0.0044,139/81,,,2.70E-13,two-sided Mann-Whitney (Fig. 4c)
+"per-genome median nucleotide diversity, Imitervirales vs Algavirales, 0.2–1.2 µm",0.0222 vs 0.0010,137/76,,,2.46E-10,two-sided Mann-Whitney (Fig. 4c)
+"per-genome median nucleotide diversity, Imitervirales vs Algavirales, 1.2–80 µm",0.0394 vs 0.0234,136/63,,,9.37E-06,two-sided Mann-Whitney (Fig. 4c)
+"out-of-fold permutation importance (loss of R2), temperature",0.514917342,1000,0.030869,1.214917749,,"2.5-97.5 percentile range, not a confidence interval"
+"out-of-fold permutation importance (loss of R2), log_chl",0.192596071,1000,-0.100071,0.777623621,,"2.5-97.5 percentile range, not a confidence interval"
+"out-of-fold permutation importance (loss of R2), femto",0.141702261,1000,-0.015188726,0.336449376,,"2.5-97.5 percentile range, not a confidence interval"
+"out-of-fold permutation importance (loss of R2), salinity",0.028338192,1000,-0.066362944,0.116548884,,"2.5-97.5 percentile range, not a confidence interval"
+"out-of-fold permutation importance (loss of R2), log_Fe",0.008274934,1000,-0.08783717,0.108229992,,"2.5-97.5 percentile range, not a confidence interval"
+"out-of-fold permutation importance (loss of R2), log_PO4",-0.004477405,1000,-0.062927758,0.046472175,,"2.5-97.5 percentile range, not a confidence interval"
+"out-of-fold permutation importance (loss of R2), log_NO3",-0.008260784,1000,-0.087871148,0.032242327,,"2.5-97.5 percentile range, not a confidence interval"
+"out-of-fold permutation importance (loss of R2), log_Si",-0.009033482,1000,-0.063072999,0.026581686,,"2.5-97.5 percentile range, not a confidence interval"
+Heat-shock proteins: Mantel-Haenszel common odds ratio (recovery strata 4-6),76.31015038,139/81,21.65669063,268.8886844,1.32E-22,Cochran-Mantel-Haenszel P
+DNA repair: Mantel-Haenszel common odds ratio (recovery strata 4-6),1971.4,139/81,151.9106588,25583.5765,9.87E-39,Cochran-Mantel-Haenszel P
+Type-I rhodopsin: Mantel-Haenszel common odds ratio (recovery strata 4-6),26.57842105,139/81,7.774253522,90.86563277,4.73E-12,Cochran-Mantel-Haenszel P
+Glycolysis: Mantel-Haenszel common odds ratio (recovery strata 4-6),7.518843931,139/81,3.375694719,16.74707542,9.40E-08,Cochran-Mantel-Haenszel P
+TCA cycle: Mantel-Haenszel common odds ratio (recovery strata 4-6),inf,139/81,,,7.22E-06,Cochran-Mantel-Haenszel P
+"six-marker recovery score, Imitervirales vs Algavirales (median)",5 vs 5,139/81,,,0.959115026,Mann-Whitney U = 5652
+recovery-adjusted difference in selected pathway categories per genome (Imitervirales - Algavirales),4.542042861,139/81,4.072052702,5.012033021,5.21E-80,HC3 OLS with recovery score
+"PolB phylotypes, Imitervirales",721,167,,,,order-level catalogue count
+"PolB phylotypes, Algavirales",241,167,,,,order-level catalogue count
+"PolB phylotypes, Pimascovirales",43,167,,,,order-level catalogue count
+"PolB phylotypes, Pandoravirales",37,167,,,,order-level catalogue count
+"PolB phylotypes, MR_01",33,167,,,,order-level catalogue count
+"PolB phylotypes, MR_02",10,167,,,,order-level catalogue count
+"PolB phylotypes, Asfuvirales",4,167,,,,order-level catalogue count
+"PolB phylotypes, MR_07",4,167,,,,order-level catalogue count
+"PolB phylotypes, Proculvirales",2,167,,,,order-level catalogue count

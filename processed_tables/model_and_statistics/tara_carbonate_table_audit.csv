@@ -1,0 +1,31 @@
+carb_column,carb_parameter,carb_statistic,identical_to_table,identical_to_parameter,identical_to_statistic,n_rows,share_identical
+39,Bicarbonate ion,minimum value in the selected environmen,HPLC,Phaeophorbide a,minimum value in the selected environmen,24241,1.0
+40,Bicarbonate ion,"lower quartile value (25th percentile, f",HPLC,Phaeophorbide a,"lower quartile value (25th percentile, f",24241,1.0
+41,Bicarbonate ion,"median value (50th percentile, second qu",HPLC,Phaeophorbide a,"median value (50th percentile, second qu",24241,1.0
+42,Bicarbonate ion,"upper quartile value (75th percentile, t",HPLC,Phaeophorbide a,"upper quartile value (75th percentile, t",24241,1.0
+43,Bicarbonate ion,maximum value in the selected environmen,HPLC,Phaeophorbide a,maximum value in the selected environmen,24241,1.0
+44,Carbonate ion,minimum value in the selected environmen,HPLC,19-Butanoyloxyfucoxanthin,minimum value in the selected environmen,24241,1.0
+45,Carbonate ion,"lower quartile value (25th percentile, f",HPLC,19-Butanoyloxyfucoxanthin,"lower quartile value (25th percentile, f",24241,1.0
+46,Carbonate ion,"median value (50th percentile, second qu",HPLC,19-Butanoyloxyfucoxanthin,"median value (50th percentile, second qu",24241,1.0
+47,Carbonate ion,"upper quartile value (75th percentile, t",HPLC,19-Butanoyloxyfucoxanthin,"upper quartile value (75th percentile, t",24241,1.0
+48,Carbonate ion,maximum value in the selected environmen,HPLC,19-Butanoyloxyfucoxanthin,maximum value in the selected environmen,24241,1.0
+49,"Carbon, total",minimum value in the selected environmen,HPLC,Fucoxanthin,minimum value in the selected environmen,24241,1.0
+50,"Carbon, total","lower quartile value (25th percentile, f",HPLC,Fucoxanthin,"lower quartile value (25th percentile, f",24241,1.0
+51,"Carbon, total","median value (50th percentile, second qu",HPLC,Fucoxanthin,"median value (50th percentile, second qu",24241,1.0
+52,"Carbon, total","upper quartile value (75th percentile, t",HPLC,Fucoxanthin,"upper quartile value (75th percentile, t",24241,1.0
+53,"Carbon, total",maximum value in the selected environmen,HPLC,Fucoxanthin,maximum value in the selected environmen,24241,1.0
+54,"Alkalinity, total",minimum value in the selected environmen,HPLC,Neoxanthin,minimum value in the selected environmen,24241,1.0
+55,"Alkalinity, total","lower quartile value (25th percentile, f",HPLC,Neoxanthin,"lower quartile value (25th percentile, f",24241,1.0
+56,"Alkalinity, total","median value (50th percentile, second qu",HPLC,Neoxanthin,"median value (50th percentile, second qu",24241,1.0
+57,"Alkalinity, total","upper quartile value (75th percentile, t",HPLC,Neoxanthin,"upper quartile value (75th percentile, t",24241,1.0
+58,"Alkalinity, total",maximum value in the selected environmen,HPLC,Neoxanthin,maximum value in the selected environmen,24241,1.0
+59,Calcite saturation state,minimum value in the selected environmen,HPLC,Prasinoxanthin,minimum value in the selected environmen,24241,1.0
+60,Calcite saturation state,"lower quartile value (25th percentile, f",HPLC,Prasinoxanthin,"lower quartile value (25th percentile, f",24241,1.0
+61,Calcite saturation state,"median value (50th percentile, second qu",HPLC,Prasinoxanthin,"median value (50th percentile, second qu",24241,1.0
+62,Calcite saturation state,"upper quartile value (75th percentile, t",HPLC,Prasinoxanthin,"upper quartile value (75th percentile, t",24241,1.0
+63,Calcite saturation state,maximum value in the selected environmen,HPLC,Prasinoxanthin,maximum value in the selected environmen,24241,1.0
+64,Aragonite saturation state,minimum value in the selected environmen,HPLC,Violaxanthin,minimum value in the selected environmen,24241,1.0
+65,Aragonite saturation state,"lower quartile value (25th percentile, f",HPLC,Violaxanthin,"lower quartile value (25th percentile, f",24241,1.0
+66,Aragonite saturation state,"median value (50th percentile, second qu",HPLC,Violaxanthin,"median value (50th percentile, second qu",24241,1.0
+67,Aragonite saturation state,"upper quartile value (75th percentile, t",HPLC,Violaxanthin,"upper quartile value (75th percentile, t",24241,1.0
+68,Aragonite saturation state,maximum value in the selected environmen,HPLC,Violaxanthin,maximum value in the selected environmen,24241,1.0

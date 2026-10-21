@@ -1,0 +1,55 @@
+﻿cff-version: 1.2.0
+message: "If you use the D-index or this code, please cite the manuscript and this repository."
+title: "dindex: a two-group log-ratio index for microbial community tables"
+abstract: >-
+  Python and R implementation of the D-index, D = (P - M)/(P + M) = tanh(0.5 ln(P/M)), a bounded
+  two-group log-ratio index of microbial community composition, with quality-control flags,
+  count-based and bootstrap intervals, and calibration helpers (environmental sensitivity, the
+  value of the driver at which D = 0, and seasonal-baseline anomalies). This repository also
+  contains the analysis and figure code for the accompanying manuscript on an
+  Imitervirales-Algavirales balance in marine giant-virus communities.
+type: software
+license: MIT
+version: "0.1.0"
+date-released: "2026-09-24"
+repository-code: "https://github.com/Jianyi-Feng/dindex"
+url: "https://github.com/Jianyi-Feng/dindex"
+
+authors:
+  - family-names: Feng
+    given-names: Jianyi
+    affiliation: "Department of Ocean Science and Engineering, Southern University of Science and Technology, Shenzhen, China"
+  - family-names: Hou
+    given-names: Shengwei
+    affiliation: "Department of Ocean Science and Engineering, Southern University of Science and Technology, Shenzhen, China"
+    orcid: ""
+  - family-names: Fuhrman
+    given-names: Jed A.
+    affiliation: "Department of Biological Sciences, University of Southern California, Los Angeles, CA, USA"
+
+contact:
+  - family-names: Hou
+    given-names: Shengwei
+    email: "housw@sustech.edu.cn"
+
+keywords:
+  - compositional data analysis
+  - log-ratio
+  - metagenomics
+  - microbial ecology
+  - marine giant viruses
+  - climate change indicator
+  - Nucleocytoviricota
+
+references:
+  - type: article
+    title: "A giant-virus index of warming-associated community reorganization"
+    authors:
+      - family-names: Feng
+        given-names: Jianyi
+      - family-names: Hou
+        given-names: Shengwei
+      - family-names: Fuhrman
+        given-names: Jed A.
+    status: submitted
+    journal: Nature

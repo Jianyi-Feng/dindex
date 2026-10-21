@@ -1,0 +1,7 @@
+item,status,detail
+SPOT fraction-slope heterogeneity,supported,"joint SST x fraction interaction P=0.73; use 'similar', not 'identical' slopes"
+heatwave event inference,revise emphasis,year-level exact permutation P=0.048 should be primary inferential check; sample-level P=0.0003 is complementary
+micro/nano relaxation,corrected,"post phase is 2017-2018 matched-SST samples vs 2014-2016 heatwave phase; beta=-0.203, P=0.025"
+Tara leave-one-basin-out,revise wording,"pooled LOBO R2 summarizes all held-out predictions; basin-specific R2 varies and is often negative, so do not claim uniform basin-level skill"
+permutation importance,wording,report descriptive permutation distribution across held-out folds/partitions; do not label pooled permutation quantiles as a confidence interval
+CMIP6 front uncertainty,revise emphasis,use four-ESM model range as primary projection spread; fixed-effect CI is not a full climate-projection uncertainty interval

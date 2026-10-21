@@ -1,0 +1,41 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# ---- R ----
+.Rhistory
+.RData
+.Rproj.user/
+
+# ---- 生成物（脚本会写进 outputs/，不入库）----
+outputs/
+
+# ---- 体积过大的二进制（放在数据存档里，见 README 的 Data 一节）----
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.zip
+*.tar
+*.docx
+*.pdf
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
