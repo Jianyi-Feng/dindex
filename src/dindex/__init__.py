@@ -1,4 +1,4 @@
-"""dindex: a two-group log-ratio index for microbial community composition.
+"""dindex: a bounded two-group balance index for microbial community composition.
 
     D = (P - M) / (P + M) = tanh(0.5 ln(P/M))
 

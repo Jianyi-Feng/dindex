@@ -1,16 +1,21 @@
-# dindex — a two-group log-ratio index for microbial community tables
+# dindex — a bounded two-group balance index for microbial community tables
 
 `dindex` computes the **D-index**, a single number that summarises the balance between two groups
 of taxa in a sample:
 
 $$D = \frac{I - A}{I + A} = \tanh\!\left(\tfrac{1}{2}\ln\frac{I}{A}\right)$$
 
+The second equality holds when **I > 0 and A > 0**. When one group has zero abundance the
+right-hand side is understood as a limit (D = −1 or +1), and D is undefined when **I + A = 0**.
+The index itself never needs a pseudocount; log-ratio computations in the manuscript use a
+pseudocount of 10⁻³ (with 10⁻⁴ and 10⁻² sensitivity checks) only for that log scale.
+
 - **I** is the summed abundance of *Imitervirales* (the "plus" group in the giant-virus study).
 - **A** is the summed abundance of *Algavirales* (the "minus" group).
 
 D runs from **−1** (only A detected) through **0** (equal abundance) to **+1** (only I detected).
-It depends only on the ratio I/A, so it is unchanged by sequencing depth, by normalisation to
-relative abundance, or by any factor applied equally to both groups. It is undefined when I + A = 0.
+Because it is a function of the ratio I/A, D is unchanged by sequencing depth, by normalisation
+to relative abundance, or by any factor applied equally to both groups.
 
 Nothing in the calculation is specific to viruses. It applies to any two groups whose balance you
 expect to track an environmental gradient — ecotypes or clades, warm- vs cold-associated lineages,

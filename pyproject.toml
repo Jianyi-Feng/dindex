@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dindex"
 version = "0.1.0"
-description = "Two-group log-ratio index D = (P - M)/(P + M) for microbial community composition, with QC, uncertainty and calibration helpers"
+description = "Bounded two-group balance index D = (P - M)/(P + M) for microbial community composition, with QC, uncertainty and calibration helpers"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = ["numpy>=1.21", "pandas>=1.3", "scipy>=1.7"]
