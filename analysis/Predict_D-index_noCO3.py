@@ -1,22 +1,14 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-D-index Prediction  -  without the Tara "CO3" predictor
+"""D-index prediction without the Tara "CO3" predictor.
 
- change: the Tara "CO3" column (TARA_SAMPLES_CONTEXT_ENV-DEPTH-CARB_20170515, "Carbonate ion") is identical to the HPLC
-median of 19'-butanoyloxyfucoxanthin in the same PANGAEA release (mislabelled columns), so it is removed from training and
-projection. Everything else is unchanged from .
+This script defines the final seven-predictor framework used in the manuscript: the Tara
+"CO3" column is identical to the median of 19'-butanoyloxyfucoxanthin in the same PANGAEA
+release (mislabelled columns), so it is removed before projection; Imitervirales and
+Algavirales are predicted separately and combined as D = (I - A)/(I + A).
 
-( header) Framework C (predict I and A separately) + ENSEMBLE + I/A abundance
-
-Framework C: predict Imitervirales (I) and Algavirales (A) separately, then combine D = (I-A)/(I+A).
-Follows the earlier conclusion but drops the Temp x log10(Chl) interaction (main-effects model):
-  - 8 main-effect features: Temperature and Salinity (linear), plus ChlorophyllA, CO3, PO4, NO3, Si and Iron (log10);
-  - model pool: LinearReg, Ridge, Lasso, ElasticNet, BayesianRidge, Huber, PLS, LassoLars, AdaBoost, ExtraTrees (KernelRidge removed);
-  - ensemble: average the per-model D predictions (uniform / R2-weighted / top-3) and choose the best by GroupKFold CV.
-  - outputs the D-index plus the predicted Imitervirales/Algavirales relative abundances.
-
-CMIP6 scanning covers all decades automatically.
+NOTE: it consumes three author-local intermediate tables that are not part of this
+repository or of the data deposit (`Final_SPOT_TARA_ocean_Imitervirales_and_environments.csv`,
+`*_data_transformed.csv`, `*_D_index_predicted_noCO3.csv`); run from a working tree that has
+them in place. The deposited results it produces are in `processed_tables/`.
 """
 import os, sys, warnings, time, hashlib, argparse, glob, re
 import numpy as np

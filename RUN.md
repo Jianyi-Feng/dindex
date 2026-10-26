@@ -31,7 +31,6 @@ Any failing step prints its reason, and a summary is given at the end.
 | `analysis/cmip6_extract.py` | needs external input | raw CMIP6 model output (not distributed; see file header) |
 | `analysis/cmip6_analyses.py`, `cmip6_gridded_analyses.py`, `cmip6_aoa_fronts.py`, `climate_velocity_comparison.py` | needs the `*.npz` grids | grids are too large and live in the data deposit (see README) |
 | `figures/*.py` | partly needs the grids | figures that need an `.npz` skip that panel and say so in the log |
-| `checks/*.py` | not standalone | pre-submission package checks against the full submission tree; kept for provenance |
 
 ## Path conventions
 

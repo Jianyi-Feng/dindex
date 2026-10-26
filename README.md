@@ -44,14 +44,12 @@ This repository contains (i) the `dindex` implementation used for that applicati
 | `src/dindex/` | Python package: `core.py` (D-index), `calibrate.py` (sensitivity, zero point, seasonal baseline, pair screening), `cli.py` (command line) |
 | `R/dindex.R` | Base-R implementation of the same functions |
 | `tests/` | `pytest` suite (Python) and `test_dindex.R` (R) |
-| `docs/METHODS_TEMPLATE.md` | Adaptable Methods paragraph for a new application |
-| `docs/REPORTING_CHECKLIST.md` | Minimum reporting standard |
+| `docs/` | Adaptable Methods paragraph (`METHODS_TEMPLATE.md`) and reporting checklist |
 | `examples/` | Worked SPOT + Tara example and a small toy count table for the CLI |
 | `raw_tables/` | **Raw input tables** used by the manuscript analyses (sample-level D values, Tara predictors, CMIP6 latitude–year field, network edge/node lists, rhodopsin metadata) |
-| `analysis/` | Analysis scripts: SPOT time series, heatwave inference, Tara calibration and validation, CMIP6 projections and dominance fronts, genome tables, pN/pS and the association network |
+| `analysis/` | Analysis scripts, including `Predict_D-index_noCO3.py` (the final seven-predictor framework; needs author-local inputs, see the file header): SPOT time series, heatwave inference, Tara calibration and validation, CMIP6 projections and dominance fronts, genome tables, pN/pS and the association network |
 | `processed_tables/` | **Analysis and figure output tables**: Supplementary Data, Supplementary Tables, figure source data, model and statistics tables, genome microdiversity, phylogenies, gridded CMIP6 fields |
 | `figures/` | Figure-generation scripts (main Figs. 1–5, Extended Data Figs. 1–5) |
-| `checks/` | Pre-submission consistency, figure and package checks (kept for provenance; they expect the full submission tree) |
 | `outputs/` | Written by the analysis and figure scripts (ignored by git) |
 | `RUN.md`, `run_checks.sh` | How to verify and rerun the package on any machine |
 
@@ -167,9 +165,11 @@ Data availability statements, following the manuscript:
   UKESM1-0-LL) are public through the [ESGF archive](https://esgf-node.llnl.gov/)
 
 The observation tables needed to rerun the analyses ship with this repository (`raw_tables/` and
-`processed_tables/`), so no extra download is required to get started. The large gridded CMIP6
-arrays are archived with the figshare deposit (`07_CMIP6_gridded_fields/`); `RUN.md` lists which
-scripts need them.
+`processed_tables/`), so no extra download is required to get started. Three gridded CMIP6
+arrays are required by the map and projection scripts: `cmip6_grid.npz` (175 MB),
+`cmip6_maps_2deg.npz` (0.4 MB) and `cmip6_aoa_2deg.npz`. They are too large to be tracked in
+the repository and are distributed as GitHub release assets; `RUN.md` lists which scripts
+need them.
 
 Run the packaging and runnability check with:
 
