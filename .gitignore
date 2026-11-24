@@ -18,10 +18,10 @@ htmlcov/
 .RData
 .Rproj.user/
 
-# ---- 生成物（脚本会写进 outputs/，不入库）----
+# ---- generated files (scripts write into outputs/; not tracked) ----
 outputs/
 
-# ---- 体积过大的二进制（放在数据存档里，见 README 的 Data 一节）----
+# ---- large binaries (archived with the data; see the Data section of README) ----
 *.npz
 *.npy
 *.h5

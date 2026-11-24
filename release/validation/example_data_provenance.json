@@ -1,0 +1,14 @@
+[
+  {
+    "file": "SPOT_sample_Dindex.csv",
+    "sha256": "60f5c85e0b1b87d186dcfee016e75cf134baadd64f3613e010fccd9ad3e496fd",
+    "source": "D-index_revision/data/SPOT_sample_Dindex.csv",
+    "byte_identical": true
+  },
+  {
+    "file": "Tara_observed_Dindex.csv",
+    "sha256": "cda9112668e014dc84df8f95242979992b75ad4f5af894c247680ae0a940bae6",
+    "source": "D-index_revision/data/Tara_observed_Dindex.csv",
+    "byte_identical": true
+  }
+]

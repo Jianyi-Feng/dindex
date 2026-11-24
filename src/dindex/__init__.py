@@ -14,5 +14,5 @@ s2 -1.000  0.952  ok
 """
 from .core import aggregate_groups, d_ci_bootstrap, d_ci_counts, d_from_log_ratio, d_from_table, d_index, log_ratio
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 __all__ = ["d_index", "log_ratio", "d_from_log_ratio", "aggregate_groups", "d_from_table", "d_ci_counts", "d_ci_bootstrap", "__version__"]

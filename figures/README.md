@@ -3,6 +3,13 @@
 The five scripts here reproduce every published figure and their per-figure source data.
 They write into the repository-level `outputs/` folder (ignored by git).
 
+**V73 production scripts.** `figures/v73/` contains the scripts used for the submitted main Figs. 1–5 and
+Extended Data Figs. 1–9 (`build_main.py`, `build_ed.py`, `gvstyle.py`, `qa_figures.py`). They read the
+deposited per-panel source-data workbooks in `processed_tables/figure_source_data/` and write into
+`outputs/v73/`; `figures/v73/README.md` documents the figure-to-input mapping. The five scripts below are
+the earlier pipeline that renders the same main and Extended Data panels through the `dindex` package API
+and assembles the Supplementary Figures.
+
 ## Render order (important)
 
 ```bash

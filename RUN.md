@@ -31,6 +31,11 @@ Any failing step prints its reason, and a summary is given at the end.
 | `analysis/cmip6_extract.py` | needs external input | raw CMIP6 model output (not distributed; see file header) |
 | `analysis/cmip6_analyses.py`, `cmip6_gridded_analyses.py`, `cmip6_aoa_fronts.py`, `climate_velocity_comparison.py` | needs the `*.npz` grids | grids are too large and live in the data deposit (see README) |
 | `figures/*.py` | partly needs the grids | figures that need an `.npz` skip that panel and say so in the log |
+| `figures/v73/build_main.py`, `figures/v73/build_ed.py` | yes | production scripts for main Figs. 1–5 and Extended Data Figs. 1–9; inputs = `processed_tables/figure_source_data/` + `processed_tables/supplementary_data/` + `raw_tables/SPOT_sample_Dindex.csv`. Optional author-local inputs have deposited fallbacks, see `figures/v73/README.md` |
+
+`tools/check_data_layout.py` also lists the repository-external inputs together with the scripts that
+reference them (the three `.npz` CMIP6 grids, the author-local working files of
+`analysis/Predict_D-index_noCO3.py`, and the optional figure-script inputs).
 
 ## Path conventions
 
@@ -45,6 +50,9 @@ outputs    = PKG / "outputs"               # figures and source data written by 
 ```
 
 To keep data elsewhere, edit those constants at the top of the script; do not commit absolute paths.
+`figures/v73/` already supports this through `DINDEX_INPUTS` (table root) and `DINDEX_OUT`
+(output folder); optional author-local inputs are enabled with `DINDEX_STUDY_JSON`, `DINDEX_DATA_EXTRA`
+and `DINDEX_POLB_CTI` (see `figures/v73/README.md`).
 
 ## Environment
 

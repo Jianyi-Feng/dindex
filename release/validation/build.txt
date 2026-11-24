@@ -1,0 +1,133 @@
+* Getting build dependencies for sdist...
+running egg_info
+creating src/dindex.egg-info
+writing src/dindex.egg-info/PKG-INFO
+writing dependency_links to src/dindex.egg-info/dependency_links.txt
+writing entry points to src/dindex.egg-info/entry_points.txt
+writing requirements to src/dindex.egg-info/requires.txt
+writing top-level names to src/dindex.egg-info/top_level.txt
+writing manifest file 'src/dindex.egg-info/SOURCES.txt'
+reading manifest file 'src/dindex.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/dindex.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing src/dindex.egg-info/PKG-INFO
+writing dependency_links to src/dindex.egg-info/dependency_links.txt
+writing entry points to src/dindex.egg-info/entry_points.txt
+writing requirements to src/dindex.egg-info/requires.txt
+writing top-level names to src/dindex.egg-info/top_level.txt
+reading manifest file 'src/dindex.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/dindex.egg-info/SOURCES.txt'
+running check
+creating dindex-0.1.2
+creating dindex-0.1.2/R
+creating dindex-0.1.2/docs
+creating dindex-0.1.2/examples
+creating dindex-0.1.2/examples/data
+creating dindex-0.1.2/src/dindex
+creating dindex-0.1.2/src/dindex.egg-info
+creating dindex-0.1.2/tests
+copying files to dindex-0.1.2...
+copying CHANGELOG.md -> dindex-0.1.2
+copying CITATION.cff -> dindex-0.1.2
+copying LICENSE -> dindex-0.1.2
+copying MANIFEST.in -> dindex-0.1.2
+copying README.md -> dindex-0.1.2
+copying pyproject.toml -> dindex-0.1.2
+copying setup.cfg -> dindex-0.1.2
+copying R/dindex.R -> dindex-0.1.2/R
+copying docs/METHODS_TEMPLATE.md -> dindex-0.1.2/docs
+copying docs/OWN_DATA_WORKFLOW.md -> dindex-0.1.2/docs
+copying docs/RELEASE.md -> dindex-0.1.2/docs
+copying docs/REPORTING_CHECKLIST.md -> dindex-0.1.2/docs
+copying examples/spot_tara_example.py -> dindex-0.1.2/examples
+copying examples/data/SPOT_sample_Dindex.csv -> dindex-0.1.2/examples/data
+copying examples/data/Tara_observed_Dindex.csv -> dindex-0.1.2/examples/data
+copying examples/data/toy_D.tsv -> dindex-0.1.2/examples/data
+copying examples/data/toy_D_env.tsv -> dindex-0.1.2/examples/data
+copying examples/data/toy_counts.tsv -> dindex-0.1.2/examples/data
+copying examples/data/toy_environment.tsv -> dindex-0.1.2/examples/data
+copying examples/data/toy_taxonomy.tsv -> dindex-0.1.2/examples/data
+copying src/dindex/__init__.py -> dindex-0.1.2/src/dindex
+copying src/dindex/calibrate.py -> dindex-0.1.2/src/dindex
+copying src/dindex/cli.py -> dindex-0.1.2/src/dindex
+copying src/dindex/core.py -> dindex-0.1.2/src/dindex
+copying src/dindex/predict.py -> dindex-0.1.2/src/dindex
+copying src/dindex.egg-info/PKG-INFO -> dindex-0.1.2/src/dindex.egg-info
+copying src/dindex.egg-info/SOURCES.txt -> dindex-0.1.2/src/dindex.egg-info
+copying src/dindex.egg-info/dependency_links.txt -> dindex-0.1.2/src/dindex.egg-info
+copying src/dindex.egg-info/entry_points.txt -> dindex-0.1.2/src/dindex.egg-info
+copying src/dindex.egg-info/requires.txt -> dindex-0.1.2/src/dindex.egg-info
+copying src/dindex.egg-info/top_level.txt -> dindex-0.1.2/src/dindex.egg-info
+copying tests/test_dindex.R -> dindex-0.1.2/tests
+copying tests/test_dindex.py -> dindex-0.1.2/tests
+copying tests/test_predict.py -> dindex-0.1.2/tests
+copying src/dindex.egg-info/SOURCES.txt -> dindex-0.1.2/src/dindex.egg-info
+Writing dindex-0.1.2/setup.cfg
+Creating tar archive
+removing 'dindex-0.1.2' (and everything under it)
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+running egg_info
+writing src/dindex.egg-info/PKG-INFO
+writing dependency_links to src/dindex.egg-info/dependency_links.txt
+writing entry points to src/dindex.egg-info/entry_points.txt
+writing requirements to src/dindex.egg-info/requires.txt
+writing top-level names to src/dindex.egg-info/top_level.txt
+reading manifest file 'src/dindex.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/dindex.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/dindex
+copying src/dindex/predict.py -> build/lib/dindex
+copying src/dindex/core.py -> build/lib/dindex
+copying src/dindex/cli.py -> build/lib/dindex
+copying src/dindex/calibrate.py -> build/lib/dindex
+copying src/dindex/__init__.py -> build/lib/dindex
+running egg_info
+writing src/dindex.egg-info/PKG-INFO
+writing dependency_links to src/dindex.egg-info/dependency_links.txt
+writing entry points to src/dindex.egg-info/entry_points.txt
+writing requirements to src/dindex.egg-info/requires.txt
+writing top-level names to src/dindex.egg-info/top_level.txt
+reading manifest file 'src/dindex.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/dindex.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/dindex
+copying build/lib/dindex/__init__.py -> build/bdist.linux-x86_64/wheel/./dindex
+copying build/lib/dindex/calibrate.py -> build/bdist.linux-x86_64/wheel/./dindex
+copying build/lib/dindex/cli.py -> build/bdist.linux-x86_64/wheel/./dindex
+copying build/lib/dindex/core.py -> build/bdist.linux-x86_64/wheel/./dindex
+copying build/lib/dindex/predict.py -> build/bdist.linux-x86_64/wheel/./dindex
+running install_egg_info
+Copying src/dindex.egg-info to build/bdist.linux-x86_64/wheel/./dindex-0.1.2-py3.14.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/dindex-0.1.2.dist-info/WHEEL
+creating '/home/shengwei/.claude/jobs/01b4acd5/tmp/dx2/dindex-0.1.2/dist/.tmp-phy3m0eb/dindex-0.1.2-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'dindex/__init__.py'
+adding 'dindex/calibrate.py'
+adding 'dindex/cli.py'
+adding 'dindex/core.py'
+adding 'dindex/predict.py'
+adding 'dindex-0.1.2.dist-info/licenses/LICENSE'
+adding 'dindex-0.1.2.dist-info/METADATA'
+adding 'dindex-0.1.2.dist-info/WHEEL'
+adding 'dindex-0.1.2.dist-info/entry_points.txt'
+adding 'dindex-0.1.2.dist-info/top_level.txt'
+adding 'dindex-0.1.2.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built dindex-0.1.2.tar.gz and dindex-0.1.2-py3-none-any.whl

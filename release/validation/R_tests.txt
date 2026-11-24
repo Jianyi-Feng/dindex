@@ -1,0 +1,4 @@
+R was not available on the machine that built 0.1.2, so the R tests were not re-run.
+R/dindex.R and tests/test_dindex.R are byte-identical to release 0.1.1, whose record read:
+
+R tests passed

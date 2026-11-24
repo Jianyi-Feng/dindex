@@ -1,0 +1,8 @@
+max |D - published D| = 1.2535184001905009e-10
+median share of PolB coverage in the two orders: 0.965
+SPOT sensitivity: {'slope': 0.1115712954528883, 'ci_low': 0.08151964694328462, 'ci_high': 0.14162294396249198, 'P': 3.421784441689455e-13, 'n': 157}
+  0.02-0.2um: slope 0.096 (0.040-0.153); D = 0 at 22.6 degC (20.8-30.8)
+  0.2-1.2um: slope 0.117 (0.058-0.177); D = 0 at 19.7 degC (18.4-22.9)
+  1.2-80um: slope 0.125 (0.097-0.153); D = 0 at 17.2 degC (15.2-18.2)
+heatwave residual shift (2014-2015 minus 2009-2013): +0.46 D units; baseline R2 = 0.27
+Tara sensitivity (station-clustered): {'slope': 0.043076388605530494, 'ci_low': 0.03356544900980242, 'ci_high': 0.05258732820125857, 'P': 6.871640001253411e-19, 'n': 196}

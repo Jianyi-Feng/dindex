@@ -3,8 +3,7 @@ message: "If you use the D-index or this code, please cite the manuscript and th
 title: "dindex: a bounded two-group dominance index for marine giant-virus communities"
 abstract: >-
   Python and R implementation of the D-index, D = (I - A)/(I + A) = tanh(0.5 ln(I/A)) for I, A > 0,
-  a bounded
-  bounded two-group dominance index developed for marine giant-virus communities (equal to
+  a bounded two-group dominance index developed for marine giant-virus communities (equal to
   tanh(0.5 ln(P/M)) when
   both groups are present), with quality-control flags,
   count-based and bootstrap intervals, and calibration helpers (environmental sensitivity, the
@@ -13,8 +12,8 @@ abstract: >-
   Imitervirales-Algavirales balance in marine giant-virus communities.
 type: software
 license: MIT
-version: "0.1.0"
-date-released: "2026-10-21"
+version: "0.1.2"
+date-released: "2026-11-24"
 repository-code: "https://github.com/Jianyi-Feng/dindex"
 url: "https://github.com/Jianyi-Feng/dindex"
 

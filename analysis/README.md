@@ -1,7 +1,7 @@
 # Manuscript analysis scripts
 
-Code for the analyses reported in *Recurrent warming-associated shifts in marine giant-virus dominance across scales
-reorganization*. Scripts are grouped by the part of the paper they produce and are listed in the
+Code for the analyses reported in *Recurrent warming-associated shifts in marine giant-virus dominance across scales*.
+Scripts are grouped by the part of the paper they produce and are listed in the
 order they were run.
 
 Every script resolves its input and output paths relative to its own location:
@@ -22,15 +22,15 @@ raw model output.
 |---|---|
 | `inherited/dindex_analyses.py` | Core SPOT analyses: D by size fraction, temperature sensitivity at SPOT, seasonal climatology, zero points, heatwave residuals, Tara calibration and transfer |
 | `inherited/dindex_analyses_extra.py` | Additional SPOT summaries (seasonal statistics, event tests) |
-| `inherited/analysis_review.py` | Pseudocount sensitivity and review items carried forward from  |
 | `pre2014_pair_derivation.py` | Screens all 36 pairs of the nine giant-virus orders among the 89 pre-2014 metagenomes, and refits the D–SST slope on that subset |
 
 ## Marine-heatwave inference
 
 Heatwave residuals, the exact year-label permutation over the 21 two-of-seven year assignments,
 the calendar-year bootstrap and the same-month comparisons are produced by
-`inherited/dindex_analyses.py`. Event tests are tabulated in `01_Supplementary_Data/Supplementary_Data_3_*`
-and `02_Supplementary_Tables/Supplementary_Table_3_*`.
+`inherited/dindex_analyses.py`. Event tests are tabulated in
+`processed_tables/supplementary_data/Supplementary_Data_3_*` and
+`processed_tables/supplementary_tables/Supplementary_Table_3_*`.
 
 ## Tara Oceans calibration, validation and benchmarks
 
@@ -62,18 +62,22 @@ and `02_Supplementary_Tables/Supplementary_Table_3_*`.
 |---|---|
 | `pnps_and_network.py` | pN/pS contrasts under coverage thresholds and the descriptive 18S–giant-virus association network |
 | `assemble_supplementary_data.py` | Assembles Supplementary Data 2–10 from the analysis outputs |
-| `restore_new_data_analyses.py` | **Historical — do not rerun.** Provenance source for Supplementary Tables 15–18; it writes -era tables and figures |
+| `historical_new_data_analyses.py` | **Historical — do not rerun.** Provenance source for the earlier-draft supplementary tables; it writes earlier-draft tables and figures |
 
 ## Figures and checks
 
-`figures/make_figures.py` (main Figs. 1–5 and Extended Data Figs. 1–4),
+`figures/make_figures.py` (main Figs. 1–5 and Extended Data Figs. 1, 2, 3, 5),
 `figures/make_extended_data_fig4.py`, `figures/make_supplementary_figs4_5_pnps_network.py`,
 `figures/make_supplementary_fig3_components.py` and `figures/build_supplementary_figures.py`
 regenerate the published panels and their per-figure source data into `outputs/`.
 
-`checks/check_*.py` reproduce the pre-submission checks (consistency, figures, package integrity,
-final presubmission). They expect the full submission tree and are kept for provenance rather than
-for standalone use.
+`figures/v73/` holds the V73 production scripts used for the submitted figures:
+`build_main.py` (main Figs. 1–5), `build_ed.py` (Extended Data Figs. 1–9), `gvstyle.py` (house style)
+and `qa_figures.py` (Nature-spec PDF check). `figures/v73/README.md` maps every figure to its
+source-data sheets and lists the optional author-local inputs and their deposited fallbacks.
+
+Pre-submission consistency checks were run in the author-side submission tree; they are not part of
+this repository.
 
 Manuscript text and the Word-file builders are not part of this repository.
 

@@ -37,6 +37,31 @@ This repository contains (i) the `dindex` implementation used for that applicati
 
 ---
 
+## Reproduction package: data, analysis and figure code for the manuscript
+
+The current release is **dindex 0.1.2** (released 24 November 2026), the reviewer release. It is a
+documentation-only update of 0.1.1: the projection model is now described as an ensemble of ridge
+regression and a random forest, the PolB catalogues are supplied as Supplementary Data 1 and 1b, and
+references to earlier drafts were removed. The built artefacts — wheel, source archive,
+`SHA256SUMS.txt`, `README_FIRST.md` and the validation transcripts — are in `release/`.
+
+This repository is the reproduction package promised by the manuscript's Code availability statement:
+
+> The dindex Python/R toolkit for calculating, quality-controlling and calibrating the D-index for
+> user-specified taxon pairs, with tests, worked examples and a reporting checklist, is available at
+> https://github.com/Jianyi-Feng/dindex. Code for heatwave and calibration analyses, cross-validation,
+> CMIP6 projections, dominance-front analysis and figure generation is available in the same repository,
+> with software environments and random seeds.
+
+It therefore contains, next to the toolkit, the study-specific analysis code (`analysis/`), the inputs
+those analyses start from (`raw_tables/`), the deposited derived tables (`processed_tables/`, including
+Supplementary Data 1–14, Supplementary Tables 1–20 and the per-figure source data) and the production figure
+code (`figures/v73/`, main Figs. 1–5 and Extended Data Figs. 1–9). `docs/REPRODUCING_FIGURES.md` walks
+through the full chain raw table → analysis script → processed table → figure and states which archive
+provides which raw input; `MANIFEST_sha256.csv` records the size and SHA-256 of every tracked file.
+
+---
+
 ## Repository layout
 
 | Path | Contents |
@@ -44,12 +69,13 @@ This repository contains (i) the `dindex` implementation used for that applicati
 | `src/dindex/` | Python package: `core.py` (D-index), `calibrate.py` (sensitivity, zero point, seasonal baseline, pair screening), `cli.py` (command line) |
 | `R/dindex.R` | Base-R implementation of the same functions |
 | `tests/` | `pytest` suite (Python) and `test_dindex.R` (R) |
-| `docs/` | Adaptable Methods paragraph (`METHODS_TEMPLATE.md`) and reporting checklist |
+| `docs/` | Adaptable Methods paragraph (`METHODS_TEMPLATE.md`), reporting checklist, and the end-to-end reproduction guide (`REPRODUCING_FIGURES.md`) |
 | `examples/` | Worked SPOT + Tara example and a small toy count table for the CLI |
 | `raw_tables/` | **Raw input tables** used by the manuscript analyses (sample-level D values, Tara predictors, CMIP6 latitude–year field, network edge/node lists, rhodopsin metadata) |
 | `analysis/` | Analysis scripts, including `Predict_D-index_noCO3.py` (the final seven-predictor framework; needs author-local inputs, see the file header): SPOT time series, heatwave inference, Tara calibration and validation, CMIP6 projections and dominance fronts, genome tables, pN/pS and the association network |
-| `processed_tables/` | **Analysis and figure output tables**: Supplementary Data, Supplementary Tables, figure source data, model and statistics tables, genome microdiversity, phylogenies, gridded CMIP6 fields |
-| `figures/` | Figure-generation scripts (main Figs. 1–5, Extended Data Figs. 1–5) |
+| `processed_tables/` | **Analysis and figure output tables**: Supplementary Data 1–14 (including the curated gene list, Data 14), Supplementary Tables 1–20, figure source data for main Figs. 1–5 and Extended Data Figs. 1–9, model and statistics tables, genome microdiversity, phylogenies, gridded CMIP6 fields |
+| `figures/` | Figure-generation scripts: `figures/v73/` holds the Nature-spec production scripts for main Figs. 1–5 and Extended Data Figs. 1–9; the five earlier scripts render the same panels through the `dindex` API and assemble the Supplementary Figures |
+| `release/` | Reviewer release 0.1.2: wheel, source archive, `SHA256SUMS.txt`, `README_FIRST.md` and the validation transcripts |
 | `outputs/` | Written by the analysis and figure scripts (ignored by git) |
 | `RUN.md`, `run_checks.sh` | How to verify and rerun the package on any machine |
 
@@ -159,6 +185,8 @@ Data availability statements, following the manuscript:
 - **Nucleocytoviricota and Mirusviricota MAGs** (nucleotide and protein sequences) — figshare,
   [`https://doi.org/10.6084/m9.figshare.34419060`](https://doi.org/10.6084/m9.figshare.34419060)
 - **Tara Oceans metagenomes** — ENA `PRJEB1787`, `PRJEB1788`, `PRJEB9740`
+- **Tara Oceans 18S V9 OTU table** — Zenodo,
+  [`https://doi.org/10.5281/zenodo.3768510`](https://doi.org/10.5281/zenodo.3768510)
 - **Companion 16S and 18S rRNA amplicon series** from the same programme are described in our
   previous studies
 - **CMIP6 fields** — the four Earth-system models used (CESM2-WACCM, IPSL-CM6A-LR, NorESM2-MM,

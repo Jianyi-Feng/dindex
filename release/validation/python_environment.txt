@@ -1,0 +1,10 @@
+Python 3.14.6
+dindex==0.1.2
+numpy==2.4.6
+pandas==3.0.3
+scipy==1.18.0
+statsmodels==0.14.6
+patsy==1.0.2
+pytest==9.0.3
+build==1.5.1
+setuptools==83.0.0
