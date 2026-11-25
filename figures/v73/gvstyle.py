@@ -52,15 +52,32 @@ if THEME == 'vivid':
     GREY3 = ['#5F6B7A', '#D5DAE3', '#1F2A44']
     CMAP_T = 'viridis'
     N_DARK, N_MID, N_LIGHT = '#4A5568', '#98A2B3', '#D5DAE3'
-def use():
-    mpl.rcParams.update(RC)
+SCALE = 1.10          # global text scale for the 2026-11 size pass; per-figure overrides call use(scale)
+def fs(x):
+    """Scale a font size written against the original 6.5 pt body style."""
+    return x * SCALE
+def use(scale=None):
+    global SCALE
+    if scale is not None: SCALE = scale
+    rc = dict(RC)
+    for _k in ('font.size', 'axes.labelsize', 'axes.titlesize', 'xtick.labelsize', 'ytick.labelsize', 'legend.fontsize'):
+        rc[_k] = RC[_k] * SCALE
+    mpl.rcParams.update(rc)
     import matplotlib._mathtext as _mt
     _mt.SHRINK_FACTOR = 0.85          # sub/superscripts at 6.5 pt body -> 5.2 pt, above Nature's 5 pt floor (default 0.7 gives 4.55)
 def figure(w_mm=183, h_mm=120): return plt.figure(figsize=(w_mm * MM, h_mm * MM))
-def label(ax, s, dx=-0.0, dy=1.02, x_mm=None):
-    """8 pt bold lowercase panel label, anchored to the left edge of the axis label area."""
-    fig = ax.figure; bb = ax.get_position(); off = (x_mm if x_mm is not None else 9) * MM / fig.get_figwidth()
-    fig.text(bb.x0 - off, bb.y1 + 0.012, s, fontsize=8, fontweight='bold', va='bottom', ha='left')
+_LABELS = {}
+def label(ax, s, dx=None, dy=1.02, x_mm=None):
+    """8 pt bold lowercase panel label. Placed at save time, just left of the y-axis label text,
+    so long axis labels (or larger type) can never collide with the letter."""
+    _LABELS.setdefault(id(ax.figure), []).append((ax, s))
+def _place_labels(fig):
+    items = _LABELS.pop(id(fig), [])
+    if not items:
+        return
+    for ax, s in items:
+        bb = ax.get_position()
+        fig.text(bb.x0 - 4.0 / 183.0, bb.y1 + 0.012, s, fontsize=fs(8), fontweight='bold', va='bottom', ha='left')
 def raincloud(ax, data, pos, color, width=0.34, seed=0, cloud=True, box=True, ms=2.2, side=1):
     """Raincloud: half-violin (the cloud) on one side, a slim box plot on the centre line, and the raw observations (the rain)
     jittered on the other side. `side` = +1 puts the cloud to the right. Everything is drawn in one colour."""
@@ -80,4 +97,5 @@ def sci(p):
     """1.2e-15 -> '1.2 x 10^-15' in mathtext"""
     m, e = f'{p:.1e}'.split('e'); return rf'{m} × 10$^{{{int(e)}}}$'
 def save(fig, stem):
+    _place_labels(fig)
     fig.savefig(stem + '.pdf'); fig.savefig(stem + '.png', dpi=300)
