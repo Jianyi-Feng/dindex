@@ -58,7 +58,7 @@ def ed1():
     for i, r in enumerate(c.itertuples()):                        # half-eye: the sampling distribution implied by the estimate and its 95% interval, with the interval itself underneath
         y0 = len(c) - 1 - i; col = [DK, DK, MD, MD, DK][i]; se = (r.ci_high - r.ci_low) / (2 * 1.96); dn = norm.pdf(xx, r.value, se); dn = dn / dn.max() * 0.72; inside = (xx >= r.ci_low) & (xx <= r.ci_high)
         ax.fill_between(xx, y0, y0 + dn, color=col, alpha=0.13, lw=0); ax.fill_between(xx[inside], y0, y0 + dn[inside], color=col, alpha=0.30, lw=0); ax.plot(xx, y0 + dn, color=col, lw=0.5)
-        ax.plot([r.ci_low, r.ci_high], [y0, y0], color=col, lw=1.1, solid_capstyle='round'); ax.plot(r.value, y0, 'o', color=col, ms=3.8, mec='white', mew=0.5, zorder=4); ax.text(0.298, y0 + 0.12, f'n = {int(r.n)}', ha='right', va='bottom', fontsize=G.fs(5.5), color=MD)
+        ax.plot([r.ci_low, r.ci_high], [y0, y0], color=col, lw=1.1, solid_capstyle='round'); ax.plot(r.value, y0, 'o', color=col, ms=3.8, mec='white', mew=0.5, zorder=4); ax.text(0.298, y0 + 0.12, f'$n$ = {int(r.n)}', ha='right', va='bottom', fontsize=G.fs(5.5), color=MD)
     ax.axvline(0, color=MD, lw=0.5, ls=(0, (3, 2))); ax.set_yticks(range(5)); ax.set_yticklabels(nm[::-1]); ax.set_ylim(-0.35, 4.95); ax.set_xlim(-0.03, 0.30); ax.set_xlabel('Slope of D on temperature (per °C)'); ax.set_title('Temperature sensitivity'); lab(ax, 'c', 23)
     # d: the fitted relationships themselves, and where each crosses D = 0
     ax = fig.add_subplot(gs[3]); sp = rd('Fig1_derive', 'a_samples'); sp = sp[sp.SST.notna()]; ta = pd.read_csv(SUP + 'Supplementary_Data_4_Tara_Dindex_predictors.csv'); ta = ta[ta.D_index_qc == 'ok'].copy()
@@ -88,7 +88,7 @@ def ed2():
     F = 'ExtendedDataFig2_heatwave'; b = rd(F, 'b_permutations'); c = rd(F, 'c_same_month'); S = between_year_sensitivity()
     fig = G.figure(183, 66); gs = fig.add_gridspec(1, 3, left=0.075, right=0.99, top=0.93, bottom=0.2, wspace=0.38, width_ratios=[0.8, 1.0, 1.25])
     ax = fig.add_subplot(gs[0]); g = sorted((float(k), v['P']) for k, v in S['grid'].items()); ax.plot([x for x, _ in g], [p for _, p in g], '-o', color=DK, ms=3)
-    ax.axhline(0.05, color=MD, lw=0.6, ls=(0, (3, 2))); ax.axvline(S['sd_of_pre_event_year_means'], color=LT, lw=2.2, zorder=0); ax.set_yscale('log'); ax.set_xlabel('Assumed between-year s.d. of D'); ax.set_ylabel('«i»P«/i» of the observed shift'.replace('«i»','').replace('«/i»','')); ax.set_title('Between-year sensitivity'); lab(ax, 'a')
+    ax.axhline(0.05, color=MD, lw=0.6, ls=(0, (3, 2))); ax.axvline(S['sd_of_pre_event_year_means'], color=LT, lw=2.2, zorder=0); ax.set_yscale('log'); ax.set_xlabel('Assumed between-year s.d. of D'); ax.set_ylabel('$P$ of the observed shift'); ax.set_title('Between-year sensitivity'); lab(ax, 'a')
     ax = fig.add_subplot(gs[1]); b = b.sort_values('shift'); ev = b.years.astype(str).str.contains('2014') & b.years.astype(str).str.contains('2015')
     ax.barh(range(len(b)), b['shift'], color=np.where(ev, EV, LT), lw=0); ax.set_yticks(range(len(b))); ax.set_yticklabels([' + '.join(__import__('re').findall(r'20\d\d', str(v))) for v in b.years], fontsize=G.fs(4.9)); ax.axvline(0, color=DK, lw=0.4, ls=(0, (3, 2))); ax.set_xlabel('Mean residual shift in D'); ax.set_title('Year-label permutations'); lab(ax, 'b', 14)
     ax = fig.add_subplot(gs[2]); c['date'] = pd.to_datetime(c.date); ax.bar(range(len(c)), c['diff'], color=np.where(c['diff'] >= 0, EV if G.THEME == 'vivid' else '#4D4D4D', LT), lw=0); ax.axhline(0, color=DK, lw=0.4, ls=(0, (3, 2)))
@@ -122,7 +122,7 @@ def ed3():
     for k in ('viral', 'pico'):
         dd = d[d.frac == k]; st = G.FRAC[k]; ax.scatter(dd.D_tara, dd.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label=st['label'])
     _rr = {k: np.corrcoef(g.D_tara, g.D_index)[0, 1] for k, g in d.groupby('frac')}
-    ax.text(0.03, 0.96, 'r = %.2f (viral), %.2f (pico)' % (_rr.get('viral', np.nan), _rr.get('pico', np.nan)), transform=ax.transAxes, va='top', fontsize=G.fs(5.5))
+    ax.text(0.03, 0.96, '$r$ = %.2f (viral), %.2f (pico)' % (_rr.get('viral', np.nan), _rr.get('pico', np.nan)), transform=ax.transAxes, va='top', fontsize=G.fs(5.5))
     ax.set_xlabel('D predicted from Tara calibration'); ax.set_ylabel('Observed D at SPOT'); ax.set_xlim(-1.05, 1.05); ax.set_ylim(-1.05, 1.05); ax.set_title('Tara calibration applied to SPOT'); ax.legend(loc='lower right', handletextpad=0.1); lab(ax, 'd')
     ax = fig.add_subplot(g2[1]); e = e.sort_values('mean', ascending=False).reset_index(drop=True); rp = (pd.read_csv(os.path.join(DATA_EXTRA, 'permutation_importance_replicates.csv')) if DATA_EXTRA
           else rd('ExtendedDataFig3_global_robustness', 'e_permutation_replicates')); from scipy.stats import gaussian_kde
@@ -133,7 +133,7 @@ def ed3():
         ax.scatter(v, y0 - 0.10 - rj.uniform(0, 0.16, len(v)), s=0.6, color=col, alpha=0.25, lw=0, zorder=1, rasterized=True)
         ax.plot([r.ci_low, r.ci_high], [y0, y0], color=col, lw=1.1, solid_capstyle='round', zorder=4); ax.plot(r.mean, y0, 'o', color=col, ms=3.8, mec='white', mew=0.5, zorder=5)
     ax.axvline(0, color=MD, lw=0.5, ls=(0, (3, 2)), zorder=0); ax.set_yticks(range(len(e))); ax.set_yticklabels([NM[x] for x in e.feature][::-1]); ax.set_ylim(-0.4, len(e) - 0.05); ax.set_xlim(-0.25, 1.45)
-    ax.set_xlabel('Loss of out-of-fold R² when the predictor is permuted'); ax.set_title('Predictor importance'); lab(ax, 'e', 22)
+    ax.set_xlabel('Loss of out-of-fold $R^2$ when the predictor is permuted'); ax.set_title('Predictor importance'); lab(ax, 'e', 22)
     G.save(fig, OUT + F); return {'e_permutation_importance': e, 'e_permutation_replicates': rp}
 
 def ed4():
@@ -166,11 +166,11 @@ def ed5():
         bot = 0
         for k, col, nm in (('unique_temperature', G.N_MID, 'Temperature only'), ('shared', G.N_LIGHT, 'Shared'), ('unique_host', HO, 'Mamiellophyceae only')):
             ax.bar(i, r[k], 0.5, bottom=bot, color=col, lw=0, label=nm if i == 0 else None); bot += r[k]
-    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.7, 1.7); ax.set_ylim(0, 1.12); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Variance in D explained (R²)'); ax.set_title('Temperature or Mamiellophyceae?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper center', ncol=1, labelspacing=0.2, borderaxespad=0.1); lab(ax, 'b')
+    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.7, 1.7); ax.set_ylim(0, 1.12); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Variance in D explained ($R^2$)'); ax.set_title('Temperature or Mamiellophyceae?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper center', ncol=1, labelspacing=0.2, borderaxespad=0.1); lab(ax, 'b')
     ax = fig.add_subplot(gs[2]); mam = d.X.str.contains('Mamiello') | d.Y.str.contains('Mamiello'); bins = np.linspace(0, 0.85, 18)
     ax.hist([d.abs_rho_D[~mam], d.abs_rho_D[mam]], bins=bins, stacked=True, color=[LT, HO], lw=0, label=['Other pairs', 'Pairs with Mamiellophyceae'])
     pre = d[(d.X.str.contains('Prymnes') & d.Y.str.contains('Mamiello')) | (d.Y.str.contains('Prymnes') & d.X.str.contains('Mamiello'))].abs_rho_D.iloc[0]; ax.plot(pre, -1.2, '^', color=HO, ms=4.5, clip_on=False)
-    ax.set_xlabel('|Spearman ρ| with station-mean D'); ax.set_ylabel('Number of protist-group pairs'); ax.set_title('All 210 protist-group pairs'); ax.legend(loc='upper left'); lab(ax, 'c')
+    ax.set_xlabel('|Spearman $\\rho$| with station-mean D'); ax.set_ylabel('Number of protist-group pairs'); ax.set_title('All 210 protist-group pairs'); ax.legend(loc='upper left'); lab(ax, 'c')
     G.save(fig, OUT + F)
 
 def ed6():
@@ -249,7 +249,7 @@ def ed8():
     ax = fig.add_axes([0.065, 0.39, 0.24, 0.22]); uu = u.groupby('variable').agg(ratio=('median_ratio_cmip6_over_tara', 'median'), rho=('spearman_rho', 'median')).reset_index(); ax.axvline(1, color=LT, lw=0.5)
     fin = ~uu.variable.isin(['Si', 'CO3']); ax.scatter(uu.ratio[fin], uu.rho[fin], s=14, color=DK, lw=0); ax.scatter(uu.ratio[uu.variable == 'Si'], uu.rho[uu.variable == 'Si'], s=14, facecolor='white', edgecolor=DK, lw=0.7); ax.scatter(uu.ratio[uu.variable == 'CO3'], uu.rho[uu.variable == 'CO3'], s=15, marker='s', facecolor='white', edgecolor=G.MUTED, lw=0.8); NM = {'temperature': ('Temperature', (4, 3)), 'salinity': ('Salinity', (4, -5)), 'Fe': ('Iron', (4, 0)), 'PO4': ('Phosphate', (4, 3)), 'chlorophyll_a': ('Chlorophyll a', (4, -5)), 'NO3': ('Nitrate', (4, 0)), 'Si': ('Silicate', (4, 0)), 'CO3': ('CO3 (excluded)', (-5, 6))}
     [ax.annotate(NM[r.variable][0], (r.ratio, r.rho), xytext=NM[r.variable][1], textcoords='offset points', fontsize=G.fs(5.5), va='center', ha='right' if r.variable == 'CO3' else 'left') for r in uu.itertuples()]
-    ax.set_xscale('log'); ax.set_xlabel('Median ratio, CMIP6 / Tara'); ax.set_ylabel('Spearman ρ across 83 stations'); ax.set_ylim(0, 1.12); ax.set_title('Model inputs vs observations'); lab(ax, 'd')
+    ax.set_xscale('log'); ax.set_xlabel('Median ratio, CMIP6 / Tara'); ax.set_ylabel('Spearman $\\rho$ across 83 stations'); ax.set_ylim(0, 1.12); ax.set_title('Model inputs vs observations'); lab(ax, 'd')
     ax = fig.add_axes([0.40, 0.39, 0.24, 0.22]); esm_lines(ax, e, 'front'); ax.set_xlabel('Decade (mid-year)'); ax.set_ylabel('Front latitude (°)'); ax.set_title('Temperature-only calibration'); lab(ax, 'e')
     ax = fig.add_axes([0.735, 0.39, 0.245, 0.22]); pers = [f.period.min(), f.period.max()]
     for e_, st in G.ESM.items():

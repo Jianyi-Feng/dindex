@@ -104,23 +104,26 @@ def fig1():
         if j == 0: ax.legend(loc='upper center', ncol=2, columnspacing=1.2, borderaxespad=0.1)
         lab(ax, k)
     ax = fig.add_subplot(gs[1, 1]); ax.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
-    import statsmodels.formula.api as smf
-    dd = a.dropna(subset=['SST'])
-    mm = smf.ols('D_index ~ SST + C(frac)', data=dd).fit(cov_type='HC3')
+    from scipy import stats as _sst
+    dd = a.dropna(subset=['SST']).copy()
+    _fit = {}
     for k in ['viral', 'pico', 'micro']:
         d = dd[dd.frac == k]; st = G.FRAC[k]
-        ax.scatter(d.SST, d.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label=st['label'])
+        ax.scatter(d.SST, d.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55)
+        _sl, _ic = np.polyfit(d.SST, d.D_index, 1)
         xs = np.linspace(d.SST.min(), d.SST.max(), 50)
-        ax.plot(xs, mm.predict(pd.DataFrame({'SST': xs, 'frac': k})), color=st['color'], lw=1.1)
-    ci = mm.conf_int().loc['SST', :]
-    rr = float(np.corrcoef(dd.SST, dd.D_index)[0, 1])
-    _lab = '%.2f D/\u00b0C (95%% CI %.2f\u2013%.2f)\n$r$ = %.2f, n = %d' % (mm.params['SST'], ci.iloc[0], ci.iloc[1], rr, len(dd))
-    ax.text(0.03, 0.97, _lab,
-            transform=ax.transAxes, va='top', fontsize=G.fs(5.6), color=G.INK, linespacing=1.4,
-            bbox=dict(facecolor='white', edgecolor='none', pad=1.5))
-    ax.set_xlabel('SST (°C)'); ax.set_ylabel('D'); ax.set_title('D against temperature'); ax.set_ylim(-1.05, 1.22); ax.set_yticks([-1, -0.5, 0, 0.5, 1])
-    ax.legend(loc='lower right', handlelength=1.4, fontsize=G.fs(5.6), frameon=True, facecolor='white', edgecolor='none', framealpha=1)
-    lab(ax, 'e')
+        ax.plot(xs, _ic + _sl * xs, color=st['color'], lw=1.1)
+        _rr, _pp = _sst.pearsonr(d.SST, d.D_index)
+        _fit[k] = dict(slope=float(_sl), intercept=float(_ic), r=float(_rr), P=float(_pp), n=int(len(d)))
+    for _i, _k in enumerate(['viral', 'pico', 'micro']):
+        _yy = 0.985 - 0.082 * _i; _st_ = G.FRAC[_k]; _f = _fit[_k]
+        ax.plot([0.045], [_yy], marker=_st_['marker'], ms=3.0, mfc='none', mec=_st_['color'], mew=0.6,
+                ls='none', transform=ax.transAxes, clip_on=False)
+        _pt = '$P$ < 0.001' if _f['P'] < 1e-3 else '$P$ = ' + G.sci(_f['P'])
+        ax.text(0.085, _yy, '%s  $r$ = %.2f, %s' % (_st_['label'], _f['r'], _pt), transform=ax.transAxes,
+                va='center', ha='left', fontsize=G.fs(4.9), color=G.INK)
+    ax.set_xlabel('SST (\u00b0C)'); ax.set_ylabel('D'); ax.set_title('D against temperature')
+    ax.set_ylim(-1.05, 1.55); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); lab(ax, 'e')
     f = rd('Fig1_derive', 'f_monthly_D'); ax = fig.add_subplot(gs[1, 2]); ax.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     sm = rd('Fig1_derive', 'a_samples').copy(); sm['month'] = pd.to_datetime(sm.date).dt.month; fm = sm.groupby(['frac', 'month']).D_index.agg(['mean', 'size']).reset_index()
     FL = {'viral': ('#8D99AE', '-', 'o', 'Viral'), 'pico': ('#AEB8C8', (0, (4, 1.5)), 's', 'Pico'), 'micro': ('#C6CEDA', (0, (1.2, 1.2)), '^', 'Micro/nano')}     # light tints: context behind the pooled mean
@@ -130,7 +133,7 @@ def fig1():
     ax.set_xticks(range(1, 13)); ax.set_xticklabels(MON); ax.set_ylim(-1.05, 1.05); ax.set_ylabel('D'); ax.set_xlabel('Month'); ax.set_title('Seasonal cycle of D')
     ax.legend(loc='upper left', ncol=2, columnspacing=0.8, handlelength=1.5, handletextpad=0.3, fontsize=G.fs(5.5), borderaxespad=0.1); lab(ax, 'f')
     EX1 = {'f_monthly_D_by_fraction': fm.rename(columns={'frac': 'size_fraction', 'mean': 'mean_D', 'size': 'n_samples'})}
-    EX1['e_regression'] = pd.DataFrame({'term': list(mm.params.index), 'coef': list(mm.params.values), 'P': list(mm.pvalues.values)})
+    EX1['e_regression'] = pd.DataFrame([dict(size_fraction=k, slope=v['slope'], intercept=v['intercept'], r=v['r'], P=v['P'], n=v['n']) for k, v in _fit.items()])
     G.save(fig, OUT + 'Fig1_derive'); return EX1
 
 # ============================================================== Fig. 2
@@ -213,21 +216,21 @@ def fig3():
     for _lat in (-35, 35):
         axa.plot(np.linspace(-180, 180, 100), np.full(100, _lat), transform=ccrs.PlateCarree(), color='#9A9A9A', lw=0.4, ls=':', zorder=2)
     cax = fig.add_axes([0.583, 0.700, 0.012, 0.205]); cb = fig.colorbar(sc, cax=cax, orientation='vertical', ticks=[-1, -0.5, 0, 0.5, 1]); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cax.set_title('D-index', fontsize=G.fs(6), pad=3)
-    fig.text(0.025, 0.983, 'a', fontsize=G.fs(8), fontweight='bold'); fig.text(0.055, 0.983, 'Tara Oceans: station-mean D (83 stations, 196 metagenomes)', fontsize=G.fs(6.6), fontweight='bold')
+    fig.text(0.025, 0.983, 'a', fontsize=G.fs(8), fontweight='bold'); fig.text(0.055, 0.983, 'Tara Oceans: station-mean D', fontsize=G.fs(6.6), fontweight='bold')
     axb = fig.add_axes([0.708, 0.665, 0.272, 0.30]); na, ar = st[~st.arctic], st[st.arctic]; axb.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     axb.scatter(na['T'], na.D, s=11, color=G.INK, lw=0, zorder=3, label='Other oceans'); axb.scatter(ar['T'], ar.D, s=11, facecolor='white', edgecolor=G.INK, lw=0.6, zorder=3, label='Arctic')
     for d_, ls in ((st, '-'), (na, (0, (4, 2)))):
         b = np.polyfit(d_['T'], d_.D, 1); xx = np.array([d_['T'].min(), d_['T'].max()]); axb.plot(xx, np.polyval(b, xx), color=G.MUTED, lw=1.0, ls=ls, zorder=2)
     r_all, p_all = stats.pearsonr(st['T'], st.D); r_na, p_na = stats.pearsonr(na['T'], na.D)
-    pa = 'P < 0.001' if p_all < 1e-3 else 'P = ' + G.sci(p_all); pn = 'P < 0.001' if p_na < 1e-3 else 'P = ' + G.sci(p_na)
-    axb.text(0.03, 0.98, 'All stations  r = %.2f, %s\nNon-Arctic  r = %.2f, %s' % (r_all, pa, r_na, pn),
+    pa = '$P$ < 0.001' if p_all < 1e-3 else '$P$ = ' + G.sci(p_all); pn = '$P$ < 0.001' if p_na < 1e-3 else '$P$ = ' + G.sci(p_na)
+    axb.text(0.03, 0.98, 'All stations  $r$ = %.2f, %s\nNon-Arctic  $r$ = %.2f, %s' % (r_all, pa, r_na, pn),
              transform=axb.transAxes, va='top', ha='left', fontsize=G.fs(5.4), color=G.INK, linespacing=1.5)
     axb.set_xlabel('Temperature (°C)'); axb.set_ylabel('Station-mean D'); axb.set_ylim(-1.12, 1.42); axb.set_yticks([-1, -0.5, 0, 0.5, 1]); axb.legend(loc='lower right', handletextpad=0.2); axb.set_title('D against temperature')
     axc = fig.add_axes([0.075, 0.375, 0.20, 0.19]); axc.plot([-1, 1], [-1, 1], color=G.LIGHT, lw=0.7, ls=(0, (3, 2)))
     for d_, kw in ((oof[~oof.arctic], dict(color=G.INK, lw=0)), (oof[oof.arctic], dict(facecolor='white', edgecolor=G.INK, lw=0.5))): axc.scatter(d_.observed_D, d_.predicted_D, s=6, zorder=3, **kw)
     axc.set_xlabel('Observed D'); axc.set_ylabel('Predicted D'); axc.set_xticks([-1, 0, 1]); axc.set_yticks([-1, 0, 1]); axc.set_title('Out-of-fold prediction')
     xo, yp = oof.observed_D.values, oof.predicted_D.values; r2 = 1 - ((xo - yp) ** 2).sum() / ((xo - xo.mean()) ** 2).sum()
-    axc.text(0.97, 0.04, 'R² = %.2f, n = %d' % (r2, len(oof)), transform=axc.transAxes, va='bottom', ha='right', fontsize=G.fs(5.6), color=G.INK)
+    axc.text(0.97, 0.04, '$R^2$ = %.2f, $n$ = %d' % (r2, len(oof)), transform=axc.transAxes, va='bottom', ha='right', fontsize=G.fs(5.6), color=G.INK)
     axd = fig.add_axes([0.40, 0.375, 0.33, 0.19])
     NAME = {'Temperature +\nfraction (D)': 'Temperature only', 'Ridge, 7 env\n+ fraction': 'Ridge', 'Random forest, 7 env\n+ fraction (log-ratio)': 'Random forest (log-ratio)', 'Random forest, 7 env\n+ fraction (D)': 'Random forest (D)', 'Ensemble (ridge + random forest), 7 env + fraction': 'Ensemble'}
     assert set(tr.model) == set(NAME); HI = {'Ensemble': G.INK}
@@ -237,7 +240,7 @@ def fig3():
         axd.plot([0, 1], [a_, b_], color=c_, lw=1.5 if hi else 0.9, zorder=4 if hi else 3); axd.plot([0, 1], [a_, b_], 'o', color=c_, ms=4.2 if hi else 3.2, mec='white', mew=0.5, zorder=5)
         axd.text(1.06, b_, f'{nm}  {b_:.2f}', va='center', ha='left', fontsize=G.fs(5.8), color=c_, fontweight='bold' if hi else 'normal')
     axd.text(-0.06, tr.station_blocked_R2_mean.max(), f'{tr.station_blocked_R2_mean.max():.2f}', va='center', ha='right', fontsize=G.fs(5.8), color=G.INK, fontweight='bold')
-    axd.set_xlim(-0.22, 1.05); axd.set_ylim(0.1, 0.7); axd.set_xticks([0, 1]); axd.set_xticklabels(['Stations withheld', 'Whole basin withheld']); axd.set_ylabel('Out-of-sample R² for D'); axd.set_yticks([0.2, 0.4, 0.6]); axd.spines['bottom'].set_bounds(0, 1); axd.set_title('Transfer across basins')
+    axd.set_xlim(-0.22, 1.05); axd.set_ylim(0.1, 0.7); axd.set_xticks([0, 1]); axd.set_xticklabels(['Stations withheld', 'Whole basin withheld']); axd.set_ylabel('Out-of-sample $R^2$ for D'); axd.set_yticks([0.2, 0.4, 0.6]); axd.spines['bottom'].set_bounds(0, 1); axd.set_title('Transfer across basins')
     axe = fig.add_axes([0.075, 0.065, 0.235, 0.225]); grp = ['within', 'Imitervirales', 'Algavirales']; cols = {'within': G.INK, 'Imitervirales': G.IMI, 'Algavirales': G.ALG}; rj = np.random.default_rng(3)
     for i, g in enumerate(grp):
         d_ = ya[ya['index'] == g]; ev = d_[d_.event_years.astype(str).str.contains('2014') & d_.event_years.astype(str).str.contains('2015')]; ot = d_.drop(ev.index)
@@ -252,7 +255,7 @@ def fig3():
     for o, c, off in (('Imitervirales', G.IMI, 0.16), ('Algavirales', G.ALG, -0.16)):
         vv = [abs(W['C2'][o][k]['rho']) for k in keys]; yy = np.arange(len(keys))[::-1] + off; axg.hlines(yy, 0, vv, color=c, lw=0.9); axg.plot(vv, yy, 'o', color=c, ms=3.4)
         out += [dict(order=o, niche_axis=k, spearman_rho=W['C2'][o][k]['rho'], P=W['C2'][o][k]['P'], n=W['C2'][o][k]['n']) for k in keys]
-    axg.set_yticks(range(len(keys))); axg.set_yticklabels(lb[::-1]); axg.set_xlim(0, 0.34); axg.set_xlabel('|Spearman ρ|'); axg.set_title('Which niche axis?')
+    axg.set_yticks(range(len(keys))); axg.set_yticklabels(lb[::-1]); axg.set_xlim(0, 0.34); axg.set_xlabel('|Spearman $\\rho$|'); axg.set_title('Which niche axis?')
     for ax, s, xm in ((axb, 'b', 9), (axc, 'c', 9), (axd, 'd', 9), (axe, 'e', 9), (axf, 'f', 10), (axg, 'g', 15)): lab(ax, s, xm)
     G.save(fig, OUT + 'Fig3_validate'); return {'g_niche_axes': pd.DataFrame(out)}
 
@@ -271,13 +274,13 @@ def fig4():
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
     ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower left', bbox_to_anchor=(0.02, 0.02), handletextpad=0.2, borderaxespad=0.1, frameon=True, facecolor='white', edgecolor='none', framealpha=1.0, fontsize=G.fs(5.0))
-    ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(6.2)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman ρ, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
+    ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(6.2)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman $\\rho$, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
     ax = fig.add_axes([0.765, 0.62, 0.215, 0.34])
     for i, r in c.iterrows():
         bot = 0
         for k, col, nm in (('unique_temperature', G.N_MID, 'Temperature only'), ('shared', G.N_LIGHT, 'Shared'), ('unique_host', G.HOST, 'Host balance only')):
             ax.bar(i, r[k], 0.55, bottom=bot, color=col, lw=0, label=nm if i == 0 else None); bot += r[k]
-    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.6, 1.6); ax.set_ylim(0, 1.0); ax.set_ylabel('Variance in D explained (R²)'); ax.set_title('Temperature or hosts?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper right'); lab(ax, 'c')
+    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.6, 1.6); ax.set_ylim(0, 1.0); ax.set_ylabel('Variance in D explained ($R^2$)'); ax.set_title('Temperature or hosts?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper right'); lab(ax, 'c')
     ax = fig.add_axes([0.03, 0.09, 0.62, 0.43], projection=ccrs.Robinson(central_longitude=-160)); ax.set_global(); ax.spines['geo'].set_linewidth(0.5)
     lon, lat, z = grid(d, 'dD'); pm = ax.pcolormesh(lon, lat, z, cmap=G.cmap_orders(), vmin=-0.4, vmax=0.4, transform=ccrs.PlateCarree(), rasterized=True, shading='nearest')
     _, _, sup = grid(d.assign(s=(~d.support.astype(bool)).astype(float)), 's'); ax.contourf(lon, lat, sup, levels=[0.5, 1.5], colors=['#F2F2F2'], transform=ccrs.PlateCarree())
