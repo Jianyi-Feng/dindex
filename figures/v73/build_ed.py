@@ -107,21 +107,23 @@ def ed3():
     ax = fig.add_subplot(g1[1]); bb = b[b.basin.notna()]; mods = list(dict.fromkeys(bb.model)); bas = sorted(bb.basin.unique())
     for j, (mname, col) in enumerate(zip(mods[:2], (DK, LT))):
         v = [bb[(bb.basin == k) & (bb.model == mname)].RMSE.mean() for k in bas]; ax.barh(np.arange(len(bas)) + (0.19 - 0.38 * j), v, 0.36, color=col, lw=0, label=['Temperature + size fraction', 'Random forest'][j])
-    ax.set_yticks(range(len(bas))); ax.set_yticklabels(bas); ax.set_xlabel('RMSE in held-out basin (D units)'); ax.set_xlim(0, 1.5); ax.set_xticks([0, 0.5, 1.0]); ax.set_title('Error in each held-out basin'); ax.legend(loc='lower right', ncol=1, handletextpad=0.3, borderaxespad=0.2); lab(ax, 'b', 19)
-    _p = ax.get_position(); ax.set_position([_p.x0 + 0.016, _p.y0, _p.width - 0.016, _p.height])
+    ax.set_yticks(range(len(bas))); ax.set_yticklabels(bas); ax.set_xlabel('RMSE in held-out basin (D units)'); ax.set_xlim(0, 1.5); ax.set_xticks([0, 0.5, 1.0]); ax.set_title('Error in each held-out basin'); ax.legend(loc='lower right', ncol=1, handletextpad=0.3, borderaxespad=0.15, fontsize=G.fs(4.6), frameon=True, facecolor='white', edgecolor='none', framealpha=1.0); lab(ax, 'b', 19)
+    _p = ax.get_position(); ax.set_position([_p.x0 + 0.034, _p.y0, _p.width - 0.028, _p.height])
     ax = fig.add_subplot(g1[2]); bs = sorted(c.ocean_basin.unique()); rj = np.random.default_rng(2)
     for i, k in enumerate(bs):
         v = c[c.ocean_basin == k].residual_D.values
         vp = ax.violinplot([v], positions=[i], widths=0.74, showextrema=False, showmedians=False)
         for _b in vp['bodies']:
-            _b.set_facecolor(LT); _b.set_edgecolor(MD); _b.set_linewidth(0.4); _b.set_alpha(0.9)
+            _b.set_facecolor('none'); _b.set_edgecolor(MD); _b.set_linewidth(0.55)
         ax.scatter(i + rj.uniform(-0.15, 0.15, len(v)), v, s=4, color=MD, lw=0, alpha=0.55, zorder=3)
         ax.plot([i - 0.22, i + 0.22], [np.median(v)] * 2, color=DK, lw=1.2, zorder=4)
     ax.axhline(0, color=MD, lw=0.5, ls=(0, (3, 2))); ax.set_xticks(range(len(bs))); ax.set_xticklabels([k.replace(' Ocean', '').replace(' Sea', '').replace('Mediterranean', 'Medit.') for k in bs], rotation=55, ha='right', fontsize=G.fs(5.5)); ax.set_ylabel('Observed − predicted D'); ax.set_title('Residuals by basin'); lab(ax, 'c')
     ax = fig.add_subplot(g2[0]); ax.plot([-1, 1], [-1, 1], color=LT, lw=0.7)
     for k in ('viral', 'pico'):
         dd = d[d.frac == k]; st = G.FRAC[k]; ax.scatter(dd.D_tara, dd.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label=st['label'])
-    ax.set_xlabel('D predicted from Tara calibration'); ax.set_ylabel('Observed D at SPOT'); ax.set_xlim(-1.05, 1.05); ax.set_ylim(-1.05, 1.05); ax.set_title('Tara calibration applied to SPOT'); ax.legend(loc='upper left', handletextpad=0.1); lab(ax, 'd')
+    _rr = {k: np.corrcoef(g.D_tara, g.D_index)[0, 1] for k, g in d.groupby('frac')}
+    ax.text(0.03, 0.96, 'r = %.2f (viral), %.2f (pico)' % (_rr.get('viral', np.nan), _rr.get('pico', np.nan)), transform=ax.transAxes, va='top', fontsize=G.fs(5.5))
+    ax.set_xlabel('D predicted from Tara calibration'); ax.set_ylabel('Observed D at SPOT'); ax.set_xlim(-1.05, 1.05); ax.set_ylim(-1.05, 1.05); ax.set_title('Tara calibration applied to SPOT'); ax.legend(loc='lower right', handletextpad=0.1); lab(ax, 'd')
     ax = fig.add_subplot(g2[1]); e = e.sort_values('mean', ascending=False).reset_index(drop=True); rp = (pd.read_csv(os.path.join(DATA_EXTRA, 'permutation_importance_replicates.csv')) if DATA_EXTRA
           else rd('ExtendedDataFig3_global_robustness', 'e_permutation_replicates')); from scipy.stats import gaussian_kde
     NM = {'temperature': 'Temperature', 'log_chl': 'Chlorophyll a', 'femto': 'Size fraction', 'salinity': 'Salinity', 'log_Fe': 'Iron', 'log_PO4': 'Phosphate', 'log_NO3': 'Nitrate', 'log_Si': 'Silicate'}; xx = np.linspace(-0.25, 1.45, 500); rj = np.random.default_rng(5)
@@ -144,6 +146,7 @@ def ed4():
         if i == 0: ax.tick_params(labelbottom=False); ax.set_title('Within-order thermal affinity through time'); lab(ax, 'a')
     fig.text(0.012, 0.55, 'Seasonal residual of mean thermal affinity (°C)', rotation=90, va='center', fontsize=G.fs(6.5))
     ax = fig.add_subplot(gs[:, 1]); ax.hist(b.null_event_shift, bins=50, orientation='horizontal', color=LT, lw=0); ax.axhline(b.observed.iloc[0], color=EV, lw=1.0); ax.set_xticks([]); ax.spines['bottom'].set_visible(False); ax.set_ylabel('Event shift (°C)'); ax.set_title('Shuffle null'); lab(ax, 'b')
+    _p = ax.get_position(); ax.set_position([_p.x0 - 0.028, _p.y0, _p.width, _p.height])
     ax = fig.add_subplot(gs[:, 2]); c = c.sort_values('mean_tara_affinity').reset_index(drop=True)
     for i, r in c.iterrows():
         col = G.IMI if r.order == 'Imitervirales' else G.ALG; ax.plot([100 * r.mean_share_pre, 100 * r.mean_share_event], [i, i], color=col, lw=0.9); ax.plot(100 * r.mean_share_pre, i, 'o', mfc='white', mec=col, ms=4, mew=0.8); ax.plot(100 * r.mean_share_event, i, 'o', color=col, ms=4)
@@ -180,7 +183,7 @@ def ed6():
     ax.set_yscale('log'); ax.set_ylim(0.02, 400); ax.set_ylabel('Mamiellophyceae (% of 18S reads)'); ax.set_xlabel('Year'); ax.set_title('Mamiellophyceae through time'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper left', ncol=2); lab(ax, 'a')
     ax = fig.add_subplot(g1[1]); z = lambda v: (v - np.nanmean(v)) / np.nanstd(v); oc = [k for k in b.columns if k.startswith('s_M_1.2')][0]
     ax.plot(b.month, z(b.s_M), '-s', color=HO, ms=2.6, label='Mamiellophyceae, 0.2–1.2 µm'); ax.plot(b.month, z(b[oc]), '-s', color=HOL, ms=2.6, ls=(0, (3, 1.5)), label='Mamiellophyceae, 1.2–80 µm'); ax.plot(b.month, z(b.AG_vir), '-o', color=G.ALG, ms=2.8, label='Algavirales share')
-    ax.set_xticks(range(1, 13)); ax.set_xticklabels(MON); ax.set_ylabel('Monthly mean (standardized)'); ax.set_title('Annual cycles'); ax.legend(loc='lower center', fontsize=G.fs(5.5), labelspacing=0.2, borderaxespad=0.2); ax.axhline(0, color=LT, lw=0.5, ls=(0, (3, 2))); lab(ax, 'b')
+    ax.set_xticks(range(1, 13)); ax.set_xticklabels(MON); ax.set_ylabel('Monthly mean (standardized)'); ax.set_title('Annual cycles'); ax.legend(loc='lower center', fontsize=G.fs(4.5), labelspacing=0.12, borderaxespad=0.2); ax.axhline(0, color=LT, lw=0.5, ls=(0, (3, 2))); lab(ax, 'b')
     ax = fig.add_subplot(g2[0]); rj = np.random.default_rng(4); gps = list(dict.fromkeys(c.group))
     for i, g_ in enumerate(gps):
         dd = c[c.group == g_]; o = dd[dd.year != 2015]; e_ = dd[dd.year == 2015]; G.raincloud(ax, np.log10(o.fold_change.values), i, MD, width=0.34, seed=i, ms=4); ax.scatter([i], np.log10(e_.fold_change), s=30, marker='D', color=EV, edgecolor='white', lw=0.5, zorder=7)
@@ -191,7 +194,9 @@ def ed6():
     for j, (col_, nm, k) in enumerate((('AG_pico_resid', 'Algavirales share, picoplankton\n(residual, percentage points)', 'd'), ('AG_vir_resid', 'Algavirales share, viral fraction\n(residual, percentage points)', 'e'))):
         ax = fig.add_subplot(g2[j + 1]); dd = d.dropna(subset=['M_resid', col_]); ax.axhline(0, color=LT, lw=0.5, ls=(0, (3, 2))); ax.axvline(0, color=LT, lw=0.5, ls=(0, (3, 2)))
         o = dd[dd.yr != 2015]; e_ = dd[dd.yr == 2015]; ax.scatter(o.M_resid, 100 * o[col_], s=10, facecolor='white', edgecolor=DK, lw=0.55); ax.scatter(e_.M_resid, 100 * e_[col_], s=12, color=EV, lw=0)
-        ax.set_xlabel('Mamiellophyceae share (residual, log$_{10}$)'); ax.set_ylabel(nm); ax.set_title(['Coupling, picoplankton', 'Coupling, viral fraction'][j]); lab(ax, k)
+        ax.set_xlabel('Mamiellophyceae share (residual, log$_{10}$)'); ax.set_ylabel(nm)
+        if j == 1: ax.xaxis.set_label_coords(0.42, -0.17)
+        ax.set_title(['Coupling, picoplankton', 'Coupling, viral fraction'][j]); lab(ax, k)
     G.save(fig, OUT + F)
 
 def esm_lines(ax, d, ycol, xcol='year'):
@@ -217,12 +222,12 @@ def ed7():
         if i in (1, 2):
             cax = fig.add_axes([0.02 + i * 0.33 + (0.0 if i == 2 else -0.165) + 0.07, 0.575, 0.16, 0.011]); cb = fig.colorbar(pm, cax=cax, orientation='horizontal', ticks=[-vm, 0, vm]); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cb.set_label('D' if i == 1 else 'ΔD, 2090s − 2000s', labelpad=1)
     ax = fig.add_axes([0.065, 0.1, 0.25, 0.34]); dd = d[d.projection.str.contains('final ensemble')]; esm_lines(ax, dd, 'front'); ax.set_xlabel('Decade (mid-year)'); ax.set_ylabel('Latitude of D = 0 front (°)'); ax.set_title('Front latitude by model'); esm_legend(ax, loc='upper left', ncol=2, columnspacing=0.6); ax.set_ylim(33, 58); lab(ax, 'd')
-    ax = fig.add_axes([0.47, 0.1, 0.21, 0.34]); pr = [p_ for p_ in dict.fromkeys(e.projection) if 'archived' not in p_]
+    ax = fig.add_axes([0.505, 0.1, 0.195, 0.34]); pr = [p_ for p_ in dict.fromkeys(e.projection) if 'archived' not in p_]
     for i, p_ in enumerate(pr):
         for hm, off, fill in (('North', 0.14, DK), ('South', -0.14, 'white')):
             x = e[(e.projection == p_) & (e.hemisphere == hm)]; y = len(pr) - 1 - i + off; ax.plot([x.km_per_decade.min(), x.km_per_decade.max()], [y, y], color=MD, lw=0.6)
             for _, r in x.iterrows(): ax.plot(r.km_per_decade, y, marker=G.ESM[r.ESM]['marker'], mfc=fill, mec=DK, ms=3, mew=0.5)
-    short = {'final ensemble (7 predictors)': 'Final ensemble', 'final ensemble, AOA cells only': 'Ensemble, support domain'}; ax.set_yticks(range(len(pr))); ax.set_yticklabels([short.get(p_, p_.split('(')[0].strip().capitalize()) for p_ in pr][::-1]); ax.set_xlim(0, 125); ax.set_xlabel('Poleward rate (km per decade)'); ax.set_title('Rates across designs'); lab(ax, 'e', 22)
+    short = {'final ensemble (7 predictors)': 'Final ensemble', 'final ensemble, AOA cells only': 'Ensemble, support domain'}; ax.set_yticks(range(len(pr))); ax.set_yticklabels([short.get(p_, p_.split('(')[0].strip().capitalize()) for p_ in pr][::-1]); ax.set_xlim(0, 125); ax.tick_params(axis='y', labelsize=G.fs(4.9)); ax.set_xlabel('Poleward rate (km per decade)'); ax.set_title('Rates across designs'); lab(ax, 'e', 22)
     ax = fig.add_axes([0.78, 0.1, 0.2, 0.34]); fb = f[f.hemisphere == 'both']; ax.bar(range(len(fb)), 100 * fb.share_sign_agreement, 0.62, color=MD, lw=0); ax.set_xticks(range(len(fb))); ax.set_xticklabels(['<30°', '30–45°', '45–60°', '>60°'][:len(fb)]); ax.set_ylim(0, 100)
     ax.set_xlabel('Absolute latitude'); ax.set_ylabel('Models agree on sign (% of area)'); ax.set_title('Model agreement'); lab(ax, 'f', 11)
     G.save(fig, OUT + F)
@@ -251,10 +256,10 @@ def ed8():
         for pr_, ls in zip(pers, ((0, (1, 1)), '-')):
             dd = f[(f.ESM == e_) & (f.period == pr_)].sort_values('latitude_mid'); ax.plot(dd.mean_D, dd.latitude_mid, color=MD if ls == '-' else LT, lw=0.7, ls=ls)
     ax.axvline(0, color=LT, lw=0.5, ls=(0, (3, 2))); ax.plot([], [], color=LT, lw=0.9, ls=(0, (1, 1)), label='2000s'); ax.plot([], [], color=MD, lw=0.9, label='2090s'); ax.legend(loc='lower right'); ax.set_xlabel('Zonal-mean D'); ax.set_ylabel('Latitude (°)'); ax.set_xlim(-1, 1); ax.set_title('Zonal-mean D by model'); lab(ax, 'f')
-    ax = fig.add_axes([0.065, 0.075, 0.24, 0.22]); ax.plot([0, 95], [0, 95], color=LT, lw=0.7)
+    ax = fig.add_axes([0.065, 0.058, 0.24, 0.22]); ax.plot([0, 95], [0, 95], color=LT, lw=0.7)
     for _, r in g.iterrows(): ax.plot(r.isotherm, r.D_front, marker=G.ESM[r.ESM]['marker'], mfc=DK if r.hemisphere == 'North' else 'white', mec=DK, ms=4, mew=0.6)
     ax.set_xlabel('Isotherm rate (km per decade)'); ax.set_ylabel('D = 0 front rate (km per decade)'); ax.set_xlim(0, 95); ax.set_ylim(0, 108); ax.set_title('Front rate vs isotherm rate'); esm_legend(ax, loc='upper left'); lab(ax, 'g')
-    ax = fig.add_axes([0.40, 0.075, 0.58, 0.22]); esm_lines(ax, fr, 'front')
+    ax = fig.add_axes([0.40, 0.058, 0.58, 0.22]); esm_lines(ax, fr, 'front')
     for e_ in G.ESM:
         for hm in ('North', 'South'):
             dd = h[(h.ESM == e_) & (h.hemisphere == hm)].sort_values('year'); ax.plot(dd.year, dd.lat.abs(), color=MD, lw=0.7, ls=(0, (1, 1)))

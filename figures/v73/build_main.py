@@ -89,13 +89,14 @@ def fig1():
     G.use(1.16)
     a = rd('Fig1_derive', 'a_samples'); a['date'] = pd.to_datetime(a.date)
     fig = G.figure(183, 104); gs = fig.add_gridspec(2, 3, left=0.07, right=0.985, top=0.945, bottom=0.085, hspace=0.46, wspace=0.34)
-    ax = fig.add_subplot(gs[0, 0]); ax.axvspan(pd.Timestamp('2014-01-01'), pd.Timestamp('2016-08-31'), color=G.BAND, lw=0)
+    gs1 = fig.add_gridspec(1, 3, left=0.097, right=0.985, top=0.945, bottom=0.5954, wspace=0.34)
+    ax = fig.add_subplot(gs1[0, 0]); ax.axvspan(pd.Timestamp('2014-01-01'), pd.Timestamp('2016-08-31'), color=G.BAND, lw=0)
     for i, k in enumerate(['viral', 'pico', 'micro']):
         d = a[a.frac == k]; ax.scatter(d.date, np.full(len(d), i), s=7, marker=G.FRAC[k]['marker'], color=G.FRAC[k]['color'], lw=0)
     ax.set_yticks([0, 1, 2]); ax.set_yticklabels(['Viral', 'Pico', 'Micro/nano']); ax.set_ylim(-0.7, 2.7); ax.spines['left'].set_visible(False); ax.tick_params(axis='y', length=0)
     ax.set_xlim(pd.Timestamp('2009-01-01'), pd.Timestamp('2020-01-01')); ax.set_xlabel('Year'); ax.set_title('Sampling, 2009–2019'); lab(ax, 'a', 11)
     for j, (sh, k) in enumerate((('b_viral_monthly', 'b'), ('c_pico_monthly', 'c'), ('d_micro_monthly', 'd'))):
-        d = rd('Fig1_derive', sh); ax = fig.add_subplot(gs[0, 1] if j == 0 else gs[0, 2] if j == 1 else gs[1, 0])
+        d = rd('Fig1_derive', sh); ax = fig.add_subplot(gs1[0, 1] if j == 0 else gs1[0, 2] if j == 1 else gs[1, 0])
         for q, c, nm in (('I', G.IMI, 'Imitervirales'), ('A', G.ALG, 'Algavirales')):
             ax.fill_between(d.month, d[q + 'q1'], d[q + 'q3'], color=c, alpha=0.18, lw=0); ax.plot(d.month, d[q + 'm'], '-o', color=c, ms=2.6, label=nm)
         ax.set_xticks(range(1, 13)); ax.set_xticklabels(MON); ax.set_ylim(0, 1.22); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Relative abundance'); ax.set_xlabel('Month')
@@ -209,8 +210,8 @@ def fig3():
     fig = G.figure(183, 165)
     axa = fig.add_axes([0.025, 0.628, 0.555, 0.355], projection=ccrs.Robinson()); axa.set_global(); axa.add_feature(cf.LAND, facecolor='#EAEAEA', lw=0); axa.coastlines(lw=0.25, color='#BDBDBD'); axa.spines['geo'].set_linewidth(0.5)
     sc = axa.scatter(st.lon, st.lat, c=st.D, cmap=G.cmap_orders(), vmin=-1, vmax=1, s=36, edgecolor='white', lw=0.5, transform=ccrs.PlateCarree(), zorder=3)
-    for _lat in (-23.44, 23.44):
-        axa.plot([-179, 179], [_lat, _lat], transform=ccrs.PlateCarree(), color='#9A9A9A', lw=0.4, ls=(0, (1.5, 1.5)), zorder=2)
+    for _lat in (-35, 35):
+        axa.plot(np.linspace(-180, 180, 100), np.full(100, _lat), transform=ccrs.PlateCarree(), color='#9A9A9A', lw=0.4, ls=':', zorder=2)
     cax = fig.add_axes([0.583, 0.700, 0.012, 0.205]); cb = fig.colorbar(sc, cax=cax, orientation='vertical', ticks=[-1, -0.5, 0, 0.5, 1]); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cax.set_title('D-index', fontsize=G.fs(6), pad=3)
     fig.text(0.025, 0.983, 'a', fontsize=G.fs(8), fontweight='bold'); fig.text(0.055, 0.983, 'Tara Oceans: station-mean D (83 stations, 196 metagenomes)', fontsize=G.fs(6.6), fontweight='bold')
     axb = fig.add_axes([0.708, 0.665, 0.272, 0.30]); na, ar = st[~st.arctic], st[st.arctic]; axb.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
@@ -241,7 +242,7 @@ def fig3():
     for i, g in enumerate(grp):
         d_ = ya[ya['index'] == g]; ev = d_[d_.event_years.astype(str).str.contains('2014') & d_.event_years.astype(str).str.contains('2015')]; ot = d_.drop(ev.index)
         G.raincloud(axe, ot['shift'].values, i, G.MUTED, width=0.36, seed=i, ms=3); axe.scatter([i], ev['shift'], s=30, marker='D', color=cols[g], edgecolor='white', lw=0.5, zorder=7)
-    axe.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2))); axe.set_xticks(range(3)); axe.set_xticklabels(['Both orders', 'Imitervirales', 'Algavirales']); axe.tick_params(axis='x', labelsize=G.fs(5.8)); axe.set_xlim(-0.5, 2.5); axe.set_ylim(-2.5, 2.3); axe.set_ylabel('Shift in mean thermal affinity (°C)'); axe.set_title('Within-order affinity shift')
+    axe.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2))); axe.set_xticks(range(3)); axe.set_xticklabels(['Both orders', 'Imitervirales', 'Algavirales'], rotation=30, ha='right', rotation_mode='anchor'); axe.tick_params(axis='x', labelsize=G.fs(5.4)); axe.set_xlim(-0.5, 2.5); axe.set_ylim(-2.5, 2.3); axe.set_ylabel('Shift in mean thermal affinity (°C)'); axe.set_title('Within-order affinity shift')
     axf = fig.add_axes([0.415, 0.065, 0.270, 0.225])
     for o, c in (('Imitervirales', G.IMI), ('Algavirales', G.ALG)):
         d_ = ph[ph.order == o]; density(axf, d_.tara_affinity.values, d_.event_change_log10.values, c, (-6, 36), (-2.6, 3.0)); axf.scatter(d_.tara_affinity, d_.event_change_log10, s=3 + 60 * np.sqrt(d_.mean_share.clip(0, 0.2)), color=c, alpha=0.35, lw=0, zorder=2)
@@ -265,11 +266,11 @@ def fig4():
     ax = fig.add_axes([0.07, 0.62, 0.24, 0.34]); sc = ax.scatter(a.D_host, a.D, c=a['T'], cmap=G.CMAP_T, vmin=-4, vmax=30, s=13, edgecolor=G.INK, lw=0.3)
     cax = ax.inset_axes([0.06, 0.845, 0.34, 0.036]); cb = fig.colorbar(sc, cax=cax, orientation='horizontal', ticks=[0, 15, 30]); cb.outline.set_linewidth(0.4); cax.tick_params(length=1.5, width=0.4, labelsize=G.fs(5.8), pad=1); cax.set_title('Temperature (°C)', fontsize=G.fs(6), pad=2, loc='left', fontweight='normal')
     ax.set_xlabel('Host balance, D$_{host}$'); ax.set_ylabel('Station-mean D'); ax.set_xlim(-1.08, 1.08); ax.set_ylim(-1.08, 1.45); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against the host balance'); lab(ax, 'a')
-    ax = fig.add_axes([0.468, 0.62, 0.183, 0.34]); ax.axvline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
+    ax = fig.add_axes([0.470, 0.625, 0.168, 0.325]); ax.axvline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
-    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower right', handletextpad=0.2, borderaxespad=0.1)
+    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower left', bbox_to_anchor=(0.02, 0.02), handletextpad=0.2, borderaxespad=0.1, frameon=True, facecolor='white', edgecolor='none', framealpha=1.0, fontsize=G.fs(5.0))
     ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(6.2)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman ρ, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
     ax = fig.add_axes([0.765, 0.62, 0.215, 0.34])
     for i, r in c.iterrows():
@@ -287,11 +288,11 @@ def fig4():
     ax.plot([], [], color=G.INK, lw=0.9, ls=(0, (3, 1.5)), label='D = 0, 2000s'); ax.plot([], [], color=G.INK, lw=0.9, label='D = 0, 2090s'); fig.legend(*ax.get_legend_handles_labels(), loc='lower left', bbox_to_anchor=(0.03, 0.035), ncol=2)
     cax = fig.add_axes([0.36, 0.062, 0.22, 0.011]); cb = fig.colorbar(pm, cax=cax, orientation='horizontal', ticks=[-0.4, 0, 0.4], extend='both'); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cb.set_label('ΔD, 2090s − 2000s', labelpad=1)
     fig.text(0.03, 0.525, 'd', fontsize=G.fs(8), fontweight='bold'); fig.text(0.062, 0.525, 'Projected change in D by the 2090s', fontsize=G.fs(7.2), fontweight='bold')
-    ax = fig.add_axes([0.80, 0.115, 0.18, 0.40])
+    ax = fig.add_axes([0.772, 0.115, 0.198, 0.40])
     for j, hm in enumerate(['North', 'South']):
         dd = e[e.hemisphere == hm]; yv = 1 - j; ax.plot([dd.km_per_decade.min(), dd.km_per_decade.max()], [yv, yv], color=G.MUTED, lw=0.7); ax.plot([dd.km_per_decade.mean()] * 2, [yv - 0.16, yv + 0.16], color=G.INK, lw=1.6)
         for _, r in dd.iterrows(): ax.plot(r.km_per_decade, yv, marker=G.ESM[r.ESM]['marker'], mfc='white', mec=G.INK, ms=3.6, mew=0.7, ls='none', label=r.ESM if j == 0 else None)
-    ax.set_yticks([1, 0]); ax.set_yticklabels(['Northern front', 'Southern front']); ax.set_ylim(-0.75, 1.5); ax.set_xlim(0, 100); ax.set_xlabel('Poleward rate (km per decade)'); ax.set_title('Front movement'); ax.legend(loc='lower right', handletextpad=0.1, fontsize=G.fs(5.5), borderaxespad=0); lab(ax, 'e', 11)
+    ax.set_yticks([1, 0]); ax.set_yticklabels(['Northern front', 'Southern front']); ax.set_ylim(-0.75, 1.5); ax.set_xlim(0, 100); ax.set_xlabel('Poleward rate (km per decade)'); ax.set_title('Front movement'); ax.legend(loc='lower right', handletextpad=0.1, fontsize=G.fs(4.8), borderaxespad=0); lab(ax, 'e', 11)
     G.save(fig, OUT + 'Fig4_hosts_and_fronts')
 
 # ============================================================== Fig. 5
