@@ -164,7 +164,7 @@ def fig2():
     axb.axvspan(*span, color=G.BAND, lw=0); axb.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2))); tt = pd.date_range('2009-07-01', '2016-01-01', freq='7D')
     axb.plot(tt, H(tt.month + tt.day / 30) @ b0, color=G.MUTED, lw=0.8, ls=(0, (3, 1.5)), label='Seasonal expectation'); axb.plot(v.date, y, color=G.LIGHT, lw=0.6, zorder=1)
     axb.scatter(v.date[pre], y[pre], s=9, color=G.PRE, lw=0, zorder=3, label='2009–2013'); axb.scatter(v.date[~pre], y[~pre], s=11, color=G.EVT, lw=0, zorder=3, label='2014–2015')
-    axb.set_ylim(-1.05, 1.45); axb.set_ylabel('D'); axb.legend(loc='upper left', handlelength=1.8); axb.set_title('D against its seasonal cycle')
+    axb.set_ylim(-1.05, 1.45); axb.set_ylabel('D'); axb.legend(loc='upper left', handlelength=1.8); axb.set_title('D and its seasonal cycle')
     for a_ in (axa, axb): a_.set_xlim(pd.Timestamp('2009-05-01'), pd.Timestamp('2016-02-01'))
     axc.hist(null, bins=60, color=G.LIGHT, lw=0); ym = axc.get_ylim()[1]; others = [s for p, s in assign.items() if p != (2014, 2015)]
     axc.plot(others, np.full(len(others), -0.045 * ym), '|', color=G.PRE, ms=5, mew=0.8, clip_on=False); axc.plot([obs], [-0.045 * ym], '|', color=G.EVT, ms=7, mew=1.4, clip_on=False)
@@ -273,7 +273,7 @@ def fig4():
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
-    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower right', bbox_to_anchor=(0.99, 0.02), handletextpad=0.2, borderaxespad=0.1, frameon=False, fontsize=G.fs(4.5))
+    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='upper right', bbox_to_anchor=(1.0, 0.98), handletextpad=0.2, borderaxespad=0.1, frameon=False, fontsize=G.fs(4.5))
     ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(6.2)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman $\\rho$, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
     ax = fig.add_axes([0.765, 0.62, 0.215, 0.34])
     for i, r in c.iterrows():
@@ -323,7 +323,7 @@ def fig5():
     for yv in range(1, len(TC)): ax.axhline(yv, color='white', lw=1.6)
     ax.set_xlim(0, x0 - GAP); ax.set_ylim(len(TC), -0.02); ax.set_yticks(np.arange(len(TC)) + 0.5); ax.set_yticklabels(list(TC)); ax.set_xticks([]); ax.tick_params(length=0)
     for sp in ax.spines.values(): sp.set_visible(False)
-    ax.set_xlabel('Genomes, one column each'); ax.set_title('Trait repertoire', pad=12); lab(ax, 'a', 21, 0.05)
+    ax.set_xlabel('Genomes (one column each)'); ax.set_title('Trait repertoire', pad=12); lab(ax, 'a', 21, 0.05)
     axp = fig.add_subplot(gs[1]); bm, bp = ax.get_position(), axp.get_position(); axp.set_position([bm.x1 + 0.012, bp.y0, bp.x1 - bm.x1 - 0.03, bp.height])
     for i, r in a.iterrows():
         yv = i + 0.5; axp.plot([100 * r.kA / nA, 100 * r.kI / nI], [yv, yv], color=G.LIGHT, lw=1.6, zorder=1, solid_capstyle='round')

@@ -151,7 +151,7 @@ def ed4():
     for i, r in c.iterrows():
         col = G.IMI if r.order == 'Imitervirales' else G.ALG; ax.plot([100 * r.mean_share_pre, 100 * r.mean_share_event], [i, i], color=col, lw=0.9); ax.plot(100 * r.mean_share_pre, i, 'o', mfc='white', mec=col, ms=4, mew=0.8); ax.plot(100 * r.mean_share_event, i, 'o', color=col, ms=4)
     ax.plot([], [], 'o', mfc='white', mec=DK, ms=4, mew=0.8, label='2009–2013'); ax.plot([], [], 'o', color=DK, ms=4, label='2014–2015'); ax.legend(loc='upper right', handletextpad=0.1)
-    ax.set_yticks(range(len(c))); ax.set_yticklabels([f"{r.family.replace('_', ' ')}  {r.mean_tara_affinity:.1f} °C" for r in c.itertuples()]); ax.set_xlabel('Share of giant-virus PolB coverage (%)'); ax.set_ylim(-0.6, len(c) - 0.4); ax.set_title('Family shares before and during'); lab(ax, 'c', 24)
+    ax.set_yticks(range(len(c))); ax.set_yticklabels([f"{r.family.replace('_', ' ')}  {r.mean_tara_affinity:.1f} °C" for r in c.itertuples()]); ax.set_xlabel('Share of giant-virus PolB coverage (%)'); ax.set_ylim(-0.6, len(c) - 0.4); ax.set_title('Family shares, pre-event vs event'); lab(ax, 'c', 24)
     G.save(fig, OUT + F)
 
 def ed5():
@@ -166,7 +166,7 @@ def ed5():
         bot = 0
         for k, col, nm in (('unique_temperature', G.N_MID, 'Temperature only'), ('shared', G.N_LIGHT, 'Shared'), ('unique_host', HO, 'Mamiellophyceae only')):
             ax.bar(i, r[k], 0.5, bottom=bot, color=col, lw=0, label=nm if i == 0 else None); bot += r[k]
-    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.7, 1.7); ax.set_ylim(0, 1.12); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Variance in D explained ($R^{\mathrm{2}}$)'); ax.set_title('Temperature or Mamiellophyceae?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper center', ncol=1, labelspacing=0.2, borderaxespad=0.1); lab(ax, 'b')
+    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.7, 1.7); ax.set_ylim(0, 1.12); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Variance in D explained ($R^{\mathrm{2}}$)'); ax.set_title('Variance partition'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper center', ncol=1, labelspacing=0.2, borderaxespad=0.1); lab(ax, 'b')
     ax = fig.add_subplot(gs[2]); mam = d.X.str.contains('Mamiello') | d.Y.str.contains('Mamiello'); bins = np.linspace(0, 0.85, 18)
     ax.hist([d.abs_rho_D[~mam], d.abs_rho_D[mam]], bins=bins, stacked=True, color=[LT, HO], lw=0, label=['Other pairs', 'Pairs with\nMamiellophyceae'])
     pre = d[(d.X.str.contains('Prymnes') & d.Y.str.contains('Mamiello')) | (d.Y.str.contains('Prymnes') & d.X.str.contains('Mamiello'))].abs_rho_D.iloc[0]; ax.plot(pre, -1.2, '^', color=HO, ms=4.5, clip_on=False)
@@ -245,7 +245,7 @@ def ed8():
     for j, (dc, col) in enumerate(zip(dec, ('white', MD))):
         for i, k in enumerate(('share_all', 'share_near_front', 'share_polar')):
             v = c0[c0.decade == dc][k] * 100; ax.bar(i + (j - 0.5) * 0.36, v.mean(), 0.34, color=col, edgecolor=DK, lw=0.5, label=['2000s', '2090s'][j] if i == 0 else None); ax.plot(np.full(len(v), i + (j - 0.5) * 0.36), v, '.', color=DK, ms=2.5)
-    ax.set_xticks(range(3)); ax.set_xticklabels(['All ocean', 'Near fronts', '≥60°']); ax.tick_params(axis='x', labelsize=G.fs(5.8)); ax.set_ylim(0, 118); ax.set_ylabel('Area within support (%)'); ax.set_title('Share within support'); ax.legend(loc='upper center', ncol=2, bbox_to_anchor=(0.5, 1.28)); lab(ax, 'c')
+    ax.set_xticks(range(3)); ax.set_xticklabels(['All ocean', 'Near fronts', '≥60°']); ax.tick_params(axis='x', labelsize=G.fs(5.8)); ax.set_ylim(0, 118); ax.set_ylabel('Area within support (%)'); ax.set_title('Support-domain coverage'); ax.legend(loc='upper center', ncol=2, bbox_to_anchor=(0.5, 1.28)); lab(ax, 'c')
     ax = fig.add_axes([0.065, 0.39, 0.24, 0.22]); uu = u.groupby('variable').agg(ratio=('median_ratio_cmip6_over_tara', 'median'), rho=('spearman_rho', 'median')).reset_index(); ax.axvline(1, color=LT, lw=0.5)
     fin = ~uu.variable.isin(['Si', 'CO3']); ax.scatter(uu.ratio[fin], uu.rho[fin], s=14, color=DK, lw=0); ax.scatter(uu.ratio[uu.variable == 'Si'], uu.rho[uu.variable == 'Si'], s=14, facecolor='white', edgecolor=DK, lw=0.7); ax.scatter(uu.ratio[uu.variable == 'CO3'], uu.rho[uu.variable == 'CO3'], s=15, marker='s', facecolor='white', edgecolor=G.MUTED, lw=0.8); NM = {'temperature': ('Temperature', (4, 3)), 'salinity': ('Salinity', (4, -5)), 'Fe': ('Iron', (4, 0)), 'PO4': ('Phosphate', (4, 3)), 'chlorophyll_a': ('Chlorophyll a', (4, -5)), 'NO3': ('Nitrate', (4, 0)), 'Si': ('Silicate', (4, 0)), 'CO3': ('CO3 (excluded)', (-5, 6))}
     [ax.annotate(NM[r.variable][0], (r.ratio, r.rho), xytext=NM[r.variable][1], textcoords='offset points', fontsize=G.fs(5.5), va='center', ha='right' if r.variable == 'CO3' else 'left') for r in uu.itertuples()]
