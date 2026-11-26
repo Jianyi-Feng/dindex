@@ -265,23 +265,23 @@ def grid(d, col):
 def fig4():
     G.use(1.30)
     a = rd('Fig4_hosts_and_fronts', 'a_station'); b = rd59('Fig4_hosts_and_fronts', 'b_cross_match'); c = rd('Fig4_hosts_and_fronts', 'c_variance_partition'); d = rd('Fig4_hosts_and_fronts', 'd_map_2deg_support_masked'); e = rd('Fig4_hosts_and_fronts', 'e_rates_support_domain')
-    fig = G.figure(183, 132)
+    fig = G.figure(183, 142)
     ax = fig.add_axes([0.07, 0.62, 0.24, 0.34]); sc = ax.scatter(a.D_host, a.D, c=a['T'], cmap=G.CMAP_T, vmin=-4, vmax=30, s=13, edgecolor=G.INK, lw=0.3)
     cax = ax.inset_axes([0.06, 0.845, 0.34, 0.036]); cb = fig.colorbar(sc, cax=cax, orientation='horizontal', ticks=[0, 15, 30]); cb.outline.set_linewidth(0.4); cax.tick_params(length=1.5, width=0.4, labelsize=G.fs(5.8), pad=1); cax.set_title('Temperature (°C)', fontsize=G.fs(6), pad=2, loc='left', fontweight='normal')
     ax.set_xlabel('Host balance, D$_{\mathrm{host}}$'); ax.set_ylabel('Station-mean D'); ax.set_xlim(-1.08, 1.08); ax.set_ylim(-1.08, 1.45); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against the host balance'); lab(ax, 'a')
-    ax = fig.add_axes([0.470, 0.625, 0.168, 0.325]); ax.axvline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
+    ax = fig.add_axes([0.437, 0.625, 0.162, 0.325]); ax.axvline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
-    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='upper right', bbox_to_anchor=(1.0, 0.98), handletextpad=0.2, borderaxespad=0.1, frameon=False, fontsize=G.fs(4.5))
-    ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(6.2)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman $\\rho$, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
+    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); fig.legend(*ax.get_legend_handles_labels(), loc='center left', bbox_to_anchor=(0.600, 0.700), frameon=False, fontsize=G.fs(4.2), handletextpad=0.3, labelspacing=0.3, borderaxespad=0)
+    ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(5.9)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman $\\rho$, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
     ax = fig.add_axes([0.765, 0.62, 0.215, 0.34])
     for i, r in c.iterrows():
         bot = 0
         for k, col, nm in (('unique_temperature', G.N_MID, 'Temperature only'), ('shared', G.N_LIGHT, 'Shared'), ('unique_host', G.HOST, 'Host balance only')):
             ax.bar(i, r[k], 0.55, bottom=bot, color=col, lw=0, label=nm if i == 0 else None); bot += r[k]
     ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.6, 1.6); ax.set_ylim(0, 1.0); ax.set_ylabel('Variance in D explained ($R^{\mathrm{2}}$)'); ax.set_title('Variance partition'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper right'); lab(ax, 'c')
-    ax = fig.add_axes([0.03, 0.09, 0.62, 0.43], projection=ccrs.Robinson(central_longitude=-160)); ax.set_global(); ax.spines['geo'].set_linewidth(0.5)
+    ax = fig.add_axes([0.03, 0.082, 0.62, 0.43], projection=ccrs.Robinson(central_longitude=-160)); ax.set_global(); ax.spines['geo'].set_linewidth(0.5)
     lon, lat, z = grid(d, 'dD'); pm = ax.pcolormesh(lon, lat, z, cmap=G.cmap_orders(), vmin=-0.4, vmax=0.4, transform=ccrs.PlateCarree(), rasterized=True, shading='nearest')
     _, _, sup = grid(d.assign(s=(~d.support.astype(bool)).astype(float)), 's'); ax.contourf(lon, lat, sup, levels=[0.5, 1.5], colors=['#F2F2F2'], transform=ccrs.PlateCarree())
     dis = d[(~d.all_models_agree.astype(bool)) & d.dD.notna()].iloc[::3]; ax.scatter(dis.lon, dis.lat, s=0.25, color=G.INK, lw=0, transform=ccrs.PlateCarree())
@@ -289,9 +289,9 @@ def fig4():
     for col_, ls in (('D_2000s', (0, (3, 1.5))), ('D_2090s', '-')):
         _, _, zz = grid(d, col_); ax.contour(lon, lat, zz, levels=[0], colors=[G.INK], linewidths=0.9, linestyles=[ls], transform=ccrs.PlateCarree(), zorder=5)
     ax.plot([], [], color=G.INK, lw=0.9, ls=(0, (3, 1.5)), label='D = 0, 2000s'); ax.plot([], [], color=G.INK, lw=0.9, label='D = 0, 2090s'); fig.legend(*ax.get_legend_handles_labels(), loc='lower left', bbox_to_anchor=(0.03, 0.035), ncol=2)
-    cax = fig.add_axes([0.36, 0.062, 0.22, 0.011]); cb = fig.colorbar(pm, cax=cax, orientation='horizontal', ticks=[-0.4, 0, 0.4], extend='both'); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cb.set_label('ΔD, 2090s − 2000s', labelpad=1)
-    fig.text(0.03, 0.525, 'd', fontsize=G.fs(8), fontweight='bold'); fig.text(0.062, 0.525, 'Projected change in D by the 2090s', fontsize=G.fs(7.2), fontweight='bold')
-    ax = fig.add_axes([0.772, 0.115, 0.198, 0.40])
+    cax = fig.add_axes([0.36, 0.056, 0.22, 0.011]); cb = fig.colorbar(pm, cax=cax, orientation='horizontal', ticks=[-0.4, 0, 0.4], extend='both'); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cb.set_label('ΔD, 2090s − 2000s', labelpad=1)
+    fig.text(0.03, 0.518, 'd', fontsize=G.fs(8), fontweight='bold'); fig.text(0.062, 0.518, 'Projected change in D by the 2090s', fontsize=G.fs(7.2), fontweight='bold')
+    ax = fig.add_axes([0.772, 0.107, 0.198, 0.40])
     for j, hm in enumerate(['North', 'South']):
         dd = e[e.hemisphere == hm]; yv = 1 - j; ax.plot([dd.km_per_decade.min(), dd.km_per_decade.max()], [yv, yv], color=G.MUTED, lw=0.7); ax.plot([dd.km_per_decade.mean()] * 2, [yv - 0.16, yv + 0.16], color=G.INK, lw=1.6)
         for _, r in dd.iterrows(): ax.plot(r.km_per_decade, yv, marker=G.ESM[r.ESM]['marker'], mfc='white', mec=G.INK, ms=3.6, mew=0.7, ls='none', label=r.ESM if j == 0 else None)
@@ -324,7 +324,7 @@ def fig5():
     ax.set_xlim(0, x0 - GAP); ax.set_ylim(len(TC), -0.02); ax.set_yticks(np.arange(len(TC)) + 0.5); ax.set_yticklabels(list(TC)); ax.set_xticks([]); ax.tick_params(length=0)
     for sp in ax.spines.values(): sp.set_visible(False)
     ax.set_xlabel('Genomes (one column each)'); ax.set_title('Trait repertoire', pad=12); lab(ax, 'a', 21, 0.05)
-    axp = fig.add_subplot(gs[1]); bm, bp = ax.get_position(), axp.get_position(); axp.set_position([bm.x1 + 0.012, bp.y0, bp.x1 - bm.x1 - 0.03, bp.height])
+    axp = fig.add_subplot(gs[1]); bm, bp = ax.get_position(), axp.get_position(); axp.set_position([bm.x1 - 0.009, bp.y0, bp.x1 - bm.x1 - 0.002, bp.height])
     for i, r in a.iterrows():
         yv = i + 0.5; axp.plot([100 * r.kA / nA, 100 * r.kI / nI], [yv, yv], color=G.LIGHT, lw=1.6, zorder=1, solid_capstyle='round')
         for k, n, col in ((r.kI, nI, G.IMI), (r.kA, nA, G.ALG)):
