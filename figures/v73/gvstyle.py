@@ -32,7 +32,7 @@ RC = {'font.family': 'sans-serif', 'font.sans-serif': ['Arial'], 'font.size': 6.
       'axes.linewidth': 0.5, 'xtick.major.width': 0.5, 'ytick.major.width': 0.5, 'xtick.major.size': 2.2, 'ytick.major.size': 2.2,
       'xtick.direction': 'out', 'ytick.direction': 'out', 'axes.spines.top': False, 'axes.spines.right': False,
       'lines.linewidth': 0.9, 'lines.markersize': 3, 'patch.linewidth': 0.4, 'pdf.fonttype': 42, 'ps.fonttype': 42, 'svg.fonttype': 'none',
-      'mathtext.fontset': 'custom', 'mathtext.rm': 'Arial', 'mathtext.it': 'Arial:italic', 'mathtext.bf': 'Arial:bold', 'mathtext.default': 'regular',
+      'mathtext.fontset': 'custom', 'mathtext.rm': 'Arial', 'mathtext.it': 'Arial:italic', 'mathtext.bf': 'Arial:bold', 'mathtext.default': 'it',
       'figure.dpi': 150, 'savefig.dpi': 600, 'axes.unicode_minus': True}
 def cmap_orders():
     """diverging map for D and for changes in D: Algavirales vermilion <- white -> Imitervirales blue"""

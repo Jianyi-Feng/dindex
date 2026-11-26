@@ -268,7 +268,7 @@ def fig4():
     fig = G.figure(183, 132)
     ax = fig.add_axes([0.07, 0.62, 0.24, 0.34]); sc = ax.scatter(a.D_host, a.D, c=a['T'], cmap=G.CMAP_T, vmin=-4, vmax=30, s=13, edgecolor=G.INK, lw=0.3)
     cax = ax.inset_axes([0.06, 0.845, 0.34, 0.036]); cb = fig.colorbar(sc, cax=cax, orientation='horizontal', ticks=[0, 15, 30]); cb.outline.set_linewidth(0.4); cax.tick_params(length=1.5, width=0.4, labelsize=G.fs(5.8), pad=1); cax.set_title('Temperature (°C)', fontsize=G.fs(6), pad=2, loc='left', fontweight='normal')
-    ax.set_xlabel('Host balance, D$_{host}$'); ax.set_ylabel('Station-mean D'); ax.set_xlim(-1.08, 1.08); ax.set_ylim(-1.08, 1.45); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against the host balance'); lab(ax, 'a')
+    ax.set_xlabel('Host balance, D$_{\mathrm{host}}$'); ax.set_ylabel('Station-mean D'); ax.set_xlim(-1.08, 1.08); ax.set_ylim(-1.08, 1.45); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against the host balance'); lab(ax, 'a')
     ax = fig.add_axes([0.470, 0.625, 0.168, 0.325]); ax.axvline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
@@ -309,7 +309,7 @@ def fig5():
     G.use(1.16)
     a = rd('Fig5_interpret', 'a_trait_prevalence'); b = rd('Fig5_interpret', 'b_pathway_richness'); c = rd('Fig5_interpret', 'c_microdiversity')
     nI, nA = (b.order == 'Imitervirales').sum(), (b.order == 'Algavirales').sum()
-    fig = G.figure(183, 66); gs = fig.add_gridspec(1, 4, left=0.125, right=0.985, top=0.875, bottom=0.17, wspace=0.42, width_ratios=[1.3, 0.5, 0.62, 1.3])
+    fig = G.figure(183, 66); gs = fig.add_gridspec(1, 4, left=0.152, right=0.985, top=0.875, bottom=0.17, wspace=0.40, width_ratios=[1.3, 0.5, 0.62, 1.3])
     gt = pd.read_csv(SUP + 'Supplementary_Data_7_GVMAG_functional_traits.csv'); gt = gt[gt.order.isin(['Imitervirales', 'Algavirales'])].copy()
     TC = {'Heat-shock proteins': 'pw_heat_shock_proteins', 'DNA repair': 'pw_DNA_repair', 'Cold-shock proteins': 'pw_cold_shock_proteins', 'Type-I rhodopsin': 'type_I_rhodopsin', 'TCA cycle': 'pw_TCA'}; assert list(a.trait) == list(TC)
     M = (gt[list(TC.values())] > 0).astype(int); M.columns = list(TC); gt['n5'] = M.sum(axis=1).values
@@ -339,7 +339,7 @@ def fig5():
         for o, col, off in (('Imitervirales', G.IMI, -0.25), ('Algavirales', G.ALG, 0.25)):
             dd = c[(c.size_fraction == f_) & (c.order == o)].median_pi.dropna().values
             if len(dd) > 2: G.raincloud(ax, dd, i + off, col, width=0.2, seed=i, ms=1.6)
-    ax.set_xticks(range(len(fr))); ax.set_xticklabels(['Viral', 'Pico', 'Micro/nano'][:len(fr)]); ax.set_ylabel('Nucleotide diversity (π) per genome'); ax.set_ylim(0, None); ax.set_xlim(-0.55, len(fr) - 0.45); ax.set_title('Population microdiversity', pad=12); lab(ax, 'c', 9, 0.05)
+    ax.set_xticks(range(len(fr))); ax.set_xticklabels(['Viral', 'Pico', 'Micro/nano'][:len(fr)]); ax.set_ylabel('Nucleotide diversity ($\pi$) per genome'); ax.set_ylim(0, None); ax.set_xlim(-0.55, len(fr) - 0.45); ax.set_title('Population microdiversity', pad=12); lab(ax, 'c', 9, 0.05)
     G.save(fig, OUT + 'Fig5_interpret'); return EX5
 
 if __name__ == '__main__':

@@ -44,7 +44,7 @@ def pint(ax, vals, los, his, labels, cols=None):
 def ed1():
     G.use(1.22 if '1' == '8' else 1.16)
     F = 'ExtendedDataFig1_index_properties'; a = rd(F, 'a_D_vs_logratio'); b = rd(F, 'b_combined_share'); c = rd(F, 'c_slopes'); d = rd(F, 'd_zero_points')
-    fig = G.figure(183, 92); gs = fig.add_gridspec(2, 2, left=0.145, right=0.99, top=0.945, bottom=0.085, wspace=0.24, hspace=0.38, width_ratios=[1.0, 1.0])
+    fig = G.figure(183, 100); gs = fig.add_gridspec(2, 2, left=0.145, right=0.99, top=0.945, bottom=0.115, wspace=0.24, hspace=0.38, width_ratios=[1.0, 1.0])
     ax = fig.add_subplot(gs[0]); x = np.linspace(-8, 8, 300); ax.plot(x, np.tanh(x / 2), color=LT, lw=2.2, zorder=1)
     for ds, kw in (('SPOT', dict(color=DK, lw=0)), ('Tara', dict(facecolor='white', edgecolor=MD, lw=0.5))):
         dd = a[a.dataset.str.contains(ds, case=False)]; ax.scatter(dd.ln_I_over_A, dd.D, s=5, zorder=3, label=ds, **kw)
@@ -86,9 +86,9 @@ def ed1():
 def ed2():
     G.use(1.22 if '2' == '8' else 1.16)
     F = 'ExtendedDataFig2_heatwave'; b = rd(F, 'b_permutations'); c = rd(F, 'c_same_month'); S = between_year_sensitivity()
-    fig = G.figure(183, 66); gs = fig.add_gridspec(1, 3, left=0.075, right=0.99, top=0.93, bottom=0.2, wspace=0.38, width_ratios=[0.8, 1.0, 1.25])
+    fig = G.figure(183, 62); gs = fig.add_gridspec(1, 3, left=0.075, right=0.99, top=0.935, bottom=0.178, wspace=0.38, width_ratios=[0.8, 1.0, 1.25])
     ax = fig.add_subplot(gs[0]); g = sorted((float(k), v['P']) for k, v in S['grid'].items()); ax.plot([x for x, _ in g], [p for _, p in g], '-o', color=DK, ms=3)
-    ax.axhline(0.05, color=MD, lw=0.6, ls=(0, (3, 2))); ax.axvline(S['sd_of_pre_event_year_means'], color=LT, lw=2.2, zorder=0); ax.set_yscale('log'); ax.set_xlabel('Assumed between-year s.d. of D'); ax.set_ylabel('$P$ of the observed shift'); ax.set_title('Between-year sensitivity'); lab(ax, 'a')
+    ax.axhline(0.05, color=MD, lw=0.6, ls=(0, (3, 2))); ax.axvline(S['sd_of_pre_event_year_means'], color=LT, lw=2.2, zorder=0); ax.set_yscale('log'); ax.set_xlabel('Assumed between-year s.d. of D'); ax.set_ylabel('$P$ value of the observed shift'); ax.set_title('Between-year sensitivity'); lab(ax, 'a')
     ax = fig.add_subplot(gs[1]); b = b.sort_values('shift'); ev = b.years.astype(str).str.contains('2014') & b.years.astype(str).str.contains('2015')
     ax.barh(range(len(b)), b['shift'], color=np.where(ev, EV, LT), lw=0); ax.set_yticks(range(len(b))); ax.set_yticklabels([' + '.join(__import__('re').findall(r'20\d\d', str(v))) for v in b.years], fontsize=G.fs(4.9)); ax.axvline(0, color=DK, lw=0.4, ls=(0, (3, 2))); ax.set_xlabel('Mean residual shift in D'); ax.set_title('Year-label permutations'); lab(ax, 'b', 14)
     ax = fig.add_subplot(gs[2]); c['date'] = pd.to_datetime(c.date); ax.bar(range(len(c)), c['diff'], color=np.where(c['diff'] >= 0, EV if G.THEME == 'vivid' else '#4D4D4D', LT), lw=0); ax.axhline(0, color=DK, lw=0.4, ls=(0, (3, 2)))
@@ -100,7 +100,7 @@ def ed2():
 def ed3():
     G.use(1.22 if '3' == '8' else 1.16)
     F = 'ExtendedDataFig3_global_robustness'; a = rd(F, 'a_station_D_chl'); b = rd(F, 'b_lobo'); c = rd(F, 'c_oof_residuals_by_basin'); d = rd(F, 'd_transfer'); e = rd('Fig3_validate', 'e_permutation_importance')
-    fig = G.figure(183, 112); g1 = fig.add_gridspec(1, 3, left=0.065, right=0.985, top=0.95, bottom=0.6, wspace=0.55, width_ratios=[0.8, 1.2, 1.2]); g2 = fig.add_gridspec(1, 2, left=0.065, right=0.985, top=0.44, bottom=0.11, wspace=0.55, width_ratios=[0.8, 1.6])
+    fig = G.figure(183, 108); g1 = fig.add_gridspec(1, 3, left=0.065, right=0.985, top=0.95, bottom=0.585, wspace=0.55, width_ratios=[0.8, 1.2, 1.2]); g2 = fig.add_gridspec(1, 2, left=0.065, right=0.985, top=0.445, bottom=0.100, wspace=0.55, width_ratios=[0.8, 1.6])
     ax = fig.add_subplot(g1[0]); sc = ax.scatter(a.log10_chl, a.D, c=a['T'], cmap=G.CMAP_T, vmin=-4, vmax=30, s=11, edgecolor=DK, lw=0.3)
     cax = ax.inset_axes([0.5, 0.86, 0.42, 0.03]); cb = fig.colorbar(sc, cax=cax, orientation='horizontal', ticks=[0, 15, 30]); cb.outline.set_linewidth(0.4); cax.tick_params(length=1.5, width=0.4, labelsize=G.fs(5.5), pad=1); cax.set_title('Temperature (°C)', fontsize=G.fs(5.5), pad=2, loc='left', fontweight='normal')
     ax.set_xlabel('log$_{10}$ chlorophyll a (mg m$^{-3}$)'); ax.set_ylabel('Station-mean D'); ax.set_ylim(-1.08, 1.72); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against chlorophyll'); lab(ax, 'a')
@@ -168,7 +168,7 @@ def ed5():
             ax.bar(i, r[k], 0.5, bottom=bot, color=col, lw=0, label=nm if i == 0 else None); bot += r[k]
     ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.7, 1.7); ax.set_ylim(0, 1.12); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Variance in D explained ($R^2$)'); ax.set_title('Temperature or Mamiellophyceae?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper center', ncol=1, labelspacing=0.2, borderaxespad=0.1); lab(ax, 'b')
     ax = fig.add_subplot(gs[2]); mam = d.X.str.contains('Mamiello') | d.Y.str.contains('Mamiello'); bins = np.linspace(0, 0.85, 18)
-    ax.hist([d.abs_rho_D[~mam], d.abs_rho_D[mam]], bins=bins, stacked=True, color=[LT, HO], lw=0, label=['Other pairs', 'Pairs with Mamiellophyceae'])
+    ax.hist([d.abs_rho_D[~mam], d.abs_rho_D[mam]], bins=bins, stacked=True, color=[LT, HO], lw=0, label=['Other pairs', 'Pairs with\nMamiellophyceae'])
     pre = d[(d.X.str.contains('Prymnes') & d.Y.str.contains('Mamiello')) | (d.Y.str.contains('Prymnes') & d.X.str.contains('Mamiello'))].abs_rho_D.iloc[0]; ax.plot(pre, -1.2, '^', color=HO, ms=4.5, clip_on=False)
     ax.set_xlabel('|Spearman $\\rho$| with station-mean D'); ax.set_ylabel('Number of protist-group pairs'); ax.set_title('All 210 protist-group pairs'); ax.legend(loc='upper left'); lab(ax, 'c')
     G.save(fig, OUT + F)
@@ -221,7 +221,7 @@ def ed7():
         fig.text(0.02 + i * 0.33, 0.945, k, fontsize=G.fs(8), fontweight='bold'); fig.text(0.05 + i * 0.33, 0.945, ['Mean D, 2000s', 'Mean D, 2090s', 'Change in D, 2000s to 2090s'][i], fontsize=G.fs(7), fontweight='bold')
         if i in (1, 2):
             cax = fig.add_axes([0.02 + i * 0.33 + (0.0 if i == 2 else -0.165) + 0.07, 0.575, 0.16, 0.011]); cb = fig.colorbar(pm, cax=cax, orientation='horizontal', ticks=[-vm, 0, vm]); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cb.set_label('D' if i == 1 else 'ΔD, 2090s − 2000s', labelpad=1)
-    ax = fig.add_axes([0.065, 0.1, 0.25, 0.34]); dd = d[d.projection.str.contains('final ensemble')]; esm_lines(ax, dd, 'front'); ax.set_xlabel('Decade (mid-year)'); ax.set_ylabel('Latitude of D = 0 front (°)'); ax.set_title('Front latitude by model'); esm_legend(ax, loc='upper left', ncol=2, columnspacing=0.6); ax.set_ylim(33, 58); lab(ax, 'd')
+    ax = fig.add_axes([0.065, 0.1, 0.25, 0.34]); dd = d[d.projection.str.contains('final ensemble')]; esm_lines(ax, dd, 'front'); ax.set_xlabel('Decade (mid-year)'); ax.set_ylabel('Latitude of the D = 0 front (°)'); ax.set_title('Front latitude by model'); esm_legend(ax, loc='upper left', ncol=2, columnspacing=0.6); ax.set_ylim(33, 58); lab(ax, 'd')
     ax = fig.add_axes([0.505, 0.1, 0.195, 0.34]); pr = [p_ for p_ in dict.fromkeys(e.projection) if 'archived' not in p_]
     for i, p_ in enumerate(pr):
         for hm, off, fill in (('North', 0.14, DK), ('South', -0.14, 'white')):
@@ -236,7 +236,7 @@ def ed8():
     G.use(1.32)
     F = 'ExtendedDataFig8_projection_robustness'; m = rd(F, 'a_b_aoa_share_2deg'); c = rd(F, 'c_aoa_shares'); u = rd(F, 'd_units'); e = rd(F, 'e_temperature_only_fronts'); f = rd(F, 'f_profiles'); g = rd(F, 'g_front_vs_isotherm'); h = rd(F, 'h_isotherm_trajectories')
     fr = rd('ExtendedDataFig7_projection', 'd_front_trajectories'); fr = fr[fr.projection.str.contains('final ensemble')]
-    fig = G.figure(183, 150)
+    fig = G.figure(183, 157)
     for i, (col, k) in enumerate((('aoa_2000s', 'a'), ('aoa_2090s', 'b'))):
         ax = fig.add_axes([0.02 + i * 0.33, 0.72, 0.3, 0.24], projection=ccrs.Robinson(central_longitude=-160)); ax.set_global(); ax.spines['geo'].set_linewidth(0.5)
         lon, lat, z = grid(m, col); pm = ax.pcolormesh(lon, lat, 100 * z, cmap='Greys_r', vmin=0, vmax=100, transform=ccrs.PlateCarree(), rasterized=True, shading='nearest'); ax.add_feature(cf.LAND, facecolor='#E9E3D8', lw=0, zorder=4); fig.text(0.02 + i * 0.33, 0.962, k, fontsize=G.fs(8), fontweight='bold'); fig.text(0.05 + i * 0.33, 0.962, ['Support domain, 2000s', 'Support domain, 2090s'][i], fontsize=G.fs(7), fontweight='bold')
@@ -256,10 +256,10 @@ def ed8():
         for pr_, ls in zip(pers, ((0, (1, 1)), '-')):
             dd = f[(f.ESM == e_) & (f.period == pr_)].sort_values('latitude_mid'); ax.plot(dd.mean_D, dd.latitude_mid, color=MD if ls == '-' else LT, lw=0.7, ls=ls)
     ax.axvline(0, color=LT, lw=0.5, ls=(0, (3, 2))); ax.plot([], [], color=LT, lw=0.9, ls=(0, (1, 1)), label='2000s'); ax.plot([], [], color=MD, lw=0.9, label='2090s'); ax.legend(loc='lower right'); ax.set_xlabel('Zonal-mean D'); ax.set_ylabel('Latitude (°)'); ax.set_xlim(-1, 1); ax.set_title('Zonal-mean D by model'); lab(ax, 'f')
-    ax = fig.add_axes([0.065, 0.058, 0.24, 0.22]); ax.plot([0, 95], [0, 95], color=LT, lw=0.7)
+    ax = fig.add_axes([0.065, 0.072, 0.24, 0.22]); ax.plot([0, 95], [0, 95], color=LT, lw=0.7)
     for _, r in g.iterrows(): ax.plot(r.isotherm, r.D_front, marker=G.ESM[r.ESM]['marker'], mfc=DK if r.hemisphere == 'North' else 'white', mec=DK, ms=4, mew=0.6)
     ax.set_xlabel('Isotherm rate (km per decade)'); ax.set_ylabel('D = 0 front rate (km per decade)'); ax.set_xlim(0, 95); ax.set_ylim(0, 108); ax.set_title('Front rate vs isotherm rate'); esm_legend(ax, loc='upper left'); lab(ax, 'g')
-    ax = fig.add_axes([0.40, 0.058, 0.58, 0.22]); esm_lines(ax, fr, 'front')
+    ax = fig.add_axes([0.40, 0.072, 0.58, 0.22]); esm_lines(ax, fr, 'front')
     for e_ in G.ESM:
         for hm in ('North', 'South'):
             dd = h[(h.ESM == e_) & (h.hemisphere == hm)].sort_values('year'); ax.plot(dd.year, dd.lat.abs(), color=MD, lw=0.7, ls=(0, (1, 1)))
@@ -269,7 +269,7 @@ def ed8():
 def ed9():
     G.use(1.22 if '9' == '8' else 1.16)
     F = 'ExtendedDataFig9_marker_recovery'; a = rd(F, 'a_scores'); b = rd(F, 'b_mantel_haenszel'); c = rd(F, 'c_pathways_by_score'); sc = [k for k in a.columns if 'score' in k][0]; sc2 = [k for k in c.columns if 'score' in k][0]
-    fig = G.figure(183, 62); gs = fig.add_gridspec(1, 3, left=0.06, right=0.985, top=0.92, bottom=0.2, wspace=0.34, width_ratios=[0.62, 1.7, 0.9])
+    fig = G.figure(183, 58); gs = fig.add_gridspec(1, 3, left=0.06, right=0.985, top=0.92, bottom=0.195, wspace=0.34, width_ratios=[0.62, 1.7, 0.9])
     ax = fig.add_subplot(gs[0]); ct = a.groupby(['order', sc]).size()
     for j, (o, col) in enumerate((('Imitervirales', G.IMI), ('Algavirales', G.ALG))):
         for s_, n in ct[o].items(): ax.barh(s_ + (0.19 - 0.38 * j), n, 0.36, color=col, lw=0)
@@ -291,7 +291,7 @@ def ed9():
     for r in b.itertuples():   # the strata reproduce the deposited totals
         assert r.Imitervirales_positive == int((gt[gt.order == 'Imitervirales'][TC[r.trait][0]] > 0).sum()) and r.Algavirales_positive == int((gt[gt.order == 'Algavirales'][TC[r.trait][0]] > 0).sum())
     ax.set_xticks([ti * 4 + si for ti in range(5) for si in range(3)]); ax.set_xticklabels(['4', '5', '6'] * 5, fontsize=G.fs(5.5)); ax.set_xlim(-0.75, 18.75); ax.set_ylim(-4, 136); ax.set_yticks([0, 25, 50, 75, 100]); ax.spines['left'].set_bounds(0, 100)
-    for ti, (tr_, (col_, short)) in enumerate(TC.items()): ax.text(ti * 4 + 1, 135, short, ha='center', va='top', fontsize=G.fs(5.8), linespacing=1.25)
+    for ti, (tr_, (col_, short)) in enumerate(TC.items()): ax.text(ti * 4 + 1, 135, short, ha='center', va='top', fontsize=G.fs(4.8), linespacing=1.2)
     ax.set_xlabel('Six-marker recovery score'); ax.set_ylabel('Genomes with trait (%)'); ax.set_title('Traits within recovery strata'); lab(ax, 'b', 10)
     EX = {'b_prevalence_by_stratum': pd.DataFrame(rows)}
     ax = fig.add_subplot(gs[2])
