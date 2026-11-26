@@ -280,7 +280,7 @@ def fig4():
         bot = 0
         for k, col, nm in (('unique_temperature', G.N_MID, 'Temperature only'), ('shared', G.N_LIGHT, 'Shared'), ('unique_host', G.HOST, 'Host balance only')):
             ax.bar(i, r[k], 0.55, bottom=bot, color=col, lw=0, label=nm if i == 0 else None); bot += r[k]
-    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.6, 1.6); ax.set_ylim(0, 1.0); ax.set_ylabel('Variance in D explained ($R^{\mathrm{2}}$)'); ax.set_title('Temperature or hosts?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper right'); lab(ax, 'c')
+    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.6, 1.6); ax.set_ylim(0, 1.0); ax.set_ylabel('Variance in D explained ($R^{\mathrm{2}}$)'); ax.set_title('Variance partition'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper right'); lab(ax, 'c')
     ax = fig.add_axes([0.03, 0.09, 0.62, 0.43], projection=ccrs.Robinson(central_longitude=-160)); ax.set_global(); ax.spines['geo'].set_linewidth(0.5)
     lon, lat, z = grid(d, 'dD'); pm = ax.pcolormesh(lon, lat, z, cmap=G.cmap_orders(), vmin=-0.4, vmax=0.4, transform=ccrs.PlateCarree(), rasterized=True, shading='nearest')
     _, _, sup = grid(d.assign(s=(~d.support.astype(bool)).astype(float)), 's'); ax.contourf(lon, lat, sup, levels=[0.5, 1.5], colors=['#F2F2F2'], transform=ccrs.PlateCarree())
