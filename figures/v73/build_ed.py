@@ -103,7 +103,7 @@ def ed3():
     fig = G.figure(183, 108); g1 = fig.add_gridspec(1, 3, left=0.065, right=0.985, top=0.95, bottom=0.585, wspace=0.55, width_ratios=[0.8, 1.2, 1.2]); g2 = fig.add_gridspec(1, 2, left=0.065, right=0.985, top=0.445, bottom=0.100, wspace=0.55, width_ratios=[0.8, 1.6])
     ax = fig.add_subplot(g1[0]); sc = ax.scatter(a.log10_chl, a.D, c=a['T'], cmap=G.CMAP_T, vmin=-4, vmax=30, s=11, edgecolor=DK, lw=0.3)
     cax = ax.inset_axes([0.5, 0.86, 0.42, 0.03]); cb = fig.colorbar(sc, cax=cax, orientation='horizontal', ticks=[0, 15, 30]); cb.outline.set_linewidth(0.4); cax.tick_params(length=1.5, width=0.4, labelsize=G.fs(5.5), pad=1); cax.set_title('Temperature (°C)', fontsize=G.fs(5.5), pad=2, loc='left', fontweight='normal')
-    ax.set_xlabel('log$_{10}$ chlorophyll a (mg m$^{-3}$)'); ax.set_ylabel('Station-mean D'); ax.set_ylim(-1.08, 1.72); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against chlorophyll'); lab(ax, 'a')
+    ax.set_xlabel('log$_{\mathrm{10}}$ chlorophyll a (mg m$^{\mathrm{-3}}$)'); ax.set_ylabel('Station-mean D'); ax.set_ylim(-1.08, 1.72); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against chlorophyll'); lab(ax, 'a')
     ax = fig.add_subplot(g1[1]); bb = b[b.basin.notna()]; mods = list(dict.fromkeys(bb.model)); bas = sorted(bb.basin.unique())
     for j, (mname, col) in enumerate(zip(mods[:2], (DK, LT))):
         v = [bb[(bb.basin == k) & (bb.model == mname)].RMSE.mean() for k in bas]; ax.barh(np.arange(len(bas)) + (0.19 - 0.38 * j), v, 0.36, color=col, lw=0, label=['Temperature + size fraction', 'Random forest'][j])
@@ -133,7 +133,7 @@ def ed3():
         ax.scatter(v, y0 - 0.10 - rj.uniform(0, 0.16, len(v)), s=0.6, color=col, alpha=0.25, lw=0, zorder=1, rasterized=True)
         ax.plot([r.ci_low, r.ci_high], [y0, y0], color=col, lw=1.1, solid_capstyle='round', zorder=4); ax.plot(r.mean, y0, 'o', color=col, ms=3.8, mec='white', mew=0.5, zorder=5)
     ax.axvline(0, color=MD, lw=0.5, ls=(0, (3, 2)), zorder=0); ax.set_yticks(range(len(e))); ax.set_yticklabels([NM[x] for x in e.feature][::-1]); ax.set_ylim(-0.4, len(e) - 0.05); ax.set_xlim(-0.25, 1.45)
-    ax.set_xlabel('Loss of out-of-fold $R^2$ when the predictor is permuted'); ax.set_title('Predictor importance'); lab(ax, 'e', 22)
+    ax.set_xlabel('Loss of out-of-fold $R^{\mathrm{2}}$ when the predictor is permuted'); ax.set_title('Predictor importance'); lab(ax, 'e', 22)
     G.save(fig, OUT + F); return {'e_permutation_importance': e, 'e_permutation_replicates': rp}
 
 def ed4():
@@ -166,7 +166,7 @@ def ed5():
         bot = 0
         for k, col, nm in (('unique_temperature', G.N_MID, 'Temperature only'), ('shared', G.N_LIGHT, 'Shared'), ('unique_host', HO, 'Mamiellophyceae only')):
             ax.bar(i, r[k], 0.5, bottom=bot, color=col, lw=0, label=nm if i == 0 else None); bot += r[k]
-    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.7, 1.7); ax.set_ylim(0, 1.12); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Variance in D explained ($R^2$)'); ax.set_title('Temperature or Mamiellophyceae?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper center', ncol=1, labelspacing=0.2, borderaxespad=0.1); lab(ax, 'b')
+    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.7, 1.7); ax.set_ylim(0, 1.12); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Variance in D explained ($R^{\mathrm{2}}$)'); ax.set_title('Temperature or Mamiellophyceae?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper center', ncol=1, labelspacing=0.2, borderaxespad=0.1); lab(ax, 'b')
     ax = fig.add_subplot(gs[2]); mam = d.X.str.contains('Mamiello') | d.Y.str.contains('Mamiello'); bins = np.linspace(0, 0.85, 18)
     ax.hist([d.abs_rho_D[~mam], d.abs_rho_D[mam]], bins=bins, stacked=True, color=[LT, HO], lw=0, label=['Other pairs', 'Pairs with\nMamiellophyceae'])
     pre = d[(d.X.str.contains('Prymnes') & d.Y.str.contains('Mamiello')) | (d.Y.str.contains('Prymnes') & d.X.str.contains('Mamiello'))].abs_rho_D.iloc[0]; ax.plot(pre, -1.2, '^', color=HO, ms=4.5, clip_on=False)
@@ -194,7 +194,7 @@ def ed6():
     for j, (col_, nm, k) in enumerate((('AG_pico_resid', 'Algavirales share, picoplankton\n(residual, percentage points)', 'd'), ('AG_vir_resid', 'Algavirales share, viral fraction\n(residual, percentage points)', 'e'))):
         ax = fig.add_subplot(g2[j + 1]); dd = d.dropna(subset=['M_resid', col_]); ax.axhline(0, color=LT, lw=0.5, ls=(0, (3, 2))); ax.axvline(0, color=LT, lw=0.5, ls=(0, (3, 2)))
         o = dd[dd.yr != 2015]; e_ = dd[dd.yr == 2015]; ax.scatter(o.M_resid, 100 * o[col_], s=10, facecolor='white', edgecolor=DK, lw=0.55); ax.scatter(e_.M_resid, 100 * e_[col_], s=12, color=EV, lw=0)
-        ax.set_xlabel('Mamiellophyceae share (residual, log$_{10}$)'); ax.set_ylabel(nm)
+        ax.set_xlabel('Mamiellophyceae share (residual, log$_{\mathrm{10}}$)'); ax.set_ylabel(nm)
         if j == 1: ax.xaxis.set_label_coords(0.42, -0.17)
         ax.set_title(['Coupling, picoplankton', 'Coupling, viral fraction'][j]); lab(ax, k)
     G.save(fig, OUT + F)

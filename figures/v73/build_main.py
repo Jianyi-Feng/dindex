@@ -223,14 +223,14 @@ def fig3():
         b = np.polyfit(d_['T'], d_.D, 1); xx = np.array([d_['T'].min(), d_['T'].max()]); axb.plot(xx, np.polyval(b, xx), color=G.MUTED, lw=1.0, ls=ls, zorder=2)
     r_all, p_all = stats.pearsonr(st['T'], st.D); r_na, p_na = stats.pearsonr(na['T'], na.D)
     pa = '$P$ < 0.001' if p_all < 1e-3 else '$P$ = ' + G.sci(p_all); pn = '$P$ < 0.001' if p_na < 1e-3 else '$P$ = ' + G.sci(p_na)
-    axb.text(0.03, 0.98, 'All stations  $r$ = %.2f, %s\nNon-Arctic  $r$ = %.2f, %s' % (r_all, pa, r_na, pn),
-             transform=axb.transAxes, va='top', ha='left', fontsize=G.fs(5.4), color=G.INK, linespacing=1.5)
+    axb.text(0.03, 0.98, 'All stations (solid)  $r$ = %.2f, %s\nNon-Arctic (dashed)  $r$ = %.2f, %s' % (r_all, pa, r_na, pn),
+             transform=axb.transAxes, va='top', ha='left', fontsize=G.fs(4.8), color=G.INK, linespacing=1.45)
     axb.set_xlabel('Temperature (°C)'); axb.set_ylabel('Station-mean D'); axb.set_ylim(-1.12, 1.42); axb.set_yticks([-1, -0.5, 0, 0.5, 1]); axb.legend(loc='lower right', handletextpad=0.2); axb.set_title('D against temperature')
     axc = fig.add_axes([0.075, 0.375, 0.20, 0.19]); axc.plot([-1, 1], [-1, 1], color=G.LIGHT, lw=0.7, ls=(0, (3, 2)))
     for d_, kw in ((oof[~oof.arctic], dict(color=G.INK, lw=0)), (oof[oof.arctic], dict(facecolor='white', edgecolor=G.INK, lw=0.5))): axc.scatter(d_.observed_D, d_.predicted_D, s=6, zorder=3, **kw)
     axc.set_xlabel('Observed D'); axc.set_ylabel('Predicted D'); axc.set_xticks([-1, 0, 1]); axc.set_yticks([-1, 0, 1]); axc.set_title('Out-of-fold prediction')
     xo, yp = oof.observed_D.values, oof.predicted_D.values; r2 = 1 - ((xo - yp) ** 2).sum() / ((xo - xo.mean()) ** 2).sum()
-    axc.text(0.97, 0.04, '$R^2$ = %.2f, $n$ = %d' % (r2, len(oof)), transform=axc.transAxes, va='bottom', ha='right', fontsize=G.fs(5.6), color=G.INK)
+    axc.text(0.97, 0.04, '$R^{\mathrm{2}}$ = %.2f, $n$ = %d' % (r2, len(oof)), transform=axc.transAxes, va='bottom', ha='right', fontsize=G.fs(5.6), color=G.INK)
     axd = fig.add_axes([0.40, 0.375, 0.33, 0.19])
     NAME = {'Temperature +\nfraction (D)': 'Temperature only', 'Ridge, 7 env\n+ fraction': 'Ridge', 'Random forest, 7 env\n+ fraction (log-ratio)': 'Random forest (log-ratio)', 'Random forest, 7 env\n+ fraction (D)': 'Random forest (D)', 'Ensemble (ridge + random forest), 7 env + fraction': 'Ensemble'}
     assert set(tr.model) == set(NAME); HI = {'Ensemble': G.INK}
@@ -240,7 +240,7 @@ def fig3():
         axd.plot([0, 1], [a_, b_], color=c_, lw=1.5 if hi else 0.9, zorder=4 if hi else 3); axd.plot([0, 1], [a_, b_], 'o', color=c_, ms=4.2 if hi else 3.2, mec='white', mew=0.5, zorder=5)
         axd.text(1.06, b_, f'{nm}  {b_:.2f}', va='center', ha='left', fontsize=G.fs(5.8), color=c_, fontweight='bold' if hi else 'normal')
     axd.text(-0.06, tr.station_blocked_R2_mean.max(), f'{tr.station_blocked_R2_mean.max():.2f}', va='center', ha='right', fontsize=G.fs(5.8), color=G.INK, fontweight='bold')
-    axd.set_xlim(-0.22, 1.05); axd.set_ylim(0.1, 0.7); axd.set_xticks([0, 1]); axd.set_xticklabels(['Stations withheld', 'Whole basin withheld']); axd.set_ylabel('Out-of-sample $R^2$ for D'); axd.set_yticks([0.2, 0.4, 0.6]); axd.spines['bottom'].set_bounds(0, 1); axd.set_title('Transfer across basins')
+    axd.set_xlim(-0.22, 1.05); axd.set_ylim(0.1, 0.7); axd.set_xticks([0, 1]); axd.set_xticklabels(['Stations withheld', 'Whole basin withheld']); axd.set_ylabel('Out-of-sample $R^{\mathrm{2}}$ for D'); axd.set_yticks([0.2, 0.4, 0.6]); axd.spines['bottom'].set_bounds(0, 1); axd.set_title('Transfer across basins')
     axe = fig.add_axes([0.075, 0.065, 0.235, 0.225]); grp = ['within', 'Imitervirales', 'Algavirales']; cols = {'within': G.INK, 'Imitervirales': G.IMI, 'Algavirales': G.ALG}; rj = np.random.default_rng(3)
     for i, g in enumerate(grp):
         d_ = ya[ya['index'] == g]; ev = d_[d_.event_years.astype(str).str.contains('2014') & d_.event_years.astype(str).str.contains('2015')]; ot = d_.drop(ev.index)
@@ -250,12 +250,12 @@ def fig3():
     for o, c in (('Imitervirales', G.IMI), ('Algavirales', G.ALG)):
         d_ = ph[ph.order == o]; density(axf, d_.tara_affinity.values, d_.event_change_log10.values, c, (-6, 36), (-2.6, 3.0)); axf.scatter(d_.tara_affinity, d_.event_change_log10, s=3 + 60 * np.sqrt(d_.mean_share.clip(0, 0.2)), color=c, alpha=0.35, lw=0, zorder=2)
         q = pd.qcut(d_.tara_affinity, 6, duplicates='drop'); md = d_.groupby(q, observed=True).agg(x=('tara_affinity', 'median'), y=('event_change_log10', 'median')); axf.plot(md.x, md.y, '-s', color=c, ms=3, lw=1.1, zorder=4, label=o)
-    axf.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2))); axf.set_xlabel('Thermal affinity (°C)'); axf.set_ylabel('Change in within-order share (log$_{10}$)'); axf.set_ylim(-1.9, 2.3); axf.set_xlim(-3, 31.5); axf.legend(loc='upper left', handlelength=1.6, ncol=2, columnspacing=1.0); axf.set_title('Phylotype response vs affinity')
+    axf.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2))); axf.set_xlabel('Thermal affinity (°C)'); axf.set_ylabel('Change in within-order share (log$_{\mathrm{10}}$)'); axf.set_ylim(-1.9, 2.3); axf.set_xlim(-3, 31.5); axf.legend(loc='upper left', handlelength=1.6, ncol=2, columnspacing=1.0); axf.set_title('Phylotype response vs affinity')
     axg = fig.add_axes([0.775, 0.065, 0.205, 0.225]); keys = ['temperature', 'log10_chlorophyll', 'abs_latitude', 'nitrate', 'salinity']; lb = ['Temperature', 'Chlorophyll a', 'Latitude', 'Nitrate', 'Salinity']; out = []
     for o, c, off in (('Imitervirales', G.IMI, 0.16), ('Algavirales', G.ALG, -0.16)):
         vv = [abs(W['C2'][o][k]['rho']) for k in keys]; yy = np.arange(len(keys))[::-1] + off; axg.hlines(yy, 0, vv, color=c, lw=0.9); axg.plot(vv, yy, 'o', color=c, ms=3.4)
         out += [dict(order=o, niche_axis=k, spearman_rho=W['C2'][o][k]['rho'], P=W['C2'][o][k]['P'], n=W['C2'][o][k]['n']) for k in keys]
-    axg.set_yticks(range(len(keys))); axg.set_yticklabels(lb[::-1]); axg.set_xlim(0, 0.34); axg.set_xlabel('|Spearman $\\rho$|'); axg.set_title('Which niche axis?')
+    axg.set_yticks(range(len(keys))); axg.set_yticklabels(lb[::-1]); axg.set_xlim(0, 0.34); axg.set_xlabel('|Spearman $\\rho$|'); axg.set_title('Niche correlates')
     for ax, s, xm in ((axb, 'b', 9), (axc, 'c', 9), (axd, 'd', 9), (axe, 'e', 9), (axf, 'f', 10), (axg, 'g', 15)): lab(ax, s, xm)
     G.save(fig, OUT + 'Fig3_validate'); return {'g_niche_axes': pd.DataFrame(out)}
 
@@ -273,14 +273,14 @@ def fig4():
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
-    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower left', bbox_to_anchor=(0.02, 0.02), handletextpad=0.2, borderaxespad=0.1, frameon=True, facecolor='white', edgecolor='none', framealpha=1.0, fontsize=G.fs(5.0))
+    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower right', bbox_to_anchor=(0.99, 0.02), handletextpad=0.2, borderaxespad=0.1, frameon=False, fontsize=G.fs(4.5))
     ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(6.2)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman $\\rho$, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
     ax = fig.add_axes([0.765, 0.62, 0.215, 0.34])
     for i, r in c.iterrows():
         bot = 0
         for k, col, nm in (('unique_temperature', G.N_MID, 'Temperature only'), ('shared', G.N_LIGHT, 'Shared'), ('unique_host', G.HOST, 'Host balance only')):
             ax.bar(i, r[k], 0.55, bottom=bot, color=col, lw=0, label=nm if i == 0 else None); bot += r[k]
-    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.6, 1.6); ax.set_ylim(0, 1.0); ax.set_ylabel('Variance in D explained ($R^2$)'); ax.set_title('Temperature or hosts?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper right'); lab(ax, 'c')
+    ax.set_xticks([0, 1]); ax.set_xticklabels(['All', 'Non-Arctic']); ax.set_xlim(-0.6, 1.6); ax.set_ylim(0, 1.0); ax.set_ylabel('Variance in D explained ($R^{\mathrm{2}}$)'); ax.set_title('Temperature or hosts?'); h, l = ax.get_legend_handles_labels(); ax.legend(h[::-1], l[::-1], loc='upper right'); lab(ax, 'c')
     ax = fig.add_axes([0.03, 0.09, 0.62, 0.43], projection=ccrs.Robinson(central_longitude=-160)); ax.set_global(); ax.spines['geo'].set_linewidth(0.5)
     lon, lat, z = grid(d, 'dD'); pm = ax.pcolormesh(lon, lat, z, cmap=G.cmap_orders(), vmin=-0.4, vmax=0.4, transform=ccrs.PlateCarree(), rasterized=True, shading='nearest')
     _, _, sup = grid(d.assign(s=(~d.support.astype(bool)).astype(float)), 's'); ax.contourf(lon, lat, sup, levels=[0.5, 1.5], colors=['#F2F2F2'], transform=ccrs.PlateCarree())
@@ -309,7 +309,7 @@ def fig5():
     G.use(1.16)
     a = rd('Fig5_interpret', 'a_trait_prevalence'); b = rd('Fig5_interpret', 'b_pathway_richness'); c = rd('Fig5_interpret', 'c_microdiversity')
     nI, nA = (b.order == 'Imitervirales').sum(), (b.order == 'Algavirales').sum()
-    fig = G.figure(183, 66); gs = fig.add_gridspec(1, 4, left=0.152, right=0.985, top=0.875, bottom=0.17, wspace=0.40, width_ratios=[1.3, 0.5, 0.62, 1.3])
+    fig = G.figure(183, 66); gs = fig.add_gridspec(1, 4, left=0.138, right=0.985, top=0.875, bottom=0.17, wspace=0.42, width_ratios=[1.3, 0.5, 0.62, 1.3])
     gt = pd.read_csv(SUP + 'Supplementary_Data_7_GVMAG_functional_traits.csv'); gt = gt[gt.order.isin(['Imitervirales', 'Algavirales'])].copy()
     TC = {'Heat-shock proteins': 'pw_heat_shock_proteins', 'DNA repair': 'pw_DNA_repair', 'Cold-shock proteins': 'pw_cold_shock_proteins', 'Type-I rhodopsin': 'type_I_rhodopsin', 'TCA cycle': 'pw_TCA'}; assert list(a.trait) == list(TC)
     M = (gt[list(TC.values())] > 0).astype(int); M.columns = list(TC); gt['n5'] = M.sum(axis=1).values
