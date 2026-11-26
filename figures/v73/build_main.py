@@ -86,7 +86,7 @@ def lab(ax, s, x_mm=9, y=0.008):
 
 # ============================================================== Fig. 1
 def fig1():
-    G.use(1.10)
+    G.use(1.16)
     a = rd('Fig1_derive', 'a_samples'); a['date'] = pd.to_datetime(a.date)
     fig = G.figure(183, 104); gs = fig.add_gridspec(2, 3, left=0.07, right=0.985, top=0.945, bottom=0.085, hspace=0.46, wspace=0.34)
     ax = fig.add_subplot(gs[0, 0]); ax.axvspan(pd.Timestamp('2014-01-01'), pd.Timestamp('2016-08-31'), color=G.BAND, lw=0)
@@ -103,18 +103,22 @@ def fig1():
         if j == 0: ax.legend(loc='upper center', ncol=2, columnspacing=1.2, borderaxespad=0.1)
         lab(ax, k)
     ax = fig.add_subplot(gs[1, 1]); ax.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
-    FIT = []
-    for k in ['micro', 'pico', 'viral']:
-        d = a[(a.frac == k) & a.SST.notna()]; st = G.FRAC[k]
+    import statsmodels.formula.api as smf
+    dd = a.dropna(subset=['SST'])
+    mm = smf.ols('D_index ~ SST + C(frac)', data=dd).fit(cov_type='HC3')
+    for k in ['viral', 'pico', 'micro']:
+        d = dd[dd.frac == k]; st = G.FRAC[k]
         ax.scatter(d.SST, d.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label=st['label'])
-        b = np.polyfit(d.SST, d.D_index, 1); xx = np.array([d.SST.min(), d.SST.max()]); ax.plot(xx, np.polyval(b, xx), color=st['color'], lw=1.1)
-        rr, pp = stats.pearsonr(d.SST, d.D_index); FIT.append((st['label'], rr, pp, st['color']))
-    ax.set_xlabel('SST (°C)'); ax.set_ylabel('D'); ax.set_title('D against temperature'); ax.set_ylim(-1.05, 1.36); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_yticks([-1, -0.5, 0, 0.5, 1])
-    MK = {'Viral': ('o', G.INK), 'Pico': ('s', '#6C7A90'), 'Micro/nano': ('^', '#AAB4C3')}
-    for i_, (nm_, rr, pp, cc_) in enumerate(FIT[::-1]):
-        pv = 'P < 0.001' if pp < 1e-3 else 'P = ' + G.sci(pp); yy = 0.985 - i_ * 0.078
-        ax.plot([0.037], [yy - 0.013], marker=MK[nm_][0], ms=3.0, mfc='none', mec=MK[nm_][1], mew=0.7, transform=ax.transAxes, clip_on=False)
-        ax.text(0.058, yy, '%s  r = %.2f, %s' % (nm_, rr, pv), transform=ax.transAxes, ha='left', va='top', fontsize=G.fs(5.3), color=G.INK)
+        xs = np.linspace(d.SST.min(), d.SST.max(), 50)
+        ax.plot(xs, mm.predict(pd.DataFrame({'SST': xs, 'frac': k})), color=st['color'], lw=1.1)
+    ci = mm.conf_int().loc['SST', :]
+    rr = float(np.corrcoef(dd.SST, dd.D_index)[0, 1])
+    _lab = '%.2f D/\u00b0C (95%% CI %.2f\u2013%.2f)\n$r$ = %.2f, n = %d' % (mm.params['SST'], ci.iloc[0], ci.iloc[1], rr, len(dd))
+    ax.text(0.03, 0.97, _lab,
+            transform=ax.transAxes, va='top', fontsize=G.fs(5.6), color=G.INK, linespacing=1.4,
+            bbox=dict(facecolor='white', edgecolor='none', pad=1.5))
+    ax.set_xlabel('SST (°C)'); ax.set_ylabel('D'); ax.set_title('D against temperature'); ax.set_ylim(-1.05, 1.22); ax.set_yticks([-1, -0.5, 0, 0.5, 1])
+    ax.legend(loc='lower right', handlelength=1.4, fontsize=G.fs(5.6), frameon=True, facecolor='white', edgecolor='none', framealpha=1)
     lab(ax, 'e')
     f = rd('Fig1_derive', 'f_monthly_D'); ax = fig.add_subplot(gs[1, 2]); ax.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     sm = rd('Fig1_derive', 'a_samples').copy(); sm['month'] = pd.to_datetime(sm.date).dt.month; fm = sm.groupby(['frac', 'month']).D_index.agg(['mean', 'size']).reset_index()
@@ -125,11 +129,12 @@ def fig1():
     ax.set_xticks(range(1, 13)); ax.set_xticklabels(MON); ax.set_ylim(-1.05, 1.05); ax.set_ylabel('D'); ax.set_xlabel('Month'); ax.set_title('Seasonal cycle of D')
     ax.legend(loc='upper left', ncol=2, columnspacing=0.8, handlelength=1.5, handletextpad=0.3, fontsize=G.fs(5.5), borderaxespad=0.1); lab(ax, 'f')
     EX1 = {'f_monthly_D_by_fraction': fm.rename(columns={'frac': 'size_fraction', 'mean': 'mean_D', 'size': 'n_samples'})}
+    EX1['e_regression'] = pd.DataFrame({'term': list(mm.params.index), 'coef': list(mm.params.values), 'P': list(mm.pvalues.values)})
     G.save(fig, OUT + 'Fig1_derive'); return EX1
 
 # ============================================================== Fig. 2
 def fig2():
-    G.use(1.10)
+    G.use(1.16)
     rng = np.random.default_rng(20261123)
     m = pd.read_csv(RAW + 'SPOT_sample_Dindex.csv'); m['date'] = pd.to_datetime(m.date); m['year'] = m.date.dt.year; m['month'] = m.date.dt.month
     v = m[m.size_fraction_ascii == '0.02-0.2um'].sort_values('date').reset_index(drop=True)
@@ -198,14 +203,16 @@ def density(ax, x, y, color, xr, yr, levels=(0.25, 0.5, 0.75, 0.95)):
     zs = np.sort(z.ravel())[::-1]; cs = np.cumsum(zs) / zs.sum(); th = sorted(zs[np.searchsorted(cs, l)] for l in levels); rgb = mc.to_rgb(color)
     ax.contourf(gx, gy, z, levels=th + [z.max() * 1.01], colors=[rgb + (a,) for a in (0.07, 0.12, 0.18, 0.25)], zorder=1); ax.contour(gx, gy, z, levels=th[:1], colors=[rgb + (0.35,)], linewidths=0.4, zorder=1)
 def fig3():
-    G.use(1.22)
+    G.use(1.30)
     st = rd('Fig3_validate', 'a_b_station_means'); oof = rd('Fig3_validate', 'c_oof_predictions'); tr = rd('Fig3_validate', 'd_model_transfer'); ya = rd('Fig3_validate', 'f_year_assignments'); ph = rd('Fig3_validate', 'g_per_phylotype')
     W = within_order_json(); st['arctic'] = st.basin.str.contains('Arctic'); oof['arctic'] = oof.ocean_basin.str.contains('Arctic')
     fig = G.figure(183, 165)
     axa = fig.add_axes([0.025, 0.628, 0.555, 0.355], projection=ccrs.Robinson()); axa.set_global(); axa.add_feature(cf.LAND, facecolor='#EAEAEA', lw=0); axa.coastlines(lw=0.25, color='#BDBDBD'); axa.spines['geo'].set_linewidth(0.5)
-    sc = axa.scatter(st.lon, st.lat, c=st.D, cmap=G.cmap_orders(), vmin=-1, vmax=1, s=31, edgecolor='white', lw=0.55, transform=ccrs.PlateCarree(), zorder=3)
-    cax = fig.add_axes([0.583, 0.700, 0.012, 0.205]); cb = fig.colorbar(sc, cax=cax, orientation='vertical', ticks=[-1, -0.5, 0, 0.5, 1]); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cax.set_title('D', fontsize=G.fs(6.5), pad=4)
-    fig.text(0.025, 0.983, 'a', fontsize=G.fs(8), fontweight='bold'); fig.text(0.055, 0.983, 'Station-mean D across the ocean', fontsize=G.fs(7.2), fontweight='bold')
+    sc = axa.scatter(st.lon, st.lat, c=st.D, cmap=G.cmap_orders(), vmin=-1, vmax=1, s=36, edgecolor='white', lw=0.5, transform=ccrs.PlateCarree(), zorder=3)
+    for _lat in (-23.44, 23.44):
+        axa.plot([-179, 179], [_lat, _lat], transform=ccrs.PlateCarree(), color='#9A9A9A', lw=0.4, ls=(0, (1.5, 1.5)), zorder=2)
+    cax = fig.add_axes([0.583, 0.700, 0.012, 0.205]); cb = fig.colorbar(sc, cax=cax, orientation='vertical', ticks=[-1, -0.5, 0, 0.5, 1]); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cax.set_title('D-index', fontsize=G.fs(6), pad=3)
+    fig.text(0.025, 0.983, 'a', fontsize=G.fs(8), fontweight='bold'); fig.text(0.055, 0.983, 'Tara Oceans: station-mean D (83 stations, 196 metagenomes)', fontsize=G.fs(6.6), fontweight='bold')
     axb = fig.add_axes([0.708, 0.665, 0.272, 0.30]); na, ar = st[~st.arctic], st[st.arctic]; axb.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     axb.scatter(na['T'], na.D, s=11, color=G.INK, lw=0, zorder=3, label='Other oceans'); axb.scatter(ar['T'], ar.D, s=11, facecolor='white', edgecolor=G.INK, lw=0.6, zorder=3, label='Arctic')
     for d_, ls in ((st, '-'), (na, (0, (4, 2)))):
@@ -230,12 +237,12 @@ def fig3():
         axd.text(1.06, b_, f'{nm}  {b_:.2f}', va='center', ha='left', fontsize=G.fs(5.8), color=c_, fontweight='bold' if hi else 'normal')
     axd.text(-0.06, tr.station_blocked_R2_mean.max(), f'{tr.station_blocked_R2_mean.max():.2f}', va='center', ha='right', fontsize=G.fs(5.8), color=G.INK, fontweight='bold')
     axd.set_xlim(-0.22, 1.05); axd.set_ylim(0.1, 0.7); axd.set_xticks([0, 1]); axd.set_xticklabels(['Stations withheld', 'Whole basin withheld']); axd.set_ylabel('Out-of-sample R² for D'); axd.set_yticks([0.2, 0.4, 0.6]); axd.spines['bottom'].set_bounds(0, 1); axd.set_title('Transfer across basins')
-    axe = fig.add_axes([0.075, 0.065, 0.245, 0.225]); grp = ['within', 'Imitervirales', 'Algavirales']; cols = {'within': G.INK, 'Imitervirales': G.IMI, 'Algavirales': G.ALG}; rj = np.random.default_rng(3)
+    axe = fig.add_axes([0.075, 0.065, 0.235, 0.225]); grp = ['within', 'Imitervirales', 'Algavirales']; cols = {'within': G.INK, 'Imitervirales': G.IMI, 'Algavirales': G.ALG}; rj = np.random.default_rng(3)
     for i, g in enumerate(grp):
         d_ = ya[ya['index'] == g]; ev = d_[d_.event_years.astype(str).str.contains('2014') & d_.event_years.astype(str).str.contains('2015')]; ot = d_.drop(ev.index)
         G.raincloud(axe, ot['shift'].values, i, G.MUTED, width=0.36, seed=i, ms=3); axe.scatter([i], ev['shift'], s=30, marker='D', color=cols[g], edgecolor='white', lw=0.5, zorder=7)
     axe.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2))); axe.set_xticks(range(3)); axe.set_xticklabels(['Both orders', 'Imitervirales', 'Algavirales']); axe.tick_params(axis='x', labelsize=G.fs(5.8)); axe.set_xlim(-0.5, 2.5); axe.set_ylim(-2.5, 2.3); axe.set_ylabel('Shift in mean thermal affinity (°C)'); axe.set_title('Within-order affinity shift')
-    axf = fig.add_axes([0.40, 0.065, 0.285, 0.225])
+    axf = fig.add_axes([0.415, 0.065, 0.270, 0.225])
     for o, c in (('Imitervirales', G.IMI), ('Algavirales', G.ALG)):
         d_ = ph[ph.order == o]; density(axf, d_.tara_affinity.values, d_.event_change_log10.values, c, (-6, 36), (-2.6, 3.0)); axf.scatter(d_.tara_affinity, d_.event_change_log10, s=3 + 60 * np.sqrt(d_.mean_share.clip(0, 0.2)), color=c, alpha=0.35, lw=0, zorder=2)
         q = pd.qcut(d_.tara_affinity, 6, duplicates='drop'); md = d_.groupby(q, observed=True).agg(x=('tara_affinity', 'median'), y=('event_change_log10', 'median')); axf.plot(md.x, md.y, '-s', color=c, ms=3, lw=1.1, zorder=4, label=o)
@@ -252,13 +259,13 @@ def fig3():
 def grid(d, col):
     p = d.pivot(index='lat', columns='lon', values=col); return p.columns.values, p.index.values, p.values
 def fig4():
-    G.use(1.22)
+    G.use(1.30)
     a = rd('Fig4_hosts_and_fronts', 'a_station'); b = rd59('Fig4_hosts_and_fronts', 'b_cross_match'); c = rd('Fig4_hosts_and_fronts', 'c_variance_partition'); d = rd('Fig4_hosts_and_fronts', 'd_map_2deg_support_masked'); e = rd('Fig4_hosts_and_fronts', 'e_rates_support_domain')
     fig = G.figure(183, 132)
     ax = fig.add_axes([0.07, 0.62, 0.24, 0.34]); sc = ax.scatter(a.D_host, a.D, c=a['T'], cmap=G.CMAP_T, vmin=-4, vmax=30, s=13, edgecolor=G.INK, lw=0.3)
     cax = ax.inset_axes([0.06, 0.845, 0.34, 0.036]); cb = fig.colorbar(sc, cax=cax, orientation='horizontal', ticks=[0, 15, 30]); cb.outline.set_linewidth(0.4); cax.tick_params(length=1.5, width=0.4, labelsize=G.fs(5.8), pad=1); cax.set_title('Temperature (°C)', fontsize=G.fs(6), pad=2, loc='left', fontweight='normal')
     ax.set_xlabel('Host balance, D$_{host}$'); ax.set_ylabel('Station-mean D'); ax.set_xlim(-1.08, 1.08); ax.set_ylim(-1.08, 1.45); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against the host balance'); lab(ax, 'a')
-    ax = fig.add_axes([0.455, 0.62, 0.192, 0.34]); ax.axvline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
+    ax = fig.add_axes([0.468, 0.62, 0.183, 0.34]); ax.axvline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
@@ -295,7 +302,7 @@ def violin(ax, data, pos, col, w=0.34):
     for b in vp['bodies']: b.set_facecolor(col); b.set_alpha(0.22); b.set_edgecolor(col); b.set_linewidth(0.6)
     q1, md, q3 = np.percentile(data, [25, 50, 75]); ax.plot([pos, pos], [q1, q3], color=col, lw=1.6, solid_capstyle='butt'); ax.plot(pos, md, 'o', mfc='white', mec=col, ms=3, mew=0.8)
 def fig5():
-    G.use(1.10)
+    G.use(1.16)
     a = rd('Fig5_interpret', 'a_trait_prevalence'); b = rd('Fig5_interpret', 'b_pathway_richness'); c = rd('Fig5_interpret', 'c_microdiversity')
     nI, nA = (b.order == 'Imitervirales').sum(), (b.order == 'Algavirales').sum()
     fig = G.figure(183, 66); gs = fig.add_gridspec(1, 4, left=0.125, right=0.985, top=0.875, bottom=0.17, wspace=0.42, width_ratios=[1.3, 0.5, 0.62, 1.3])

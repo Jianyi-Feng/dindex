@@ -52,7 +52,7 @@ if THEME == 'vivid':
     GREY3 = ['#5F6B7A', '#D5DAE3', '#1F2A44']
     CMAP_T = 'viridis'
     N_DARK, N_MID, N_LIGHT = '#4A5568', '#98A2B3', '#D5DAE3'
-SCALE = 1.10          # global text scale for the 2026-11 size pass; per-figure overrides call use(scale)
+SCALE = 1.18          # global text scale for the 2026-11 size pass; per-figure overrides call use(scale)
 def fs(x):
     """Scale a font size written against the original 6.5 pt body style."""
     return x * SCALE
