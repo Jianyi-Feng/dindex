@@ -100,9 +100,9 @@ def fig1():
         for q, c, nm in (('I', G.IMI, 'Imitervirales'), ('A', G.ALG, 'Algavirales')):
             ax.fill_between(d.month, d[q + 'q1'], d[q + 'q3'], color=c, alpha=0.18, lw=0); ax.plot(d.month, d[q + 'm'], '-o', color=c, ms=2.6, label=nm)
         ax.set_xticks(range(1, 13)); ax.set_xticklabels(MON); ax.set_ylim(0, 1.22); ax.set_yticks([0, 0.25, 0.5, 0.75, 1]); ax.set_ylabel('Relative abundance'); ax.set_xlabel('Month')
-        ax.set_title(['Viral fraction, 0.02–0.2 µm', 'Picoplankton, 0.2–1.2 µm', 'Micro/nanoplankton, 1.2–80 µm'][j])
+        ax.set_title(['Viral fraction, 0.02–0.2 µm', 'Picoplankton, 0.2–1.2 µm', 'Micro/nanoplankton, 1.2–80 µm'][j], pad=9)
         if j == 0: ax.legend(loc='upper center', ncol=2, columnspacing=1.2, borderaxespad=0.1)
-        lab(ax, k)
+        lab(ax, k, 9, 0.030)
     ax = fig.add_subplot(gs[1, 1]); ax.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     from scipy import stats as _sst
     dd = a.dropna(subset=['SST']).copy()
@@ -116,22 +116,22 @@ def fig1():
         _rr, _pp = _sst.pearsonr(d.SST, d.D_index)
         _fit[k] = dict(slope=float(_sl), intercept=float(_ic), r=float(_rr), P=float(_pp), n=int(len(d)))
     for _i, _k in enumerate(['viral', 'pico', 'micro']):
-        _yy = 0.948 - 0.082 * _i; _st_ = G.FRAC[_k]; _f = _fit[_k]
+        _yy = 0.975 - 0.082 * _i; _st_ = G.FRAC[_k]; _f = _fit[_k]
         ax.plot([0.045], [_yy], marker=_st_['marker'], ms=3.0, mfc='none', mec=_st_['color'], mew=0.6,
                 ls='none', transform=ax.transAxes, clip_on=False)
         _pt = '$P$ < 0.001' if _f['P'] < 1e-3 else '$P$ = ' + G.sci(_f['P'])
         ax.text(0.085, _yy, '%s  $r$ = %.2f, %s' % (_st_['label'], _f['r'], _pt), transform=ax.transAxes,
                 va='center', ha='left', fontsize=G.fs(4.9), color=G.INK)
-    ax.set_xlabel('SST (\u00b0C)'); ax.set_ylabel('D'); ax.set_title('D against temperature')
-    ax.set_ylim(-1.05, 1.55); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); lab(ax, 'e')
+    ax.set_xlabel('SST (\u00b0C)'); ax.set_ylabel('D'); ax.set_title('D against temperature', pad=9)
+    ax.set_ylim(-1.05, 1.55); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); lab(ax, 'e', 9, 0.030)
     f = rd('Fig1_derive', 'f_monthly_D'); ax = fig.add_subplot(gs[1, 2]); ax.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     sm = rd('Fig1_derive', 'a_samples').copy(); sm['month'] = pd.to_datetime(sm.date).dt.month; fm = sm.groupby(['frac', 'month']).D_index.agg(['mean', 'size']).reset_index()
     FL = {'viral': ('#8D99AE', '-', 'o', 'Viral'), 'pico': ('#AEB8C8', (0, (4, 1.5)), 's', 'Pico'), 'micro': ('#C6CEDA', (0, (1.2, 1.2)), '^', 'Micro/nano')}     # light tints: context behind the pooled mean
     for k, (c_, ls, mk, nm) in FL.items():
         d_ = fm[fm.frac == k]; ax.plot(d_.month, d_['mean'], ls=ls, marker=mk, color=c_, lw=0.9, ms=2.2, mew=0, zorder=2, label=nm)
     ax.fill_between(f.month, f['mean'] - 1.96 * f['sem'], f['mean'] + 1.96 * f['sem'], color=G.INK, alpha=0.10, lw=0, zorder=3); ax.plot(f.month, f['mean'], '-o', color=G.INK, ms=2.8, lw=1.2, zorder=4, label='All fractions')
-    ax.set_xticks(range(1, 13)); ax.set_xticklabels(MON); ax.set_ylim(-1.05, 1.05); ax.set_ylabel('D'); ax.set_xlabel('Month'); ax.set_title('Seasonal cycle of D')
-    ax.legend(loc='upper left', ncol=2, columnspacing=0.8, handlelength=1.5, handletextpad=0.3, fontsize=G.fs(5.5), borderaxespad=0.1); lab(ax, 'f')
+    ax.set_xticks(range(1, 13)); ax.set_xticklabels(MON); ax.set_ylim(-1.05, 1.05); ax.set_ylabel('D'); ax.set_xlabel('Month'); ax.set_title('Seasonal cycle of D', pad=9)
+    ax.legend(loc='upper left', ncol=2, columnspacing=0.8, handlelength=1.5, handletextpad=0.3, fontsize=G.fs(5.5), borderaxespad=0.1); lab(ax, 'f', 9, 0.030)
     EX1 = {'f_monthly_D_by_fraction': fm.rename(columns={'frac': 'size_fraction', 'mean': 'mean_D', 'size': 'n_samples'})}
     EX1['e_regression'] = pd.DataFrame([dict(size_fraction=k, slope=v['slope'], intercept=v['intercept'], r=v['r'], P=v['P'], n=v['n']) for k, v in _fit.items()])
     G.save(fig, OUT + 'Fig1_derive'); return EX1
@@ -216,7 +216,7 @@ def fig3():
     for _lat in (-35, 35):
         axa.plot(np.linspace(-180, 180, 100), np.full(100, _lat), transform=ccrs.PlateCarree(), color='#9A9A9A', lw=0.4, ls=':', zorder=2)
     cax = fig.add_axes([0.583, 0.700, 0.012, 0.205]); cb = fig.colorbar(sc, cax=cax, orientation='vertical', ticks=[-1, -0.5, 0, 0.5, 1]); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cax.set_title('D-index', fontsize=G.fs(6), pad=3)
-    fig.text(0.025, 0.983, 'a', fontsize=G.fs(8), fontweight='bold'); fig.text(0.055, 0.983, 'Tara Oceans: station-mean D', fontsize=G.fs(6.6), fontweight='bold')
+    fig.text(0.025, 0.966, 'a', fontsize=G.fs(8), fontweight='bold'); fig.text(0.055, 0.966, 'Tara Oceans: station-mean D', fontsize=G.fs(6.6), fontweight='bold')
     axb = fig.add_axes([0.708, 0.665, 0.272, 0.30]); na, ar = st[~st.arctic], st[st.arctic]; axb.axhline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     axb.scatter(na['T'], na.D, s=11, color=G.INK, lw=0, zorder=3, label='Other oceans'); axb.scatter(ar['T'], ar.D, s=11, facecolor='white', edgecolor=G.INK, lw=0.6, zorder=3, label='Arctic')
     for d_, ls in ((st, '-'), (na, (0, (4, 2)))):
@@ -273,7 +273,7 @@ def fig4():
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
-    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); fig.legend(*ax.get_legend_handles_labels(), loc='lower left', bbox_to_anchor=(0.612, 0.508), frameon=False, fontsize=G.fs(4.6), handletextpad=0.3, labelspacing=0.3, borderaxespad=0)
+    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower right', bbox_to_anchor=(0.995, 0.015), frameon=False, fontsize=G.fs(4.6), handletextpad=0.3, labelspacing=0.25, borderaxespad=0)
     ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(5.9)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman $\\rho$, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
     ax = fig.add_axes([0.765, 0.62, 0.215, 0.34])
     for i, r in c.iterrows():
@@ -323,13 +323,13 @@ def fig5():
     for yv in range(1, len(TC)): ax.axhline(yv, color='white', lw=1.6)
     ax.set_xlim(0, x0 - GAP); ax.set_ylim(len(TC), -0.02); ax.set_yticks(np.arange(len(TC)) + 0.5); ax.set_yticklabels(list(TC)); ax.set_xticks([]); ax.tick_params(length=0)
     for sp in ax.spines.values(): sp.set_visible(False)
-    ax.set_xlabel('Genomes (one column each)'); ax.set_title('Trait repertoire', pad=12); lab(ax, 'a', 21, 0.05)
-    axp = fig.add_subplot(gs[1]); bm, bp = ax.get_position(), axp.get_position(); axp.set_position([bm.x1 - 0.015, bp.y0, bp.x1 - bm.x1 + 0.004, bp.height])
+    ax.set_xlabel('One column per genome'); ax.xaxis.set_label_coords(0.40, -0.175); ax.set_title('Trait repertoire', pad=12); lab(ax, 'a', 21, 0.05)
+    axp = fig.add_subplot(gs[1]); bm, bp = ax.get_position(), axp.get_position(); axp.set_position([bm.x1 - 0.058, bp.y0, bp.x1 - bm.x1 + 0.049, bp.height])
     for i, r in a.iterrows():
         yv = i + 0.5; axp.plot([100 * r.kA / nA, 100 * r.kI / nI], [yv, yv], color=G.LIGHT, lw=1.6, zorder=1, solid_capstyle='round')
         for k, n, col in ((r.kI, nI, G.IMI), (r.kA, nA, G.ALG)):
             lo, hi = wilson(k, n); axp.plot([100 * lo, 100 * hi], [yv] * 2, color=col, lw=0.9, zorder=2); axp.plot(100 * k / n, yv, 'o', color=col, ms=3.8, mec='white', mew=0.4, zorder=3)
-    axp.set_ylim(len(TC), -0.02); axp.set_yticks([]); axp.spines['left'].set_visible(False); axp.set_xlim(-6, 106); axp.set_xticks([0, 50, 100]); axp.set_xlabel('Genomes (%)'); axp.set_title('Prevalence', pad=12)
+    axp.set_ylim(len(TC), -0.02); axp.set_yticks([]); axp.spines['left'].set_visible(False); axp.set_xlim(-1, 101); axp.set_xticks([0, 50, 100]); axp.set_xlabel('Genomes (%)'); axp.set_title('Prevalence', pad=12)
     EX5 = {'a_trait_matrix': pd.concat([gt[['genome_id', 'order']].reset_index(drop=True), M.reset_index(drop=True)], axis=1)}
     ax = fig.add_subplot(gs[2])
     for j, (o, col) in enumerate((('Imitervirales', G.IMI), ('Algavirales', G.ALG))): G.raincloud(ax, b[b.order == o].n_pathways_present.values, j, col, width=0.4, seed=j)

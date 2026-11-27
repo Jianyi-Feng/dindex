@@ -107,7 +107,7 @@ def ed3():
     ax = fig.add_subplot(g1[1]); bb = b[b.basin.notna()]; mods = list(dict.fromkeys(bb.model)); bas = sorted(bb.basin.unique())
     for j, (mname, col) in enumerate(zip(mods[:2], (DK, LT))):
         v = [bb[(bb.basin == k) & (bb.model == mname)].RMSE.mean() for k in bas]; ax.barh(np.arange(len(bas)) + (0.19 - 0.38 * j), v, 0.36, color=col, lw=0, label=['Temperature + size fraction', 'Random forest'][j])
-    ax.set_yticks(range(len(bas))); ax.set_yticklabels(bas); ax.set_xlabel('RMSE in held-out basin (D units)'); ax.set_xlim(0, 1.5); ax.set_xticks([0, 0.5, 1.0]); ax.set_title('Error in each held-out basin'); ax.legend(loc='lower right', ncol=1, handletextpad=0.3, borderaxespad=0.15, fontsize=G.fs(4.6), frameon=True, facecolor='white', edgecolor='none', framealpha=1.0); lab(ax, 'b', 19)
+    ax.set_yticks(range(len(bas))); ax.set_yticklabels(bas); ax.set_xlabel('RMSE in held-out basin (D units)'); ax.set_xlim(0, 1.5); ax.set_xticks([0, 0.5, 1.0]); ax.set_title('Error in each held-out basin'); ax.legend(loc='lower right', bbox_to_anchor=(1.0, -0.02), ncol=1, handletextpad=0.3, borderaxespad=0, fontsize=G.fs(4.6), frameon=True, facecolor='white', edgecolor='none', framealpha=1.0); lab(ax, 'b', 19)
     _p = ax.get_position(); ax.set_position([_p.x0 + 0.042, _p.y0, _p.width - 0.036, _p.height])
     ax = fig.add_subplot(g1[2]); bs = sorted(c.ocean_basin.unique()); rj = np.random.default_rng(2)
     for i, k in enumerate(bs):
@@ -123,7 +123,7 @@ def ed3():
         dd = d[d.frac == k]; st = G.FRAC[k]; ax.scatter(dd.D_tara, dd.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label=st['label'].capitalize())
     _rr = {k: np.corrcoef(g.D_tara, g.D_index)[0, 1] for k, g in d.groupby('frac')}
     ax.text(0.03, 0.96, '$r$ = %.2f (viral), %.2f (pico)' % (_rr.get('viral', np.nan), _rr.get('pico', np.nan)), transform=ax.transAxes, va='top', fontsize=G.fs(5.5))
-    ax.set_xlabel('D predicted from Tara calibration'); ax.set_ylabel('Observed D at SPOT'); ax.set_xlim(-1.05, 1.05); ax.set_ylim(-1.05, 1.05); ax.set_title('Tara calibration applied to SPOT'); ax.legend(loc='lower right', frameon=True, facecolor='white', framealpha=0.95, edgecolor='none', handletextpad=0.1); lab(ax, 'd')
+    ax.set_xlabel('D predicted from Tara calibration'); ax.set_ylabel('Observed D at SPOT'); ax.set_xlim(-1.05, 1.05); ax.set_ylim(-1.05, 1.05); ax.set_title('Tara calibration applied to SPOT'); ax.legend(loc='lower right', bbox_to_anchor=(0.995, 0.055), frameon=False, fontsize=G.fs(5.2), handletextpad=0.15, labelspacing=0.25, borderaxespad=0); lab(ax, 'd')
     ax = fig.add_subplot(g2[1]); e = e.sort_values('mean', ascending=False).reset_index(drop=True); rp = (pd.read_csv(os.path.join(DATA_EXTRA, 'permutation_importance_replicates.csv')) if DATA_EXTRA
           else rd('ExtendedDataFig3_global_robustness', 'e_permutation_replicates')); from scipy.stats import gaussian_kde
     NM = {'temperature': 'Temperature', 'log_chl': 'Chlorophyll a', 'femto': 'Size fraction', 'salinity': 'Salinity', 'log_Fe': 'Iron', 'log_PO4': 'Phosphate', 'log_NO3': 'Nitrate', 'log_Si': 'Silicate'}; xx = np.linspace(-0.25, 1.45, 500); rj = np.random.default_rng(5)
@@ -258,7 +258,7 @@ def ed8():
     ax.axvline(0, color=LT, lw=0.5, ls=(0, (3, 2))); ax.plot([], [], color=LT, lw=0.9, ls=(0, (1, 1)), label='2000s'); ax.plot([], [], color=MD, lw=0.9, label='2090s'); ax.legend(loc='lower right'); ax.set_xlabel('Zonal-mean D'); ax.set_ylabel('Latitude (°)'); ax.set_xlim(-1, 1); ax.set_title('Zonal-mean D by model'); lab(ax, 'f')
     ax = fig.add_axes([0.065, 0.072, 0.24, 0.22]); ax.plot([0, 95], [0, 95], color=LT, lw=0.7)
     for _, r in g.iterrows(): ax.plot(r.isotherm, r.D_front, marker=G.ESM[r.ESM]['marker'], mfc=DK if r.hemisphere == 'North' else 'white', mec=DK, ms=4, mew=0.6)
-    ax.set_xlabel('Isotherm rate (km per decade)'); ax.set_ylabel('D = 0 front rate (km per decade)'); ax.set_xlim(0, 95); ax.set_ylim(0, 108); ax.set_title('Front rate vs isotherm rate'); esm_legend(ax, loc='upper left'); lab(ax, 'g')
+    ax.set_xlabel('Isotherm rate (km per decade)'); ax.set_ylabel('D = 0 front rate (km per decade)'); ax.set_xlim(0, 95); ax.set_ylim(0, 108); ax.set_title('Front rate vs isotherm rate'); esm_legend(ax, fsz=4.5, loc='upper left'); lab(ax, 'g')
     ax = fig.add_axes([0.40, 0.072, 0.58, 0.22]); esm_lines(ax, fr, 'front')
     for e_ in G.ESM:
         for hm in ('North', 'South'):
