@@ -79,7 +79,7 @@ def ed1():
         v, lo, hi = zs[key]; col = '#98A2B3' if 'Tara' in key else DK; axs.plot([lo, min(hi, 30.5)], [n_, n_], color=col, lw=1.0, solid_capstyle='round'); axs.plot(v, n_, 'o', color=col, ms=3.0, mec='white', mew=0.4)
     axs.set_ylim(5.2, -0.8); axs.axis('off')
     ax.set_xlim(-2, 31); ax.set_ylim(-1.95, 1.62); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.spines['left'].set_bounds(-1, 1); ax.set_xlabel('Temperature (°C)'); ax.set_ylabel('Fitted D'); ax.yaxis.set_label_coords(-0.115, 0.55)
-    ax.text(-1.5, -1.2, 'Crossing temperature, 95% interval', fontsize=G.fs(5.5), color=MD, va='bottom'); ax.legend(loc='upper left', ncol=2, columnspacing=1.0, fontsize=G.fs(5.5), labelspacing=0.15, handlelength=2.2, borderaxespad=0.0); ax.set_title('Where the orders are equal'); lab(ax, 'd', 9)
+    ax.text(-1.5, -1.2, 'Crossing temperature, 95% interval', fontsize=G.fs(5.5), color=MD, va='bottom'); ax.legend(loc='upper left', ncol=2, columnspacing=1.0, fontsize=G.fs(5.5), labelspacing=0.15, handlelength=2.2, borderaxespad=0.0); ax.set_title('Equal-dominance temperature'); lab(ax, 'd', 9)
     EX = {'d_fitted_curves': pd.DataFrame(curves)}
     G.save(fig, OUT + F); return EX
 
