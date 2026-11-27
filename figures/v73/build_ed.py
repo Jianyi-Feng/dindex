@@ -120,7 +120,7 @@ def ed3():
     ax.axhline(0, color=MD, lw=0.5, ls=(0, (3, 2))); ax.set_xticks(range(len(bs))); ax.set_xticklabels([k.replace(' Ocean', '').replace(' Sea', '').replace('Mediterranean', 'Medit.') for k in bs], rotation=55, ha='right', fontsize=G.fs(5.5)); ax.set_ylabel('Observed − predicted D'); ax.set_title('Residuals by basin'); lab(ax, 'c')
     ax = fig.add_subplot(g2[0]); ax.plot([-1, 1], [-1, 1], color=LT, lw=0.7)
     for k in ('viral', 'pico'):
-        dd = d[d.frac == k]; st = G.FRAC[k]; ax.scatter(dd.D_tara, dd.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label='SPOT ' + st['label'])
+        dd = d[d.frac == k]; st = G.FRAC[k]; ax.scatter(dd.D_tara, dd.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label=st['label'].capitalize())
     _rr = {k: np.corrcoef(g.D_tara, g.D_index)[0, 1] for k, g in d.groupby('frac')}
     ax.text(0.03, 0.96, '$r$ = %.2f (viral), %.2f (pico)' % (_rr.get('viral', np.nan), _rr.get('pico', np.nan)), transform=ax.transAxes, va='top', fontsize=G.fs(5.5))
     ax.set_xlabel('D predicted from Tara calibration'); ax.set_ylabel('Observed D at SPOT'); ax.set_xlim(-1.05, 1.05); ax.set_ylim(-1.05, 1.05); ax.set_title('Tara calibration applied to SPOT'); ax.legend(loc='lower right', frameon=True, facecolor='white', framealpha=0.95, edgecolor='none', handletextpad=0.1); lab(ax, 'd')
