@@ -107,7 +107,7 @@ def ed3():
     ax = fig.add_subplot(g1[1]); bb = b[b.basin.notna()]; mods = list(dict.fromkeys(bb.model)); bas = sorted(bb.basin.unique())
     for j, (mname, col) in enumerate(zip(mods[:2], (DK, LT))):
         v = [bb[(bb.basin == k) & (bb.model == mname)].RMSE.mean() for k in bas]; ax.barh(np.arange(len(bas)) + (0.19 - 0.38 * j), v, 0.36, color=col, lw=0, label=['Temperature + size fraction', 'Random forest'][j])
-    ax.set_yticks(range(len(bas))); ax.set_yticklabels(bas); ax.set_xlabel('RMSE in held-out basin (D units)'); ax.set_xlim(0, 1.5); ax.set_xticks([0, 0.5, 1.0]); ax.set_title('Error in each held-out basin'); ax.legend(loc='lower right', bbox_to_anchor=(1.0, -0.02), ncol=1, handletextpad=0.3, borderaxespad=0, fontsize=G.fs(4.6), frameon=True, facecolor='white', edgecolor='none', framealpha=1.0); lab(ax, 'b', 19)
+    ax.set_yticks(range(len(bas))); ax.set_yticklabels(bas); ax.set_xlabel('RMSE in held-out basin (D units)'); ax.set_xlim(0, 1.5); ax.set_xticks([0, 0.5, 1.0]); ax.set_title('Error in each held-out basin'); ax.legend(loc='lower right', ncol=1, handletextpad=0.3, borderaxespad=0.15, fontsize=G.fs(4.6), frameon=True, facecolor='white', edgecolor='none', framealpha=1.0); lab(ax, 'b', 19)
     _p = ax.get_position(); ax.set_position([_p.x0 + 0.042, _p.y0, _p.width - 0.036, _p.height])
     ax = fig.add_subplot(g1[2]); bs = sorted(c.ocean_basin.unique()); rj = np.random.default_rng(2)
     for i, k in enumerate(bs):
