@@ -116,7 +116,7 @@ def fig1():
         _rr, _pp = _sst.pearsonr(d.SST, d.D_index)
         _fit[k] = dict(slope=float(_sl), intercept=float(_ic), r=float(_rr), P=float(_pp), n=int(len(d)))
     for _i, _k in enumerate(['viral', 'pico', 'micro']):
-        _yy = 0.985 - 0.082 * _i; _st_ = G.FRAC[_k]; _f = _fit[_k]
+        _yy = 0.948 - 0.082 * _i; _st_ = G.FRAC[_k]; _f = _fit[_k]
         ax.plot([0.045], [_yy], marker=_st_['marker'], ms=3.0, mfc='none', mec=_st_['color'], mew=0.6,
                 ls='none', transform=ax.transAxes, clip_on=False)
         _pt = '$P$ < 0.001' if _f['P'] < 1e-3 else '$P$ = ' + G.sci(_f['P'])
@@ -226,12 +226,12 @@ def fig3():
     axb.text(0.03, 0.98, 'All stations (solid)  $r$ = %.2f, %s\nNon-Arctic (dashed)  $r$ = %.2f, %s' % (r_all, pa, r_na, pn),
              transform=axb.transAxes, va='top', ha='left', fontsize=G.fs(4.8), color=G.INK, linespacing=1.45)
     axb.set_xlabel('Temperature (°C)'); axb.set_ylabel('Station-mean D'); axb.set_ylim(-1.12, 1.42); axb.set_yticks([-1, -0.5, 0, 0.5, 1]); axb.legend(loc='lower right', handletextpad=0.2); axb.set_title('D against temperature')
-    axc = fig.add_axes([0.075, 0.375, 0.20, 0.19]); axc.plot([-1, 1], [-1, 1], color=G.LIGHT, lw=0.7, ls=(0, (3, 2)))
+    axc = fig.add_axes([0.075, 0.398, 0.20, 0.19]); axc.plot([-1, 1], [-1, 1], color=G.LIGHT, lw=0.7, ls=(0, (3, 2)))
     for d_, kw in ((oof[~oof.arctic], dict(color=G.INK, lw=0)), (oof[oof.arctic], dict(facecolor='white', edgecolor=G.INK, lw=0.5))): axc.scatter(d_.observed_D, d_.predicted_D, s=6, zorder=3, **kw)
     axc.set_xlabel('Observed D'); axc.set_ylabel('Predicted D'); axc.set_xticks([-1, 0, 1]); axc.set_yticks([-1, 0, 1]); axc.set_title('Out-of-fold prediction')
     xo, yp = oof.observed_D.values, oof.predicted_D.values; r2 = 1 - ((xo - yp) ** 2).sum() / ((xo - xo.mean()) ** 2).sum()
     axc.text(0.97, 0.04, '$R^{\mathrm{2}}$ = %.2f, $n$ = %d' % (r2, len(oof)), transform=axc.transAxes, va='bottom', ha='right', fontsize=G.fs(5.6), color=G.INK)
-    axd = fig.add_axes([0.40, 0.375, 0.33, 0.19])
+    axd = fig.add_axes([0.40, 0.398, 0.33, 0.19])
     NAME = {'Temperature +\nfraction (D)': 'Temperature only', 'Ridge, 7 env\n+ fraction': 'Ridge', 'Random forest, 7 env\n+ fraction (log-ratio)': 'Random forest (log-ratio)', 'Random forest, 7 env\n+ fraction (D)': 'Random forest (D)', 'Ensemble (ridge + random forest), 7 env + fraction': 'Ensemble'}
     assert set(tr.model) == set(NAME); HI = {'Ensemble': G.INK}
     for r in tr.itertuples():
@@ -273,7 +273,7 @@ def fig4():
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
-    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); fig.legend(*ax.get_legend_handles_labels(), loc='center left', bbox_to_anchor=(0.600, 0.700), frameon=False, fontsize=G.fs(4.2), handletextpad=0.3, labelspacing=0.3, borderaxespad=0)
+    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); fig.legend(*ax.get_legend_handles_labels(), loc='lower left', bbox_to_anchor=(0.612, 0.508), frameon=False, fontsize=G.fs(4.6), handletextpad=0.3, labelspacing=0.3, borderaxespad=0)
     ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(5.9)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman $\\rho$, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
     ax = fig.add_axes([0.765, 0.62, 0.215, 0.34])
     for i, r in c.iterrows():
@@ -291,7 +291,7 @@ def fig4():
     ax.plot([], [], color=G.INK, lw=0.9, ls=(0, (3, 1.5)), label='D = 0, 2000s'); ax.plot([], [], color=G.INK, lw=0.9, label='D = 0, 2090s'); fig.legend(*ax.get_legend_handles_labels(), loc='lower left', bbox_to_anchor=(0.03, 0.035), ncol=2)
     cax = fig.add_axes([0.36, 0.056, 0.22, 0.011]); cb = fig.colorbar(pm, cax=cax, orientation='horizontal', ticks=[-0.4, 0, 0.4], extend='both'); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cb.set_label('ΔD, 2090s − 2000s', labelpad=1)
     fig.text(0.03, 0.518, 'd', fontsize=G.fs(8), fontweight='bold'); fig.text(0.062, 0.518, 'Projected change in D by the 2090s', fontsize=G.fs(7.2), fontweight='bold')
-    ax = fig.add_axes([0.772, 0.107, 0.198, 0.40])
+    ax = fig.add_axes([0.772, 0.095, 0.198, 0.40])
     for j, hm in enumerate(['North', 'South']):
         dd = e[e.hemisphere == hm]; yv = 1 - j; ax.plot([dd.km_per_decade.min(), dd.km_per_decade.max()], [yv, yv], color=G.MUTED, lw=0.7); ax.plot([dd.km_per_decade.mean()] * 2, [yv - 0.16, yv + 0.16], color=G.INK, lw=1.6)
         for _, r in dd.iterrows(): ax.plot(r.km_per_decade, yv, marker=G.ESM[r.ESM]['marker'], mfc='white', mec=G.INK, ms=3.6, mew=0.7, ls='none', label=r.ESM if j == 0 else None)
@@ -319,12 +319,12 @@ def fig5():
     for o, col, n in (('Imitervirales', G.IMI, nI), ('Algavirales', G.ALG, nA)):
         sel = (gt.order == o).values; od = np.lexsort([-M[sel][t].values for t in list(TC)[::-1]] + [-gt.n5[sel].values]); mm = M[sel].values[od].T; assert mm.shape[1] == n
         ax.imshow(mm, extent=(x0, x0 + n, len(TC), 0), aspect='auto', interpolation='nearest', cmap=mc.ListedColormap([mc.to_rgba(col, 0.10), mc.to_rgba(col, 1.0)]), vmin=0, vmax=1)
-        ax.text(x0 + n / 2, -0.18, f'{o} ({n})', ha='center', va='bottom', fontsize=G.fs(6), color=col); ticks.append((x0, n)); x0 += n + GAP
+        ax.text(x0 + n / 2, -0.10, f'{o} ({n})', ha='center', va='bottom', fontsize=G.fs(6), color=col); ticks.append((x0, n)); x0 += n + GAP
     for yv in range(1, len(TC)): ax.axhline(yv, color='white', lw=1.6)
     ax.set_xlim(0, x0 - GAP); ax.set_ylim(len(TC), -0.02); ax.set_yticks(np.arange(len(TC)) + 0.5); ax.set_yticklabels(list(TC)); ax.set_xticks([]); ax.tick_params(length=0)
     for sp in ax.spines.values(): sp.set_visible(False)
     ax.set_xlabel('Genomes (one column each)'); ax.set_title('Trait repertoire', pad=12); lab(ax, 'a', 21, 0.05)
-    axp = fig.add_subplot(gs[1]); bm, bp = ax.get_position(), axp.get_position(); axp.set_position([bm.x1 - 0.009, bp.y0, bp.x1 - bm.x1 - 0.002, bp.height])
+    axp = fig.add_subplot(gs[1]); bm, bp = ax.get_position(), axp.get_position(); axp.set_position([bm.x1 - 0.015, bp.y0, bp.x1 - bm.x1 + 0.004, bp.height])
     for i, r in a.iterrows():
         yv = i + 0.5; axp.plot([100 * r.kA / nA, 100 * r.kI / nI], [yv, yv], color=G.LIGHT, lw=1.6, zorder=1, solid_capstyle='round')
         for k, n, col in ((r.kI, nI, G.IMI), (r.kA, nA, G.ALG)):

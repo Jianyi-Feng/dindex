@@ -108,7 +108,7 @@ def ed3():
     for j, (mname, col) in enumerate(zip(mods[:2], (DK, LT))):
         v = [bb[(bb.basin == k) & (bb.model == mname)].RMSE.mean() for k in bas]; ax.barh(np.arange(len(bas)) + (0.19 - 0.38 * j), v, 0.36, color=col, lw=0, label=['Temperature + size fraction', 'Random forest'][j])
     ax.set_yticks(range(len(bas))); ax.set_yticklabels(bas); ax.set_xlabel('RMSE in held-out basin (D units)'); ax.set_xlim(0, 1.5); ax.set_xticks([0, 0.5, 1.0]); ax.set_title('Error in each held-out basin'); ax.legend(loc='lower right', ncol=1, handletextpad=0.3, borderaxespad=0.15, fontsize=G.fs(4.6), frameon=True, facecolor='white', edgecolor='none', framealpha=1.0); lab(ax, 'b', 19)
-    _p = ax.get_position(); ax.set_position([_p.x0 + 0.034, _p.y0, _p.width - 0.028, _p.height])
+    _p = ax.get_position(); ax.set_position([_p.x0 + 0.042, _p.y0, _p.width - 0.036, _p.height])
     ax = fig.add_subplot(g1[2]); bs = sorted(c.ocean_basin.unique()); rj = np.random.default_rng(2)
     for i, k in enumerate(bs):
         v = c[c.ocean_basin == k].residual_D.values
@@ -120,10 +120,10 @@ def ed3():
     ax.axhline(0, color=MD, lw=0.5, ls=(0, (3, 2))); ax.set_xticks(range(len(bs))); ax.set_xticklabels([k.replace(' Ocean', '').replace(' Sea', '').replace('Mediterranean', 'Medit.') for k in bs], rotation=55, ha='right', fontsize=G.fs(5.5)); ax.set_ylabel('Observed − predicted D'); ax.set_title('Residuals by basin'); lab(ax, 'c')
     ax = fig.add_subplot(g2[0]); ax.plot([-1, 1], [-1, 1], color=LT, lw=0.7)
     for k in ('viral', 'pico'):
-        dd = d[d.frac == k]; st = G.FRAC[k]; ax.scatter(dd.D_tara, dd.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label=st['label'])
+        dd = d[d.frac == k]; st = G.FRAC[k]; ax.scatter(dd.D_tara, dd.D_index, s=8, marker=st['marker'], facecolor='none', edgecolor=st['color'], lw=0.55, label='SPOT ' + st['label'])
     _rr = {k: np.corrcoef(g.D_tara, g.D_index)[0, 1] for k, g in d.groupby('frac')}
     ax.text(0.03, 0.96, '$r$ = %.2f (viral), %.2f (pico)' % (_rr.get('viral', np.nan), _rr.get('pico', np.nan)), transform=ax.transAxes, va='top', fontsize=G.fs(5.5))
-    ax.set_xlabel('D predicted from Tara calibration'); ax.set_ylabel('Observed D at SPOT'); ax.set_xlim(-1.05, 1.05); ax.set_ylim(-1.05, 1.05); ax.set_title('Tara calibration applied to SPOT'); ax.legend(loc='lower right', handletextpad=0.1); lab(ax, 'd')
+    ax.set_xlabel('D predicted from Tara calibration'); ax.set_ylabel('Observed D at SPOT'); ax.set_xlim(-1.05, 1.05); ax.set_ylim(-1.05, 1.05); ax.set_title('Tara calibration applied to SPOT'); ax.legend(loc='lower right', frameon=True, facecolor='white', framealpha=0.95, edgecolor='none', handletextpad=0.1); lab(ax, 'd')
     ax = fig.add_subplot(g2[1]); e = e.sort_values('mean', ascending=False).reset_index(drop=True); rp = (pd.read_csv(os.path.join(DATA_EXTRA, 'permutation_importance_replicates.csv')) if DATA_EXTRA
           else rd('ExtendedDataFig3_global_robustness', 'e_permutation_replicates')); from scipy.stats import gaussian_kde
     NM = {'temperature': 'Temperature', 'log_chl': 'Chlorophyll a', 'femto': 'Size fraction', 'salinity': 'Salinity', 'log_Fe': 'Iron', 'log_PO4': 'Phosphate', 'log_NO3': 'Nitrate', 'log_Si': 'Silicate'}; xx = np.linspace(-0.25, 1.45, 500); rj = np.random.default_rng(5)
@@ -147,7 +147,7 @@ def ed4():
     fig.text(0.012, 0.55, 'Seasonal residual of mean thermal affinity (°C)', rotation=90, va='center', fontsize=G.fs(6.5))
     ax = fig.add_subplot(gs[:, 1]); ax.hist(b.null_event_shift, bins=50, orientation='horizontal', color=LT, lw=0); ax.axhline(b.observed.iloc[0], color=EV, lw=1.0); ax.set_xticks([]); ax.spines['bottom'].set_visible(False); ax.set_ylabel('Event shift (°C)'); ax.set_title('Shuffle null'); lab(ax, 'b')
     _p = ax.get_position(); ax.set_position([_p.x0 - 0.028, _p.y0, _p.width, _p.height])
-    ax = fig.add_subplot(gs[:, 2]); c = c.sort_values('mean_tara_affinity').reset_index(drop=True)
+    ax = fig.add_subplot(gs[:, 2]); _p = ax.get_position(); ax.set_position([_p.x0 - 0.012, _p.y0, _p.width, _p.height]); c = c.sort_values('mean_tara_affinity').reset_index(drop=True)
     for i, r in c.iterrows():
         col = G.IMI if r.order == 'Imitervirales' else G.ALG; ax.plot([100 * r.mean_share_pre, 100 * r.mean_share_event], [i, i], color=col, lw=0.9); ax.plot(100 * r.mean_share_pre, i, 'o', mfc='white', mec=col, ms=4, mew=0.8); ax.plot(100 * r.mean_share_event, i, 'o', color=col, ms=4)
     ax.plot([], [], 'o', mfc='white', mec=DK, ms=4, mew=0.8, label='2009–2013'); ax.plot([], [], 'o', color=DK, ms=4, label='2014–2015'); ax.legend(loc='upper right', handletextpad=0.1)
@@ -204,10 +204,10 @@ def esm_lines(ax, d, ycol, xcol='year'):
         for hm, fill in (('North', DK), ('South', 'white')):
             dd = d[(d.ESM == e_) & (d.hemisphere == hm)].sort_values(xcol)
             if len(dd): ax.plot(dd[xcol], dd[ycol].abs(), marker=st['marker'], color=MD, lw=0.6, mfc=fill, mec=DK, ms=2.8, mew=0.5)
-def esm_legend(ax, **kw):
+def esm_legend(ax, fsz=5.5, **kw):
     hs = [mpl.lines.Line2D([], [], marker=st['marker'], color='none', mfc='white', mec=DK, ms=3.2, mew=0.6, label=e_) for e_, st in G.ESM.items()]
     hs += [mpl.lines.Line2D([], [], marker='o', color='none', mfc=DK, mec=DK, ms=3.2, label='North'), mpl.lines.Line2D([], [], marker='o', color='none', mfc='white', mec=DK, ms=3.2, mew=0.6, label='South')]
-    ax.legend(handles=hs, fontsize=G.fs(5.5), handletextpad=0.1, **kw)
+    ax.legend(handles=hs, fontsize=G.fs(fsz), handletextpad=0.1, **kw)
 
 def ed7():
     G.use(1.22 if '7' == '8' else 1.16)
@@ -221,13 +221,13 @@ def ed7():
         fig.text(0.02 + i * 0.33, 0.945, k, fontsize=G.fs(8), fontweight='bold'); fig.text(0.05 + i * 0.33, 0.945, ['Mean D, 2000s', 'Mean D, 2090s', 'Change in D, 2000s to 2090s'][i], fontsize=G.fs(7), fontweight='bold')
         if i in (1, 2):
             cax = fig.add_axes([0.02 + i * 0.33 + (0.0 if i == 2 else -0.165) + 0.07, 0.575, 0.16, 0.011]); cb = fig.colorbar(pm, cax=cax, orientation='horizontal', ticks=[-vm, 0, vm]); cb.outline.set_linewidth(0.4); cax.tick_params(length=2, width=0.5, labelsize=G.fs(6)); cb.set_label('D' if i == 1 else 'ΔD, 2090s − 2000s', labelpad=1)
-    ax = fig.add_axes([0.065, 0.1, 0.25, 0.34]); dd = d[d.projection.str.contains('final ensemble')]; esm_lines(ax, dd, 'front'); ax.set_xlabel('Decade (mid-year)'); ax.set_ylabel('Latitude of the D = 0 front (°)'); ax.set_title('Front latitude by model'); esm_legend(ax, loc='upper left', ncol=2, columnspacing=0.6); ax.set_ylim(33, 58); lab(ax, 'd')
+    ax = fig.add_axes([0.065, 0.1, 0.25, 0.34]); dd = d[d.projection.str.contains('final ensemble')]; esm_lines(ax, dd, 'front'); ax.set_xlabel('Decade (mid-year)'); ax.set_ylabel('Latitude of the D = 0 front (°)'); ax.set_title('Front latitude by model'); esm_legend(ax, fsz=4.3, loc='upper left', ncol=2, columnspacing=0.6); ax.set_ylim(33, 58); lab(ax, 'd')
     ax = fig.add_axes([0.505, 0.1, 0.195, 0.34]); pr = [p_ for p_ in dict.fromkeys(e.projection) if 'archived' not in p_]
     for i, p_ in enumerate(pr):
         for hm, off, fill in (('North', 0.14, DK), ('South', -0.14, 'white')):
             x = e[(e.projection == p_) & (e.hemisphere == hm)]; y = len(pr) - 1 - i + off; ax.plot([x.km_per_decade.min(), x.km_per_decade.max()], [y, y], color=MD, lw=0.6)
             for _, r in x.iterrows(): ax.plot(r.km_per_decade, y, marker=G.ESM[r.ESM]['marker'], mfc=fill, mec=DK, ms=3, mew=0.5)
-    short = {'final ensemble (7 predictors)': 'Final ensemble', 'final ensemble, AOA cells only': 'Ensemble, support domain'}; ax.set_yticks(range(len(pr))); ax.set_yticklabels([short.get(p_, p_.split('(')[0].strip().capitalize()) for p_ in pr][::-1]); ax.set_xlim(0, 125); ax.tick_params(axis='y', labelsize=G.fs(4.9)); ax.set_xlabel('Poleward rate (km per decade)'); ax.set_title('Rates across designs'); lab(ax, 'e', 22)
+    short = {'final ensemble (7 predictors)': 'Final ensemble', 'final ensemble, AOA cells only': 'Ensemble, support domain'}; ax.set_yticks(range(len(pr))); ax.set_yticklabels([short.get(p_, p_.split('(')[0].strip().capitalize()) for p_ in pr][::-1]); ax.set_xlim(0, 125); ax.tick_params(axis='y', labelsize=G.fs(5.7)); ax.set_xlabel('Poleward rate (km per decade)'); ax.set_title('Rates across designs'); lab(ax, 'e', 22)
     ax = fig.add_axes([0.78, 0.1, 0.2, 0.34]); fb = f[f.hemisphere == 'both']; ax.bar(range(len(fb)), 100 * fb.share_sign_agreement, 0.62, color=MD, lw=0); ax.set_xticks(range(len(fb))); ax.set_xticklabels(['<30°', '30–45°', '45–60°', '>60°'][:len(fb)]); ax.set_ylim(0, 100)
     ax.set_xlabel('Absolute latitude'); ax.set_ylabel('Models agree on sign (% of area)'); ax.set_title('Model agreement'); lab(ax, 'f', 11)
     G.save(fig, OUT + F)
