@@ -273,7 +273,7 @@ def fig4():
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
         for hg, kw, off in (('Prymnesiophyceae', dict(mfc='white'), 0.13), ('Mamiellophyceae', dict(), -0.13)):
             r = b[(b.virus_family == fam) & (b.host_group == hg)].rho.iloc[0]; ax.plot([0, r], [1 - i + off] * 2, color=col, lw=0.9); ax.plot(r, 1 - i + off, 'o', color=col, mec=col, ms=4.2, mew=0.8, **kw)
-    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower right', bbox_to_anchor=(0.995, 0.015), frameon=False, fontsize=G.fs(4.6), handletextpad=0.3, labelspacing=0.25, borderaxespad=0)
+    ax.plot([], [], 'o', mfc='white', mec=G.INK, ms=4, mew=0.8, label='Prymnesiophytes'); ax.plot([], [], 'o', color=G.INK, ms=4, label='Mamiellophyceae'); ax.legend(loc='lower left', bbox_to_anchor=(0.60, 0.02), frameon=False, fontsize=G.fs(4.6), handletextpad=0.3, labelspacing=0.25, borderaxespad=0)
     ax.set_yticks([1, 0]); ax.set_yticklabels(['Mesomimiviridae', 'Prasinoviridae']); ax.tick_params(axis='y', labelsize=G.fs(5.9)); ax.set_ylim(-1.0, 1.6); ax.set_xlim(-0.8, 0.9); ax.set_xlabel('Spearman $\\rho$, virus vs host share'); ax.set_title('Virus families and their hosts'); lab(ax, 'b', 15)
     ax = fig.add_axes([0.765, 0.62, 0.215, 0.34])
     for i, r in c.iterrows():
