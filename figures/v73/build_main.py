@@ -268,11 +268,7 @@ def fig4():
     fig = G.figure(183, 142)
     ax = fig.add_axes([0.07, 0.62, 0.24, 0.34]); sc = ax.scatter(a.D_host, a.D, c=a['T'], cmap=G.CMAP_T, vmin=-4, vmax=30, s=13, edgecolor=G.INK, lw=0.3)
     cax = ax.inset_axes([0.06, 0.700, 0.34, 0.032]); cb = fig.colorbar(sc, cax=cax, orientation='horizontal', ticks=[0, 15, 30]); cb.outline.set_linewidth(0.4); cax.tick_params(length=1.5, width=0.4, labelsize=G.fs(5.8), pad=1); cax.set_title('Temperature (°C)', fontsize=G.fs(6), pad=2, loc='left', fontweight='normal')
-    _kk, _bb = np.polyfit(a.D_host, a.D, 1)
-    _xs = np.linspace(a.D_host.min(), a.D_host.max(), 100)
-    ax.plot(_xs, _kk * _xs + _bb, color=G.MUTED, lw=0.9, zorder=1)
     _rho4, _p4 = stats.spearmanr(a.D, a.D_host)
-    _r4 = stats.pearsonr(a.D, a.D_host)[0]
     _p4s = '$P$ < 0.001' if _p4 < 1e-3 else '$P$ = ' + G.sci(_p4)
     ax.text(0.03, 0.975, '$\\rho$ = %.2f, %s, $n$ = %d' % (_rho4, _p4s, len(a)), transform=ax.transAxes, fontsize=G.fs(5.3), color=G.MUTED, va='top')
     ax.set_xlabel('Host balance, D$_{\mathrm{host}}$'); ax.set_ylabel('Station-mean D'); ax.set_xlim(-1.08, 1.08); ax.set_ylim(-1.08, 1.70); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against the host balance'); lab(ax, 'a')
