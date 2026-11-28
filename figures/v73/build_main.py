@@ -274,8 +274,7 @@ def fig4():
     _rho4, _p4 = stats.spearmanr(a.D, a.D_host)
     _r4 = stats.pearsonr(a.D, a.D_host)[0]
     _p4s = '$P$ < 0.001' if _p4 < 1e-3 else '$P$ = ' + G.sci(_p4)
-    ax.text(0.03, 0.985, 'Spearman $\\rho$ = %.2f, %s' % (_rho4, _p4s), transform=ax.transAxes, fontsize=G.fs(5.0), color=G.MUTED, va='top')
-    ax.text(0.03, 0.905, '$r$ = %.2f, $n$ = %d' % (_r4, len(a)), transform=ax.transAxes, fontsize=G.fs(5.0), color=G.MUTED, va='top')
+    ax.text(0.03, 0.975, '$r$ = %.2f, %s, $n$ = %d' % (_rho4, _p4s, len(a)), transform=ax.transAxes, fontsize=G.fs(5.3), color=G.MUTED, va='top')
     ax.set_xlabel('Host balance, D$_{\mathrm{host}}$'); ax.set_ylabel('Station-mean D'); ax.set_xlim(-1.08, 1.08); ax.set_ylim(-1.08, 1.70); ax.set_yticks([-1, -0.5, 0, 0.5, 1]); ax.set_title('D against the host balance'); lab(ax, 'a')
     ax = fig.add_axes([0.437, 0.625, 0.162, 0.325]); ax.axvline(0, color=G.MUTED, lw=0.5, ls=(0, (3, 2)))
     for i, (fam, col, nm) in enumerate((('IM_01', G.IMI, 'Mesomimi-\nviridae'), ('AG_01', G.ALG, 'Prasino-\nviridae'))):
